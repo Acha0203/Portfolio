@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import SketchRotation from '@/components/SketchRotation';
 
-export default function Home() {
+const Home = () => {
   return (
     <>
       <Head>
@@ -15,4 +15,6 @@ export default function Home() {
       <SketchRotation />
     </>
   );
-}
+};
+
+export default Home;

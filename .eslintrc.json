@@ -14,7 +14,7 @@
   "parserOptions": {
     "ecmaVersion": "latest",
     "tsconfigRootDir": ".",
-    "project": ["./tsconfig.json"],
+    "project": ["./tsconfig.json", "tailwind.config.js"],
     "sourceType": "module"
   },
   "plugins": ["@typescript-eslint", "react", "react-hooks", "import", "unused-imports"],
