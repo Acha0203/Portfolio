@@ -22,7 +22,7 @@ const SketchRotation = () => {
     for (let i = 0; i < 100; i++) {
       const x = Math.cos(angle) * r;
       const y = Math.sin(angle) * r;
-      p5.fill(100);
+      p5.fill(200);
       p5.circle(x, y, 5);
 
       angle += 0.25;

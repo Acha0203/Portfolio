@@ -3,8 +3,8 @@ import styles from '../styles/Home.module.scss';
 const TitleOfHome = () => {
   return (
     <div>
-      <div className={styles.title_of_home}>ACHA IKEDA</div>
-      <div className={styles.profession}>DESIGNER & DEVELOPER</div>
+      <div className={`${styles.my_name} ${styles.fade_up}`}>ACHA IKEDA</div>
+      <div className={`${styles.profession} ${styles.fade_up}`}>DESIGNER & DEVELOPER</div>
     </div>
   );
 };
