@@ -1,5 +1,8 @@
 import Head from 'next/head';
-import MenuBar from '@/components/ui/MenuBar';
+import SketchCliffordAttractor01 from '@/components/sketch/SketchCliffordAttractor01';
+import TitleOfHome from '@/components/TitleOfHome';
+import Footer from '@/components/ui/Footer';
+import MenuBarTop from '@/components/ui/MenuBarTop';
 
 const Home = () => {
   return (
@@ -12,8 +15,11 @@ const Home = () => {
           key='desc'
         />
       </Head>
-      <div className='flex justify-center items-center'>
-        <MenuBar />
+      <div className='flex-col justify-center items-center z-0 relative'>
+        <SketchCliffordAttractor01 />
+        <MenuBarTop />
+        <TitleOfHome />
+        <Footer />
       </div>
     </>
   );

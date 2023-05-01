@@ -1,9 +1,9 @@
 import styles from '../../styles/Home.module.scss';
 
-const MenuBar = () => {
+const MenuBarTop = () => {
   return (
-    <div className='flex-col'>
-      <div className='flex justify-end items-end w-screen h-16'>
+    <div className='flex-col absolute top-10'>
+      <div className='flex justify-end items-end w-screen h-12'>
         <div className='mx-5 text-neutral-400'>HOME</div>
         <div className='mx-5 text-neutral-400'>PROFILE</div>
         <div className='mx-5 text-neutral-400'>WORK</div>
@@ -18,4 +18,4 @@ const MenuBar = () => {
   );
 };
 
-export default MenuBar;
+export default MenuBarTop;
