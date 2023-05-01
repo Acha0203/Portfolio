@@ -3,6 +3,7 @@ import SketchCliffordAttractor01 from '@/components/sketch/SketchCliffordAttract
 import TitleOfHome from '@/components/TitleOfHome';
 import Footer from '@/components/ui/Footer';
 import MenuBarTop from '@/components/ui/MenuBarTop';
+import styles from '../styles/Home.module.scss'
 
 const Home = () => {
   return (
@@ -15,7 +16,7 @@ const Home = () => {
           key='desc'
         />
       </Head>
-      <div className='flex-col justify-center items-center relative'>
+      <div className={`${styles.curtain} flex-col justify-center items-center relative`}>
         <SketchCliffordAttractor01 />
         <MenuBarTop />
         <TitleOfHome />
