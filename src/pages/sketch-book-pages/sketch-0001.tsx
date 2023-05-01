@@ -1,8 +1,8 @@
 import Head from 'next/head';
-import SketchBackground from '@/components/sketch-components/SketchBackground';
-import TitleOfSketchBook from '@/components/TitleOfSketchBook';
+import SketchRotation from '@/components/sketch-components/SketchRotation';
+import Footer from '@/components/ui/Footer';
 import MenuBarTop from '@/components/ui/MenuBarTop';
-import styles from '../styles/Home.module.scss';
+import styles from '../../styles/Home.module.scss';
 
 const SketchBookPage = () => {
   return (
@@ -15,12 +15,10 @@ const SketchBookPage = () => {
           key='desc'
         />
       </Head>
-      <div className={'flex-col justify-center items-center relative'}>
-        <div className={styles.curtain}>
-          <SketchBackground />
-        </div>
+      <div className={`${styles.curtain} flex-col justify-center items-center relative`}>
+        <SketchRotation />
         <MenuBarTop />
-        <TitleOfSketchBook />
+        <Footer />
       </div>
     </>
   );

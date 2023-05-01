@@ -6,6 +6,7 @@
 }
 
 .curtain {
+  background-image: linear-gradient(to bottom, #fff0 50%, #525252ff);
   animation: fade_in 4s forwards;
 }
 
@@ -53,10 +54,20 @@
   }
 }
 
+.title {
+  @include display_center();
+  width: 100vw;
+  font-size: 4rem;
+  color: #fff;
+  letter-spacing: 1rem;
+  position: absolute;
+  top: 16vh;
+}
+
 .my_name {
   @include display_center();
   width: 100vw;
-  font-size: 5rem;
+  font-size: 4rem;
   color: #fff;
   letter-spacing: 1rem;
   position: absolute;
@@ -66,9 +77,9 @@
 .profession {
   @include display_center();
   width: 100vw;
-  font-size: 1.7rem;
+  font-size: 1.2rem;
   color: #8c8c8c;
   letter-spacing: 1rem;
   position: absolute;
-  top: 54vh;
+  top: 53vh;
 }
