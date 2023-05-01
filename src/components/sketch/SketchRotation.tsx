@@ -6,11 +6,7 @@ const Sketch = dynamic(import('react-p5'), {
   ssr: false,
 });
 
-export const SketchRotation = () => {
-  const preload = () => {
-    // 画像などのロードを行う
-  };
-
+const SketchRotation = () => {
   const setup = (p5: p5Types, canvasParentRef: Element) => {
     p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
     p5.noStroke();
@@ -26,7 +22,7 @@ export const SketchRotation = () => {
     for (let i = 0; i < 100; i++) {
       const x = Math.cos(angle) * r;
       const y = Math.sin(angle) * r;
-      p5.fill(200);
+      p5.fill(100);
       p5.circle(x, y, 5);
 
       angle += 0.25;
@@ -40,7 +36,7 @@ export const SketchRotation = () => {
     p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
   };
 
-  return <Sketch preload={preload} setup={setup} draw={draw} windowResized={windowResized} />;
+  return <Sketch setup={setup} draw={draw} windowResized={windowResized} />;
 };
 
 export default SketchRotation;

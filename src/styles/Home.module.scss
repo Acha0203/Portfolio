@@ -1,0 +1,39 @@
+/* General */
+@mixin display_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Menu Bar */
+.line_under_menu_bar {
+  width: 50%;
+  height: 2px;
+  background: #8c8c8c;
+}
+
+.line_under_menu_bar_grad {
+  width: 20%;
+  height: 2px;
+  background-image: linear-gradient(to left, #8c8c8c 10%, #000);
+}
+
+/* Title */
+.title_of_home {
+  @include display_center();
+  width: 100vw;
+  font-size: 5rem;
+  letter-spacing: 1rem;
+  position: absolute;
+  top: 43vh;
+}
+
+.profession {
+  @include display_center();
+  width: 100vw;
+  font-size: 1.7rem;
+  color: #8c8c8c;
+  letter-spacing: 1rem;
+  position: absolute;
+  top: 52vh;
+}
