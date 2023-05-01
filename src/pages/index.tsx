@@ -15,7 +15,7 @@ const Home = () => {
           key='desc'
         />
       </Head>
-      <div className='flex-col justify-center items-center z-0 relative'>
+      <div className='flex-col justify-center items-center relative'>
         <SketchCliffordAttractor01 />
         <MenuBarTop />
         <TitleOfHome />

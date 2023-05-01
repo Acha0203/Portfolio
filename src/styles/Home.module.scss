@@ -6,16 +6,18 @@
 }
 
 /* Menu Bar */
-.line_under_menu_bar {
-  width: 50%;
-  height: 2px;
-  background: #8c8c8c;
+.line_under_menu_bar_grad {
+  width: 70%;
+  height: 1px;
+  mix-blend-mode: overlay;
+  background-image: linear-gradient(to left, #676767ff 70%, #67676700);
 }
 
-.line_under_menu_bar_grad {
-  width: 20%;
-  height: 2px;
-  background-image: linear-gradient(to left, #8c8c8c 10%, #000);
+.line_under_text_grad {
+  height: 1px;
+  background-image: linear-gradient(to left, #fff0, #ffff 50%, #fff0);
+  position: absolute;
+  top: 48px;
 }
 
 /* Title */
@@ -35,5 +37,5 @@
   color: #8c8c8c;
   letter-spacing: 1rem;
   position: absolute;
-  top: 52vh;
+  top: 54vh;
 }
