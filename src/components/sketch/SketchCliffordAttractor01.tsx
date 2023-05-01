@@ -8,10 +8,10 @@ const Sketch = dynamic(import('react-p5'), {
 
 export const SketchCliffordAttractor01 = () => {
   const drawScale = 200;
-  let noiseValA = 0.005;
-  let noiseValB = 0.005;
-  let noiseValC = 0.005;
-  let noiseValD = 0.005;
+  let noiseValA = 0.002;
+  let noiseValB = 0.002;
+  let noiseValC = 0.002;
+  let noiseValD = 0.002;
   let a = -1.5;
   let b = 1.7;
   let c = -1.8;
@@ -30,7 +30,7 @@ export const SketchCliffordAttractor01 = () => {
     let xNow = 0.1;
     let yNow = 0.1;
 
-    if (a > -1.45 || a < -1.55) noiseValA *= -1;
+    if (a > -1.42 || a < -1.52) noiseValA *= -1;
     if (b > 1.75 || b < 1.65) noiseValB *= -1;
     if (c > -1.65 || c < -1.85) noiseValC *= -1;
     if (d > -0.45 || d < -0.55) noiseValD *= -1;
