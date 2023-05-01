@@ -2,6 +2,7 @@ import Head from 'next/head';
 import SketchRotation from '@/components/sketch/SketchRotation';
 import Footer from '@/components/ui/Footer';
 import MenuBarTop from '@/components/ui/MenuBarTop';
+import styles from '../styles/Home.module.scss';
 
 const SketchBookPage = () => {
   return (
@@ -14,7 +15,7 @@ const SketchBookPage = () => {
           key='desc'
         />
       </Head>
-      <div className='flex-col justify-center items-center relative'>
+      <div className={`${styles.curtain} flex-col justify-center items-center relative`}>
         <SketchRotation />
         <MenuBarTop />
         <Footer />
