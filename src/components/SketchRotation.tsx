@@ -6,7 +6,7 @@ const Sketch = dynamic(import('react-p5'), {
   ssr: false,
 });
 
-export const SketchRotation = () => {
+const SketchRotation = () => {
   const preload = () => {
     // 画像などのロードを行う
   };

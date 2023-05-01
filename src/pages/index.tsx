@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import SketchRotation from '@/components/SketchRotation';
+import MenuBar from '@/components/ui/MenuBar';
 
 const Home = () => {
   return (
@@ -8,11 +8,13 @@ const Home = () => {
         <title>Acha&apos;s Sketch Book</title>
         <meta
           name='description'
-          content="This page shows Acha's generative arts with p5.js."
+          content="This site shows Acha's generative arts with p5.js."
           key='desc'
         />
       </Head>
-      <SketchRotation />
+      <div className='flex justify-center items-center'>
+        <MenuBar />
+      </div>
     </>
   );
 };

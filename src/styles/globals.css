@@ -8,8 +8,9 @@ body {
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   overflow-x: scroll;
-  background-color: #000000;
+  color: #fff;
+  background-color: #000;
   font-family: 'Montserrat', sans-serif;
 }

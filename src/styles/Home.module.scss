@@ -1,0 +1,12 @@
+.line_under_menu_bar {
+  width: 50%;
+  height: 2px;
+  background: #8c8c8c;
+}
+
+.line_under_menu_bar_grad {
+  width: 20%;
+  height: 2px;
+  background-image: linear-gradient(to left, #8c8c8c 10%, #000);
+}
+
