@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Showcase from '@/components/Showcase';
 import SketchBackground from '@/components/sketch-components/SketchBackground';
 import TitleOfSketchBook from '@/components/TitleOfSketchBook';
 import MenuBarTop from '@/components/ui/MenuBarTop';
@@ -11,7 +12,7 @@ const SketchBookPage = () => {
         <title>Acha Ikeda | Sketch Book</title>
         <meta
           name='description'
-          content="This page shows Acha Ikeda's generative arts with p5.js."
+          content="This page shows Acha Ikeda's works using the creative coding."
           key='desc'
         />
       </Head>
@@ -21,6 +22,7 @@ const SketchBookPage = () => {
         </div>
         <MenuBarTop />
         <TitleOfSketchBook />
+        <Showcase />
       </div>
     </>
   );

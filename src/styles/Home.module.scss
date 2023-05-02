@@ -2,7 +2,6 @@
 @mixin display_center {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .curtain {
@@ -61,7 +60,17 @@
   color: #fff;
   letter-spacing: 1rem;
   position: absolute;
-  top: 16vh;
+  top: 120px;
+}
+
+.description {
+  @include display_center();
+  width: 100vw;
+  font-size: 1.2rem;
+  color: #8c8c8c;
+  letter-spacing: 1rem;
+  position: absolute;
+  top: 220px;
 }
 
 .my_name {
@@ -71,7 +80,7 @@
   color: #fff;
   letter-spacing: 1rem;
   position: absolute;
-  top: 43vh;
+  top: 40%;
 }
 
 .profession {
@@ -81,5 +90,11 @@
   color: #8c8c8c;
   letter-spacing: 1rem;
   position: absolute;
-  top: 53vh;
+  top: 100%;
+}
+
+/* Showcase */
+.showcase {
+  margin: 2rem;
+  filter: drop-shadow(0 0 0.75rem #525252);
 }
