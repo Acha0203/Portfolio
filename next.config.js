@@ -1,15 +1,14 @@
 /** @type {import('next').NextConfig} */
-module.exports =  {
+module.exports = {
   reactStrictMode: true,
   images: {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'github.com',
+        hostname: 'acha0203.github.io',
         port: '',
-        pathname: '/Acha0203/Portfolio/blob/main/public/**',
+        pathname: '/Portfolio/**',
       },
     ],
   },
 };
-
