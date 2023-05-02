@@ -1,4 +1,5 @@
 /* General */
+
 @mixin display_center {
   display: flex;
   justify-content: center;
@@ -25,6 +26,7 @@
 }
 
 /* Menu Bar */
+
 .line_under_menu_bar {
   width: 580px;
   height: 1px;
@@ -47,6 +49,7 @@
 }
 
 /* Title */
+
 .fade_up {
   animation-name: fade_up_anime;
   animation-duration: 2s;
@@ -74,6 +77,7 @@
   letter-spacing: 0.7rem;
   position: absolute;
   top: 120px;
+  text-align: center;
   @media screen and (min-width: 321px) {
     font-size: 1.6rem;
     letter-spacing: 0.8rem;
@@ -96,6 +100,7 @@
   letter-spacing: 0.3rem;
   position: absolute;
   top: 160px;
+  text-align: center;
   @media screen and (min-width: 321px) {
     font-size: 0.8rem;
     letter-spacing: 0.4rem;
@@ -113,6 +118,8 @@
   }
 }
 
+/* Title of Home Page */
+
 .my_name {
   @include display_center();
   width: 100vw;
@@ -121,6 +128,7 @@
   color: #fff;
   position: absolute;
   top: 40%;
+  text-align: center;
   @media screen and (min-width: 321px) {
     font-size: 1.8rem;
     letter-spacing: 1rem;
@@ -139,6 +147,7 @@
   color: #8c8c8c;
   position: absolute;
   top: 100%;
+  text-align: center;
   @media screen and (min-width: 321px) {
     font-size: 0.9rem;
     letter-spacing: 0.5rem;
@@ -149,7 +158,56 @@
   }
 }
 
+/* Title of Sketch */
+
+.title_of_sketch {
+  @include display_center();
+  width: 100vw;
+  font-size: 1.5rem;
+  letter-spacing: 0.7rem;
+  color: #fff;
+  text-shadow: #000 0 0 20px;
+  position: absolute;
+  bottom: 30px;
+  text-align: center;
+  @media screen and (min-width: 321px) {
+    font-size: 1.8rem;
+    letter-spacing: 1rem;
+    bottom: 50px;
+  }
+  @media screen and (min-width: 640px) {
+    font-size: 2.5rem;
+    letter-spacing: 1rem;
+    bottom: 80px;
+  }
+}
+
+.code {
+  @include display_center();
+  width: 100vw;
+  font-size: 0.7rem;
+  letter-spacing: 0.4rem;
+  color: #8c8c8c;
+  text-shadow: #000 0 0 20px;
+  position: absolute;
+  top: 100%;
+  text-align: center;
+  @media screen and (min-width: 321px) {
+    font-size: 0.9rem;
+    letter-spacing: 0.5rem;
+  }
+  @media screen and (min-width: 640px) {
+    font-size: 1.2rem;
+    letter-spacing: 0.8rem;
+  }
+
+  &:hover {
+    filter: brightness(1.5);
+  }
+}
+
 /* Showcase */
+
 .showcase {
   margin: 1rem;
   filter: drop-shadow(0 0 0.75rem #525252);

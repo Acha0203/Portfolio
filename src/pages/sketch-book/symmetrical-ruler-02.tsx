@@ -1,10 +1,10 @@
 import Head from 'next/head';
 import { sketchList } from '@/consts/sketchList';
-import SketchRotation02 from '@/components/sketch-components/SketchRotation02';
+import SketchSymmetricalRuler02 from '@/components/sketch-components/SketchSymmetricalRuler02';
 import MenuBarTop from '@/components/ui/MenuBarTop';
 import styles from '../../styles/Home.module.scss';
 
-const SketchRotation02Page = () => {
+const SymmetricalRuler02Page = () => {
   return (
     <>
       <Head>
@@ -17,16 +17,16 @@ const SketchRotation02Page = () => {
       </Head>
       <div className={'flex-col justify-center items-center relative'}>
         <div className={styles.curtain}>
-          <SketchRotation02 />
+          <SketchSymmetricalRuler02 />
         </div>
         <MenuBarTop />
       </div>
       <div>
         <div className={`${styles.title_of_sketch} ${styles.fade_up}`}>
-          {`${sketchList[0].title}`}
+          {`${sketchList[1].title}`}
           <br />
           <span className={styles.code}>
-            <a href={`${sketchList[0].codeUrl}`} target='_blank' rel='noreferrer'>
+            <a href={`${sketchList[1].codeUrl}`} target='_blank' rel='noreferrer'>
               CODE
             </a>
           </span>
@@ -36,4 +36,4 @@ const SketchRotation02Page = () => {
   );
 };
 
-export default SketchRotation02Page;
+export default SymmetricalRuler02Page;
