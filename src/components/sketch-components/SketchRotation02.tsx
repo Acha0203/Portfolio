@@ -6,7 +6,7 @@ const Sketch = dynamic(import('react-p5'), {
   ssr: false,
 });
 
-const SketchRotation = () => {
+const SketchRotation02 = () => {
   const setup = (p5: p5Types, canvasParentRef: Element) => {
     p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
     p5.noStroke();
@@ -39,4 +39,4 @@ const SketchRotation = () => {
   return <Sketch setup={setup} draw={draw} windowResized={windowResized} />;
 };
 
-export default SketchRotation;
+export default SketchRotation02;

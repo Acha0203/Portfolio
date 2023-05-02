@@ -80,6 +80,7 @@ const MenuBarTop = () => {
       </div>
       <div className='flex justify-end items-end w-screen relative top-12'>
         <div className={styles.line_under_menu_bar_grad} />
+        <div className={styles.line_under_menu_bar} />
       </div>
     </div>
   );

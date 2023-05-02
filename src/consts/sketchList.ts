@@ -2,7 +2,7 @@ import type { WorkObj } from '@/types';
 
 const sketch1: WorkObj = {
   id: 1,
-  title: 'Rotation 1',
+  title: 'Rotation 2',
   thumbnailUrl: '/images/Sketch_Images/rotation-02.png',
   codeUrl: 'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/rotation02-b.js',
   path: '/sketch-book/rotation-02',
