@@ -31,19 +31,19 @@ const sketch3: WorkObj = {
 
 const sketch4: WorkObj = {
   id: 4,
-  title: 'Sine Cosine 1',
-  thumbnailUrl: '/images/Sketch_Images/sine-cosine-01.png',
+  title: 'Rotation 1',
+  thumbnailUrl: '/images/Sketch_Images/rotation-01.png',
   codeUrl: 'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/chapter016/sincos01.js',
-  path: '/sketch-book/sine-cosine-01',
+  path: '/sketch-book/rotation-01',
   description: '',
 } as const;
 
 const sketch5: WorkObj = {
   id: 5,
-  title: 'Sine Cosine 2',
-  thumbnailUrl: '/images/Sketch_Images/sine-cosine-02.png',
+  title: 'Circle Motion 2',
+  thumbnailUrl: '/images/Sketch_Images/circle-motion-02.png',
   codeUrl: 'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/chapter016/sincos02.js',
-  path: '/sketch-book/sine-cosine-02',
+  path: '/sketch-book/circle-motion-02',
   description: '',
 } as const;
 
