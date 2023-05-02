@@ -11,6 +11,10 @@ body {
   align-items: center;
   overflow-x: scroll;
   color: #fff;
-  background-color: #000;
+  background-image: linear-gradient(to bottom, #000 50%, #525252);
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: 'Montserrat', sans-serif;
 }

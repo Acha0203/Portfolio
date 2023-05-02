@@ -9,7 +9,7 @@ const MenuBarTop = () => {
   const [isOverHome, setIsOverHome] = useState(false);
 
   return (
-    <div className='flex-col absolute top-10'>
+    <div className='flex-col absolute top-0'>
       <div className='flex justify-end items-end w-screen h-12 absolute'>
         {router.pathname === '/' ? (
           <div className='flex flex-col justify-center items-center'>
@@ -80,6 +80,7 @@ const MenuBarTop = () => {
       </div>
       <div className='flex justify-end items-end w-screen relative top-12'>
         <div className={styles.line_under_menu_bar_grad} />
+        <div className={styles.line_under_menu_bar} />
       </div>
     </div>
   );

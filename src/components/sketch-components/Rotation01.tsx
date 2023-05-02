@@ -6,29 +6,30 @@ const Sketch = dynamic(import('react-p5'), {
   ssr: false,
 });
 
-const SketchRotation = () => {
+const Rotation01 = () => {
   const setup = (p5: p5Types, canvasParentRef: Element) => {
     p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
-    p5.noStroke();
+    p5.colorMode(p5.HSB);
+    p5.angleMode(p5.DEGREES);
   };
 
-  let angle = 0;
-  let r = 0;
+  const scale = 0.9;
+  let rotation = 0;
 
   const draw = (p5: p5Types) => {
-    p5.background(0, 10);
+    p5.clear();
     p5.translate(p5.windowWidth / 2, p5.windowHeight / 2);
 
-    for (let i = 0; i < 100; i++) {
-      const x = Math.cos(angle) * r;
-      const y = Math.sin(angle) * r;
-      p5.fill(200);
-      p5.circle(x, y, 5);
-
-      angle += 0.25;
-
-      r = r > 250 ? 0 : r + 2;
+    for (let angle = 0; angle < 360; angle += 10) {
+      p5.scale(scale);
+      p5.rotate(rotation);
+      const x = Math.cos(angle) * 200;
+      const y = Math.sin(angle) * 200;
+      p5.fill(angle + 1, 100, 100);
+      p5.circle(x, y, 10);
     }
+
+    rotation += 0.5;
   };
 
   const windowResized = (p5: p5Types) => {
@@ -39,4 +40,4 @@ const SketchRotation = () => {
   return <Sketch setup={setup} draw={draw} windowResized={windowResized} />;
 };
 
-export default SketchRotation;
+export default Rotation01;

@@ -1,6 +1,7 @@
 import Head from 'next/head';
-import SketchRotation from '@/components/sketch/SketchRotation';
-import Footer from '@/components/ui/Footer';
+import Showcase from '@/components/Showcase';
+import SketchBackground from '@/components/sketch-components/SketchBackground';
+import TitleOfSketchBook from '@/components/TitleOfSketchBook';
 import MenuBarTop from '@/components/ui/MenuBarTop';
 import styles from '../styles/Home.module.scss';
 
@@ -8,17 +9,20 @@ const SketchBookPage = () => {
   return (
     <>
       <Head>
-        <title>Acha&apos;s Sketch Book</title>
+        <title>Acha Ikeda | Sketch Book</title>
         <meta
           name='description'
-          content="This page shows Acha Ikeda's generative arts with p5.js."
+          content="This page shows Acha Ikeda's works using the creative coding."
           key='desc'
         />
       </Head>
-      <div className={`${styles.curtain} flex-col justify-center items-center relative`}>
-        <SketchRotation />
+      <div className={'flex-col justify-center items-center relative'}>
+        <div className={styles.curtain}>
+          <SketchBackground />
+        </div>
         <MenuBarTop />
-        <Footer />
+        <TitleOfSketchBook />
+        <Showcase />
       </div>
     </>
   );
