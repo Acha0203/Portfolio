@@ -1,6 +1,15 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+module.exports =  {
   reactStrictMode: true,
-}
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'github.com',
+        port: '',
+        pathname: '/Acha0203/Portfolio/blob/main/public/**',
+      },
+    ],
+  },
+};
 
-module.exports = nextConfig
