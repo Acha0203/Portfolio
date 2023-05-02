@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import SketchCliffordAttractor01 from '@/components/sketch-components/SketchCliffordAttractor01';
 import TitleOfHome from '@/components/TitleOfHome';
-import MenuBarTop from '@/components/ui/MenuBarTop';
+import HamburgerBtn from '@/components/ui/HamburgerBtn';
+// import MenuBarTop from '@/components/ui/MenuBarTop';
 import styles from '../styles/Home.module.scss';
 
 const Home = () => {
@@ -19,7 +20,8 @@ const Home = () => {
         <div className={styles.curtain}>
           <SketchCliffordAttractor01 />
         </div>
-        <MenuBarTop />
+        {/* <MenuBarTop /> */}
+        <HamburgerBtn />
         <TitleOfHome />
       </div>
     </>
