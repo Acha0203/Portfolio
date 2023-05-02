@@ -5,7 +5,7 @@
 }
 
 .curtain {
-  background-image: linear-gradient(to bottom, #fff0 50%, #525252ff);
+  background-image: linear-gradient(to bottom, #000f 50%, #525252ff);
   animation: fade_in 4s forwards;
 }
 
@@ -63,45 +63,98 @@
 .title {
   @include display_center();
   width: 100vw;
-  font-size: 4rem;
+  font-size: 1.4rem;
   color: #fff;
-  letter-spacing: 1rem;
+  letter-spacing: 0.7rem;
   position: absolute;
   top: 120px;
+  @media screen and (min-width: 321px) {
+    font-size: 1.6rem;
+    letter-spacing: 0.8rem;
+  }
+  @media screen and (min-width: 640px) {
+    font-size: 3.5rem;
+    letter-spacing: 1rem;
+  }
+  @media screen and (min-width: 1024px) {
+    font-size: 4rem;
+    letter-spacing: 1rem;
+  }
 }
 
 .description {
   @include display_center();
   width: 100vw;
-  font-size: 1.2rem;
+  font-size: 0.7rem;
   color: #8c8c8c;
-  letter-spacing: 1rem;
+  letter-spacing: 0.3rem;
   position: absolute;
-  top: 220px;
+  top: 160px;
+  @media screen and (min-width: 321px) {
+    font-size: 0.8rem;
+    letter-spacing: 0.4rem;
+    top: 166px;
+  }
+  @media screen and (min-width: 640px) {
+    font-size: 1.1rem;
+    letter-spacing: 0.8rem;
+    top: 220px;
+  }
+  @media screen and (min-width: 1024px) {
+    font-size: 1.2rem;
+    letter-spacing: 1rem;
+    top: 220px;
+  }
 }
 
 .my_name {
   @include display_center();
   width: 100vw;
-  font-size: 4rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.7rem;
   color: #fff;
-  letter-spacing: 1rem;
   position: absolute;
   top: 40%;
+  @media screen and (min-width: 321px) {
+    font-size: 1.8rem;
+    letter-spacing: 1rem;
+  }
+  @media screen and (min-width: 640px) {
+    font-size: 4rem;
+    letter-spacing: 1rem;
+  }
 }
 
 .profession {
   @include display_center();
   width: 100vw;
-  font-size: 1.2rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.4rem;
   color: #8c8c8c;
-  letter-spacing: 1rem;
   position: absolute;
   top: 100%;
+  @media screen and (min-width: 321px) {
+    font-size: 0.9rem;
+    letter-spacing: 0.5rem;
+  }
+  @media screen and (min-width: 640px) {
+    font-size: 1.2rem;
+    letter-spacing: 1rem;
+  }
 }
 
 /* Showcase */
 .showcase {
-  margin: 2rem;
+  margin: 1rem;
   filter: drop-shadow(0 0 0.75rem #525252);
+  @media screen and (min-width: 640px) {
+    margin: 2rem;
+  }
+}
+
+.showcase_wrapper {
+  top: 240px;
+  @media screen and (min-width: 640px) {
+    top: 320px;
+  }
 }
