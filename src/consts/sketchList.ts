@@ -11,11 +11,11 @@ const sketch1: WorkObj = {
 
 const sketch2: WorkObj = {
   id: 2,
-  title: 'Symmetrical Ruler 1',
-  thumbnailUrl: '/images/Sketch_Images/symmetrical-ruler-01.png',
+  title: 'Symmetrical Ruler 2',
+  thumbnailUrl: '/images/Sketch_Images/symmetrical-ruler-02.png',
   codeUrl:
     'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/symmetrical-ruler02-b.js',
-  path: '/sketch-book/symmetrical-ruler-01',
+  path: '/sketch-book/symmetrical-ruler-02',
   description: '',
 } as const;
 
@@ -29,4 +29,32 @@ const sketch3: WorkObj = {
   description: '',
 } as const;
 
-export const sketchList: WorkObj[] = [sketch1, sketch2, sketch3];
+const sketch4: WorkObj = {
+  id: 4,
+  title: 'Sine Cosine 1',
+  thumbnailUrl: '/images/Sketch_Images/sine-cosine-01.png',
+  codeUrl: 'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/chapter016/sincos01.js',
+  path: '/sketch-book/sine-cosine-01',
+  description: '',
+} as const;
+
+const sketch5: WorkObj = {
+  id: 5,
+  title: 'Sine Cosine 2',
+  thumbnailUrl: '/images/Sketch_Images/sine-cosine-02.png',
+  codeUrl: 'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/chapter016/sincos02.js',
+  path: '/sketch-book/sine-cosine-02',
+  description: '',
+} as const;
+
+const sketch6: WorkObj = {
+  id: 6,
+  title: 'Circle Motion 1',
+  thumbnailUrl: '/images/Sketch_Images/circle-motion-01.png',
+  codeUrl:
+    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/chapter017/circleMotion.js',
+  path: '/sketch-book/circle-motion-01',
+  description: '',
+} as const;
+
+export const sketchList: WorkObj[] = [sketch1, sketch2, sketch3, sketch4, sketch5, sketch6];

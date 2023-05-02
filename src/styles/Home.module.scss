@@ -5,7 +5,13 @@
 }
 
 .curtain {
-  background-image: linear-gradient(to bottom, #000f 50%, #525252ff);
+  background: {
+    image: linear-gradient(to bottom, #000 50%, #525252);
+    attachment: fixed;
+    position: center center;
+    repeat: no-repeat;
+    size: cover;
+  }
   animation: fade_in 4s forwards;
 }
 
