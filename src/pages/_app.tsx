@@ -1,6 +1,7 @@
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import { Montserrat } from 'next/font/google';
+import '../styles/reset.min.css';
 
 const montserrat = Montserrat({
   weight: ['200', '400'],
