@@ -9,28 +9,14 @@ const HamburgerBtn = () => {
   };
 
   return (
-    <div className='absolute top-0 right-0'>
-      {isClosed ? (
-        <button
-          type='button'
-          onClick={handleClick}
-          className={`${styles.menu_btn} ${styles.is_closed}`}
-        >
-          <span className={styles.menu_btn_bar_frame}>
-            <span className={styles.menu_btn_bar_frame_first_bar}></span>
-            <span className={styles.menu_btn_bar_frame_second_bar}></span>
-            <span className={styles.menu_btn_bar_frame_third_bar}></span>
-          </span>
-        </button>
-      ) : (
-        <button type='button' onClick={handleClick} className={styles.menu_btn}>
-          <span className={styles.menu_btn_bar_frame}>
-            <span className={styles.menu_btn_bar_frame_first_bar}></span>
-            <span className={styles.menu_btn_bar_frame_second_bar}></span>
-            <span className={styles.menu_btn_bar_frame_third_bar}></span>
-          </span>
-        </button>
-      )}
+    <div className='absolute top-2 right-2'>
+      <div onClick={handleClick} className={`${styles.hamburger} ${isClosed && styles.is_closed}`}>
+        <span className={styles.hamburger_line_frame}>
+          <span className={styles.hamburger_line}></span>
+          <span className={styles.hamburger_line}></span>
+          <span className={styles.hamburger_line}></span>
+        </span>
+      </div>
     </div>
   );
 };

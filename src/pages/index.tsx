@@ -3,6 +3,7 @@ import SketchCliffordAttractor01 from '@/components/sketch-components/SketchClif
 import TitleOfHome from '@/components/TitleOfHome';
 import HamburgerBtn from '@/components/ui/HamburgerBtn';
 // import MenuBarTop from '@/components/ui/MenuBarTop';
+import HamburgerMenu from '@/components/ui/HamburgerMenu';
 import styles from '../styles/Home.module.scss';
 
 const Home = () => {
@@ -21,8 +22,9 @@ const Home = () => {
           <SketchCliffordAttractor01 />
         </div>
         {/* <MenuBarTop /> */}
-        <HamburgerBtn />
         <TitleOfHome />
+        <HamburgerMenu />
+        <HamburgerBtn />
       </div>
     </>
   );
