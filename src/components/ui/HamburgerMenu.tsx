@@ -1,14 +1,38 @@
+import type { MyAppState } from '@/types';
+import Link from 'next/link';
+import router from 'next/router';
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import styles from '../../styles/Home.module.scss';
 
 const HamburgerMenu = () => {
+  const isOpen = useSelector((state: MyAppState) => state.myApp.isOpen);
+  const [pathname, setPathname] = useState('');
+
+  useEffect(() => {
+    setPathname(router.pathname);
+  }, []);
+
   return (
     <div className='h-screen w-screen absolute top-0'>
-      <nav className={styles.sp_menu}>
-        <ul>
-          <li>HOME</li>
+      <nav className={`${styles.hamburger_menu} ${isOpen && styles.active}`}>
+        <ul className={`${styles.menu_ul} text-2xl sm:text-3xl lg:text-4xl`}>
+          {pathname === '/' ? (
+            <li className={styles.current}>HOME</li>
+          ) : (
+            <li className={styles.active}>
+              <Link href='/'>HOME</Link>
+            </li>
+          )}
           <li>PROFILE</li>
           <li>WORK</li>
-          <li>SKETCH BOOK</li>
+          {pathname === '/sketch-book' ? (
+            <li className={styles.current}>SKETCH BOOK</li>
+          ) : (
+            <li className={styles.active}>
+              <Link href='/sketch-book'>SKETCH BOOK</Link>
+            </li>
+          )}
           <li>CONTACT</li>
         </ul>
       </nav>

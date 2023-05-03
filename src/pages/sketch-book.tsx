@@ -1,11 +1,16 @@
 import Head from 'next/head';
+import useWindowSize from '@/hooks/useWindowSize';
 import Showcase from '@/components/Showcase';
 import SketchBackground from '@/components/sketch-components/SketchBackground';
 import TitleOfSketchBook from '@/components/TitleOfSketchBook';
+import HamburgerBtn from '@/components/ui/HamburgerBtn';
+import HamburgerMenu from '@/components/ui/HamburgerMenu';
 import MenuBarTop from '@/components/ui/MenuBarTop';
 import styles from '../styles/Home.module.scss';
 
 const SketchBookPage = () => {
+  const windowWidth = useWindowSize()[0];
+
   return (
     <>
       <Head>
@@ -20,9 +25,16 @@ const SketchBookPage = () => {
         <div className={styles.curtain}>
           <SketchBackground />
         </div>
-        <MenuBarTop />
         <TitleOfSketchBook />
         <Showcase />
+        {windowWidth <= 768 ? (
+          <>
+            <HamburgerMenu />
+            <HamburgerBtn />
+          </>
+        ) : (
+          <MenuBarTop />
+        )}
       </div>
     </>
   );

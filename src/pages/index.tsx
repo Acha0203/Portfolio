@@ -1,12 +1,15 @@
 import Head from 'next/head';
+import useWindowSize from '@/hooks/useWindowSize';
 import SketchCliffordAttractor01 from '@/components/sketch-components/SketchCliffordAttractor01';
 import TitleOfHome from '@/components/TitleOfHome';
 import HamburgerBtn from '@/components/ui/HamburgerBtn';
-// import MenuBarTop from '@/components/ui/MenuBarTop';
 import HamburgerMenu from '@/components/ui/HamburgerMenu';
+import MenuBarTop from '@/components/ui/MenuBarTop';
 import styles from '../styles/Home.module.scss';
 
 const Home = () => {
+  const windowWidth = useWindowSize()[0];
+
   return (
     <>
       <Head>
@@ -21,10 +24,15 @@ const Home = () => {
         <div className={styles.curtain}>
           <SketchCliffordAttractor01 />
         </div>
-        {/* <MenuBarTop /> */}
         <TitleOfHome />
-        <HamburgerMenu />
-        <HamburgerBtn />
+        {windowWidth <= 768 ? (
+          <>
+            <HamburgerMenu />
+            <HamburgerBtn />
+          </>
+        ) : (
+          <MenuBarTop />
+        )}
       </div>
     </>
   );
