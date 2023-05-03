@@ -10,5 +10,6 @@ export type WorkObj = {
 export type MyAppState = {
   myApp: {
     isOpen: boolean;
+    isHamburger: boolean;
   };
 };

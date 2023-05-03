@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialMyAppState = {
   isOpen: false,
+  isHamburger: true,
 };
 
 const myAppSlice = createSlice({
@@ -18,6 +19,9 @@ const myAppSlice = createSlice({
     },
     toggleIsOpen: (state: { isOpen: boolean }) => {
       state.isOpen = !state.isOpen;
+    },
+    setIsHamburger: (state: { isHamburger: boolean }, action: { payload: boolean }) => {
+      state.isHamburger = action.payload;
     },
   },
 });
