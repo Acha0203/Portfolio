@@ -6,3 +6,10 @@ export type WorkObj = {
   path: string;
   description: string;
 };
+
+export type MyAppState = {
+  myApp: {
+    isOpen: boolean;
+    isHamburger: boolean;
+  };
+};
