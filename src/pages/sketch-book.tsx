@@ -23,7 +23,7 @@ const SketchBookPage = () => {
   // useWindowSize() を使用すると windowWidth の初期値が 0 にセットされてしまうため、メニューをクリックして画面遷移すると一瞬ハンバーガーメニューが表示されてしまう。それを防ぐために isHamburger という state を設定して、最初に画面が読み込まれた際に画面サイズを取得し、それに合わせてあらかじめ isHamburger の値をセットしておく。そして windowWidth の値が 0 の場合は isHamburger の値を参照する。
 
   useEffect(() => {
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 1024) {
       // window.innerWidth は useEffect() の中でしか使用できない。
       dispatch(myAppActions.setIsHamburger(true));
     } else {
@@ -57,7 +57,7 @@ const SketchBookPage = () => {
           ) : (
             <MenuBarTop />
           )
-        ) : windowWidth <= 768 ? (
+        ) : windowWidth <= 1024 ? (
           <>
             <HamburgerMenu />
             <HamburgerBtn />

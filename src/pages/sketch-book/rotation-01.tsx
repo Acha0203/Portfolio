@@ -6,7 +6,7 @@ import { sketchList } from '@/consts/sketchList';
 import useReload from '@/hooks/useReload';
 import useWindowSize from '@/hooks/useWindowSize';
 import { myAppActions } from '@/store/myApp';
-import Rotation01 from '@/components/sketch-components/Rotation01';
+import SketchRotation01 from '@/components/sketch-components/SketchRotation01';
 import HamburgerBtn from '@/components/ui/HamburgerBtn';
 import HamburgerMenu from '@/components/ui/HamburgerMenu';
 import MenuBarTop from '@/components/ui/MenuBarTop';
@@ -22,7 +22,7 @@ const Rotation01Page = () => {
   // useWindowSize() を使用すると windowWidth の初期値が 0 にセットされてしまうため、メニューをクリックして画面遷移すると一瞬ハンバーガーメニューが表示されてしまう。それを防ぐために isHamburger という state を設定して、最初に画面が読み込まれた際に画面サイズを取得し、それに合わせてあらかじめ isHamburger の値をセットしておく。そして windowWidth の値が 0 の場合は isHamburger の値を参照する。
 
   useEffect(() => {
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 1024) {
       dispatch(myAppActions.setIsHamburger(true));
     } else {
       dispatch(myAppActions.setIsHamburger(false));
@@ -42,7 +42,7 @@ const Rotation01Page = () => {
       </Head>
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
-          <Rotation01 />
+          <SketchRotation01 />
         </div>
         <div className={`${styles.title_of_sketch} ${styles.fade_up}`}>
           {`${sketchList[3].title}`}
@@ -62,7 +62,7 @@ const Rotation01Page = () => {
           ) : (
             <MenuBarTop />
           )
-        ) : windowWidth <= 768 ? (
+        ) : windowWidth <= 1024 ? (
           <>
             <HamburgerMenu />
             <HamburgerBtn />

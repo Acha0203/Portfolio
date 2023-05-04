@@ -6,26 +6,30 @@ const Sketch = dynamic(import('react-p5'), {
   ssr: false,
 });
 
-const HappyNewYear2023 = () => {
+const SketchRotation01 = () => {
   const setup = (p5: p5Types, canvasParentRef: Element) => {
     p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
     p5.colorMode(p5.HSB);
+    p5.angleMode(p5.DEGREES);
   };
 
-  const draw = (p5: p5Types) => {
-    p5.background(0, 0.03);
+  const scale = 0.9;
+  let rotation = 0;
 
-    const colorValue = p5.frameCount % 360;
-    const x = p5.random(p5.windowWidth);
-    const y = p5.random(p5.windowHeight);
-    const size = 12 + p5.random(30);
-    p5.textSize(size);
-    p5.fill(colorValue, 100, 100);
-    p5.text('Happy', x, y);
-    p5.fill(colorValue + 10, 100, 100);
-    p5.text('New Year!', x + size, y + size);
-    p5.fill(colorValue + 20, 100, 100);
-    p5.text('2023', x + size * 2, y + size * 2);
+  const draw = (p5: p5Types) => {
+    p5.clear();
+    p5.translate(p5.windowWidth / 2, p5.windowHeight / 2);
+
+    for (let angle = 0; angle < 360; angle += 10) {
+      p5.scale(scale);
+      p5.rotate(rotation);
+      const x = Math.cos(angle) * 200;
+      const y = Math.sin(angle) * 200;
+      p5.fill(angle + 1, 100, 100);
+      p5.circle(x, y, 10);
+    }
+
+    rotation += 0.5;
   };
 
   const windowResized = (p5: p5Types) => {
@@ -36,4 +40,4 @@ const HappyNewYear2023 = () => {
   return <Sketch setup={setup} draw={draw} windowResized={windowResized} />;
 };
 
-export default HappyNewYear2023;
+export default SketchRotation01;

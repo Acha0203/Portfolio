@@ -6,30 +6,33 @@ const Sketch = dynamic(import('react-p5'), {
   ssr: false,
 });
 
-const Rotation01 = () => {
+const SketchCircleMotion02 = () => {
   const setup = (p5: p5Types, canvasParentRef: Element) => {
     p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
     p5.colorMode(p5.HSB);
     p5.angleMode(p5.DEGREES);
   };
 
-  const scale = 0.9;
-  let rotation = 0;
+  let angle = 0;
 
   const draw = (p5: p5Types) => {
-    p5.clear();
-    p5.translate(p5.windowWidth / 2, p5.windowHeight / 2);
+    const centerX = p5.windowWidth / 2;
+    const centerY = p5.windowHeight / 2;
 
-    for (let angle = 0; angle < 360; angle += 10) {
-      p5.scale(scale);
-      p5.rotate(rotation);
-      const x = Math.cos(angle) * 200;
-      const y = Math.sin(angle) * 200;
-      p5.fill(angle + 1, 100, 100);
-      p5.circle(x, y, 10);
+    p5.clear();
+    p5.translate(centerX, centerY);
+
+    for (let i = 0; i < 360; i += 10) {
+      p5.scale(0.9);
+      p5.rotate(angle);
+      const x = Math.cos(i) * 250;
+      const y = Math.sin(i) * 250;
+      p5.noFill();
+      p5.stroke(i, 100, 100);
+      p5.circle(x, y, i * 5);
     }
 
-    rotation += 0.5;
+    angle += 0.5;
   };
 
   const windowResized = (p5: p5Types) => {
@@ -40,4 +43,4 @@ const Rotation01 = () => {
   return <Sketch setup={setup} draw={draw} windowResized={windowResized} />;
 };
 
-export default Rotation01;
+export default SketchCircleMotion02;

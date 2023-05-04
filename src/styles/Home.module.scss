@@ -30,14 +30,12 @@
 .line_under_menu_bar {
   width: 580px;
   height: 1px;
-  mix-blend-mode: overlay;
   background-color: #676767;
 }
 
 .line_under_menu_bar_grad {
   width: 30px;
   height: 1px;
-  mix-blend-mode: overlay;
   background-image: linear-gradient(to left, #676767ff, #67676700);
 }
 
