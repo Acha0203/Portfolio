@@ -10,18 +10,22 @@ const HamburgerMenu = () => {
   const [pathname, setPathname] = useState('');
 
   const stopScrollingBackContent = () => {
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflowX = 'clip';
+    document.body.style.overflowY = 'clip';
 
     return () => {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflowX = 'clip';
+      document.body.style.overflowY = 'auto';
     };
   };
 
   const allowScrollingBackContent = () => {
-    document.body.style.overflow = 'scroll';
+    document.body.style.overflowX = 'clip';
+    document.body.style.overflowY = 'scroll';
 
     return () => {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflowX = 'clip';
+      document.body.style.overflowY = 'auto';
     };
   };
 
