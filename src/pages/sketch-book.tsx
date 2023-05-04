@@ -42,7 +42,7 @@ const SketchBookPage = () => {
           key='desc'
         />
       </Head>
-      <div className={'flex-col justify-center items-center relative'}>
+      <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
           <SketchBackground />
         </div>

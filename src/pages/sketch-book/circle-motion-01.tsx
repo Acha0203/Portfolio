@@ -40,12 +40,10 @@ const CircleMotion01Page = () => {
           key='desc'
         />
       </Head>
-      <div className={'flex-col justify-center items-center relative'}>
+      <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
           <CircleMotion01 />
         </div>
-      </div>
-      <div>
         <div className={`${styles.title_of_sketch} ${styles.fade_up}`}>
           {`${sketchList[5].title}`}
           <br />
