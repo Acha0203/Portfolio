@@ -277,6 +277,7 @@
   }
 }
 
+/* Hamburger Menu */
 .hamburger_menu {
   @include display_center();
   align-content: center;
@@ -284,8 +285,8 @@
   position: absolute;
   top: 0;
   right: -100%;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   display: grid;
   color: #8c8c8c;
   text-align: center;
@@ -307,7 +308,7 @@
       filter: brightness(1.5);
 
       &:hover {
-        filter: brightness(2.0);
+        filter: brightness(2);
         text-shadow: #fff 0 0 20px;
       }
     }

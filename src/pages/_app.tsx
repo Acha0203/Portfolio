@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app';
 import { Montserrat } from 'next/font/google';
 import '../styles/reset.min.css';
 import { Provider } from 'react-redux';
-import store from '@/store';
+import store from '../store';
 
 const montserrat = Montserrat({
   weight: ['200', '400'],

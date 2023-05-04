@@ -40,7 +40,7 @@ const Home = () => {
           key='desc'
         />
       </Head>
-      <div className={'flex-col justify-center items-center relative'}>
+      <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
           <SketchCliffordAttractor01 />
         </div>

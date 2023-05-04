@@ -9,7 +9,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow-x: scroll;
+  overflow-x: clip;
   color: #fff;
   background-image: linear-gradient(to bottom, #000 50%, #525252);
   background-attachment: fixed;
