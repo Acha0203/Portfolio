@@ -9,9 +9,26 @@ const HamburgerMenu = () => {
   const isOpen = useSelector((state: MyAppState) => state.myApp.isOpen);
   const [pathname, setPathname] = useState('');
 
+  const stopScrollingBackContent = () => {
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  };
+
+  const allowScrollingBackContent = () => {
+    document.body.style.overflow = 'scroll';
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  };
+
   useEffect(() => {
+    isOpen ? stopScrollingBackContent() : allowScrollingBackContent();
     setPathname(router.pathname);
-  }, []);
+  }, [isOpen]);
 
   return (
     <nav className={`${styles.hamburger_menu} ${isOpen && styles.active}`}>
