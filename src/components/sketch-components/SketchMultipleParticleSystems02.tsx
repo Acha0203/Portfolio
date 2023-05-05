@@ -28,7 +28,9 @@ const SketchMultipleParticleSystems02 = () => {
       p5.fill(255);
       p5.textAlign(p5.CENTER);
       p5.textSize(32);
-      p5.text('click mouse to add particle systems', p5.width / 2, p5.height / 2);
+      p5.text('click mouse', p5.width / 2, p5.height / 2 - 50);
+      p5.text('to add', p5.width / 2, p5.height / 2);
+      p5.text('particle systems', p5.width / 2, p5.height / 2 + 50);
     }
   };
 
