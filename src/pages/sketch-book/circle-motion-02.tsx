@@ -1,5 +1,6 @@
 import type { MyAppState } from '@/types';
 import Head from 'next/head';
+import Link from 'next/link';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { sketchList } from '@/consts/sketchList';
@@ -46,12 +47,17 @@ const CircleMotion02Page = () => {
         </div>
         <div className={`${styles.title_of_sketch} ${styles.fade_up}`}>
           {`${sketchList[4].title}`}
-          <br />
-          <span className={styles.code}>
+        </div>
+        <div className={`${styles.code_back} ${styles.fade_up}`}>
+          <div className={styles.code}>
             <a href={`${sketchList[4].codeUrl}`} target='_blank' rel='noreferrer'>
               CODE
             </a>
-          </span>
+          </div>
+          <div>|</div>
+          <div className={styles.code}>
+            <Link href={'/sketch-book'}>BACK</Link>
+          </div>
         </div>
         {windowWidth === 0 ? (
           isHamburger ? (

@@ -17,7 +17,7 @@ const SketchConcentricCircle04 = () => {
   const draw = (p5: p5Types) => {
     p5.background(0, 10);
     const X = p5.random(p5.width);
-    const Y = p5.random(p5.width);
+    const Y = p5.random(p5.height);
     for (let i = 0; i < p5.random(p5.width); i++) {
       array[i] = { x: X, y: Y, d: i + (p5.frameCount % 10) };
     }

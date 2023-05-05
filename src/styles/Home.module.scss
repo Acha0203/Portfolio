@@ -180,7 +180,7 @@
   }
 }
 
-.code {
+.code_back {
   @include display_center();
   width: 100vw;
   font-size: 0.7rem;
@@ -188,7 +188,7 @@
   color: #8c8c8c;
   text-shadow: #000 0 0 20px;
   position: absolute;
-  top: 120%;
+  bottom: 50px;
   text-align: center;
   @media screen and (min-width: 321px) {
     font-size: 0.9rem;
@@ -199,8 +199,10 @@
     letter-spacing: 0.8rem;
   }
 
-  &:hover {
-    filter: brightness(1.5);
+  .code {
+    &:hover {
+      filter: brightness(1.5);
+    }
   }
 }
 
