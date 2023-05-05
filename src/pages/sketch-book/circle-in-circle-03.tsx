@@ -45,10 +45,10 @@ const CircleInCircle03Page = () => {
           <SketchCircleInCircle03 />
         </div>
         <div className={`${styles.title_of_sketch} ${styles.fade_up}`}>
-          {`${sketchList[13].title}`}
+          {`${sketchList[11].title}`}
           <br />
           <span className={styles.code}>
-            <a href={`${sketchList[13].codeUrl}`} target='_blank' rel='noreferrer'>
+            <a href={`${sketchList[11].codeUrl}`} target='_blank' rel='noreferrer'>
               CODE
             </a>
           </span>

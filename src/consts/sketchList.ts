@@ -110,11 +110,11 @@ const sketch11: WorkObj = {
 
 const sketch12: WorkObj = {
   id: 12,
-  title: 'Perlin Noise 3',
-  thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/perlin-noise-03.png',
+  title: 'Circle in Circle 3',
+  thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/circle-in-circle-03.png',
   codeUrl:
-    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/perlin-noise03.js',
-  path: '/sketch-book/perlin-noise-03',
+    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/chapter023/circle-in-circle03.js',
+  path: '/sketch-book/circle-in-circle-03',
   description: '',
 } as const;
 
@@ -125,16 +125,6 @@ const sketch13: WorkObj = {
   codeUrl:
     'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/perlin-noise04.js',
   path: '/sketch-book/perlin-noise-04',
-  description: '',
-} as const;
-
-const sketch14: WorkObj = {
-  id: 14,
-  title: 'Circle in Circle 3',
-  thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/circle-in-circle-03.png',
-  codeUrl:
-    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/chapter023/circle-in-circle03.js',
-  path: '/sketch-book/circle-in-circle-03',
   description: '',
 } as const;
 
@@ -152,5 +142,4 @@ export const sketchList: WorkObj[] = [
   sketch11,
   sketch12,
   sketch13,
-  sketch14,
 ];
