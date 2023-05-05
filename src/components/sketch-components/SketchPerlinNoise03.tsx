@@ -6,24 +6,26 @@ const Sketch = dynamic(import('react-p5'), {
   ssr: false,
 });
 
-const SketchSymmetricalRuler02 = () => {
+const SketchPerlinNoise03 = () => {
   const setup = (p5: p5Types, canvasParentRef: Element) => {
     p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
     p5.colorMode(p5.HSB);
-    p5.noFill();
+    p5.noStroke();
+    p5.background(255);
   };
 
   const draw = (p5: p5Types) => {
-    p5.background(0, 0.03);
-    let direction = 5;
-    for (let r = 0; r < p5.TAU; r += p5.PI / 8) {
-      const a = r + (Math.sin(p5.frameCount / 50) / 3) * direction;
-      const l = p5.noise(p5.frameCount / 100) * 300;
-      const x = Math.cos(a) * l + p5.windowWidth / 2;
-      const y = Math.sin(a) * l + p5.windowHeight / 2;
-      p5.stroke((p5.frameCount % 300) + direction, 50 + direction, 100);
-      p5.circle(x, y, p5.frameCount % 300);
-      direction = -direction;
+    for (let i = 0; i < 100; i++) {
+      for (let j = 0; j < 100; j++) {
+        const p = Math.sin(p5.TAU * p5.noise(i * 0.01, j * 0.01, p5.frameCount * 0.04));
+        p5.fill(p * 360, 100, 100);
+        p5.rect(
+          (p5.windowWidth / 100) * i,
+          (p5.windowHeight / 100) * j,
+          p5.windowHeight / 100,
+          p5.windowHeight / 100,
+        );
+      }
     }
   };
 
@@ -35,4 +37,4 @@ const SketchSymmetricalRuler02 = () => {
   return <Sketch setup={setup} draw={draw} windowResized={windowResized} />;
 };
 
-export default SketchSymmetricalRuler02;
+export default SketchPerlinNoise03;

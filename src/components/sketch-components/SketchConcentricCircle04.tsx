@@ -6,25 +6,26 @@ const Sketch = dynamic(import('react-p5'), {
   ssr: false,
 });
 
-const SketchSymmetricalRuler02 = () => {
+const SketchConcentricCircle04 = () => {
+  const array: Array<{ x: number; y: number; d: number }> = [];
+
   const setup = (p5: p5Types, canvasParentRef: Element) => {
     p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
-    p5.colorMode(p5.HSB);
     p5.noFill();
   };
 
   const draw = (p5: p5Types) => {
-    p5.background(0, 0.03);
-    let direction = 5;
-    for (let r = 0; r < p5.TAU; r += p5.PI / 8) {
-      const a = r + (Math.sin(p5.frameCount / 50) / 3) * direction;
-      const l = p5.noise(p5.frameCount / 100) * 300;
-      const x = Math.cos(a) * l + p5.windowWidth / 2;
-      const y = Math.sin(a) * l + p5.windowHeight / 2;
-      p5.stroke((p5.frameCount % 300) + direction, 50 + direction, 100);
-      p5.circle(x, y, p5.frameCount % 300);
-      direction = -direction;
+    p5.background(0, 10);
+    const X = p5.random(p5.width);
+    const Y = p5.random(p5.width);
+    for (let i = 0; i < p5.random(p5.width); i++) {
+      array[i] = { x: X, y: Y, d: i + (p5.frameCount % 10) };
     }
+    array.forEach((e) => {
+      p5.stroke(p5.random(p5.width));
+      p5.strokeWeight(p5.random(1, 8));
+      p5.arc(e.x, e.y, e.d, e.d, p5.random(p5.TAU), p5.random(p5.TAU));
+    });
   };
 
   const windowResized = (p5: p5Types) => {
@@ -35,4 +36,4 @@ const SketchSymmetricalRuler02 = () => {
   return <Sketch setup={setup} draw={draw} windowResized={windowResized} />;
 };
 
-export default SketchSymmetricalRuler02;
+export default SketchConcentricCircle04;
