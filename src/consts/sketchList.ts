@@ -32,10 +32,12 @@ const sketch3: WorkObj = {
 
 const sketch4: WorkObj = {
   id: 4,
-  title: 'ROTATION 1',
-  thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/rotation-01.png',
-  codeUrl: 'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/chapter016/sincos01.js',
-  path: '/sketch-book/rotation-01',
+  title: 'CLIFFORD ATTRACTOR 3',
+  thumbnailUrl:
+    'https://acha0203.github.io/Portfolio/images/Sketch_Images/clifford-attractor-03.png',
+  codeUrl:
+    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/clifford-attractor03.js',
+  path: '/sketch-book/clifford-attractor-03',
   description: '',
 } as const;
 
@@ -60,12 +62,10 @@ const sketch6: WorkObj = {
 
 const sketch7: WorkObj = {
   id: 7,
-  title: 'CLIFFORD ATTRACTOR 3',
-  thumbnailUrl:
-    'https://acha0203.github.io/Portfolio/images/Sketch_Images/clifford-attractor-03.png',
-  codeUrl:
-    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/clifford-attractor03.js',
-  path: '/sketch-book/clifford-attractor-03',
+  title: 'ROTATION 1',
+  thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/rotation-01.png',
+  codeUrl: 'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/chapter016/sincos01.js',
+  path: '/sketch-book/rotation-01',
   description: '',
 } as const;
 
@@ -128,6 +128,17 @@ const sketch13: WorkObj = {
   description: '',
 } as const;
 
+const sketch14: WorkObj = {
+  id: 14,
+  title: 'MULTIPLE PARTICLE SYSTEMS 2',
+  thumbnailUrl:
+    'https://acha0203.github.io/Portfolio/images/Sketch_Images/multiple-particle-systems-02.png',
+  codeUrl:
+    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/p5js-examples/multiple-particle-systems02.js',
+  path: '/sketch-book/multiple-particle-systems-02',
+  description: '',
+} as const;
+
 export const sketchList: WorkObj[] = [
   sketch1,
   sketch2,
@@ -142,4 +153,5 @@ export const sketchList: WorkObj[] = [
   sketch11,
   sketch12,
   sketch13,
+  sketch14,
 ];
