@@ -7,13 +7,13 @@ import { sketchList } from '@/consts/sketchList';
 import useReload from '@/hooks/useReload';
 import useWindowSize from '@/hooks/useWindowSize';
 import { myAppActions } from '@/store/myApp';
-import SketchCliffordAttractor01 from '@/components/sketch-components/SketchCliffordAttractor01';
+import SketchMultipleParticleSystems02 from '@/components/sketch-components/SketchMultipleParticleSystems02';
 import HamburgerBtn from '@/components/ui/HamburgerBtn';
 import HamburgerMenu from '@/components/ui/HamburgerMenu';
 import MenuBarTop from '@/components/ui/MenuBarTop';
 import styles from '../../styles/Home.module.scss';
 
-const CliffordAttractor01Page = () => {
+const MultipleParticleSystems02Page = () => {
   const dispatch = useDispatch();
   const isHamburger = useSelector((state: MyAppState) => state.myApp.isHamburger);
   const windowWidth = useWindowSize()[0];
@@ -43,14 +43,14 @@ const CliffordAttractor01Page = () => {
       </Head>
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
-          <SketchCliffordAttractor01 />
+          <SketchMultipleParticleSystems02 />
         </div>
         <div className={`${styles.title_of_sketch} ${styles.fade_up}`}>
-          {`${sketchList[3].title}`}
+          {`${sketchList[13].title}`}
         </div>
         <div className={`${styles.code_back} ${styles.fade_up}`}>
           <div className={styles.code}>
-            <a href={`${sketchList[3].codeUrl}`} target='_blank' rel='noreferrer'>
+            <a href={`${sketchList[13].codeUrl}`} target='_blank' rel='noreferrer'>
               CODE
             </a>
           </div>
@@ -81,4 +81,4 @@ const CliffordAttractor01Page = () => {
   );
 };
 
-export default CliffordAttractor01Page;
+export default MultipleParticleSystems02Page;

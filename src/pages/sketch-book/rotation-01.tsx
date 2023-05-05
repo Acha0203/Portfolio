@@ -46,11 +46,11 @@ const Rotation01Page = () => {
           <SketchRotation01 />
         </div>
         <div className={`${styles.title_of_sketch} ${styles.fade_up}`}>
-          {`${sketchList[3].title}`}
+          {`${sketchList[6].title}`}
         </div>
         <div className={`${styles.code_back} ${styles.fade_up}`}>
           <div className={styles.code}>
-            <a href={`${sketchList[3].codeUrl}`} target='_blank' rel='noreferrer'>
+            <a href={`${sketchList[6].codeUrl}`} target='_blank' rel='noreferrer'>
               CODE
             </a>
           </div>
