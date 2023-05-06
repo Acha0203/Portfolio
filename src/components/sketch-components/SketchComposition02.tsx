@@ -1,5 +1,6 @@
 import type p5Types from 'p5';
 import dynamic from 'next/dynamic';
+import useWindowSize from '@/hooks/useWindowSize';
 
 const Sketch = dynamic(import('react-p5'), {
   loading: () => <></>,
@@ -7,13 +8,15 @@ const Sketch = dynamic(import('react-p5'), {
 });
 
 const SketchComposition02 = () => {
+  const windowHeight = useWindowSize()[1];
+
   let circle1: {
     x: number;
     y: number;
     r: number;
     angle: number;
     speed: number;
-  } = { x: 0, y: 500, r: 50, angle: 0, speed: 0.08 };
+  } = { x: 0, y: windowHeight / 2, r: 50, angle: 0, speed: 0.08 };
 
   let circle2: {
     x: number;
@@ -22,8 +25,8 @@ const SketchComposition02 = () => {
     angle: number;
     speed: number;
   } = {
-    x: 250,
-    y: 500,
+    x: windowHeight / 4,
+    y: windowHeight / 2,
     r: 100,
     angle: 0,
     speed: 0.03,
@@ -45,7 +48,7 @@ const SketchComposition02 = () => {
     };
 
     circle2 = {
-      x: p5.width / 4,
+      x: p5.height / 4,
       y: p5.height / 2,
       r: 100,
       angle: 0,
