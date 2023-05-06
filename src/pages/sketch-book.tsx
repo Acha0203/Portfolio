@@ -11,7 +11,6 @@ import TitleOfSketchBook from '@/components/TitleOfSketchBook';
 import HamburgerBtn from '@/components/ui/HamburgerBtn';
 import HamburgerMenu from '@/components/ui/HamburgerMenu';
 import MenuBarTop from '@/components/ui/MenuBarTop';
-import styles from '../styles/Home.module.scss';
 
 const SketchBookPage = () => {
   const dispatch = useDispatch();
