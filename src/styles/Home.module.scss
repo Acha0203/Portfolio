@@ -162,38 +162,25 @@
   @include display_center();
   width: 100vw;
   font-size: 1.5rem;
-  letter-spacing: 0.7rem;
+  letter-spacing: 0.5rem;
   color: #fff;
   text-shadow: #000 0 0 20px;
-  position: absolute;
-  bottom: 30px;
   text-align: center;
-  @media screen and (min-width: 321px) {
-    font-size: 1.8rem;
-    letter-spacing: 1rem;
-    bottom: 50px;
-  }
+  padding: 15px;
   @media screen and (min-width: 640px) {
     font-size: 2.5rem;
     letter-spacing: 1rem;
-    bottom: 80px;
   }
 }
 
 .code_back {
   @include display_center();
   width: 100vw;
-  font-size: 0.7rem;
-  letter-spacing: 0.4rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.5rem;
   color: #8c8c8c;
   text-shadow: #000 0 0 20px;
-  position: absolute;
-  bottom: 50px;
   text-align: center;
-  @media screen and (min-width: 321px) {
-    font-size: 0.9rem;
-    letter-spacing: 0.5rem;
-  }
   @media screen and (min-width: 640px) {
     font-size: 1.2rem;
     letter-spacing: 0.8rem;

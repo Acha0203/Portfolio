@@ -45,18 +45,20 @@ const HappyNewYear2023Page = () => {
         <div className={styles.curtain}>
           <SketchHappyNewYear2023 />
         </div>
-        <div className={`${styles.title_of_sketch} ${styles.fade_up}`}>
-          {`${sketchList[2].title}`}
-        </div>
-        <div className={`${styles.code_back} ${styles.fade_up}`}>
-          <div className={styles.code}>
-            <a href={`${sketchList[2].codeUrl}`} target='_blank' rel='noreferrer'>
-              CODE
-            </a>
-          </div>
-          <div>|</div>
-          <div className={styles.code}>
-            <Link href={'/sketch-book'}>BACK</Link>
+        <div
+          className={`flex-col justify-center items-center absolute bottom-10 ${styles.fade_up}`}
+        >
+          <div className={styles.title_of_sketch}>{`${sketchList[2].title}`}</div>
+          <div className={styles.code_back}>
+            <div className={styles.code}>
+              <a href={`${sketchList[2].codeUrl}`} target='_blank' rel='noreferrer'>
+                CODE
+              </a>
+            </div>
+            <div>|</div>
+            <div className={styles.code}>
+              <Link href={'/sketch-book'}>BACK</Link>
+            </div>
           </div>
         </div>
         {windowWidth === 0 ? (

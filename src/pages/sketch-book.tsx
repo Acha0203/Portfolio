@@ -43,7 +43,7 @@ const SketchBookPage = () => {
         />
       </Head>
       <div className='flex-col justify-center items-center relative'>
-        <div className={styles.curtain}>
+        <div>
           <SketchBackground />
         </div>
         <TitleOfSketchBook />
