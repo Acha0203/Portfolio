@@ -7,6 +7,7 @@ const MenuBarTop = () => {
   const router = useRouter();
   const [isOverSketchBook, setIsOverSketchBook] = useState(false);
   const [isOverHome, setIsOverHome] = useState(false);
+  const [isOverWork, setIsOverWork] = useState(false);
 
   return (
     <div>
@@ -51,7 +52,20 @@ const MenuBarTop = () => {
               <div className={`${styles.line_under_text_grad} w-20`} />
             </div>
           ) : (
-            <div className='mx-5 text-neutral-500'>WORK</div>
+            <div className='flex flex-col justify-center items-center'>
+              <div
+                className='mx-5 text-neutral-500 hover:text-white'
+                onMouseEnter={() => {
+                  setIsOverWork(true);
+                }}
+                onMouseLeave={() => {
+                  setIsOverWork(false);
+                }}
+              >
+                <Link href='/work'>WORK</Link>
+              </div>
+              {isOverWork && <div className={`${styles.line_under_text_grad} w-20`} />}
+            </div>
           )}
           {router.pathname === '/sketch-book' ? (
             <div className='flex flex-col justify-center items-center'>
