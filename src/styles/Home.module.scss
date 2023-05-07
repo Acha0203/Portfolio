@@ -278,6 +278,27 @@
   }
 }
 
+.website_btn {
+  @include display_center();
+  width: 100vw;
+  font-size: 0.9rem;
+  letter-spacing: 0.5rem;
+  color: #8c8c8c;
+  text-shadow: #000 0 0 10px;
+  text-align: center;
+
+  @media screen and (min-width: 640px) {
+    font-size: 1.2rem;
+    letter-spacing: 0.8rem;
+  }
+
+  .website_btn_text {
+    &:hover {
+      filter: brightness(1.5);
+    }
+  }
+}
+
 /* Sketch Page */
 
 .title_of_sketch {
@@ -302,7 +323,7 @@
   font-size: 0.9rem;
   letter-spacing: 0.5rem;
   color: #8c8c8c;
-  text-shadow: #000 0 0 20px;
+  text-shadow: #000 0 0 10px;
   text-align: center;
 
   @media screen and (min-width: 640px) {

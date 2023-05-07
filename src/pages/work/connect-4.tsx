@@ -44,10 +44,10 @@ const Connect4Page = () => {
           key='desc'
         />
       </Head>
-      <div className='flex-col justify-center items-center relative w-screen h-screen'>
+      <div className='flex flex-col justify-center items-center relative w-screen h-screen'>
         <SketchBackground />
         <div
-          className={`flex-col justify-start items-center absolute w-screen ${styles.work_wrapper} ${styles.fade_up}`}
+          className={`flex flex-col justify-start items-center absolute w-screen ${styles.work_wrapper} ${styles.fade_up}`}
         >
           <div
             className={`${styles.title_of_work} flex justify-center text-white text-center`}
@@ -132,8 +132,8 @@ const Connect4Page = () => {
               </div>
             )}
           </div>
-          <div className={`${styles.code_back} my-5`}>
-            <div className={`${styles.code} border-2 border-neutral-500 p-2 pl-4 ml-2`}>
+          <div className={`${styles.website_btn} my-5`}>
+            <div className={`${styles.website_btn_text} border-2 border-neutral-500 p-2 pl-4 ml-2`}>
               <a href={`${workList[0].siteUrl}`} target='_blank' rel='noreferrer'>
                 WEBSITE
               </a>
