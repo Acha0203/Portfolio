@@ -9,7 +9,9 @@ interface Props {
 
 const CodeAndBackBtn: React.FC<Props> = ({ url, prevPage }) => {
   return (
-    <div className={`${styles.code_back}`}>
+    <div
+      className={`${styles.code_back} flex justify-center w-screen text-center text-neutral-400`}
+    >
       <div className={styles.code}>
         <a href={url} target='_blank' rel='noreferrer'>
           CODE
