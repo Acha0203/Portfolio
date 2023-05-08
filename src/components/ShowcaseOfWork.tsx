@@ -1,15 +1,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { sketchList } from '@/consts/sketchList';
+import { workList } from '@/consts/workList';
 import styles from '../styles/Home.module.scss';
 
-const Showcase = () => {
+const ShowcaseOfWork = () => {
   return (
     <div
       className={`${styles.fade_up} ${styles.showcase_wrapper} flex flex-wrap justify-center items-center w-full absolute`}
     >
-      {sketchList.map(
+      {workList.map(
         (work: {
           id: number;
           title: string;
@@ -20,7 +20,12 @@ const Showcase = () => {
           return (
             <div key={work.id} className={`${styles.showcase}`}>
               <Link href={work.path}>
-                <Image src={work.thumbnailUrl} alt={work.title} width={250} height={250} />
+                <Image
+                  src={`${work.thumbnailUrl}-s.png`}
+                  alt={work.title}
+                  width={250}
+                  height={250}
+                />
               </Link>
             </div>
           );
@@ -30,4 +35,4 @@ const Showcase = () => {
   );
 };
 
-export default Showcase;
+export default ShowcaseOfWork;

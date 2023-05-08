@@ -76,16 +76,19 @@
   position: absolute;
   top: 80px;
   text-align: center;
+
   @media screen and (min-width: 321px) {
     font-size: 1.6rem;
     letter-spacing: 0.8rem;
     top: 80px;
   }
+
   @media screen and (min-width: 640px) {
     font-size: 3.5rem;
     letter-spacing: 1rem;
     top: 120px;
   }
+
   @media screen and (min-width: 1024px) {
     font-size: 4rem;
     letter-spacing: 1rem;
@@ -102,16 +105,19 @@
   position: absolute;
   top: 120px;
   text-align: center;
+
   @media screen and (min-width: 321px) {
     font-size: 0.8rem;
     letter-spacing: 0.4rem;
     top: 126px;
   }
+
   @media screen and (min-width: 640px) {
     font-size: 1.1rem;
     letter-spacing: 0.8rem;
     top: 220px;
   }
+
   @media screen and (min-width: 1024px) {
     font-size: 1.2rem;
     letter-spacing: 1rem;
@@ -130,10 +136,12 @@
   position: absolute;
   top: 45%;
   text-align: center;
+
   @media screen and (min-width: 321px) {
     font-size: 1.8rem;
     letter-spacing: 1rem;
   }
+
   @media screen and (min-width: 640px) {
     font-size: 4rem;
     letter-spacing: 1rem;
@@ -149,17 +157,187 @@
   position: absolute;
   top: 100%;
   text-align: center;
+
   @media screen and (min-width: 321px) {
     font-size: 0.9rem;
     letter-spacing: 0.5rem;
   }
+
   @media screen and (min-width: 640px) {
     font-size: 1.2rem;
     letter-spacing: 1rem;
   }
 }
 
-/* Title of Sketch */
+/* Language Button */
+
+.en_ja {
+  font-size: 0.8rem;
+  color: #8c8c8c;
+  letter-spacing: 0.3rem;
+
+  @media screen and (min-width: 640px) {
+    font-size: 1rem;
+    letter-spacing: 0.6rem;
+  }
+
+  .language {
+    color: #565656;
+    margin-left: 0.4rem;
+    cursor: pointer;
+    &:hover {
+      filter: brightness(2);
+    }
+  }
+
+  .selected_lang {
+    margin-left: 0.4rem;
+    color: #8c8c8c;
+  }
+}
+
+.separater {
+  width: 2px;
+  height: 1.2rem;
+  background-color: #8c8c8c;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+/* Work Page */
+
+.work_image {
+  filter: drop-shadow(0 0 1.5rem #525252);
+}
+
+.work_wrapper {
+  top: 6rem;
+
+  @media screen and (min-width: 640px) {
+    top: 8rem;
+  }
+
+  @media screen and (min-width: 1025px) {
+    top: 10rem;
+  }
+}
+
+.title_of_work_top {
+  font-size: 3rem;
+  letter-spacing: 1.4rem;
+  top: 70px;
+
+  @media screen and (min-width: 640px) {
+    font-size: 3.5rem;
+    letter-spacing: 2rem;
+    top: 120px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 4rem;
+    letter-spacing: 2rem;
+    top: 120px;
+  }
+}
+
+.description_for_work_title {
+  font-size: 0.7rem;
+  color: #8c8c8c;
+  letter-spacing: 0.3rem;
+
+  @media screen and (min-width: 640px) {
+    font-size: 1.1rem;
+    letter-spacing: 0.5rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 1.2rem;
+    letter-spacing: 0.5rem;
+  }
+}
+
+.title_of_work {
+  font-size: 1.4rem;
+  letter-spacing: 0.6rem;
+
+  @media screen and (min-width: 321px) {
+    font-size: 1.6rem;
+    letter-spacing: 0.8rem;
+  }
+
+  @media screen and (min-width: 640px) {
+    font-size: 3.5rem;
+    letter-spacing: 1rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 4rem;
+    letter-spacing: 1rem;
+  }
+}
+
+.title_of_description {
+  font-size: 1rem;
+  letter-spacing: 0.4rem;
+  padding: 30px;
+  text-shadow: #000 0 0 20px;
+
+  @media screen and (min-width: 640px) {
+    font-size: 1.5rem;
+    letter-spacing: 0.6rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 1.8rem;
+    letter-spacing: 1rem;
+  }
+}
+
+.work_description {
+  font-size: 0.8rem;
+  text-shadow: #000 0 0 10px;
+
+  @media screen and (min-width: 640px) {
+    font-size: 1.4rem;
+  }
+
+  &.en {
+    font-family: var(--font--montserrat);
+  }
+
+  &.jp {
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+    font-family: var(--font--notoSansJP);
+
+    @media screen and (min-width: 640px) {
+      font-size: 1rem;
+      line-height: 1.4rem;
+    }
+  }
+
+  a {
+    color: #fff;
+  }
+}
+
+.website_btn {
+  font-size: 0.9rem;
+  letter-spacing: 0.5rem;
+
+  @media screen and (min-width: 640px) {
+    font-size: 1.2rem;
+    letter-spacing: 0.8rem;
+  }
+
+  .website_btn_text {
+    &:hover {
+      filter: invert(1);
+    }
+  }
+}
+
+/* Sketch Page */
 
 .title_of_sketch {
   @include display_center();
@@ -170,6 +348,7 @@
   text-shadow: #000 0 0 20px;
   text-align: center;
   padding: 15px;
+
   @media screen and (min-width: 640px) {
     font-size: 2.5rem;
     letter-spacing: 1rem;
@@ -182,8 +361,9 @@
   font-size: 0.9rem;
   letter-spacing: 0.5rem;
   color: #8c8c8c;
-  text-shadow: #000 0 0 20px;
+  text-shadow: #000 0 0 10px;
   text-align: center;
+
   @media screen and (min-width: 640px) {
     font-size: 1.2rem;
     letter-spacing: 0.8rem;
@@ -201,6 +381,7 @@
 .showcase {
   margin: 1rem;
   filter: drop-shadow(0 0 0.75rem #525252);
+
   @media screen and (min-width: 640px) {
     margin: 2rem;
   }
@@ -208,6 +389,7 @@
 
 .showcase_wrapper {
   top: 180px;
+
   @media screen and (min-width: 640px) {
     top: 320px;
   }
