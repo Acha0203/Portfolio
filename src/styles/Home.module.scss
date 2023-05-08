@@ -169,7 +169,8 @@
   }
 }
 
-/* Work Page */
+/* Language Button */
+
 .en_ja {
   font-size: 0.8rem;
   color: #8c8c8c;
@@ -203,6 +204,8 @@
   margin-right: 0.5rem;
 }
 
+/* Work Page */
+
 .work_image {
   filter: drop-shadow(0 0 1.5rem #525252);
 }
@@ -216,6 +219,40 @@
 
   @media screen and (min-width: 1025px) {
     top: 10rem;
+  }
+}
+
+.title_of_work_top {
+  font-size: 3rem;
+  letter-spacing: 1.4rem;
+  top: 70px;
+
+  @media screen and (min-width: 640px) {
+    font-size: 3.5rem;
+    letter-spacing: 2rem;
+    top: 120px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 4rem;
+    letter-spacing: 2rem;
+    top: 120px;
+  }
+}
+
+.description_for_work_title {
+  font-size: 0.7rem;
+  color: #8c8c8c;
+  letter-spacing: 0.3rem;
+
+  @media screen and (min-width: 640px) {
+    font-size: 1.1rem;
+    letter-spacing: 0.5rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 1.2rem;
+    letter-spacing: 0.5rem;
   }
 }
 
