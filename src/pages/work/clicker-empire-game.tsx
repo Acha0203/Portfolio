@@ -45,7 +45,7 @@ const ClickerEmpireGamePage = () => {
           className={`flex flex-col justify-start items-center absolute w-screen ${styles.work_wrapper} ${styles.fade_up}`}
         >
           <div
-            className={`${styles.title_of_work} flex justify-center text-white text-center`}
+            className={`${styles.title_of_work} flex justify-center text-white text-center w-3/4`}
           >{`${workList[4].title.toUpperCase()}`}</div>
           <LanguageSwitch />
           <div className={`flex justify-center items-start w-screen mt-8 sm:mt-10 lg:mt-12`}>
