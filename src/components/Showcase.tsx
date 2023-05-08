@@ -18,9 +18,14 @@ const Showcase = () => {
           path: string;
         }) => {
           return (
-            <div key={work.id} className={`${styles.showcase}`}>
+            <div key={work.id} className={`${styles.showcase} relative`}>
               <Link href={work.path}>
                 <Image src={work.thumbnailUrl} alt={work.title} width={250} height={250} />
+                <div
+                  className={`${styles.showcase_image_text} flex justify-center items-center absolute top-0 text-white text-center text-2xl`}
+                >
+                  {work.title}
+                </div>
               </Link>
             </div>
           );
