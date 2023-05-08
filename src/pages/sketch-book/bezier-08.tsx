@@ -1,6 +1,5 @@
 import type { MyAppState } from '@/types';
 import Head from 'next/head';
-import Link from 'next/link';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { sketchList } from '@/consts/sketchList';
@@ -8,6 +7,7 @@ import useReload from '@/hooks/useReload';
 import useWindowSize from '@/hooks/useWindowSize';
 import { myAppActions } from '@/store/myApp';
 import SketchBezier08 from '@/components/sketch-components/SketchBezier08';
+import CodeAndBackBtn from '@/components/ui/button/CodeAndBackBtn';
 import HamburgerBtn from '@/components/ui/button/HamburgerBtn';
 import HamburgerMenu from '@/components/ui/menu/HamburgerMenu';
 import MenuBarTop from '@/components/ui/menu/MenuBarTop';
@@ -50,17 +50,7 @@ const Bezier08Page = () => {
           className={`flex-col justify-center items-center absolute bottom-10 ${styles.fade_up}`}
         >
           <div className={styles.title_of_sketch}>{`${sketchList[9].title}`}</div>
-          <div className={styles.code_back}>
-            <div className={styles.code}>
-              <a href={`${sketchList[9].codeUrl}`} target='_blank' rel='noreferrer'>
-                CODE
-              </a>
-            </div>
-            <div>|</div>
-            <div className={styles.code}>
-              <Link href={'/sketch-book'}>BACK</Link>
-            </div>
-          </div>
+          <CodeAndBackBtn url={`${sketchList[9].codeUrl}`} prevPage='/sketch-book' />
         </div>
         {windowWidth === 0 ? (
           isHamburger ? (

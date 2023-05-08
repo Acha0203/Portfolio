@@ -138,7 +138,7 @@ const Connect4Page = () => {
           <div className='my-5'>
             <WebsiteBtn url={`${workList[0].siteUrl}`} />
           </div>
-          <div className='mb-5'>
+          <div className='mb-10'>
             <CodeAndBackBtn url={`${workList[0].codeUrl}`} prevPage='/work' />
           </div>
         </div>
