@@ -16,7 +16,7 @@ import HamburgerMenu from '@/components/ui/menu/HamburgerMenu';
 import MenuBarTop from '@/components/ui/menu/MenuBarTop';
 import styles from '../../styles/Home.module.scss';
 
-const Connect4Page = () => {
+const CountdownTimerPage = () => {
   const dispatch = useDispatch();
   const { isHamburger, isEnglish } = useSelector((state: MyAppState) => state.myApp);
   const windowWidth = useWindowSize()[0];
@@ -36,8 +36,8 @@ const Connect4Page = () => {
   return (
     <>
       <Head>
-        <title>Acha Ikeda | {workList[0].title}</title>
-        <meta name='description' content={workList[0].description.en} key='desc' />
+        <title>Acha Ikeda | {workList[7].title}</title>
+        <meta name='description' content={workList[7].description.en} key='desc' />
       </Head>
       <div className='flex flex-col justify-center items-center relative w-screen h-screen'>
         <SketchBackground />
@@ -46,15 +46,15 @@ const Connect4Page = () => {
         >
           <div
             className={`${styles.title_of_work} flex justify-center text-white text-center`}
-          >{`${workList[0].title.toUpperCase()}`}</div>
+          >{`${workList[7].title.toUpperCase()}`}</div>
           <LanguageSwitch />
           <div className={`flex justify-center items-start w-screen mt-8 sm:mt-10 lg:mt-12`}>
             <div className='w-4/5 sm:w-1/2'>
               <Image
-                src={`${workList[0].thumbnailUrl}.png`}
-                alt={workList[0].title}
-                width={workList[0].thumbnailX}
-                height={workList[0].thumbnailY}
+                src={`${workList[7].thumbnailUrl}.png`}
+                alt={workList[7].title}
+                width={workList[7].thumbnailX}
+                height={workList[7].thumbnailY}
                 sizes='100vw'
                 className={`${styles.work_image} w-full`}
               />
@@ -68,71 +68,22 @@ const Connect4Page = () => {
               <div
                 className={`${styles.work_description} text-neutral-400 text-justify w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.en}`}
               >
-                {workList[0].description.en}
+                {workList[7].description.en}
               </div>
             ) : (
               <div
                 className={`${styles.work_description} text-neutral-400 text-justify w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.jp}`}
               >
-                {workList[0].description.ja}
+                {workList[7].description.ja}
               </div>
             )}
-            {isEnglish ? (
-              <div
-                className={`${styles.work_description} text-neutral-400 text-left w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.en}`}
-              >
-                <p>
-                  This game was co-developed with{' '}
-                  <a href='https://github.com/tkwonn' target='_blank' rel='noreferrer'>
-                    tkwonn
-                  </a>{' '}
-                  and{' '}
-                  <a href='https://github.com/maxazm' target='_blank' rel='noreferrer'>
-                    maxazm
-                  </a>
-                  .
-                </p>
-              </div>
-            ) : (
-              <div
-                className={`${styles.work_description} text-neutral-400 text-left w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.jp}`}
-              >
-                <p>
-                  なお、このゲームは{' '}
-                  <a href='https://github.com/tkwonn' target='_blank' rel='noreferrer'>
-                    tkwonn
-                  </a>{' '}
-                  および{' '}
-                  <a href='https://github.com/maxazm' target='_blank' rel='noreferrer'>
-                    maxazm
-                  </a>{' '}
-                  とのコラボレーションにより開発されました。
-                </p>
-              </div>
-            )}
-            <div className={`${styles.title_of_description} text-center text-white w-3/4 sm:w-3/5`}>
-              ALGORITHM FOR GAME AI
-            </div>
-            {isEnglish ? (
-              <div
-                className={`${styles.work_description} text-neutral-400 text-justify w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.en}`}
-              >
-                {workList[0].supplement.en}
-              </div>
-            ) : (
-              <div
-                className={`${styles.work_description} text-neutral-400 text-justify w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.jp}`}
-              >
-                {workList[0].supplement.ja}
-              </div>
-            )}
-            <Technology index={0} />
+            <Technology index={7} />
           </div>
           <div className='my-5'>
-            <WebsiteBtn url={`${workList[0].siteUrl}`} />
+            <WebsiteBtn url={`${workList[7].siteUrl}`} />
           </div>
           <div className='mb-10'>
-            <CodeAndBackBtn url={`${workList[0].codeUrl}`} prevPage='/work' />
+            <CodeAndBackBtn url={`${workList[7].codeUrl}`} prevPage='/work' />
           </div>
         </div>
         {windowWidth === 0 ? (
@@ -157,4 +108,4 @@ const Connect4Page = () => {
   );
 };
 
-export default Connect4Page;
+export default CountdownTimerPage;

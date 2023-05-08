@@ -2,7 +2,7 @@ import type { WorkObj } from '@/types';
 
 const sketch1: WorkObj = {
   id: 1,
-  title: 'ROTATION 2',
+  title: 'Rotation 2',
   thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/rotation-02.png',
   codeUrl: 'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/rotation02-b.js',
   path: '/sketch-book/rotation-02',
@@ -25,7 +25,7 @@ const sketch1: WorkObj = {
 
 const sketch2: WorkObj = {
   id: 2,
-  title: 'SYMMETRICAL RULER 2',
+  title: 'Symmetrical Ruler 2',
   thumbnailUrl:
     'https://acha0203.github.io/Portfolio/images/Sketch_Images/symmetrical-ruler-02.png',
   codeUrl:
@@ -50,7 +50,7 @@ const sketch2: WorkObj = {
 
 const sketch3: WorkObj = {
   id: 3,
-  title: 'HAPPY NEW YEAR 2023',
+  title: 'Happy New Year 2023',
   thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/happy-new-year-2023.png',
   codeUrl:
     'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/tweets/happy-new-year-2023.js',
@@ -74,7 +74,7 @@ const sketch3: WorkObj = {
 
 const sketch4: WorkObj = {
   id: 4,
-  title: 'CLIFFORD ATTRACTOR 3',
+  title: 'Clifford Attractor 3',
   thumbnailUrl:
     'https://acha0203.github.io/Portfolio/images/Sketch_Images/clifford-attractor-03.png',
   codeUrl:
@@ -99,7 +99,7 @@ const sketch4: WorkObj = {
 
 const sketch5: WorkObj = {
   id: 5,
-  title: 'CIRCLE MOTION 2',
+  title: 'Circle Motion 2',
   thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/circle-motion-02.png',
   codeUrl: 'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/chapter016/sincos02.js',
   path: '/sketch-book/circle-motion-02',
@@ -122,7 +122,7 @@ const sketch5: WorkObj = {
 
 const sketch6: WorkObj = {
   id: 6,
-  title: 'CIRCLE MOTION 1',
+  title: 'Circle Motion 1',
   thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/circle-motion-01.png',
   codeUrl:
     'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/chapter017/circleMotion.js',
@@ -146,7 +146,7 @@ const sketch6: WorkObj = {
 
 const sketch7: WorkObj = {
   id: 7,
-  title: 'ROTATION 1',
+  title: 'Rotation 1',
   thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/rotation-01.png',
   codeUrl: 'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/chapter016/sincos01.js',
   path: '/sketch-book/rotation-01',
@@ -169,7 +169,7 @@ const sketch7: WorkObj = {
 
 const sketch8: WorkObj = {
   id: 8,
-  title: 'COMPOSITION 2',
+  title: 'Composition 2',
   thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/composition-02.png',
   codeUrl:
     'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/chapter020/composition02-a.js',
@@ -193,7 +193,7 @@ const sketch8: WorkObj = {
 
 const sketch9: WorkObj = {
   id: 9,
-  title: 'ROSE CURVE 1',
+  title: 'Rose Curve 1',
   thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/rose-curve-01.png',
   codeUrl: 'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/rose-curve01.js',
   path: '/sketch-book/rose-curve-01',
@@ -216,7 +216,7 @@ const sketch9: WorkObj = {
 
 const sketch10: WorkObj = {
   id: 10,
-  title: 'BEZIER 8',
+  title: 'Bezier 8',
   thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/bezier-08.png',
   codeUrl: 'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/bezier08.js',
   path: '/sketch-book/bezier-08',
@@ -239,7 +239,7 @@ const sketch10: WorkObj = {
 
 const sketch11: WorkObj = {
   id: 11,
-  title: 'CONCENTRIC CIRCLE 4',
+  title: 'Concentric Circle 4',
   thumbnailUrl:
     'https://acha0203.github.io/Portfolio/images/Sketch_Images/concentric-circle-04.png',
   codeUrl:
@@ -264,7 +264,7 @@ const sketch11: WorkObj = {
 
 const sketch12: WorkObj = {
   id: 12,
-  title: 'CIRCLE IN CIRCLE 3',
+  title: 'Circle in Circle 3',
   thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/circle-in-circle-03.png',
   codeUrl:
     'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/chapter023/circle-in-circle03.js',
@@ -288,7 +288,7 @@ const sketch12: WorkObj = {
 
 const sketch13: WorkObj = {
   id: 13,
-  title: 'PERLIN NOISE 4',
+  title: 'Perlin Noise 4',
   thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/perlin-noise-04.png',
   codeUrl:
     'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/perlin-noise04.js',
@@ -312,7 +312,7 @@ const sketch13: WorkObj = {
 
 const sketch14: WorkObj = {
   id: 14,
-  title: 'MULTIPLE PARTICLE SYSTEMS 2',
+  title: 'Multiple Particle Systems 2',
   thumbnailUrl:
     'https://acha0203.github.io/Portfolio/images/Sketch_Images/multiple-particle-systems-02.png',
   codeUrl:

@@ -36,12 +36,8 @@ const BlackjackPage = () => {
   return (
     <>
       <Head>
-        <title>Acha Ikeda | Work</title>
-        <meta
-          name='description'
-          content='This page shows Web applications developed by Acha Ikeda.'
-          key='desc'
-        />
+        <title>Acha Ikeda | {workList[1].title}</title>
+        <meta name='description' content={workList[1].description.en} key='desc' />
       </Head>
       <div className='flex flex-col justify-center items-center relative w-screen h-screen'>
         <SketchBackground />
@@ -50,7 +46,7 @@ const BlackjackPage = () => {
         >
           <div
             className={`${styles.title_of_work} flex justify-center text-white text-center`}
-          >{`${workList[1].title}`}</div>
+          >{`${workList[1].title.toUpperCase()}`}</div>
           <LanguageSwitch />
           <div className={`flex justify-center items-start w-screen mt-8 sm:mt-10 lg:mt-12`}>
             <div className='w-4/5 sm:w-1/2'>
@@ -70,7 +66,7 @@ const BlackjackPage = () => {
             </div>
             {isEnglish ? (
               <div
-                className={`${styles.work_description}  text-neutral-400 text-justify w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.en}`}
+                className={`${styles.work_description} text-neutral-400 text-justify w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.en}`}
               >
                 {workList[1].description.en}
               </div>

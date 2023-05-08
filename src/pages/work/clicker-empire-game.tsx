@@ -16,7 +16,7 @@ import HamburgerMenu from '@/components/ui/menu/HamburgerMenu';
 import MenuBarTop from '@/components/ui/menu/MenuBarTop';
 import styles from '../../styles/Home.module.scss';
 
-const Connect4Page = () => {
+const ClickerEmpireGamePage = () => {
   const dispatch = useDispatch();
   const { isHamburger, isEnglish } = useSelector((state: MyAppState) => state.myApp);
   const windowWidth = useWindowSize()[0];
@@ -36,8 +36,8 @@ const Connect4Page = () => {
   return (
     <>
       <Head>
-        <title>Acha Ikeda | {workList[0].title}</title>
-        <meta name='description' content={workList[0].description.en} key='desc' />
+        <title>Acha Ikeda | {workList[4].title}</title>
+        <meta name='description' content={workList[4].description.en} key='desc' />
       </Head>
       <div className='flex flex-col justify-center items-center relative w-screen h-screen'>
         <SketchBackground />
@@ -46,15 +46,15 @@ const Connect4Page = () => {
         >
           <div
             className={`${styles.title_of_work} flex justify-center text-white text-center`}
-          >{`${workList[0].title.toUpperCase()}`}</div>
+          >{`${workList[4].title.toUpperCase()}`}</div>
           <LanguageSwitch />
           <div className={`flex justify-center items-start w-screen mt-8 sm:mt-10 lg:mt-12`}>
             <div className='w-4/5 sm:w-1/2'>
               <Image
-                src={`${workList[0].thumbnailUrl}.png`}
-                alt={workList[0].title}
-                width={workList[0].thumbnailX}
-                height={workList[0].thumbnailY}
+                src={`${workList[4].thumbnailUrl}.png`}
+                alt={workList[4].title}
+                width={workList[4].thumbnailX}
+                height={workList[4].thumbnailY}
                 sizes='100vw'
                 className={`${styles.work_image} w-full`}
               />
@@ -68,71 +68,57 @@ const Connect4Page = () => {
               <div
                 className={`${styles.work_description} text-neutral-400 text-justify w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.en}`}
               >
-                {workList[0].description.en}
+                <div className='mb-5'>{workList[4].description.en}</div>
+                <ol>
+                  <li>
+                    On the start page, enter your name and select New Game, then click Game Start.
+                  </li>
+                  <li>
+                    By clicking the hamburger, you can make money. One day elapses in one second.
+                  </li>
+                  <li>
+                    By purchasing items, you can make more money per one click or get an unearned
+                    income.
+                  </li>
+                  <li>
+                    By clicking the save button at the lower right, you can save your data in your
+                    local storage. To resume the game, select Continue on the start page and enter
+                    the same name, then click Game Start.
+                  </li>
+                  <li>
+                    Let&apos;s make a lot of money efficiently to get a bullet-apeed sky railway.
+                    Good luck!
+                  </li>
+                </ol>
               </div>
             ) : (
               <div
                 className={`${styles.work_description} text-neutral-400 text-justify w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.jp}`}
               >
-                {workList[0].description.ja}
+                <div className='mb-5'>{workList[4].description.ja}</div>
+                <ol>
+                  <li>
+                    スタート画面で名前を入力して「New Game」を選び、「Game Start」をクリックします。
+                  </li>
+                  <li>ハンバーガーをクリックするとお金を獲得できます。1 秒で 1 日が経過します。</li>
+                  <li>
+                    アイテムを購入するとクリックごとに獲得できるお金が増えたり、毎秒不労所得を得られるようになります。
+                  </li>
+                  <li>
+                    右下のセーブボタンをクリックするとローカルストレージにデータを保存できます。ゲームを再開するにはスタート画面で「Continue」を選び、同じ名前を入力して「Game
+                    Start」をクリックします。
+                  </li>
+                  <li>うまくお金を稼いで新幹線の購入を目指しましょう。</li>
+                </ol>
               </div>
             )}
-            {isEnglish ? (
-              <div
-                className={`${styles.work_description} text-neutral-400 text-left w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.en}`}
-              >
-                <p>
-                  This game was co-developed with{' '}
-                  <a href='https://github.com/tkwonn' target='_blank' rel='noreferrer'>
-                    tkwonn
-                  </a>{' '}
-                  and{' '}
-                  <a href='https://github.com/maxazm' target='_blank' rel='noreferrer'>
-                    maxazm
-                  </a>
-                  .
-                </p>
-              </div>
-            ) : (
-              <div
-                className={`${styles.work_description} text-neutral-400 text-left w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.jp}`}
-              >
-                <p>
-                  なお、このゲームは{' '}
-                  <a href='https://github.com/tkwonn' target='_blank' rel='noreferrer'>
-                    tkwonn
-                  </a>{' '}
-                  および{' '}
-                  <a href='https://github.com/maxazm' target='_blank' rel='noreferrer'>
-                    maxazm
-                  </a>{' '}
-                  とのコラボレーションにより開発されました。
-                </p>
-              </div>
-            )}
-            <div className={`${styles.title_of_description} text-center text-white w-3/4 sm:w-3/5`}>
-              ALGORITHM FOR GAME AI
-            </div>
-            {isEnglish ? (
-              <div
-                className={`${styles.work_description} text-neutral-400 text-justify w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.en}`}
-              >
-                {workList[0].supplement.en}
-              </div>
-            ) : (
-              <div
-                className={`${styles.work_description} text-neutral-400 text-justify w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.jp}`}
-              >
-                {workList[0].supplement.ja}
-              </div>
-            )}
-            <Technology index={0} />
+            <Technology index={4} />
           </div>
           <div className='my-5'>
-            <WebsiteBtn url={`${workList[0].siteUrl}`} />
+            <WebsiteBtn url={`${workList[4].siteUrl}`} />
           </div>
           <div className='mb-10'>
-            <CodeAndBackBtn url={`${workList[0].codeUrl}`} prevPage='/work' />
+            <CodeAndBackBtn url={`${workList[4].codeUrl}`} prevPage='/work' />
           </div>
         </div>
         {windowWidth === 0 ? (
@@ -157,4 +143,4 @@ const Connect4Page = () => {
   );
 };
 
-export default Connect4Page;
+export default ClickerEmpireGamePage;

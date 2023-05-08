@@ -35,7 +35,7 @@ const CircleMotion01Page = () => {
   return (
     <>
       <Head>
-        <title>Acha Ikeda | Sketch Book</title>
+        <title>Acha Ikeda | {sketchList[5].title}</title>
         <meta
           name='description'
           content="This page shows Acha Ikeda's generative art with p5.js."
@@ -49,7 +49,7 @@ const CircleMotion01Page = () => {
         <div
           className={`flex-col justify-center items-center absolute bottom-10 ${styles.fade_up}`}
         >
-          <div className={styles.title_of_sketch}>{`${sketchList[5].title}`}</div>
+          <div className={styles.title_of_sketch}>{`${sketchList[5].title.toUpperCase()}`}</div>
           <CodeAndBackBtn url={`${sketchList[5].codeUrl}`} prevPage='/sketch-book' />
         </div>
         {windowWidth === 0 ? (

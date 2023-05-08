@@ -27,9 +27,9 @@ const ShowcaseOfWork = () => {
                   height={250}
                 />
                 <div
-                  className={`${styles.showcase_image_text} flex justify-center items-center absolute top-0 text-white text-center text-3xl`}
+                  className={`${styles.showcase_image_text} flex justify-center items-center absolute top-0 text-white text-center text-2xl`}
                 >
-                  {work.title}
+                  {work.title.toUpperCase()}
                 </div>
               </Link>
             </div>
