@@ -8,9 +8,9 @@ import useReload from '@/hooks/useReload';
 import useWindowSize from '@/hooks/useWindowSize';
 import { myAppActions } from '@/store/myApp';
 import SketchSymmetricalRuler02 from '@/components/sketch-components/SketchSymmetricalRuler02';
-import HamburgerBtn from '@/components/ui/HamburgerBtn';
-import HamburgerMenu from '@/components/ui/HamburgerMenu';
-import MenuBarTop from '@/components/ui/MenuBarTop';
+import HamburgerBtn from '@/components/ui/button/HamburgerBtn';
+import HamburgerMenu from '@/components/ui/menu/HamburgerMenu';
+import MenuBarTop from '@/components/ui/menu/MenuBarTop';
 import styles from '../../styles/Home.module.scss';
 
 const SymmetricalRuler02Page = () => {

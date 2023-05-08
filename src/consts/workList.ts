@@ -16,8 +16,8 @@ const work1: WorkObj = {
     en: `We implemented an agent using a Monte Carlo Tree Search (MCTS) algorithm. The idea behind this algorithm is to build a search tree of possible move sequences and simulates each one multiple times to determine the expected outcome. (Instead of exploring all the possible games, only the most promising routes are chosen).`,
   },
   technology: {
-    ja: 'Next.js、Material UI',
-    en: 'Next.js, Material UI',
+    ja: 'Next.js、Material UI などを使用して開発しました。',
+    en: 'We developed this game with Next.js, Material UI, and so on.',
   },
   thumbnailX: 2860,
   thumbnailY: 2288,

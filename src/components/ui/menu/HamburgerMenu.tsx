@@ -4,7 +4,7 @@ import router from 'next/router';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { myAppActions } from '@/store/myApp';
-import styles from '../../styles/Home.module.scss';
+import styles from '../../../styles/Home.module.scss';
 
 const HamburgerMenu = () => {
   const dispatch = useDispatch();

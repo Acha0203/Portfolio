@@ -1,7 +1,6 @@
 import type { MyAppState } from '@/types';
 import Head from 'next/head';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { workList } from '@/consts/workList';
@@ -9,10 +8,13 @@ import useReload from '@/hooks/useReload';
 import useWindowSize from '@/hooks/useWindowSize';
 import { myAppActions } from '@/store/myApp';
 import SketchBackground from '@/components/sketch-components/SketchBackground';
-import HamburgerBtn from '@/components/ui/HamburgerBtn';
-import HamburgerMenu from '@/components/ui/HamburgerMenu';
-import LanguageSwitch from '@/components/ui/LanguageSwitch';
-import MenuBarTop from '@/components/ui/MenuBarTop';
+import Technology from '@/components/Technology';
+import CodeAndBackBtn from '@/components/ui/button/CodeAndBackBtn';
+import HamburgerBtn from '@/components/ui/button/HamburgerBtn';
+import LanguageSwitch from '@/components/ui/button/LanguageSwitch';
+import WebsiteBtn from '@/components/ui/button/WebsiteBtn';
+import HamburgerMenu from '@/components/ui/menu/HamburgerMenu';
+import MenuBarTop from '@/components/ui/menu/MenuBarTop';
 import styles from '../../styles/Home.module.scss';
 
 const Connect4Page = () => {
@@ -71,20 +73,20 @@ const Connect4Page = () => {
             </div>
             {isEnglish ? (
               <div
-                className={`${styles.work_description} text-justify w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.en}`}
+                className={`${styles.work_description}  text-neutral-400 text-justify w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.en}`}
               >
                 {workList[0].description.en}
               </div>
             ) : (
               <div
-                className={`${styles.work_description} text-justify w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.jp}`}
+                className={`${styles.work_description} text-neutral-400 text-justify w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.jp}`}
               >
                 {workList[0].description.ja}
               </div>
             )}
             {isEnglish ? (
               <div
-                className={`${styles.work_description} text-left w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.en}`}
+                className={`${styles.work_description} text-neutral-400 text-left w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.en}`}
               >
                 <p>
                   This game was co-developed with{' '}
@@ -100,7 +102,7 @@ const Connect4Page = () => {
               </div>
             ) : (
               <div
-                className={`${styles.work_description} text-left w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.jp}`}
+                className={`${styles.work_description} text-neutral-400 text-left w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.jp}`}
               >
                 <p>
                   なお、このゲームは{' '}
@@ -120,35 +122,24 @@ const Connect4Page = () => {
             </div>
             {isEnglish ? (
               <div
-                className={`${styles.work_description} text-justify w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.en}`}
+                className={`${styles.work_description} text-neutral-400 text-justify w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.en}`}
               >
                 {workList[0].supplement.en}
               </div>
             ) : (
               <div
-                className={`${styles.work_description} text-justify w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.jp}`}
+                className={`${styles.work_description} text-neutral-400 text-justify w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.jp}`}
               >
                 {workList[0].supplement.ja}
               </div>
             )}
+            <Technology index={0} />
           </div>
-          <div className={`${styles.website_btn} my-5`}>
-            <div className={`${styles.website_btn_text} border-2 border-neutral-500 p-2 pl-4 ml-2`}>
-              <a href={`${workList[0].siteUrl}`} target='_blank' rel='noreferrer'>
-                WEBSITE
-              </a>
-            </div>
+          <div className='my-5'>
+            <WebsiteBtn url={`${workList[0].siteUrl}`} />
           </div>
-          <div className={`${styles.code_back} my-7`}>
-            <div className={styles.code}>
-              <a href={`${workList[0].codeUrl}`} target='_blank' rel='noreferrer'>
-                CODE
-              </a>
-            </div>
-            <div className={styles.separater} />
-            <div className={`${styles.code} ml-3`}>
-              <Link href={'/work'}>BACK</Link>
-            </div>
+          <div className='mb-5'>
+            <CodeAndBackBtn url={`${workList[0].codeUrl}`} prevPage='/work' />
           </div>
         </div>
         {windowWidth === 0 ? (

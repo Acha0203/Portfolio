@@ -8,9 +8,9 @@ import { myAppActions } from '@/store/myApp';
 import ShowcaseOfWork from '@/components/ShowcaseOfWork';
 import SketchBackground from '@/components/sketch-components/SketchBackground';
 import TitleOfWork from '@/components/TitleOfWork';
-import HamburgerBtn from '@/components/ui/HamburgerBtn';
-import HamburgerMenu from '@/components/ui/HamburgerMenu';
-import MenuBarTop from '@/components/ui/MenuBarTop';
+import HamburgerBtn from '@/components/ui/button/HamburgerBtn';
+import HamburgerMenu from '@/components/ui/menu/HamburgerMenu';
+import MenuBarTop from '@/components/ui/menu/MenuBarTop';
 
 const WorkPage = () => {
   const dispatch = useDispatch();

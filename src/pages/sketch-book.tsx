@@ -8,9 +8,9 @@ import { myAppActions } from '@/store/myApp';
 import Showcase from '@/components/Showcase';
 import SketchBackground from '@/components/sketch-components/SketchBackground';
 import TitleOfSketchBook from '@/components/TitleOfSketchBook';
-import HamburgerBtn from '@/components/ui/HamburgerBtn';
-import HamburgerMenu from '@/components/ui/HamburgerMenu';
-import MenuBarTop from '@/components/ui/MenuBarTop';
+import HamburgerBtn from '@/components/ui/button/HamburgerBtn';
+import HamburgerMenu from '@/components/ui/menu/HamburgerMenu';
+import MenuBarTop from '@/components/ui/menu/MenuBarTop';
 
 const SketchBookPage = () => {
   const dispatch = useDispatch();
