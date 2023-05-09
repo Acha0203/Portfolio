@@ -11,10 +11,11 @@ import TitleOfWork from '@/components/TitleOfWork';
 import HamburgerBtn from '@/components/ui/button/HamburgerBtn';
 import HamburgerMenu from '@/components/ui/menu/HamburgerMenu';
 import MenuBarTop from '@/components/ui/menu/MenuBarTop';
+import styles from '../styles/Home.module.scss';
 
 const WorkPage = () => {
   const dispatch = useDispatch();
-  const isHamburger = useSelector((state: MyAppState) => state.myApp.isHamburger);
+  const { isHamburger, isInTransition } = useSelector((state: MyAppState) => state.myApp);
   const windowWidth = useWindowSize()[0];
 
   useReload();
@@ -23,6 +24,8 @@ const WorkPage = () => {
 
   useEffect(() => {
     dispatch(myAppActions.setIsOpen(false));
+    dispatch(myAppActions.setIsInTransition(false));
+
     if (window.innerWidth <= 1024) {
       // window.innerWidth は useEffect() の中でしか使用できない。
       dispatch(myAppActions.setIsHamburger(true));
@@ -43,6 +46,11 @@ const WorkPage = () => {
         </div>
         <TitleOfWork />
         <ShowcaseOfWork />
+        {isInTransition && (
+          <div
+            className={`${styles.overlay} flex justify-center items-center fixed top-0 left-0 w-full h-full bg-black`}
+          ></div>
+        )}
         {windowWidth === 0 ? (
           isHamburger ? (
             <>

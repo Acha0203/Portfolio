@@ -4,6 +4,7 @@ const initialMyAppState = {
   isOpen: false,
   isHamburger: true,
   isEnglish: true,
+  isInTransition: false,
 };
 
 const myAppSlice = createSlice({
@@ -26,6 +27,9 @@ const myAppSlice = createSlice({
     },
     toggleIsEnglish: (state: { isEnglish: boolean }) => {
       state.isEnglish = !state.isEnglish;
+    },
+    setIsInTransition: (state: { isInTransition: boolean }, action: { payload: boolean }) => {
+      state.isInTransition = action.payload;
     },
   },
 });

@@ -13,6 +13,7 @@ const HamburgerMenu = () => {
 
   const handleClick = () => {
     dispatch(myAppActions.setIsOpen(false));
+    dispatch(myAppActions.setIsInTransition(true));
   };
 
   const stopScrollingBackContent = () => {
@@ -46,23 +47,29 @@ const HamburgerMenu = () => {
         {pathname === '/' ? (
           <li className={styles.current}>HOME</li>
         ) : (
-          <li className={styles.active} onClick={handleClick}>
-            <Link href='/'>HOME</Link>
+          <li className={styles.active}>
+            <Link href='/' onClick={handleClick}>
+              HOME
+            </Link>
           </li>
         )}
         <li>PROFILE</li>
         {pathname === '/work' ? (
           <li className={styles.current}>WORK</li>
         ) : (
-          <li className={styles.active} onClick={handleClick}>
-            <Link href='/work'>WORK</Link>
+          <li className={styles.active}>
+            <Link href='/work' onClick={handleClick}>
+              WORK
+            </Link>
           </li>
         )}
         {pathname === '/sketch-book' ? (
           <li className={styles.current}>SKETCH BOOK</li>
         ) : (
-          <li className={styles.active} onClick={handleClick}>
-            <Link href='/sketch-book'>SKETCH BOOK</Link>
+          <li className={styles.active}>
+            <Link href='/sketch-book' onClick={handleClick}>
+              SKETCH BOOK
+            </Link>
           </li>
         )}
         <li>CONTACT</li>

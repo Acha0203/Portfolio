@@ -25,6 +25,19 @@
   }
 }
 
+.overlay {
+  animation: fade_out 4s forwards;
+}
+
+@keyframes fade_out {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 /* Menu Bar */
 
 .line_under_menu_bar {

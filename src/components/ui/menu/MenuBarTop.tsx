@@ -1,13 +1,20 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { myAppActions } from '@/store/myApp';
 import styles from '../../../styles/Home.module.scss';
 
 const MenuBarTop = () => {
+  const dispatch = useDispatch();
   const router = useRouter();
   const [isOverSketchBook, setIsOverSketchBook] = useState(false);
   const [isOverHome, setIsOverHome] = useState(false);
   const [isOverWork, setIsOverWork] = useState(false);
+
+  const handleClick = () => {
+    dispatch(myAppActions.setIsInTransition(true));
+  };
 
   return (
     <div>
@@ -33,7 +40,9 @@ const MenuBarTop = () => {
                   setIsOverHome(false);
                 }}
               >
-                <Link href='/'>HOME</Link>
+                <Link href='/' onClick={handleClick}>
+                  HOME
+                </Link>
               </div>
               {isOverHome && <div className={`${styles.line_under_text_grad} w-20`} />}
             </div>
@@ -62,7 +71,9 @@ const MenuBarTop = () => {
                   setIsOverWork(false);
                 }}
               >
-                <Link href='/work'>WORK</Link>
+                <Link href='/work' onClick={handleClick}>
+                  WORK
+                </Link>
               </div>
               {isOverWork && <div className={`${styles.line_under_text_grad} w-20`} />}
             </div>
@@ -83,7 +94,9 @@ const MenuBarTop = () => {
                   setIsOverSketchBook(false);
                 }}
               >
-                <Link href='/sketch-book'>SKETCH BOOK</Link>
+                <Link href='/sketch-book' onClick={handleClick}>
+                  SKETCH BOOK
+                </Link>
               </div>
               {isOverSketchBook && <div className={`${styles.line_under_text_grad} w-48`} />}
             </div>
