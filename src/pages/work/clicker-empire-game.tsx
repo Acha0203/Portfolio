@@ -1,11 +1,11 @@
 import type { MyAppState } from '@/types';
-import Head from 'next/head';
 import Image from 'next/image';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { workList } from '@/consts/workList';
 import useWindowSize from '@/hooks/useWindowSize';
 import { myAppActions } from '@/store/myApp';
+import MyHead from '@/components/MyHead';
 import SketchBackground from '@/components/sketch-components/SketchBackground';
 import Technology from '@/components/Technology';
 import CodeAndBackBtn from '@/components/ui/button/CodeAndBackBtn';
@@ -35,10 +35,7 @@ const ClickerEmpireGamePage = () => {
 
   return (
     <>
-      <Head>
-        <title>Acha Ikeda | {workList[4].title}</title>
-        <meta name='description' content={workList[4].description.en} key='desc' />
-      </Head>
+      <MyHead title={workList[4].title} description={workList[4].description.en} />
       <div className='flex flex-col justify-center items-center relative w-screen h-screen'>
         <SketchBackground />
         <div

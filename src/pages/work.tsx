@@ -1,10 +1,10 @@
 import type { MyAppState } from '@/types';
-import Head from 'next/head';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import useReload from '@/hooks/useReload';
 import useWindowSize from '@/hooks/useWindowSize';
 import { myAppActions } from '@/store/myApp';
+import MyHead from '@/components/MyHead';
 import ShowcaseOfWork from '@/components/ShowcaseOfWork';
 import SketchBackground from '@/components/sketch-components/SketchBackground';
 import TitleOfWork from '@/components/TitleOfWork';
@@ -33,14 +33,10 @@ const WorkPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Acha Ikeda | Work</title>
-        <meta
-          name='description'
-          content='This page shows Web applications developed by Acha Ikeda.'
-          key='desc'
-        />
-      </Head>
+      <MyHead
+        title='Work'
+        description='This page shows various Web applications developed by Acha Ikeda, a designer and developer in Japan.'
+      />
       <div className='flex-col justify-center items-center relative'>
         <div>
           <SketchBackground />
