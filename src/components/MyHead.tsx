@@ -28,9 +28,13 @@ const MyHead: NextPage<MyHeadProps> = ({ title, thumbnailUrl, description, ogDes
     <Head>
       <title>{title}</title>
       <meta name='description' content={description} key='desc' />
+      <meta name='twitter:card' content='summary_large_image' />
       <meta property='og:title' content={title} />
-      <meta property='og:image' content={thumbnailUrl} />
+      <meta property='og:site_name' content='Acha Ikeda' />
       <meta property='og:description' content={ogDescription} />
+      <meta property='og:url' content='https://acha0203.github.io/Portfolio/' />
+      <meta property='og:image' content={thumbnailUrl} />
+      <meta property='og:type' content='website' />
     </Head>
   );
 };
