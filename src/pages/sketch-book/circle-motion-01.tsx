@@ -1,11 +1,11 @@
 import type { MyAppState } from '@/types';
-import Head from 'next/head';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { sketchList } from '@/consts/sketchList';
 import useReload from '@/hooks/useReload';
 import useWindowSize from '@/hooks/useWindowSize';
 import { myAppActions } from '@/store/myApp';
+import MyHead from '@/components/MyHead';
 import SketchCircleMotion01 from '@/components/sketch-components/SketchCircleMotion01';
 import CodeAndBackBtn from '@/components/ui/button/CodeAndBackBtn';
 import HamburgerBtn from '@/components/ui/button/HamburgerBtn';
@@ -34,14 +34,7 @@ const CircleMotion01Page = () => {
 
   return (
     <>
-      <Head>
-        <title>Acha Ikeda | {sketchList[5].title}</title>
-        <meta
-          name='description'
-          content="This page shows Acha Ikeda's generative art with p5.js."
-          key='desc'
-        />
-      </Head>
+      <MyHead title={sketchList[5].title} description={sketchList[5].description.en} />
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
           <SketchCircleMotion01 />

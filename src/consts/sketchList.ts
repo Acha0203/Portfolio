@@ -9,7 +9,7 @@ const sketch1: WorkObj = {
   siteUrl: '',
   description: {
     ja: '',
-    en: '',
+    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
   },
   supplement: {
     ja: '',
@@ -34,7 +34,7 @@ const sketch2: WorkObj = {
   siteUrl: '',
   description: {
     ja: '',
-    en: '',
+    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
   },
   supplement: {
     ja: '',
@@ -58,7 +58,7 @@ const sketch3: WorkObj = {
   siteUrl: '',
   description: {
     ja: '',
-    en: '',
+    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
   },
   supplement: {
     ja: '',
@@ -83,7 +83,7 @@ const sketch4: WorkObj = {
   siteUrl: '',
   description: {
     ja: '',
-    en: '',
+    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
   },
   supplement: {
     ja: '',
@@ -106,7 +106,7 @@ const sketch5: WorkObj = {
   siteUrl: '',
   description: {
     ja: '',
-    en: '',
+    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
   },
   supplement: {
     ja: '',
@@ -130,7 +130,7 @@ const sketch6: WorkObj = {
   siteUrl: '',
   description: {
     ja: '',
-    en: '',
+    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
   },
   supplement: {
     ja: '',
@@ -153,7 +153,7 @@ const sketch7: WorkObj = {
   siteUrl: '',
   description: {
     ja: '',
-    en: '',
+    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
   },
   supplement: {
     ja: '',
@@ -177,7 +177,7 @@ const sketch8: WorkObj = {
   siteUrl: '',
   description: {
     ja: '',
-    en: '',
+    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
   },
   supplement: {
     ja: '',
@@ -200,7 +200,7 @@ const sketch9: WorkObj = {
   siteUrl: '',
   description: {
     ja: '',
-    en: '',
+    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
   },
   supplement: {
     ja: '',
@@ -223,7 +223,7 @@ const sketch10: WorkObj = {
   siteUrl: '',
   description: {
     ja: '',
-    en: '',
+    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
   },
   supplement: {
     ja: '',
@@ -248,7 +248,7 @@ const sketch11: WorkObj = {
   siteUrl: '',
   description: {
     ja: '',
-    en: '',
+    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
   },
   supplement: {
     ja: '',
@@ -272,7 +272,7 @@ const sketch12: WorkObj = {
   siteUrl: '',
   description: {
     ja: '',
-    en: '',
+    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
   },
   supplement: {
     ja: '',
@@ -296,7 +296,7 @@ const sketch13: WorkObj = {
   siteUrl: '',
   description: {
     ja: '',
-    en: '',
+    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
   },
   supplement: {
     ja: '',
@@ -321,7 +321,7 @@ const sketch14: WorkObj = {
   siteUrl: '',
   description: {
     ja: '',
-    en: '',
+    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
   },
   supplement: {
     ja: '',

@@ -1,10 +1,10 @@
 import type { MyAppState } from '@/types';
-import Head from 'next/head';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import useReload from '@/hooks/useReload';
 import useWindowSize from '@/hooks/useWindowSize';
 import { myAppActions } from '@/store/myApp';
+import MyHead from '@/components/MyHead';
 import SketchCliffordAttractor01 from '@/components/sketch-components/SketchCliffordAttractor01';
 import TitleOfHome from '@/components/TitleOfHome';
 import HamburgerBtn from '@/components/ui/button/HamburgerBtn';
@@ -32,14 +32,7 @@ const Home = () => {
 
   return (
     <>
-      <Head>
-        <title>Acha Ikeda | Portfolio</title>
-        <meta
-          name='description'
-          content="This site shows Acha Ikada's works, generative arts, profile, and so on."
-          key='desc'
-        />
-      </Head>
+      <MyHead />
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
           <SketchCliffordAttractor01 />

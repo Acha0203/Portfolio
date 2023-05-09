@@ -1,10 +1,10 @@
 import type { MyAppState } from '@/types';
-import Head from 'next/head';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import useReload from '@/hooks/useReload';
 import useWindowSize from '@/hooks/useWindowSize';
 import { myAppActions } from '@/store/myApp';
+import MyHead from '@/components/MyHead';
 import Showcase from '@/components/Showcase';
 import SketchBackground from '@/components/sketch-components/SketchBackground';
 import TitleOfSketchBook from '@/components/TitleOfSketchBook';
@@ -33,14 +33,10 @@ const SketchBookPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Acha Ikeda | Sketch Book</title>
-        <meta
-          name='description'
-          content="This page shows Acha Ikeda's works using the creative coding."
-          key='desc'
-        />
-      </Head>
+      <MyHead
+        title='Sketch Book'
+        description='This page shows various generative arts created by Acha Ikeda, a designer and developer in Japan.'
+      />
       <div className='flex-col justify-center items-center relative'>
         <SketchBackground />
         <TitleOfSketchBook />
