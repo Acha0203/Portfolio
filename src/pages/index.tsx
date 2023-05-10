@@ -14,7 +14,7 @@ import styles from '../styles/Home.module.scss';
 
 const Home = () => {
   const dispatch = useDispatch();
-  const isHamburger = useSelector((state: MyAppState) => state.myApp.isHamburger);
+  const { isHamburger, isInTransition } = useSelector((state: MyAppState) => state.myApp);
   const windowWidth = useWindowSize()[0];
 
   useReload();
@@ -23,6 +23,8 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(myAppActions.setIsOpen(false));
+    dispatch(myAppActions.setIsInTransition(false));
+
     if (window.innerWidth <= 1024) {
       dispatch(myAppActions.setIsHamburger(true));
     } else {
@@ -38,6 +40,11 @@ const Home = () => {
           <SketchCliffordAttractor01 />
         </div>
         <TitleOfHome />
+        {isInTransition && (
+          <div
+            className={`${styles.overlay} flex justify-center items-center fixed top-0 left-0 w-full h-full bg-black`}
+          ></div>
+        )}
         {windowWidth === 0 ? (
           isHamburger ? (
             <>

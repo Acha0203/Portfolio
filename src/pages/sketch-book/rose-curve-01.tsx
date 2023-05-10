@@ -15,7 +15,7 @@ import styles from '../../styles/Home.module.scss';
 
 const RoseCurve01Page = () => {
   const dispatch = useDispatch();
-  const isHamburger = useSelector((state: MyAppState) => state.myApp.isHamburger);
+  const { isHamburger, isInTransition } = useSelector((state: MyAppState) => state.myApp);
   const windowWidth = useWindowSize()[0];
 
   useReload();
@@ -24,6 +24,7 @@ const RoseCurve01Page = () => {
 
   useEffect(() => {
     dispatch(myAppActions.setIsOpen(false));
+    dispatch(myAppActions.setIsInTransition(false));
 
     if (window.innerWidth <= 1024) {
       dispatch(myAppActions.setIsHamburger(true));
@@ -45,6 +46,11 @@ const RoseCurve01Page = () => {
           <div className={styles.title_of_sketch}>{`${sketchList[8].title.toUpperCase()}`}</div>
           <CodeAndBackBtn url={`${sketchList[8].codeUrl}`} prevPage='/sketch-book' />
         </div>
+        {isInTransition && (
+          <div
+            className={`${styles.overlay} flex justify-center items-center fixed top-0 left-0 w-full h-full bg-black`}
+          ></div>
+        )}
         {windowWidth === 0 ? (
           isHamburger ? (
             <>

@@ -25,6 +25,19 @@
   }
 }
 
+.overlay {
+  animation: fade_out 4s forwards;
+}
+
+@keyframes fade_out {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 /* Menu Bar */
 
 .line_under_menu_bar {
@@ -68,14 +81,9 @@
 }
 
 .title {
-  @include display_center();
-  width: 100vw;
-  color: #fff;
   font-size: 1.4rem;
   letter-spacing: 0.6rem;
-  position: absolute;
   top: 80px;
-  text-align: center;
 
   @media screen and (min-width: 321px) {
     font-size: 1.6rem;
@@ -97,14 +105,10 @@
 }
 
 .description {
-  @include display_center();
-  width: 100vw;
   font-size: 0.7rem;
   color: #8c8c8c;
   letter-spacing: 0.3rem;
-  position: absolute;
   top: 120px;
-  text-align: center;
 
   @media screen and (min-width: 321px) {
     font-size: 0.8rem;
@@ -388,6 +392,7 @@
 .showcase {
   margin: 1rem;
   filter: drop-shadow(0 0 0.75rem #525252);
+  animation: fade_in 4s forwards;
 
   @media screen and (min-width: 640px) {
     margin: 2rem;
@@ -510,5 +515,15 @@
       color: #00c09c;
       filter: brightness(1.5);
     }
+  }
+}
+
+/* returnToTop */
+
+.return_to_top {
+  display: none;
+
+  .active {
+    display: block;
   }
 }

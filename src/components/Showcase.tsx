@@ -7,7 +7,7 @@ import styles from '../styles/Home.module.scss';
 const Showcase = () => {
   return (
     <div
-      className={`${styles.fade_up} ${styles.showcase_wrapper} flex flex-wrap justify-center items-center w-full absolute`}
+      className={`${styles.showcase_wrapper} flex flex-wrap justify-center items-center w-full absolute`}
     >
       {sketchList.map(
         (work: {

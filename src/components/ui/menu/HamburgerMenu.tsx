@@ -1,18 +1,20 @@
 import type { MyAppState } from '@/types';
 import Link from 'next/link';
-import router from 'next/router';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { myAppActions } from '@/store/myApp';
 import styles from '../../../styles/Home.module.scss';
 
 const HamburgerMenu = () => {
+  const router = useRouter();
   const dispatch = useDispatch();
   const isOpen = useSelector((state: MyAppState) => state.myApp.isOpen);
   const [pathname, setPathname] = useState('');
 
   const handleClick = () => {
     dispatch(myAppActions.setIsOpen(false));
+    dispatch(myAppActions.setIsInTransition(true));
   };
 
   const stopScrollingBackContent = () => {
@@ -21,7 +23,7 @@ const HamburgerMenu = () => {
 
     return () => {
       document.body.style.overflowX = 'clip';
-      document.body.style.overflowY = 'auto';
+      document.body.style.overflowY = 'clip';
     };
   };
 
@@ -31,14 +33,14 @@ const HamburgerMenu = () => {
 
     return () => {
       document.body.style.overflowX = 'clip';
-      document.body.style.overflowY = 'auto';
+      document.body.style.overflowY = 'scroll';
     };
   };
 
   useEffect(() => {
     isOpen ? stopScrollingBackContent() : allowScrollingBackContent();
     setPathname(router.pathname);
-  }, [isOpen]);
+  }, [isOpen, router.pathname]);
 
   return (
     <nav className={`${styles.hamburger_menu} ${isOpen && styles.active}`}>
@@ -46,23 +48,29 @@ const HamburgerMenu = () => {
         {pathname === '/' ? (
           <li className={styles.current}>HOME</li>
         ) : (
-          <li className={styles.active} onClick={handleClick}>
-            <Link href='/'>HOME</Link>
+          <li className={styles.active}>
+            <Link href='/' onClick={handleClick}>
+              HOME
+            </Link>
           </li>
         )}
         <li>PROFILE</li>
         {pathname === '/work' ? (
           <li className={styles.current}>WORK</li>
         ) : (
-          <li className={styles.active} onClick={handleClick}>
-            <Link href='/work'>WORK</Link>
+          <li className={styles.active}>
+            <Link href='/work' onClick={handleClick}>
+              WORK
+            </Link>
           </li>
         )}
         {pathname === '/sketch-book' ? (
           <li className={styles.current}>SKETCH BOOK</li>
         ) : (
-          <li className={styles.active} onClick={handleClick}>
-            <Link href='/sketch-book'>SKETCH BOOK</Link>
+          <li className={styles.active}>
+            <Link href='/sketch-book' onClick={handleClick}>
+              SKETCH BOOK
+            </Link>
           </li>
         )}
         <li>CONTACT</li>
