@@ -14,12 +14,18 @@ const HamburgerBtn = () => {
   return (
     <div className='fixed top-0 right-0'>
       <div className='absolute top-2 right-2'>
-        <div onClick={handleClick} className={`${styles.hamburger} ${isOpen && styles.is_closed}`}>
+        <div
+          onClick={handleClick}
+          className={`${styles.hamburger} ${
+            isOpen && styles.is_closed
+          } flex flex-col justify-center items-center relative cursor-pointer`}
+        >
           <span className={styles.hamburger_line_frame}>
             <span className={styles.hamburger_line}></span>
             <span className={styles.hamburger_line}></span>
             <span className={styles.hamburger_line}></span>
           </span>
+          <div className={`${styles.menu} absolute bottom-0`}>MENU</div>
         </div>
       </div>
     </div>

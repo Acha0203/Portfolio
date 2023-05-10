@@ -10,7 +10,6 @@ import ShowcaseOfWork from '@/components/ShowcaseOfWork';
 import SketchBackground from '@/components/sketch-components/SketchBackground';
 import TitleOfWork from '@/components/TitleOfWork';
 import HamburgerBtn from '@/components/ui/button/HamburgerBtn';
-// import ReturnToTopBtn from '@/components/ui/button/ReturnToTopBtn';
 import HamburgerMenu from '@/components/ui/menu/HamburgerMenu';
 import MenuBarTop from '@/components/ui/menu/MenuBarTop';
 import styles from '../styles/Home.module.scss';
@@ -20,7 +19,7 @@ const WorkPage = () => {
   const { isHamburger, isInTransition } = useSelector((state: MyAppState) => state.myApp);
   const windowWidth = useWindowSize()[0];
   const topDevRef = useRef(null);
-  const viewportTop = useSelector((state: MyAppState) => state.myApp.viewportTop);
+  // const viewportTop = useSelector((state: MyAppState) => state.myApp.viewportTop);
 
   useReload();
   useVewportTop(topDevRef);
@@ -30,9 +29,9 @@ const WorkPage = () => {
     element?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  useEffect(() => {
-    console.log(viewportTop);
-  }, [viewportTop]);
+  // useEffect(() => {
+  //   console.log(viewportTop);
+  // }, [viewportTop]);
 
   // useWindowSize() を使用すると windowWidth の初期値が 0 にセットされてしまうため、メニューをクリックして画面遷移すると一瞬ハンバーガーメニューが表示されてしまう。それを防ぐために isHamburger という state を設定して、最初に画面が読み込まれた際に画面サイズを取得し、それに合わせてあらかじめ isHamburger の値をセットしておく。そして windowWidth の値が 0 の場合は isHamburger の値を参照する。
 
@@ -84,7 +83,6 @@ const WorkPage = () => {
         ) : (
           <MenuBarTop />
         )}
-        {/* {viewportTop !== undefined && viewportTop <= -100 && <ReturnToTopBtn />} */}
       </div>
     </>
   );
