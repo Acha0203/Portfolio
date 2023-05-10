@@ -47,7 +47,7 @@ const SketchBookPage = () => {
         title='Sketch Book'
         description='This page shows various generative arts created by Acha Ikeda, a designer and developer in Japan.'
       />
-      <div className='flex-col justify-center items-center relative'>
+      <div className='flex-col justify-center items-center relative w-screen h-screen'>
         <div id='top-of-page' ref={topDevRef} />
         <div className={styles.fade_up}>
           <SketchBackground />
