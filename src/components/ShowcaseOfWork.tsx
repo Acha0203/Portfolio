@@ -20,16 +20,22 @@ const ShowcaseOfWork = () => {
           return (
             <div key={work.id} className={`${styles.showcase} relative`}>
               <Link href={work.path}>
-                <Image
-                  src={`${work.thumbnailUrl}-s.png`}
-                  alt={work.title}
-                  width={250}
-                  height={250}
-                />
                 <div
-                  className={`${styles.showcase_image_text} flex justify-center items-center absolute top-0 text-white text-center text-2xl`}
+                  className={`${styles.showcase_image} flex justify-center items-center relative`}
                 >
-                  {work.title.toUpperCase()}
+                  <Image
+                    src={`${work.thumbnailUrl}-s.png`}
+                    alt={work.title}
+                    width={500}
+                    height={500}
+                    sizes='100vw'
+                    className='w-full h-full'
+                  />
+                  <div
+                    className={`${styles.showcase_image_text} flex justify-center items-center absolute text-white text-center`}
+                  >
+                    {work.title.toUpperCase()}
+                  </div>
                 </div>
               </Link>
             </div>
