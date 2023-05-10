@@ -18,5 +18,6 @@ export type MyAppState = {
     isHamburger: boolean;
     isEnglish: boolean;
     isInTransition: boolean;
+    viewportTop: number;
   };
 };

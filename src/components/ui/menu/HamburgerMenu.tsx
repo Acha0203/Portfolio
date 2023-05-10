@@ -1,12 +1,13 @@
 import type { MyAppState } from '@/types';
 import Link from 'next/link';
-import router from 'next/router';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { myAppActions } from '@/store/myApp';
 import styles from '../../../styles/Home.module.scss';
 
 const HamburgerMenu = () => {
+  const router = useRouter();
   const dispatch = useDispatch();
   const isOpen = useSelector((state: MyAppState) => state.myApp.isOpen);
   const [pathname, setPathname] = useState('');
@@ -22,7 +23,7 @@ const HamburgerMenu = () => {
 
     return () => {
       document.body.style.overflowX = 'clip';
-      document.body.style.overflowY = 'auto';
+      document.body.style.overflowY = 'clip';
     };
   };
 
@@ -32,14 +33,14 @@ const HamburgerMenu = () => {
 
     return () => {
       document.body.style.overflowX = 'clip';
-      document.body.style.overflowY = 'auto';
+      document.body.style.overflowY = 'scroll';
     };
   };
 
   useEffect(() => {
     isOpen ? stopScrollingBackContent() : allowScrollingBackContent();
     setPathname(router.pathname);
-  }, [isOpen]);
+  }, [isOpen, router.pathname]);
 
   return (
     <nav className={`${styles.hamburger_menu} ${isOpen && styles.active}`}>

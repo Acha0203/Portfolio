@@ -1,6 +1,6 @@
 import type { MyAppState } from '@/types';
 import Image from 'next/image';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { workList } from '@/consts/workList';
 import useWindowSize from '@/hooks/useWindowSize';
@@ -18,13 +18,23 @@ import styles from '../../styles/Home.module.scss';
 
 const ComputerBuilderPage = () => {
   const dispatch = useDispatch();
-  const { isHamburger, isEnglish } = useSelector((state: MyAppState) => state.myApp);
+  const { isHamburger, isEnglish, isInTransition } = useSelector(
+    (state: MyAppState) => state.myApp,
+  );
   const windowWidth = useWindowSize()[0];
+  const topDevRef = useRef(null);
+
+  const returnToTop = () => {
+    const element = document.getElementById('top-of-page');
+    element?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   // useWindowSize() を使用すると windowWidth の初期値が 0 にセットされてしまうため、メニューをクリックして画面遷移すると一瞬ハンバーガーメニューが表示されてしまう。それを防ぐために isHamburger という state を設定して、最初に画面が読み込まれた際に画面サイズを取得し、それに合わせてあらかじめ isHamburger の値をセットしておく。そして windowWidth の値が 0 の場合は isHamburger の値を参照する。
 
   useEffect(() => {
     dispatch(myAppActions.setIsOpen(false));
+    dispatch(myAppActions.setIsInTransition(false));
+    returnToTop();
 
     if (window.innerWidth <= 1024) {
       dispatch(myAppActions.setIsHamburger(true));
@@ -37,6 +47,7 @@ const ComputerBuilderPage = () => {
     <>
       <MyHead title={workList[3].title} description={workList[3].description.en} />
       <div className='flex flex-col justify-center items-center relative w-screen h-screen'>
+        <div id='top-of-page' ref={topDevRef} />
         <SketchBackground />
         <div
           className={`flex flex-col justify-start items-center absolute w-screen ${styles.work_wrapper} ${styles.fade_up}`}
@@ -83,6 +94,11 @@ const ComputerBuilderPage = () => {
             <CodeAndBackBtn url={`${workList[3].codeUrl}`} prevPage='/work' />
           </div>
         </div>
+        {isInTransition && (
+          <div
+            className={`${styles.overlay} flex justify-center items-center fixed top-0 left-0 w-full h-full bg-black`}
+          ></div>
+        )}
         {windowWidth === 0 ? (
           isHamburger ? (
             <>
