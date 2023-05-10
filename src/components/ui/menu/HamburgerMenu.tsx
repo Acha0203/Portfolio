@@ -43,7 +43,11 @@ const HamburgerMenu = () => {
   }, [isOpen, router.pathname]);
 
   return (
-    <nav className={`${styles.hamburger_menu} ${isOpen && styles.active}`}>
+    <nav
+      className={`${styles.hamburger_menu} ${
+        isOpen && styles.active
+      } grid justify-center content-center text-center fixed top-0 w-full h-full bg-black`}
+    >
       <ul className={`${styles.menu_ul} text-2xl sm:text-3xl lg:text-4xl`}>
         {pathname === '/' ? (
           <li className={styles.current}>HOME</li>
