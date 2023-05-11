@@ -1,7 +1,7 @@
 import type { MyAppState } from '@/types';
 import { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import useVewportTop from '@/hooks/useOffsetTop';
+// import useVewportTop from '@/hooks/useOffsetTop';
 import useReload from '@/hooks/useReload';
 import useWindowSize from '@/hooks/useWindowSize';
 import { myAppActions } from '@/store/myApp';
@@ -22,7 +22,7 @@ const WorkPage = () => {
   // const viewportTop = useSelector((state: MyAppState) => state.myApp.viewportTop);
 
   useReload();
-  useVewportTop(topDevRef);
+  // useVewportTop(topDevRef);
 
   const returnToTop = () => {
     const element = document.getElementById('top-of-page');
