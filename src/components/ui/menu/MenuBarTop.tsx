@@ -11,6 +11,7 @@ const MenuBarTop = () => {
   const [isOverSketchBook, setIsOverSketchBook] = useState(false);
   const [isOverHome, setIsOverHome] = useState(false);
   const [isOverWork, setIsOverWork] = useState(false);
+  const [isOverInfo, setIsOverInfo] = useState(false);
 
   const handleClick = () => {
     dispatch(myAppActions.setIsInTransition(true));
@@ -46,14 +47,6 @@ const MenuBarTop = () => {
               </div>
               {isOverHome && <div className={`${styles.line_under_text_grad} w-20`} />}
             </div>
-          )}
-          {router.pathname === '/profile' ? (
-            <div className='flex flex-col justify-center items-center'>
-              <div className='mx-5 text-white'>PROFILE</div>
-              <div className={`${styles.line_under_text_grad} w-24`} />
-            </div>
-          ) : (
-            <div className='mx-5 text-neutral-500'>PROFILE</div>
           )}
           {router.pathname === '/work' ? (
             <div className='flex flex-col justify-center items-center'>
@@ -101,13 +94,28 @@ const MenuBarTop = () => {
               {isOverSketchBook && <div className={`${styles.line_under_text_grad} w-48`} />}
             </div>
           )}
-          {router.pathname === '/contact' ? (
+          {router.pathname === '/info' ? (
             <div className='flex flex-col justify-center items-center'>
-              <div className='mx-5 text-white'>CONTACT</div>
-              <div className={`${styles.line_under_text_grad} w-24`} />
+              <div className='mx-5 text-white'>INFO</div>
+              <div className={`${styles.line_under_text_grad} w-20`} />
             </div>
           ) : (
-            <div className='mx-5 text-neutral-500'>CONTACT</div>
+            <div className='flex flex-col justify-center items-center'>
+              <div
+                className='mx-5 text-neutral-500 hover:text-white'
+                onMouseEnter={() => {
+                  setIsOverInfo(true);
+                }}
+                onMouseLeave={() => {
+                  setIsOverInfo(false);
+                }}
+              >
+                <Link href='/info' onClick={handleClick}>
+                  INFO
+                </Link>
+              </div>
+              {isOverInfo && <div className={`${styles.line_under_text_grad} w-20`} />}
+            </div>
           )}
         </div>
       </div>
