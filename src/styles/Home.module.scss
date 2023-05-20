@@ -228,30 +228,32 @@
 
 .title_of_work_top {
   font-size: 3rem;
-  letter-spacing: 1.4rem;
+  letter-spacing: 1.6rem;
+  margin-left: 0.75rem;
   top: 70px;
 
   @media screen and (min-width: 640px) {
-    font-size: 3.5rem;
-    letter-spacing: 2rem;
+    font-size: 5rem;
+    letter-spacing: 3rem;
+    margin-left: 1rem;
     top: 120px;
   }
 
   @media screen and (min-width: 1024px) {
-    font-size: 4rem;
-    letter-spacing: 2rem;
-    top: 120px;
+    font-size: 6rem;
+    letter-spacing: 3rem;
+    top: 130px;
   }
 }
 
 .description_for_work_title {
   font-size: 0.7rem;
   color: #8c8c8c;
-  letter-spacing: 0.3rem;
+  letter-spacing: 0.2rem;
 
   @media screen and (min-width: 640px) {
     font-size: 1.1rem;
-    letter-spacing: 0.5rem;
+    letter-spacing: 0.4rem;
   }
 
   @media screen and (min-width: 1024px) {
@@ -412,11 +414,11 @@
   height: 240px;
   transition: all 0.15s linear;
 
-  &:hover {
-    width: 260px;
-    height: 260px;
-    top: -10px;
-  }
+  // &:hover {
+  //   width: 260px;
+  //   height: 260px;
+  //   top: -10px;
+  // }
 }
 
 .showcase_image_text {
@@ -426,9 +428,10 @@
   background-color: #000000b3;
   opacity: 0;
   transition: all 1s;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   line-height: 2rem;
-  letter-spacing: 0.3rem;
+  letter-spacing: 0.2rem;
+  padding: 1rem;
 
   &:hover {
     opacity: 1;
