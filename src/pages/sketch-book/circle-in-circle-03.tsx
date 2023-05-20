@@ -2,7 +2,7 @@ import type { MyAppState } from '@/types';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { sketchList } from '@/consts/sketchList';
-import useReload from '@/hooks/useReload';
+// import useReload from '@/hooks/useReload';
 import useWindowSize from '@/hooks/useWindowSize';
 import { myAppActions } from '@/store/myApp';
 import MyHead from '@/components/MyHead';
