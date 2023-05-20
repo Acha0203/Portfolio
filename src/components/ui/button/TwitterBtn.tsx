@@ -8,8 +8,9 @@ const TwitterBtn = () => {
         <Image
           src='https://acha0203.github.io/Portfolio/images/Twitter_Logo_white.svg'
           alt='Twitter button'
-          width={50}
-          height={50}
+          width={1034}
+          height={842}
+          sizes='100vw'
           className={`${styles.twitter_btn} brightness-50 hover:brightness-100`}
         />
       </a>

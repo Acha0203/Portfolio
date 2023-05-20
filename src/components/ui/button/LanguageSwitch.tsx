@@ -13,22 +13,14 @@ const LanguageSwitch = () => {
   };
 
   return (
-    <div
-      className={`${styles.en_ja} flex justify-center items-center w-screen text-center mt-3 sm:mt-6`}
-    >
-      <div
-        className={`${isEnglish ? styles.selected_lang : styles.language}`}
-        onClick={handleClick}
-      >
+    <div className={`flex justify-center items-center w-screen text-center mt-3 sm:mt-6`}>
+      <button className={`${styles.en_ja}`} onClick={handleClick} disabled={isEnglish}>
         ENGLISH
-      </div>
+      </button>
       <div className={styles.separater} />
-      <div
-        className={`${!isEnglish ? styles.selected_lang : styles.language}`}
-        onClick={handleClick}
-      >
+      <button className={`${styles.en_ja}`} onClick={handleClick} disabled={!isEnglish}>
         JAPANESE
-      </div>
+      </button>
     </div>
   );
 };
