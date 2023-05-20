@@ -88,7 +88,7 @@ const BlackjackPage = () => {
             <Technology index={1} />
           </div>
           <div className='my-5'>
-            <WebsiteBtn url={`${workList[1].siteUrl}`} />
+            <WebsiteBtn text='WEBSITE' url={`${workList[1].siteUrl}`} />
           </div>
           <div className='mb-10'>
             <CodeAndBackBtn url={`${workList[1].codeUrl}`} prevPage='/work' />

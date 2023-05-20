@@ -88,7 +88,7 @@ const OnlineDatingAppPage = () => {
             <Technology index={2} />
           </div>
           <div className='my-5'>
-            <WebsiteBtn url={`${workList[2].siteUrl}`} />
+            <WebsiteBtn text='WEBSITE' url={`${workList[2].siteUrl}`} />
           </div>
           <div className='mb-10'>
             <CodeAndBackBtn url={`${workList[2].codeUrl}`} prevPage='/work' />

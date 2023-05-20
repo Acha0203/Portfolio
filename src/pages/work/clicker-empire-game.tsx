@@ -123,7 +123,7 @@ const ClickerEmpireGamePage = () => {
             <Technology index={4} />
           </div>
           <div className='my-5'>
-            <WebsiteBtn url={`${workList[4].siteUrl}`} />
+            <WebsiteBtn text='WEBSITE' url={`${workList[4].siteUrl}`} />
           </div>
           <div className='mb-10'>
             <CodeAndBackBtn url={`${workList[4].codeUrl}`} prevPage='/work' />

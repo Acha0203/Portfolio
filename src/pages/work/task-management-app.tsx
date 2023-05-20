@@ -88,7 +88,7 @@ const TaskManagementAppPage = () => {
             <Technology index={5} />
           </div>
           <div className='my-5'>
-            <WebsiteBtn url={`${workList[5].siteUrl}`} />
+            <WebsiteBtn text='WEBSITE' url={`${workList[5].siteUrl}`} />
           </div>
           <div className='mb-10'>
             <CodeAndBackBtn url={`${workList[5].codeUrl}`} prevPage='/work' />

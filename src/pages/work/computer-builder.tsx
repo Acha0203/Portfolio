@@ -88,7 +88,7 @@ const ComputerBuilderPage = () => {
             <Technology index={3} />
           </div>
           <div className='my-5'>
-            <WebsiteBtn url={`${workList[3].siteUrl}`} />
+            <WebsiteBtn text='WEBSITE' url={`${workList[3].siteUrl}`} />
           </div>
           <div className='mb-10'>
             <CodeAndBackBtn url={`${workList[3].codeUrl}`} prevPage='/work' />

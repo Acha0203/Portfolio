@@ -88,7 +88,7 @@ const CalculationAppPage = () => {
             <Technology index={6} />
           </div>
           <div className='my-5'>
-            <WebsiteBtn url={`${workList[6].siteUrl}`} />
+            <WebsiteBtn text='WEBSITE' url={`${workList[6].siteUrl}`} />
           </div>
           <div className='mb-10'>
             <CodeAndBackBtn url={`${workList[6].codeUrl}`} prevPage='/work' />

@@ -88,7 +88,7 @@ const CountdownTimerPage = () => {
             <Technology index={7} />
           </div>
           <div className='my-5'>
-            <WebsiteBtn url={`${workList[7].siteUrl}`} />
+            <WebsiteBtn text='WEBSITE' url={`${workList[7].siteUrl}`} />
           </div>
           <div className='mb-10'>
             <CodeAndBackBtn url={`${workList[7].codeUrl}`} prevPage='/work' />

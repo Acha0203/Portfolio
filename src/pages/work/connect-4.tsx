@@ -137,7 +137,7 @@ const Connect4Page = () => {
             <Technology index={0} />
           </div>
           <div className='my-5'>
-            <WebsiteBtn url={`${workList[0].siteUrl}`} />
+            <WebsiteBtn text='WEBSITE' url={`${workList[0].siteUrl}`} />
           </div>
           <div className='mb-10'>
             <CodeAndBackBtn url={`${workList[0].codeUrl}`} prevPage='/work' />

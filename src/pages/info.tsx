@@ -11,6 +11,7 @@ import WebsiteBtn from '@/components/ui/button/WebsiteBtn';
 import HamburgerMenu from '@/components/ui/menu/HamburgerMenu';
 import MenuBarTop from '@/components/ui/menu/MenuBarTop';
 import styles from '../styles/Home.module.scss';
+import TwitterBtn from '@/components/ui/button/TwitterBtn';
 
 const InfoPage = () => {
   const dispatch = useDispatch();
@@ -76,7 +77,10 @@ const InfoPage = () => {
             )}
           </div>
           <div className='my-5'>
-            <WebsiteBtn url={``} />
+            <WebsiteBtn text='CONTACT' url={``} />
+          </div>
+          <div className='my-5'>
+            <TwitterBtn />
           </div>
         </div>
         {isInTransition && (
