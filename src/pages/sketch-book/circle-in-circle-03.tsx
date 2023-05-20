@@ -18,7 +18,7 @@ const CircleInCircle03Page = () => {
   const { isHamburger, isInTransition } = useSelector((state: MyAppState) => state.myApp);
   const windowWidth = useWindowSize()[0];
 
-  useReload();
+  // useReload();
 
   // useWindowSize() を使用すると windowWidth の初期値が 0 にセットされてしまうため、メニューをクリックして画面遷移すると一瞬ハンバーガーメニューが表示されてしまう。それを防ぐために isHamburger という state を設定して、最初に画面が読み込まれた際に画面サイズを取得し、それに合わせてあらかじめ isHamburger の値をセットしておく。そして windowWidth の値が 0 の場合は isHamburger の値を参照する。
 
