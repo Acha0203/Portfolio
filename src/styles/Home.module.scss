@@ -17,27 +17,27 @@
 }
 
 @mixin description {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+  line-height: 1.2rem;
   text-shadow: #000 0 0 10px;
 
   @media screen and (min-width: 640px) {
     font-size: 1.4rem;
+    line-height: 1.8rem;
   }
 
   &.en {
     font-family: var(--font--montserrat);
-    animation: fade_in 4s forwards;
   }
 
-  &.jp {
+  &.ja {
     font-size: 0.8rem;
     line-height: 1.2rem;
     font-family: var(--font--notoSansJP);
-    animation: fade_in 4s forwards;
 
     @media screen and (min-width: 640px) {
       font-size: 1.2rem;
-      line-height: 1.8rem;
+      line-height: 2rem;
     }
   }
 
@@ -70,6 +70,10 @@
   100% {
     opacity: 0;
   }
+}
+
+.vanish {
+  opacity: 0;
 }
 
 /* Menu Bar */
@@ -340,6 +344,7 @@
 
 .work_description {
   @include description();
+  transition: opacity 0.5s linear;
 
   li {
     list-style-type: decimal;

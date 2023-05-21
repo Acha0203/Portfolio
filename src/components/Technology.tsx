@@ -9,26 +9,35 @@ interface Props {
 }
 
 const Technology: React.FC<Props> = ({ index }) => {
-  const isEnglish = useSelector((state: MyAppState) => state.myApp.isEnglish);
+  const language = useSelector((state: MyAppState) => state.myApp.language);
 
   return (
     <>
-      <div className={`${styles.title_of_description} text-center text-white w-3/4 sm:w-3/5`}>
+      <div
+        className={`${styles.title_of_description} text-center text-white w-3/4 sm:w-3/5 ${
+          (language === 'English to Japanese' || language === 'Japanese to English') &&
+          styles.vanish
+        } ${(language === 'English to Japanese' || language === 'English') && styles.en} ${
+          (language === 'Japanese to English' || language === 'Japanese') && styles.ja
+        }`}
+      >
         TECHNOLOGY
       </div>
-      {isEnglish ? (
-        <div
-          className={`${styles.work_description} text-neutral-400 text-justify w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.en}`}
-        >
-          {workList[index].technology.en}
-        </div>
-      ) : (
-        <div
-          className={`${styles.work_description} text-neutral-400 text-justify w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.jp}`}
-        >
-          {workList[index].technology.ja}
-        </div>
-      )}
+      <div
+        className={`${
+          styles.work_description
+        } text-neutral-400 text-justify w-3/4 sm:w-3/5 mb-6 sm:mb-10 whitespace-pre-wrap ${
+          (language === 'English to Japanese' || language === 'Japanese to English') &&
+          styles.vanish
+        } ${(language === 'English to Japanese' || language === 'English') && styles.en} ${
+          (language === 'Japanese to English' || language === 'Japanese') && styles.ja
+        }`}
+      >
+        {(language === 'English to Japanese' || language === 'English') &&
+          workList[index].technology.en}
+        {(language === 'Japanese to English' || language === 'Japanese') &&
+          workList[index].technology.ja}
+      </div>
     </>
   );
 };

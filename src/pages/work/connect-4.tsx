@@ -18,9 +18,7 @@ import styles from '../../styles/Home.module.scss';
 
 const Connect4Page = () => {
   const dispatch = useDispatch();
-  const { isHamburger, isEnglish, isInTransition } = useSelector(
-    (state: MyAppState) => state.myApp,
-  );
+  const { isHamburger, isInTransition, language } = useSelector((state: MyAppState) => state.myApp);
   const windowWidth = useWindowSize()[0];
   const topDevRef = useRef(null);
 
@@ -42,6 +40,18 @@ const Connect4Page = () => {
       dispatch(myAppActions.setIsHamburger(false));
     }
   }, [dispatch]);
+
+  useEffect(() => {
+    if (language === 'English to Japanese') {
+      setTimeout(() => {
+        dispatch(myAppActions.setLanguage('Japanese'));
+      }, 500);
+    } else if (language === 'Japanese to English') {
+      setTimeout(() => {
+        dispatch(myAppActions.setLanguage('English'));
+      }, 500);
+    }
+  }, [dispatch, language]);
 
   return (
     <>
@@ -72,23 +82,32 @@ const Connect4Page = () => {
             <div className={`${styles.title_of_description} text-center text-white w-3/4`}>
               DESCRIPTION
             </div>
-            {isEnglish ? (
-              <div
-                className={`${styles.work_description} text-neutral-400 text-justify w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.en}`}
-              >
-                {workList[0].description.en}
-              </div>
-            ) : (
-              <div
-                className={`${styles.work_description} text-neutral-400 text-justify w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.jp}`}
-              >
-                {workList[0].description.ja}
-              </div>
-            )}
-            {isEnglish ? (
-              <div
-                className={`${styles.work_description} text-neutral-400 text-left w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.en}`}
-              >
+            <div
+              className={`${
+                styles.work_description
+              } text-neutral-400 text-justify w-3/4 sm:w-3/5 mb-6 sm:mb-10 whitespace-pre-wrap ${
+                (language === 'English to Japanese' || language === 'Japanese to English') &&
+                styles.vanish
+              } ${(language === 'English to Japanese' || language === 'English') && styles.en} ${
+                (language === 'Japanese to English' || language === 'Japanese') && styles.ja
+              }`}
+            >
+              {(language === 'English to Japanese' || language === 'English') &&
+                workList[0].description.en}
+              {(language === 'Japanese to English' || language === 'Japanese') &&
+                workList[0].description.ja}
+            </div>
+            <div
+              className={`${
+                styles.work_description
+              } text-neutral-400 text-justify w-3/4 sm:w-3/5 mb-6 sm:mb-10 whitespace-pre-wrap ${
+                (language === 'English to Japanese' || language === 'Japanese to English') &&
+                styles.vanish
+              } ${(language === 'English to Japanese' || language === 'English') && styles.en} ${
+                (language === 'Japanese to English' || language === 'Japanese') && styles.ja
+              }`}
+            >
+              {(language === 'English to Japanese' || language === 'English') && (
                 <p>
                   This game was co-developed with{' '}
                   <a href='https://github.com/tkwonn' target='_blank' rel='noreferrer'>
@@ -100,11 +119,8 @@ const Connect4Page = () => {
                   </a>
                   .
                 </p>
-              </div>
-            ) : (
-              <div
-                className={`${styles.work_description} text-neutral-400 text-left w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.jp}`}
-              >
+              )}
+              {(language === 'Japanese to English' || language === 'Japanese') && (
                 <p>
                   なお、このゲームは{' '}
                   <a href='https://github.com/tkwonn' target='_blank' rel='noreferrer'>
@@ -116,24 +132,26 @@ const Connect4Page = () => {
                   </a>{' '}
                   とのコラボレーションにより開発されました。
                 </p>
-              </div>
-            )}
+              )}
+            </div>
             <div className={`${styles.title_of_description} text-center text-white w-3/4 sm:w-3/5`}>
               ALGORITHM FOR GAME AI
             </div>
-            {isEnglish ? (
-              <div
-                className={`${styles.work_description} text-neutral-400 text-justify w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.en}`}
-              >
-                {workList[0].supplement.en}
-              </div>
-            ) : (
-              <div
-                className={`${styles.work_description} text-neutral-400 text-justify w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.jp}`}
-              >
-                {workList[0].supplement.ja}
-              </div>
-            )}
+            <div
+              className={`${
+                styles.work_description
+              } text-neutral-400 text-justify w-3/4 sm:w-3/5 mb-6 sm:mb-10 whitespace-pre-wrap ${
+                (language === 'English to Japanese' || language === 'Japanese to English') &&
+                styles.vanish
+              } ${(language === 'English to Japanese' || language === 'English') && styles.en} ${
+                (language === 'Japanese to English' || language === 'Japanese') && styles.ja
+              }`}
+            >
+              {(language === 'English to Japanese' || language === 'English') &&
+                workList[0].supplement.en}
+              {(language === 'Japanese to English' || language === 'Japanese') &&
+                workList[0].supplement.ja}
+            </div>
             <Technology index={0} />
           </div>
           <div className='my-5'>

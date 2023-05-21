@@ -18,9 +18,7 @@ import styles from '../../styles/Home.module.scss';
 
 const ClickerEmpireGamePage = () => {
   const dispatch = useDispatch();
-  const { isHamburger, isEnglish, isInTransition } = useSelector(
-    (state: MyAppState) => state.myApp,
-  );
+  const { isHamburger, isInTransition, language } = useSelector((state: MyAppState) => state.myApp);
   const windowWidth = useWindowSize()[0];
   const topDevRef = useRef(null);
 
@@ -42,6 +40,18 @@ const ClickerEmpireGamePage = () => {
       dispatch(myAppActions.setIsHamburger(false));
     }
   }, [dispatch]);
+
+  useEffect(() => {
+    if (language === 'English to Japanese') {
+      setTimeout(() => {
+        dispatch(myAppActions.setLanguage('Japanese'));
+      }, 500);
+    } else if (language === 'Japanese to English') {
+      setTimeout(() => {
+        dispatch(myAppActions.setLanguage('English'));
+      }, 500);
+    }
+  }, [dispatch, language]);
 
   return (
     <>
@@ -72,54 +82,65 @@ const ClickerEmpireGamePage = () => {
             <div className={`${styles.title_of_description} text-center text-white w-3/4`}>
               DESCRIPTION
             </div>
-            {isEnglish ? (
-              <div
-                className={`${styles.work_description} text-neutral-400 text-justify w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.en}`}
-              >
-                <div className='mb-5'>{workList[4].description.en}</div>
-                <ol>
-                  <li>
-                    On the start page, enter your name and select New Game, then click Game Start.
-                  </li>
-                  <li>
-                    By clicking the hamburger, you can make money. One day elapses in one second.
-                  </li>
-                  <li>
-                    By purchasing items, you can make more money per one click or get an unearned
-                    income.
-                  </li>
-                  <li>
-                    By clicking the save button at the lower right, you can save your data in your
-                    local storage. To resume the game, select Continue on the start page and enter
-                    the same name, then click Game Start.
-                  </li>
-                  <li>
-                    Let&apos;s make a lot of money efficiently to get a bullet-apeed sky railway.
-                    Good luck!
-                  </li>
-                </ol>
-              </div>
-            ) : (
-              <div
-                className={`${styles.work_description} text-neutral-400 text-justify w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.jp}`}
-              >
-                <div className='mb-5'>{workList[4].description.ja}</div>
-                <ol>
-                  <li>
-                    スタート画面で名前を入力して「New Game」を選び、「Game Start」をクリックします。
-                  </li>
-                  <li>ハンバーガーをクリックするとお金を獲得できます。1 秒で 1 日が経過します。</li>
-                  <li>
-                    アイテムを購入するとクリックごとに獲得できるお金が増えたり、毎秒不労所得を得られるようになります。
-                  </li>
-                  <li>
-                    右下のセーブボタンをクリックするとローカルストレージにデータを保存できます。ゲームを再開するにはスタート画面で「Continue」を選び、同じ名前を入力して「Game
-                    Start」をクリックします。
-                  </li>
-                  <li>うまくお金を稼いで新幹線の購入を目指しましょう。</li>
-                </ol>
-              </div>
-            )}
+            <div
+              className={`${
+                styles.work_description
+              } text-neutral-400 text-justify w-3/4 sm:w-3/5 mb-6 sm:mb-10 whitespace-pre-wrap ${
+                (language === 'English to Japanese' || language === 'Japanese to English') &&
+                styles.vanish
+              } ${(language === 'English to Japanese' || language === 'English') && styles.en} ${
+                (language === 'Japanese to English' || language === 'Japanese') && styles.ja
+              }`}
+            >
+              {(language === 'English to Japanese' || language === 'English') && (
+                <>
+                  <div className='mb-5'>{workList[4].description.en}</div>
+                  <ol>
+                    <li>
+                      On the start page, enter your name and select New Game, then click Game Start.
+                    </li>
+                    <li>
+                      By clicking the hamburger, you can make money. One day elapses in one second.
+                    </li>
+                    <li>
+                      By purchasing items, you can make more money per one click or get an unearned
+                      income.
+                    </li>
+                    <li>
+                      By clicking the save button at the lower right, you can save your data in your
+                      local storage. To resume the game, select Continue on the start page and enter
+                      the same name, then click Game Start.
+                    </li>
+                    <li>
+                      Let&apos;s make a lot of money efficiently to get a bullet-apeed sky railway.
+                      Good luck!
+                    </li>
+                  </ol>
+                </>
+              )}
+              {(language === 'Japanese to English' || language === 'Japanese') && (
+                <>
+                  <div className='mb-5'>{workList[4].description.ja}</div>
+                  <ol>
+                    <li>
+                      スタート画面で名前を入力して「New Game」を選び、「Game
+                      Start」をクリックします。
+                    </li>
+                    <li>
+                      ハンバーガーをクリックするとお金を獲得できます。1 秒で 1 日が経過します。
+                    </li>
+                    <li>
+                      アイテムを購入するとクリックごとに獲得できるお金が増えたり、毎秒不労所得を得られるようになります。
+                    </li>
+                    <li>
+                      右下のセーブボタンをクリックするとローカルストレージにデータを保存できます。ゲームを再開するにはスタート画面で「Continue」を選び、同じ名前を入力して「Game
+                      Start」をクリックします。
+                    </li>
+                    <li>うまくお金を稼いで新幹線の購入を目指しましょう。</li>
+                  </ol>
+                </>
+              )}
+            </div>
             <Technology index={4} />
           </div>
           <div className='my-5'>
