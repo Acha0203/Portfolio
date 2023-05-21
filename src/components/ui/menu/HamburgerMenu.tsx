@@ -17,28 +17,28 @@ const HamburgerMenu = () => {
     dispatch(myAppActions.setIsInTransition(true));
   };
 
-  const stopScrollingBackContent = () => {
-    document.body.style.overflowX = 'clip';
-    document.body.style.overflowY = 'clip';
+  // const stopScrollingBackContent = () => {
+  //   document.body.style.overflowX = 'clip';
+  //   document.body.style.overflowY = 'clip';
 
-    return () => {
-      document.body.style.overflowX = 'clip';
-      document.body.style.overflowY = 'clip';
-    };
-  };
+  //   return () => {
+  //     document.body.style.overflowX = 'clip';
+  //     document.body.style.overflowY = 'clip';
+  //   };
+  // };
 
-  const allowScrollingBackContent = () => {
-    document.body.style.overflowX = 'clip';
-    document.body.style.overflowY = 'scroll';
+  // const allowScrollingBackContent = () => {
+  //   document.body.style.overflowX = 'clip';
+  //   document.body.style.overflowY = 'scroll';
 
-    return () => {
-      document.body.style.overflowX = 'clip';
-      document.body.style.overflowY = 'scroll';
-    };
-  };
+  //   return () => {
+  //     document.body.style.overflowX = 'clip';
+  //     document.body.style.overflowY = 'scroll';
+  //   };
+  // };
 
   useEffect(() => {
-    isOpen ? stopScrollingBackContent() : allowScrollingBackContent();
+    // isOpen ? stopScrollingBackContent() : allowScrollingBackContent();
     setPathname(router.pathname);
   }, [isOpen, router.pathname]);
 

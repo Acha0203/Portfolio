@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
+    "@studio-freight/lenis": "^1.0.12",
     "@types/node": "18.16.3",
     "@types/react-dom": "18.2.1",
     "autoprefixer": "10.4.14",
