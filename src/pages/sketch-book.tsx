@@ -1,7 +1,7 @@
 import type { MyAppState } from '@/types';
 import { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import useReload from '@/hooks/useReload';
+// import useReload from '@/hooks/useReload';
 import useWindowSize from '@/hooks/useWindowSize';
 import { myAppActions } from '@/store/myApp';
 import MyHead from '@/components/MyHead';
@@ -19,7 +19,7 @@ const SketchBookPage = () => {
   const windowWidth = useWindowSize()[0];
   const topDevRef = useRef(null);
 
-  useReload();
+  // useReload();
 
   const returnToTop = () => {
     const element = document.getElementById('top-of-page');
