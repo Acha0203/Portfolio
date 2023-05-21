@@ -35,7 +35,7 @@ export const SketchCliffordAttractor01 = () => {
     if (c > -1.65 || c < -1.85) noiseValC *= -1;
     if (d > -0.45 || d < -0.55) noiseValD *= -1;
 
-    for (let i = 0; i < 1e5; i++) {
+    for (let i = 0; i < 5e4; i++) {
       const xNext = Math.sin(a * yNow) + c * Math.cos(a * xNow);
       const yNext = Math.sin(b * xNow) + d * Math.cos(b * yNow);
 
