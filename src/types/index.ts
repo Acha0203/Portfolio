@@ -18,6 +18,12 @@ export type MyAppState = {
     isHamburger: boolean;
     isEnglish: boolean;
     isInTransition: boolean;
+    language: string;
     viewportTop: number;
   };
+};
+
+export type InfoObj = {
+  id: number;
+  description: { ja: string; en: string };
 };

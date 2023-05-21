@@ -1,22 +1,20 @@
 import type { MyAppState } from '@/types';
-import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { workList } from '@/consts/workList';
+import { infoList } from '@/consts/information';
 import useWindowSize from '@/hooks/useWindowSize';
 import { myAppActions } from '@/store/myApp';
 import MyHead from '@/components/MyHead';
 import SketchBackground from '@/components/sketch-components/SketchBackground';
-import Technology from '@/components/Technology';
-import CodeAndBackBtn from '@/components/ui/button/CodeAndBackBtn';
 import HamburgerBtn from '@/components/ui/button/HamburgerBtn';
 import LanguageSwitch from '@/components/ui/button/LanguageSwitch';
+import TwitterBtn from '@/components/ui/button/TwitterBtn';
 import WebsiteBtn from '@/components/ui/button/WebsiteBtn';
 import HamburgerMenu from '@/components/ui/menu/HamburgerMenu';
 import MenuBarTop from '@/components/ui/menu/MenuBarTop';
-import styles from '../../styles/Home.module.scss';
+import styles from '../styles/Home.module.scss';
 
-const Connect4Page = () => {
+const InfoPage = () => {
   const dispatch = useDispatch();
   const { isHamburger, isInTransition, language } = useSelector((state: MyAppState) => state.myApp);
   const windowWidth = useWindowSize()[0];
@@ -55,7 +53,10 @@ const Connect4Page = () => {
 
   return (
     <>
-      <MyHead title={workList[0].title} description={workList[0].description.en} />
+      <MyHead
+        title='Info'
+        description='This page shows information about Acha Ikeda, a designer and developer in Japan.'
+      />
       <div className='flex flex-col justify-center items-center relative w-screen h-screen'>
         <div id='top-of-page' ref={topDevRef} />
         <SketchBackground />
@@ -63,24 +64,16 @@ const Connect4Page = () => {
           className={`flex flex-col justify-start items-center absolute w-screen ${styles.work_wrapper} ${styles.fade_up}`}
         >
           <div
-            className={`${styles.title_of_work} flex justify-center text-white text-center w-3/4`}
-          >{`${workList[0].title.toUpperCase()}`}</div>
+            className={`${styles.title_of_work_top} flex justify-center text-white text-center pl-10`}
+          >
+            INFO
+          </div>
           <LanguageSwitch />
-          <div className={`flex justify-center items-start w-screen mt-8 sm:mt-10 lg:mt-12`}>
-            <div className='w-4/5 sm:w-1/2'>
-              <Image
-                src={`${workList[0].thumbnailUrl}.png`}
-                alt={workList[0].title}
-                width={workList[0].thumbnailX}
-                height={workList[0].thumbnailY}
-                sizes='100vw'
-                className={`${styles.work_image} w-full`}
-              />
-            </div>
-          </div>
-          <div className={`flex flex-col justify-center items-center w-screen sm:mt-10`}>
-            <div className={`${styles.title_of_description} text-center text-white w-3/4`}>
-              DESCRIPTION
+          <div className='flex flex-col justify-center items-center w-screen sm:mt-10'>
+            <div
+              className={`${styles.title_of_description} text-center text-white w-3/4 my-5 sm:mb-10`}
+            >
+              BACKGROUND
             </div>
             <div
               className={`${
@@ -93,49 +86,21 @@ const Connect4Page = () => {
               }`}
             >
               {(language === 'English to Japanese' || language === 'English') &&
-                workList[0].description.en}
+                infoList[0].description.en}
               {(language === 'Japanese to English' || language === 'Japanese') &&
-                workList[0].description.ja}
+                infoList[0].description.ja}
             </div>
             <div
               className={`${
-                styles.work_description
-              } text-neutral-400 text-justify w-3/4 sm:w-3/5 mb-6 sm:mb-10 whitespace-pre-wrap ${
+                styles.title_of_description
+              } text-center text-white w-3/4 my-5 sm:mb-10 ${
                 (language === 'English to Japanese' || language === 'Japanese to English') &&
                 styles.vanish
               } ${(language === 'English to Japanese' || language === 'English') && styles.en} ${
                 (language === 'Japanese to English' || language === 'Japanese') && styles.ja
               }`}
             >
-              {(language === 'English to Japanese' || language === 'English') && (
-                <p>
-                  This game was co-developed with{' '}
-                  <a href='https://github.com/tkwonn' target='_blank' rel='noreferrer'>
-                    tkwonn
-                  </a>{' '}
-                  and{' '}
-                  <a href='https://github.com/maxazm' target='_blank' rel='noreferrer'>
-                    maxazm
-                  </a>
-                  .
-                </p>
-              )}
-              {(language === 'Japanese to English' || language === 'Japanese') && (
-                <p>
-                  なお、このゲームは{' '}
-                  <a href='https://github.com/tkwonn' target='_blank' rel='noreferrer'>
-                    tkwonn
-                  </a>{' '}
-                  および{' '}
-                  <a href='https://github.com/maxazm' target='_blank' rel='noreferrer'>
-                    maxazm
-                  </a>{' '}
-                  とのコラボレーションにより開発されました。
-                </p>
-              )}
-            </div>
-            <div className={`${styles.title_of_description} text-center text-white w-3/4 sm:w-3/5`}>
-              ALGORITHM FOR GAME AI
+              PRIZES
             </div>
             <div
               className={`${
@@ -148,17 +113,23 @@ const Connect4Page = () => {
               }`}
             >
               {(language === 'English to Japanese' || language === 'English') &&
-                workList[0].supplement.en}
+                infoList[1].description.en}
               {(language === 'Japanese to English' || language === 'Japanese') &&
-                workList[0].supplement.ja}
+                infoList[1].description.ja}
             </div>
-            <Technology index={0} />
           </div>
-          <div className='my-5'>
-            <WebsiteBtn text='WEBSITE' url={`${workList[0].siteUrl}`} />
+          <div className='my-5 sm:my-10'>
+            <WebsiteBtn
+              text='CONTACT'
+              url={
+                language === 'English'
+                  ? 'https://docs.google.com/forms/d/e/1FAIpQLSdl1GxKpcAaQwmxcdeeN5eMnPAbLzGT1RhYV4xgm3aESYmQQg/viewform?usp=sf_link'
+                  : 'https://docs.google.com/forms/d/e/1FAIpQLSffeDpyhnvtgtsoZ7SM5c_VV0YB1xXomh4dQ-94XaxSiBEAEw/viewform?usp=sf_link'
+              }
+            />
           </div>
-          <div className='mb-10'>
-            <CodeAndBackBtn url={`${workList[0].codeUrl}`} prevPage='/work' />
+          <div className='mt-5 mb-14'>
+            <TwitterBtn />
           </div>
         </div>
         {isInTransition && (
@@ -188,4 +159,4 @@ const Connect4Page = () => {
   );
 };
 
-export default Connect4Page;
+export default InfoPage;

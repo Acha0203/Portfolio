@@ -18,9 +18,7 @@ import styles from '../../styles/Home.module.scss';
 
 const BlackjackPage = () => {
   const dispatch = useDispatch();
-  const { isHamburger, isEnglish, isInTransition } = useSelector(
-    (state: MyAppState) => state.myApp,
-  );
+  const { isHamburger, isInTransition, language } = useSelector((state: MyAppState) => state.myApp);
   const windowWidth = useWindowSize()[0];
   const topDevRef = useRef(null);
 
@@ -42,6 +40,18 @@ const BlackjackPage = () => {
       dispatch(myAppActions.setIsHamburger(false));
     }
   }, [dispatch]);
+
+  useEffect(() => {
+    if (language === 'English to Japanese') {
+      setTimeout(() => {
+        dispatch(myAppActions.setLanguage('Japanese'));
+      }, 500);
+    } else if (language === 'Japanese to English') {
+      setTimeout(() => {
+        dispatch(myAppActions.setLanguage('English'));
+      }, 500);
+    }
+  }, [dispatch, language]);
 
   return (
     <>
@@ -72,23 +82,25 @@ const BlackjackPage = () => {
             <div className={`${styles.title_of_description} text-center text-white w-3/4`}>
               DESCRIPTION
             </div>
-            {isEnglish ? (
-              <div
-                className={`${styles.work_description} text-neutral-400 text-justify w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.en}`}
-              >
-                {workList[1].description.en}
-              </div>
-            ) : (
-              <div
-                className={`${styles.work_description} text-neutral-400 text-justify w-4/5 sm:w-3/5 whitespace-pre-wrap mb-3 ${styles.jp}`}
-              >
-                {workList[1].description.ja}
-              </div>
-            )}
+            <div
+              className={`${
+                styles.work_description
+              } text-neutral-400 text-justify w-3/4 sm:w-3/5 mb-6 sm:mb-10 whitespace-pre-wrap ${
+                (language === 'English to Japanese' || language === 'Japanese to English') &&
+                styles.vanish
+              } ${(language === 'English to Japanese' || language === 'English') && styles.en} ${
+                (language === 'Japanese to English' || language === 'Japanese') && styles.ja
+              }`}
+            >
+              {(language === 'English to Japanese' || language === 'English') &&
+                workList[1].description.en}
+              {(language === 'Japanese to English' || language === 'Japanese') &&
+                workList[1].description.ja}
+            </div>
             <Technology index={1} />
           </div>
           <div className='my-5'>
-            <WebsiteBtn url={`${workList[1].siteUrl}`} />
+            <WebsiteBtn text='WEBSITE' url={`${workList[1].siteUrl}`} />
           </div>
           <div className='mb-10'>
             <CodeAndBackBtn url={`${workList[1].codeUrl}`} prevPage='/work' />
