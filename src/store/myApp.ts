@@ -3,7 +3,6 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialMyAppState = {
   isOpen: false,
   isHamburger: true,
-  isEnglish: true,
   isInTransition: false,
   language: 'English',
   viewportTop: 0,
@@ -26,9 +25,6 @@ const myAppSlice = createSlice({
     },
     setIsHamburger: (state: { isHamburger: boolean }, action: { payload: boolean }) => {
       state.isHamburger = action.payload;
-    },
-    toggleIsEnglish: (state: { isEnglish: boolean }) => {
-      state.isEnglish = !state.isEnglish;
     },
     setIsInTransition: (state: { isInTransition: boolean }, action: { payload: boolean }) => {
       state.isInTransition = action.payload;

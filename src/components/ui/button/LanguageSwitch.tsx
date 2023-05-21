@@ -9,12 +9,10 @@ const LanguageSwitch = () => {
   const language = useSelector((state: MyAppState) => state.myApp.language);
 
   const handleClickEn = () => {
-    dispatch(myAppActions.toggleIsEnglish());
     dispatch(myAppActions.setLanguage('Japanese to English'));
   };
 
   const handleClickJa = () => {
-    dispatch(myAppActions.toggleIsEnglish());
     dispatch(myAppActions.setLanguage('English to Japanese'));
   };
 
