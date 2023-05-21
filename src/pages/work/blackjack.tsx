@@ -79,7 +79,9 @@ const BlackjackPage = () => {
             </div>
           </div>
           <div className={`flex flex-col justify-center items-center w-screen sm:mt-10`}>
-            <div className={`${styles.title_of_description} text-center text-white w-3/4`}>
+            <div
+              className={`${styles.title_of_description} text-center text-white w-3/4 my-6 sm:my-10`}
+            >
               DESCRIPTION
             </div>
             <div

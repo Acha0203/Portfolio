@@ -79,7 +79,9 @@ const Connect4Page = () => {
             </div>
           </div>
           <div className={`flex flex-col justify-center items-center w-screen sm:mt-10`}>
-            <div className={`${styles.title_of_description} text-center text-white w-3/4`}>
+            <div
+              className={`${styles.title_of_description} text-center text-white w-3/4 my-6 sm:my-10`}
+            >
               DESCRIPTION
             </div>
             <div
@@ -134,7 +136,16 @@ const Connect4Page = () => {
                 </p>
               )}
             </div>
-            <div className={`${styles.title_of_description} text-center text-white w-3/4 sm:w-3/5`}>
+            <div
+              className={`${
+                styles.title_of_description
+              } text-center text-white w-3/4 sm:w-3/5 mb-6 sm:mb-10 ${
+                (language === 'English to Japanese' || language === 'Japanese to English') &&
+                styles.vanish
+              } ${(language === 'English to Japanese' || language === 'English') && styles.en} ${
+                (language === 'Japanese to English' || language === 'Japanese') && styles.ja
+              }`}
+            >
               ALGORITHM FOR GAME AI
             </div>
             <div

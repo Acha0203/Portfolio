@@ -14,7 +14,9 @@ const Technology: React.FC<Props> = ({ index }) => {
   return (
     <>
       <div
-        className={`${styles.title_of_description} text-center text-white w-3/4 sm:w-3/5 ${
+        className={`${
+          styles.title_of_description
+        } text-center text-white w-3/4 sm:w-3/5 mb-6 sm:mb-10 ${
           (language === 'English to Japanese' || language === 'Japanese to English') &&
           styles.vanish
         } ${(language === 'English to Japanese' || language === 'English') && styles.en} ${
