@@ -1,5 +1,5 @@
 import type { MyAppState } from '@/types';
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 // import useVewportTop from '@/hooks/useOffsetTop';
 // import useReload from '@/hooks/useReload';
@@ -18,7 +18,7 @@ const WorkPage = () => {
   const dispatch = useDispatch();
   const { isHamburger, isInTransition } = useSelector((state: MyAppState) => state.myApp);
   const windowWidth = useWindowSize()[0];
-  const topDevRef = useRef(null);
+  // const topDevRef = useRef(null);
   // const viewportTop = useSelector((state: MyAppState) => state.myApp.viewportTop);
 
   // useReload();
@@ -55,7 +55,7 @@ const WorkPage = () => {
         description='This page shows various Web applications developed by Acha Ikeda, a designer and developer in Japan.'
       />
       <div className='flex-col justify-center items-center relative w-screen h-screen'>
-        <div id='top-of-page' ref={topDevRef} />
+        {/* <div id='top-of-page' ref={topDevRef} /> */}
         <div className={styles.fade_up}>
           <SketchBackground />
           <TitleOfWork />
