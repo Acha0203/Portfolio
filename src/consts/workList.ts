@@ -19,8 +19,8 @@ const work1: WorkObj = {
     ja: 'Next.js、Material UI などを使用して開発しました。',
     en: 'We developed this game with Next.js, Material UI, and so on.',
   },
-  thumbnailX: 2860,
-  thumbnailY: 2288,
+  thumbnailX: 1000,
+  thumbnailY: 800,
 } as const;
 
 const work2: WorkObj = {
@@ -55,8 +55,8 @@ You can play until you run out of chips or run out of cards. Good luck!
     ja: 'TypeScript、Next.js、Redux、Tailwind CSS などを使用して開発しました。',
     en: 'I developed this game with TypeScript, Next.js, Redux, Tailwind CSS, and so on.',
   },
-  thumbnailX: 2070,
-  thumbnailY: 1656,
+  thumbnailX: 1000,
+  thumbnailY: 800,
 } as const;
 
 const work3: WorkObj = {
@@ -78,8 +78,8 @@ const work3: WorkObj = {
     ja: 'Vue.js、Vuex、そしてリクルートが提供している AI サービス A3RT の Talk API を使用して開発しました。',
     en: 'I developed this app using Vue.js, Vuex, and the Talk API from A3RT, an AI service provided by Recruit.',
   },
-  thumbnailX: 2634,
-  thumbnailY: 2218,
+  thumbnailX: 1000,
+  thumbnailY: 842,
 } as const;
 
 const work4: WorkObj = {
@@ -101,8 +101,8 @@ const work4: WorkObj = {
     ja: 'React.js、TypeScript、Material UI などを使用して開発しました。',
     en: 'I developed this app using React.js, TypeScript, Material UI, and so on.',
   },
-  thumbnailX: 2408,
-  thumbnailY: 2172,
+  thumbnailX: 1000,
+  thumbnailY: 902,
 } as const;
 
 const work5: WorkObj = {
@@ -124,8 +124,8 @@ const work5: WorkObj = {
     ja: 'JavaScript および Bootstrap を使用して開発しました。',
     en: 'I developed this app using JavaScript and Bootstrap.',
   },
-  thumbnailX: 1924,
-  thumbnailY: 1192,
+  thumbnailX: 1000,
+  thumbnailY: 620,
 } as const;
 
 const work6: WorkObj = {
@@ -149,8 +149,8 @@ First, click the 'ADD SECTION' button to add a section. Click the '+' at the bot
     ja: 'Vue.js および Vue Draggable を使用して開発しました。',
     en: 'I developed this app using Vue.js and Vue Draggable.',
   },
-  thumbnailX: 2212,
-  thumbnailY: 1896,
+  thumbnailX: 1000,
+  thumbnailY: 857,
 } as const;
 
 const work7: WorkObj = {
@@ -209,8 +209,8 @@ const work8: WorkObj = {
     ja: 'React.js、TypeScript、Tailwind CSS を使用して開発しました。',
     en: 'I developed this app using React.js, TypeScript, Tailwind CSS, and so on.',
   },
-  thumbnailX: 1800,
-  thumbnailY: 1300,
+  thumbnailX: 1000,
+  thumbnailY: 722,
 } as const;
 
 export const workList: WorkObj[] = [work1, work2, work3, work4, work5, work6, work7, work8];

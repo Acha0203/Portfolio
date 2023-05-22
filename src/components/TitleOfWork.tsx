@@ -9,7 +9,7 @@ const TitleOfWork = () => {
         WORK
       </div>
       <div
-        className={`${styles.description_for_work_title} flex justify-center w-screen absolute text-center top-32 sm:top-52 lg:top-60`}
+        className={`${styles.description_for_work_title} flex justify-center w-screen absolute text-center top-32 sm:top-56 lg:top-60`}
       >
         SHOWING WEB APPLICATIONS
       </div>

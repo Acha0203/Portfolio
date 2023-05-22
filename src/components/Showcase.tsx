@@ -26,8 +26,8 @@ const Showcase = () => {
                   <Image
                     src={work.thumbnailUrl}
                     alt={work.title}
-                    width={500}
-                    height={500}
+                    width={250}
+                    height={250}
                     sizes='100vw'
                     className='w-full h-full'
                   />
