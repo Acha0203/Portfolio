@@ -11,6 +11,7 @@
     "analyze": "ANALYZE=true next build"
   },
   "dependencies": {
+    "@next/bundle-analyzer": "^13.4.3",
     "@reduxjs/toolkit": "^1.9.5",
     "@studio-freight/lenis": "^1.0.12",
     "@types/node": "18.16.3",
@@ -30,7 +31,6 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^13.4.3",
     "@types/react": "^18.2.0",
     "@typescript-eslint/eslint-plugin": "^5.59.1",
     "@typescript-eslint/parser": "^5.59.1",
