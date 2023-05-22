@@ -11,7 +11,6 @@
     "analyze": "ANALYZE=true next build"
   },
   "dependencies": {
-    "@next/bundle-analyzer": "^13.4.3",
     "@reduxjs/toolkit": "^1.9.5",
     "@studio-freight/lenis": "^1.0.12",
     "@types/node": "18.16.3",
