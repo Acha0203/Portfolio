@@ -15,6 +15,8 @@ const info1: InfoObj = {
 2012 - Present: Translated English texts into Japanese, including IT and computer marketing materials, computer software manuals, cyber security reports.
 
 2021 - Present: Designed and developed various web applications and websites.
+
+2021 - Present: Designed websites etc. as a member of Hiroya Web Studio.
 `,
     ja: `
 1991 年 東京藝術大学美術学部デザイン科卒業
@@ -25,9 +27,11 @@ const info1: InfoObj = {
 
 2000 年 〜 2011 年: さまざまな Web サイトのデザインおよびコーディング、Web サイト用のラスターまたはベクター画像の制作等に従事
 
-2012 年 〜 現在: IT およびコンピュータ関連のドキュメント、マーケティング資料、サイバーセキュリティレポートなどの英日翻訳に従事
+2012 年 〜 : IT およびコンピュータ関連のドキュメント、マーケティング資料、サイバーセキュリティレポートなどの英日翻訳に従事
 
-2021 年 〜 現在: Web アプリケーションや Web サイトのデザインおよび開発に従事
+2021 年 〜 : Web アプリケーションや Web サイトのデザインおよび開発に従事
+
+2023 年 〜 : Hiroya Web Studio のメンバーとして Web サイトのデザイン等に従事
 `,
   },
 };
