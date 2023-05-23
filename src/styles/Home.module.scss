@@ -42,7 +42,10 @@
   }
 
   a {
-    color: #fff;
+    color: #c5c5c5;
+    &:hover {
+      filter: brightness(2);
+    }
   }
 }
 
@@ -419,12 +422,6 @@
   width: 240px;
   height: 240px;
   transition: all 0.15s linear;
-
-  // &:hover {
-  //   width: 260px;
-  //   height: 260px;
-  //   top: -10px;
-  // }
 }
 
 .showcase_image_text {
@@ -547,13 +544,3 @@
   width: 40px;
   height: auto;
 }
-
-/* returnToTop */
-
-// .return_to_top {
-//   display: none;
-
-//   .active {
-//     display: block;
-//   }
-// }
