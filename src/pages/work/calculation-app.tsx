@@ -49,7 +49,7 @@ const CalculationAppPage = () => {
   return (
     <>
       <MyHead title={workList[6].title} description={workList[6].description.en} />
-      <div className={`flex-col justify-center items-center relative ${styles.vh_200}`}>
+      <div className={`flex-col justify-center items-center relative ${styles.vh_280}`}>
         <SketchBackground />
         <div
           className={`flex flex-col justify-start items-center absolute ${styles.work_wrapper} ${styles.fade_up}`}
