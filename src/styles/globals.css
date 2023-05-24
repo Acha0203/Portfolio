@@ -5,10 +5,9 @@
 html,
 body {
   width: 100vw;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+}
+
+body {
   color: #fff;
   background-image: linear-gradient(to bottom, #000 50%, #525252);
   background-attachment: fixed;

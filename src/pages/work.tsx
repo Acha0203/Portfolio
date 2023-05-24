@@ -37,7 +37,7 @@ const WorkPage = () => {
         title='Work'
         description='This page shows various Web applications developed by Acha Ikeda, a designer and developer in Japan.'
       />
-      <div className='flex-col justify-center items-center relative w-screen h-auto'>
+      <div className={`flex-col justify-center items-center relative ${styles.vh_170}`}>
         <div className={styles.fade_up}>
           <SketchBackground />
           <TitleOfWork />

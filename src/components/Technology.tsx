@@ -12,11 +12,11 @@ const Technology: React.FC<Props> = ({ index }) => {
   const language = useSelector((state: MyAppState) => state.myApp.language);
 
   return (
-    <>
+    <div className='flex flex-col justify-center items-center w-3/4 sm:w-3/5'>
       <div
         className={`${
           styles.title_of_description
-        } text-center text-white w-3/4 sm:w-3/5 mb-6 sm:mb-10 ${
+        } text-center text-white w-full mb-6 sm:mb-10 ${
           (language === 'English to Japanese' || language === 'Japanese to English') &&
           styles.vanish
         } ${(language === 'English to Japanese' || language === 'English') && styles.en} ${
@@ -28,7 +28,7 @@ const Technology: React.FC<Props> = ({ index }) => {
       <div
         className={`${
           styles.work_description
-        } text-neutral-400 text-justify w-3/4 sm:w-3/5 mb-6 sm:mb-10 whitespace-pre-wrap ${
+        } text-neutral-400 text-justify w-full mb-6 sm:mb-10 whitespace-pre-wrap ${
           (language === 'English to Japanese' || language === 'Japanese to English') &&
           styles.vanish
         } ${(language === 'English to Japanese' || language === 'English') && styles.en} ${
@@ -40,7 +40,7 @@ const Technology: React.FC<Props> = ({ index }) => {
         {(language === 'Japanese to English' || language === 'Japanese') &&
           workList[index].technology.ja}
       </div>
-    </>
+    </div>
   );
 };
 

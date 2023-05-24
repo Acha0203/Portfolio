@@ -1,5 +1,17 @@
 /* General */
 
+.vh_170 {
+  min-height: 170vh;
+}
+
+.vh_200 {
+  min-height: 200vh;
+}
+
+.vh_230 {
+  min-height: 230vh;
+}
+
 @mixin display_center {
   display: flex;
   justify-content: center;
@@ -315,7 +327,7 @@
   }
 }
 
-/* Sketch Page */
+/* Sketch Book Page */
 
 .title {
   font-size: 1.4rem;
@@ -368,6 +380,12 @@
     font-size: 2.5rem;
     letter-spacing: 1rem;
   }
+}
+
+/* Info Page */
+
+.info_page_wrapper {
+  min-height: 250vh;
 }
 
 /* CODE BACK button */

@@ -50,10 +50,12 @@ const InfoPage = () => {
         title='Info'
         description='This page shows information about Acha Ikeda, a designer and developer in Japan.'
       />
-      <div className='flex flex-col justify-center items-center relative w-screen h-auto'>
+      <div
+        className={`flex flex-col justify-center items-center relative ${styles.info_page_wrapper}`}
+      >
         <SketchBackground />
         <div
-          className={`flex flex-col justify-start items-center absolute w-screen ${styles.work_wrapper} ${styles.fade_up}`}
+          className={`flex flex-col justify-start items-center absolute ${styles.work_wrapper} ${styles.fade_up}`}
         >
           <div
             className={`${styles.title_of_work_top} flex justify-center text-white text-center pl-5`}
@@ -61,7 +63,7 @@ const InfoPage = () => {
             INFO
           </div>
           <LanguageSwitch />
-          <div className='flex flex-col justify-center items-center w-screen sm:mt-10'>
+          <div className='flex flex-col justify-center items-center sm:mt-10'>
             <div
               className={`${styles.title_of_description} text-center text-white w-3/4 my-5 sm:mb-10`}
             >
@@ -104,22 +106,24 @@ const InfoPage = () => {
                 (language === 'Japanese to English' || language === 'Japanese') && styles.ja
               }`}
             >
-              <p className='text-center'>
+              <p className='text-center whitespace-pre-wrap'>
                 <a
                   href='https://www.lancers.jp/profile/HiroyaWebStudio'
                   target='_blank'
                   rel='noreferrer'
                 >
                   {(language === 'English to Japanese' || language === 'English') &&
-                    `Hiroya Web Studio in Lancers (Japanese only)`}
+                    `Hiroya Web Studio in Lancers
+(Japanese only)`}
                   {(language === 'Japanese to English' || language === 'Japanese') &&
                     `Hiroya Web Studio (Lancers)`}
                 </a>
               </p>
-              <p className='text-center mt-7'>
+              <p className='text-center whitespace-pre-wrap mt-7'>
                 <a href='https://coconala.com/users/3587217' target='_blank' rel='noreferrer'>
                   {(language === 'English to Japanese' || language === 'English') &&
-                    `Hiroya Web Studio in coconala (Japanese only)`}
+                    `Hiroya Web Studio in coconala
+(Japanese only)`}
                   {(language === 'Japanese to English' || language === 'Japanese') &&
                     `Hiroya Web Studio (coconala)`}
                 </a>

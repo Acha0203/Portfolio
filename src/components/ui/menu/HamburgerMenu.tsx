@@ -40,7 +40,7 @@ const HamburgerMenu = () => {
   useEffect(() => {
     // isOpen ? stopScrollingBackContent() : allowScrollingBackContent();
     setPathname(router.pathname);
-  }, [isOpen, router.pathname]);
+  }, [router.pathname]);
 
   return (
     <nav
