@@ -32,7 +32,7 @@ const Home = () => {
   return (
     <>
       <MyHead />
-      <div className='flex-col justify-center items-center relative'>
+      <div className='flex-col justify-center items-center relative w-screen h-auto'>
         <div className={styles.curtain}>
           <SketchCliffordAttractor01 />
         </div>

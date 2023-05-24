@@ -49,7 +49,7 @@ const ComputerBuilderPage = () => {
   return (
     <>
       <MyHead title={workList[3].title} description={workList[3].description.en} />
-      <div className='flex flex-col justify-center items-center relative w-screen h-screen'>
+      <div className='flex flex-col justify-center items-center relative w-screen h-auto'>
         <SketchBackground />
         <div
           className={`flex flex-col justify-start items-center absolute w-screen ${styles.work_wrapper} ${styles.fade_up}`}
