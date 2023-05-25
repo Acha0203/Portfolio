@@ -51,7 +51,7 @@ const InfoPage = () => {
         description='This page shows information about Acha Ikeda, a designer and developer in Japan.'
       />
       <div
-        className={`flex flex-col justify-center items-center relative ${styles.info_page_wrapper}`}
+        className={`flex flex-col justify-center items-center relative ${styles.vh_300}`}
       >
         <SketchBackground />
         <div

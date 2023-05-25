@@ -49,7 +49,7 @@ const Connect4Page = () => {
   return (
     <>
       <MyHead title={workList[0].title} description={workList[0].description.en} />
-      <div className={`flex-col justify-center items-center relative ${styles.vh_240}`}>
+      <div className={`flex-col justify-center items-center relative ${styles.vh_260}`}>
         <SketchBackground />
         <div
           className={`flex flex-col justify-start items-center absolute ${styles.work_wrapper} ${styles.fade_up}`}

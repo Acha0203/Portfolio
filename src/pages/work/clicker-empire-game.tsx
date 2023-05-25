@@ -49,7 +49,7 @@ const ClickerEmpireGamePage = () => {
   return (
     <>
       <MyHead title={workList[4].title} description={workList[4].description.en} />
-      <div className={`flex-col justify-center items-center relative ${styles.vh_240}`}>
+      <div className={`flex-col justify-center items-center relative ${styles.vh_280}`}>
         <SketchBackground />
         <div
           className={`flex flex-col justify-start items-center absolute ${styles.work_wrapper} ${styles.fade_up}`}
