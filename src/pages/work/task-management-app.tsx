@@ -49,7 +49,7 @@ const TaskManagementAppPage = () => {
   return (
     <>
       <MyHead title={workList[5].title} description={workList[5].description.en} />
-      <div className={`flex-col justify-center items-center relative ${styles.vh_210}`}>
+      <div className={`flex-col justify-center items-center relative ${styles.vh_220}`}>
         <SketchBackground />
         <div
           className={`flex flex-col justify-start items-center absolute ${styles.work_wrapper} ${styles.fade_up}`}

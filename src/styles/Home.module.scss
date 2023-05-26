@@ -7,8 +7,16 @@
     min-height: 370vh;
   }
 
-  @media screen and (min-width: 640px) {
+  @media screen and (min-width: 415px) {
     min-height: 170vh;
+  }
+
+  @media screen and (min-width: 640px) {
+    min-height: 130vh;
+  }
+
+  @media screen and (min-width: 1023px) {
+    min-height: 160vh;
   }
 
   @media screen and (min-width: 1280px) {
@@ -16,43 +24,27 @@
   }
 }
 
-.vh_190 {
-  min-height: 190vh;
-
-  @media screen and (min-width: 321px) {
-    min-height: 160vh;
-  }
-
-  @media screen and (min-width: 640px) {
-    min-height: 120vh;
-  }
-
-  @media screen and (min-width: 769px) {
-    min-height: 210vh;
-  }
-
-  @media screen and (min-width: 1280px) {
-    min-height: 170vh;
-  }
-}
-
-.vh_210 {
-  min-height: 210vh;
+.vh_200 {
+  min-height: 200vh;
 
   @media screen and (min-width: 321px) {
     min-height: 180vh;
   }
 
-  @media screen and (min-width: 640px) {
-    min-height: 130vh;
+  @media screen and (min-width: 414px) {
+    min-height: 160vh;
   }
 
-  @media screen and (min-width: 769px) {
-    min-height: 230vh;
+  @media screen and (min-width: 640px) {
+    min-height: 110vh;
+  }
+
+  @media screen and (min-width: 1023px) {
+    min-height: 200vh;
   }
 
   @media screen and (min-width: 1280px) {
-    min-height: 190vh;
+    min-height: 170vh;
   }
 }
 
@@ -63,7 +55,15 @@
     min-height: 660vh;
   }
 
+  @media screen and (min-width: 415px) {
+    min-height: 320vh;
+  }
+
   @media screen and (min-width: 640px) {
+    min-height: 200vh;
+  }
+
+  @media screen and (min-width: 1023px) {
     min-height: 240vh;
   }
 
@@ -72,23 +72,27 @@
   }
 }
 
-.vh_240 {
-  min-height: 240vh;
+.vh_220 {
+  min-height: 220vh;
 
   @media screen and (min-width: 321px) {
-    min-height: 210vh;
+    min-height: 190vh;
+  }
+
+  @media screen and (min-width: 414px) {
+    min-height: 180vh;
   }
 
   @media screen and (min-width: 640px) {
-    min-height: 150vh;
+    min-height: 120vh;
   }
 
-  @media screen and (min-width: 769px) {
-    min-height: 280vh;
+  @media screen and (min-width: 1023px) {
+    min-height: 200vh;
   }
 
   @media screen and (min-width: 1280px) {
-    min-height: 230vh;
+    min-height: 170vh;
   }
 }
 
@@ -99,36 +103,20 @@
     min-height: 220vh;
   }
 
-  @media screen and (min-width: 640px) {
-    min-height: 160vh;
-  }
-
-  @media screen and (min-width: 769px) {
-    min-height: 260vh;
-  }
-
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 414px) {
     min-height: 210vh;
-  }
-}
-
-.vh_280 {
-  min-height: 280vh;
-
-  @media screen and (min-width: 321px) {
-    min-height: 230vh;
   }
 
   @media screen and (min-width: 640px) {
-    min-height: 160vh;
+    min-height: 130vh;
   }
 
-  @media screen and (min-width: 769px) {
-    min-height: 260vh;
+  @media screen and (min-width: 1023px) {
+    min-height: 250vh;
   }
 
   @media screen and (min-width: 1280px) {
-    min-height: 210vh;
+    min-height: 220vh;
   }
 }
 
@@ -139,12 +127,68 @@
     min-height: 240vh;
   }
 
+  @media screen and (min-width: 414px) {
+    min-height: 220vh;
+  }
+
   @media screen and (min-width: 640px) {
-    min-height: 280vh;
+    min-height: 130vh;
+  }
+
+  @media screen and (min-width: 1023px) {
+    min-height: 230vh;
   }
 
   @media screen and (min-width: 1280px) {
-    min-height: 210vh;
+    min-height: 190vh;
+  }
+}
+
+.vh_320 {
+  min-height: 320vh;
+
+  @media screen and (min-width: 321px) {
+    min-height: 250vh;
+  }
+
+  @media screen and (min-width: 414px) {
+    min-height: 230vh;
+  }
+
+  @media screen and (min-width: 640px) {
+    min-height: 130vh;
+  }
+
+  @media screen and (min-width: 1023px) {
+    min-height: 230vh;
+  }
+
+  @media screen and (min-width: 1280px) {
+    min-height: 180vh;
+  }
+}
+
+.vh_340 {
+  min-height: 340vh;
+
+  @media screen and (min-width: 321px) {
+    min-height: 270vh;
+  }
+
+  @media screen and (min-width: 414px) {
+    min-height: 240vh;
+  }
+
+  @media screen and (min-width: 640px) {
+    min-height: 140vh;
+  }
+
+  @media screen and (min-width: 1023px) {
+    min-height: 240vh;
+  }
+
+  @media screen and (min-width: 1280px) {
+    min-height: 180vh;
   }
 }
 
@@ -165,28 +209,18 @@
 }
 
 @mixin description {
-  font-size: 0.9rem;
-  line-height: 1.2rem;
+  font-size: 1rem;
+  line-height: 1.4rem;
   text-shadow: #000 0 0 10px;
-
-  @media screen and (min-width: 640px) {
-    font-size: 1.4rem;
-    line-height: 1.8rem;
-  }
 
   &.en {
     font-family: var(--font--montserrat);
   }
 
   &.ja {
-    font-size: 0.8rem;
-    line-height: 1.2rem;
+    font-size: 0.9rem;
+    line-height: 1.4rem;
     font-family: var(--font--notoSansJP);
-
-    @media screen and (min-width: 640px) {
-      font-size: 1.2rem;
-      line-height: 2rem;
-    }
   }
 
   a {
@@ -405,13 +439,18 @@
     letter-spacing: 0.8rem;
   }
 
+  @media screen and (min-width: 414px) {
+    font-size: 2rem;
+    letter-spacing: 0.8rem;
+  }
+
   @media screen and (min-width: 640px) {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     letter-spacing: 1rem;
   }
 
   @media screen and (min-width: 1024px) {
-    font-size: 4rem;
+    font-size: 3rem;
     letter-spacing: 1rem;
   }
 }
