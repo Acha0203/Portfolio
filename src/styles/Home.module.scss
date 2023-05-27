@@ -7,7 +7,7 @@
     min-height: 370vh;
   }
 
-  @media screen and (min-width: 415px) {
+  @media screen and (min-width: 414px) {
     min-height: 170vh;
   }
 
@@ -504,7 +504,7 @@
 
 /* Sketch Book Page */
 
-.title {
+.title_of_sketch_book {
   font-size: 1.4rem;
   letter-spacing: 0.6rem;
   top: 80px;
@@ -522,7 +522,7 @@
   }
 }
 
-.description {
+.description_for_sketch_book_title {
   font-size: 0.7rem;
   color: #8c8c8c;
   letter-spacing: 0.3rem;
