@@ -8,7 +8,7 @@ import MyHead from '@/components/MyHead';
 import SketchBackground from '@/components/sketch-components/SketchBackground';
 import HamburgerBtn from '@/components/ui/button/HamburgerBtn';
 import LanguageSwitch from '@/components/ui/button/LanguageSwitch';
-import TwitterBtn from '@/components/ui/button/TwitterBtn';
+import LinkBtn from '@/components/ui/button/LinkBtn';
 import WebsiteBtn from '@/components/ui/button/WebsiteBtn';
 import HamburgerMenu from '@/components/ui/menu/HamburgerMenu';
 import MenuBarTop from '@/components/ui/menu/MenuBarTop';
@@ -165,8 +165,28 @@ const InfoPage = () => {
               }
             />
           </div>
-          <div className='mt-5 mb-14'>
-            <TwitterBtn />
+          <div className='flex justify-around items-center w-1/3 mt-5 mb-14'>
+            <LinkBtn
+              url='https://twitter.com/Acha_for_CS'
+              iconUrl='https://acha0203.github.io/Portfolio/images/Twitter_Logo_white.svg'
+              name='Twitter'
+              width={1034}
+              height={842}
+            />
+            <LinkBtn
+              url='https://github.com/Acha0203'
+              iconUrl='https://acha0203.github.io/Portfolio/images/github-mark-white.svg'
+              name='GitHub'
+              width={204}
+              height={200}
+            />
+            <LinkBtn
+              url='https://zenn.dev/acha_n'
+              iconUrl='https://acha0203.github.io/Portfolio/images/zenn-logo-only-white.svg'
+              name='Zenn'
+              width={204}
+              height={200}
+            />
           </div>
         </div>
         {isInTransition && (
