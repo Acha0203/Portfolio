@@ -1,5 +1,6 @@
 import type p5Types from 'p5';
 import dynamic from 'next/dynamic';
+import useWindowSize from '@/hooks/useWindowSize';
 
 const Sketch = dynamic(import('react-p5'), {
   loading: () => <></>,
@@ -8,7 +9,6 @@ const Sketch = dynamic(import('react-p5'), {
 
 const SketchConcentricCircle05 = () => {
   const colors = ['#22577a', '#3873a5', '#5799cc', '#8099ed', '#a7ccf9'];
-  const n = 50;
   const circles: Array<{
     x: number;
     y: number;
@@ -18,6 +18,26 @@ const SketchConcentricCircle05 = () => {
     c2: string;
   }> = [];
 
+  const pick = (array: string[]) => {
+    const i = Math.floor(Math.random() * array.length);
+    return array[i];
+  };
+
+  const windowSize = useWindowSize();
+
+  const n = Math.floor(windowSize[0] * windowSize[1] * 0.00006);
+
+  for (let i = 0; i < n; i++) {
+    circles.push({
+      x: Math.floor(Math.random() * windowSize[0] + 1),
+      y: Math.floor(Math.random() * windowSize[1] + 1),
+      diameter: 2,
+      maxSize: Math.floor(Math.random() * (300 - 50) + 50),
+      c1: pick(colors),
+      c2: pick(colors),
+    });
+  }
+
   const setup = (p5: p5Types, canvasParentRef: Element) => {
     p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
     p5.noFill();
@@ -25,17 +45,6 @@ const SketchConcentricCircle05 = () => {
 
   const draw = (p5: p5Types) => {
     p5.background(14, 57, 92, 10);
-
-    for (let i = 0; i < n; i++) {
-      circles.push({
-        x: Math.floor(p5.random(0, p5.width)),
-        y: Math.floor(p5.random(0, p5.height)),
-        diameter: 2,
-        maxSize: Math.floor(p5.random(50, 300)),
-        c1: p5.random(colors),
-        c2: p5.random(colors),
-      });
-    }
 
     for (let i = 0; i < n; i++) {
       const m = p5.map(circles[i].diameter, 0, circles[i].maxSize, 0, 1);
