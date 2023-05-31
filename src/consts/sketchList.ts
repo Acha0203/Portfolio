@@ -408,6 +408,29 @@ const sketch17: WorkObj = {
   thumbnailY: 0,
 } as const;
 
+const sketch18: WorkObj = {
+  id: 18,
+  title: 'Bezier 9',
+  thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/bezier-09.png',
+  codeUrl: 'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/bezier09.js',
+  path: '/sketch-book/bezier-09',
+  siteUrl: '',
+  description: {
+    ja: '',
+    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+  },
+  supplement: {
+    ja: '',
+    en: '',
+  },
+  technology: {
+    ja: 'p5.js',
+    en: 'p5.js',
+  },
+  thumbnailX: 0,
+  thumbnailY: 0,
+} as const;
+
 export const sketchList: WorkObj[] = [
   sketch1,
   sketch2,
@@ -426,4 +449,5 @@ export const sketchList: WorkObj[] = [
   sketch15,
   sketch16,
   sketch17,
+  sketch18,
 ];
