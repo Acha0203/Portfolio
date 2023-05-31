@@ -11,8 +11,8 @@ export const SketchBezier08 = () => {
   const windowWidth = useWindowSize()[0];
   const windowHeight = useWindowSize()[1];
 
-  const x2 = windowWidth / 2 - 100;
-  const x3 = windowWidth / 2 + 100;
+  const x2 = windowWidth / 3;
+  const x3 = windowWidth - x2;
   let y2 = 0;
   let y3 = windowHeight;
   let D = 1;
