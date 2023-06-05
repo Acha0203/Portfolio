@@ -501,6 +501,78 @@ const sketch21: WorkObj = {
   thumbnailY: 0,
 } as const;
 
+const sketch22: WorkObj = {
+  id: 22,
+  title: 'Rotation 5',
+  thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/rotation-05.png',
+  codeUrl: 'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/rotation05.js',
+  path: '/sketch-book/rotation-05',
+  siteUrl: '',
+  description: {
+    ja: '',
+    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+  },
+  supplement: {
+    ja: '',
+    en: '',
+  },
+  technology: {
+    ja: 'p5.js',
+    en: 'p5.js',
+  },
+  thumbnailX: 0,
+  thumbnailY: 0,
+} as const;
+
+const sketch23: WorkObj = {
+  id: 23,
+  title: 'Multiple Particle Systems 3',
+  thumbnailUrl:
+    'https://acha0203.github.io/Portfolio/images/Sketch_Images/multiple-particle-systems-03.png',
+  codeUrl:
+    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/multiple-particle-systems03.js',
+  path: '/sketch-book/multiple-particle-systems-03',
+  siteUrl: '',
+  description: {
+    ja: '',
+    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+  },
+  supplement: {
+    ja: '',
+    en: '',
+  },
+  technology: {
+    ja: 'p5.js',
+    en: 'p5.js',
+  },
+  thumbnailX: 0,
+  thumbnailY: 0,
+} as const;
+
+const sketch24: WorkObj = {
+  id: 24,
+  title: 'Random Hearts',
+  thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/random-hearts.png',
+  codeUrl:
+    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/random-hearts.js',
+  path: '/sketch-book/random-hearts',
+  siteUrl: '',
+  description: {
+    ja: '',
+    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+  },
+  supplement: {
+    ja: '',
+    en: '',
+  },
+  technology: {
+    ja: 'p5.js',
+    en: 'p5.js',
+  },
+  thumbnailX: 0,
+  thumbnailY: 0,
+} as const;
+
 export const sketchList: WorkObj[] = [
   sketch1,
   sketch2,
@@ -523,4 +595,7 @@ export const sketchList: WorkObj[] = [
   sketch19,
   sketch20,
   sketch21,
+  sketch22,
+  sketch23,
+  sketch24,
 ];

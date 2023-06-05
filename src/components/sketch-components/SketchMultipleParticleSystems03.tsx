@@ -12,10 +12,12 @@ const SketchMultipleParticleSystems02 = () => {
   let blue = 150;
   let greenD = 1;
   let blueD = 1;
+  let isFirst = true;
 
   const setup = (p5: p5Types, canvasParentRef: Element) => {
     p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
     systems = [];
+    addNewParticles(p5, p5.width / 2, p5.height / 2);
   };
 
   const draw = (p5: p5Types) => {
@@ -24,19 +26,30 @@ const SketchMultipleParticleSystems02 = () => {
     for (let i = 0; i < systems.length; i++) {
       systems[i].run(p5);
       systems[i].addParticle(p5);
+
+      if (systems[i].number <= 0 && systems[i].particles.length <= 0) {
+        systems.splice(i, 1);
+      }
     }
 
     if (systems.length === 0) {
-      p5.fill(255);
-      p5.textAlign(p5.CENTER);
-      p5.textSize(32);
-      p5.text('click mouse', p5.width / 2, p5.height / 2 - 50);
-      p5.text('to add', p5.width / 2, p5.height / 2);
-      p5.text('particle systems', p5.width / 2, p5.height / 2 + 50);
+      if (isFirst) {
+        addNewParticles(p5, p5.width / 2, p5.height / 2);
+        isFirst = false;
+      } else {
+        setTimeout(() => {
+          isFirst = true;
+        }, 4000);
+      }
     }
   };
 
   const mousePressed = (p5: p5Types) => {
+    if (isHit(p5.mouseX, p5.mouseY)) {
+      addNewParticles(p5, p5.mouseX, p5.mouseY);
+    }
+  };
+  const addNewParticles = (p5: p5Types, x: number, y: number) => {
     green -= 20 * greenD;
     blue += 20 * blueD;
 
@@ -48,8 +61,27 @@ const SketchMultipleParticleSystems02 = () => {
       blueD *= -1;
     }
 
-    const p = new ParticleSystem(p5.createVector(p5.mouseX, p5.mouseY), green, blue);
+    const p = new ParticleSystem(p5.createVector(x, y), green, blue);
     systems.push(p);
+  };
+
+  const isHit = (x: number, y: number) => {
+    for (let i = 0; i < systems.length; i++) {
+      for (let j = 0; j < systems[i].particles.length; j++) {
+        if (
+          x <= systems[i].particles[j].position.x + systems[i].particles[j].size / 2 &&
+          x >= systems[i].particles[j].position.x - systems[i].particles[j].size / 2 &&
+          y <= systems[i].particles[j].position.y + systems[i].particles[j].size / 2 &&
+          y >= systems[i].particles[j].position.y - systems[i].particles[j].size / 2
+        ) {
+          console.log('Hit!');
+
+          return true;
+        }
+      }
+    }
+
+    return false;
   };
 
   /// A simple Particle class
@@ -61,8 +93,8 @@ const SketchMultipleParticleSystems02 = () => {
     size: number;
 
     constructor(p5: p5Types, position: p5Types.Vector, size: number) {
-      this.acceleration = p5.createVector(0, 0.05);
-      this.velocity = p5.createVector(p5.random(-1, 1), p5.random(-1, 0));
+      this.acceleration = p5.createVector(0, 0.02);
+      this.velocity = p5.createVector(p5.random(-5, 5), p5.random(-5, 5));
       this.position = position.copy();
       this.lifespan = 255.0;
       this.size = size;
@@ -103,18 +135,22 @@ const SketchMultipleParticleSystems02 = () => {
     particles: Particle[];
     green: number;
     blue: number;
+    number: number;
 
     constructor(position: p5Types.Vector, green: number, blue: number) {
       this.origin = position.copy();
       this.particles = [];
       this.green = green;
       this.blue = blue;
+      this.number = 100;
     }
 
     addParticle(p5: p5Types) {
-      const p = new Particle(p5, this.origin, p5.random(5, 25));
+      if (this.number > 0) {
+        const p = new Particle(p5, this.origin, p5.random(5, 30));
 
-      this.particles.push(p);
+        this.particles.push(p);
+      }
     }
 
     run(p5: p5Types) {
@@ -123,8 +159,13 @@ const SketchMultipleParticleSystems02 = () => {
         p.run(p5, this.green, this.blue);
         if (p.isDead()) {
           this.particles.splice(i, 1);
+          this.number--;
         }
       }
+    }
+
+    destroySystem() {
+      this.particles = [];
     }
   }
 
