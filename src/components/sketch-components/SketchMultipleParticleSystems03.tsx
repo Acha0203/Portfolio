@@ -37,9 +37,7 @@ const SketchMultipleParticleSystems02 = () => {
         addNewParticles(p5, p5.width / 2, p5.height / 2);
         isFirst = false;
       } else {
-        setTimeout(() => {
-          isFirst = true;
-        }, 4000);
+        isFirst = p5.frameCount % 400 === 0;
       }
     }
   };
