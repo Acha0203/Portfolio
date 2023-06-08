@@ -25,7 +25,7 @@ const SketchConcentricCircle05 = () => {
 
   const windowSize = useWindowSize();
 
-  const n = Math.floor(windowSize[0] * windowSize[1] * 0.00006);
+  const n = Math.floor(windowSize[0] * windowSize[1] * (6 / 1e5));
 
   for (let i = 0; i < n; i++) {
     circles.push({
