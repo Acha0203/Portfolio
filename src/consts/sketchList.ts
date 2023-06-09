@@ -620,6 +620,53 @@ const sketch26: WorkObj = {
   thumbnailY: 0,
 } as const;
 
+const sketch27: WorkObj = {
+  id: 27,
+  title: 'Psychedelic Curve',
+  thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/psychedelic-curve.png',
+  codeUrl:
+    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/psychedelic-curve.js',
+  path: '/sketch-book/psychedelic-curve',
+  siteUrl: '',
+  description: {
+    ja: '',
+    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+  },
+  supplement: {
+    ja: '',
+    en: '',
+  },
+  technology: {
+    ja: 'p5.js',
+    en: 'p5.js',
+  },
+  thumbnailX: 0,
+  thumbnailY: 0,
+} as const;
+
+const sketch28: WorkObj = {
+  id: 28,
+  title: 'Cat',
+  thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/cat.png',
+  codeUrl: 'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/cat.js',
+  path: '/sketch-book/cat',
+  siteUrl: '',
+  description: {
+    ja: '',
+    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+  },
+  supplement: {
+    ja: '',
+    en: '',
+  },
+  technology: {
+    ja: 'p5.js',
+    en: 'p5.js',
+  },
+  thumbnailX: 0,
+  thumbnailY: 0,
+} as const;
+
 export const sketchList: WorkObj[] = [
   sketch1,
   sketch2,
@@ -647,4 +694,6 @@ export const sketchList: WorkObj[] = [
   sketch24,
   sketch25,
   sketch26,
+  sketch27,
+  sketch28,
 ];
