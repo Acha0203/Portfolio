@@ -7,7 +7,7 @@ const Sketch = dynamic(import('react-p5'), {
   ssr: false,
 });
 
-const SketchMultipleFans = () => {
+const SketchRain = () => {
   const windowWidth = useWindowSize()[0];
   const windowHeight = useWindowSize()[1];
   const maxSize = 300;
@@ -69,4 +69,4 @@ const SketchMultipleFans = () => {
   return <Sketch setup={setup} draw={draw} windowResized={windowResized} />;
 };
 
-export default SketchMultipleFans;
+export default SketchRain;
