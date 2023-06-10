@@ -1,5 +1,6 @@
 import type p5Types from 'p5';
 import dynamic from 'next/dynamic';
+import { useEffect, useState } from 'react';
 import useWindowSize from '@/hooks/useWindowSize';
 
 const Sketch = dynamic(import('react-p5'), {
@@ -10,9 +11,24 @@ const Sketch = dynamic(import('react-p5'), {
 const SketchCat = () => {
   const windowWidth = useWindowSize()[0];
   const windowHeight = useWindowSize()[1];
+  const [isMobile, setIsMobile] = useState(false);
   let layer1: p5Types.Graphics;
   let layer2: p5Types.Graphics;
   let isFirst = true;
+
+  useEffect(() => {
+    const userAgentInfo = window.navigator.userAgent.toLowerCase();
+
+    if (
+      userAgentInfo.includes('android') ||
+      userAgentInfo.includes('iphone') ||
+      userAgentInfo.includes('ipad')
+    ) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  }, []);
 
   const drawEars = (layer: p5Types.Graphics, d: number) => {
     layer.triangle(
@@ -45,14 +61,22 @@ const SketchCat = () => {
       layer1.ellipse(p5.width / 2, p5.height / 2, 300, 250);
       drawEars(layer1, 1);
       drawEars(layer1, -1);
+
       isFirst = false;
     }
 
     let x = p5.width / 2;
     let y = p5.height / 2;
 
-    x += Math.floor(p5.movedX / 2);
-    y += Math.floor(p5.movedY / 2);
+    if (isMobile) {
+      const v = p5.createVector(p5.mouseX - p5.width / 2, p5.mouseY - p5.height / 2);
+      v.setMag(p5.min(v.mag(), 50));
+      x = p5.width / 2 + v.x;
+      y = p5.height / 2 + v.y;
+    } else {
+      x += Math.floor(p5.movedX / 2);
+      y += Math.floor(p5.movedY / 2);
+    }
 
     layer2.clear();
     layer2.fill(50);
