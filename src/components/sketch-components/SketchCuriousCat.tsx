@@ -41,6 +41,16 @@ const SketchCuriousCat = () => {
     p5.line(x - 100 * d, y + 90, x - 50 * d, y + 70);
   };
 
+  const drawEyes = (p5: p5Types, x: number, y: number) => {
+    p5.circle(x - 70, y, 50);
+    p5.circle(x + 70, y, 50);
+  };
+
+  const drawEyeLights = (p5: p5Types, x: number, y: number) => {
+    p5.circle(x - 60, y - 10, 9);
+    p5.circle(x + 80, y - 10, 9);
+  };
+
   const setup = (p5: p5Types, canvasParentRef: Element) => {
     p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
   };
@@ -67,15 +77,16 @@ const SketchCuriousCat = () => {
     p5.ellipse(p5.width / 2, p5.height / 2, 300, 250);
     drawEars(p5, 1);
     drawEars(p5, -1);
+
     p5.fill(50);
-    p5.circle(x - 70, y, 50);
-    p5.circle(x + 70, y, 50);
+    drawEyes(p5, x, y);
     p5.rect(x - 2, y + 30, 4, 40);
     p5.rect(x - 20, y + 70, 40, 4);
     p5.ellipse(x, y + 40, 30, 20);
+
     p5.fill(255);
-    p5.circle(x - 60, y - 10, 9);
-    p5.circle(x + 80, y - 10, 9);
+    drawEyeLights(p5, x, y);
+
     p5.stroke(50);
     drawWhiskers(p5, x, y, 1);
     drawWhiskers(p5, x, y, -1);
