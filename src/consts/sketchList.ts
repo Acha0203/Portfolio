@@ -644,6 +644,29 @@ const sketch27: WorkObj = {
   thumbnailY: 0,
 } as const;
 
+const sketch28: WorkObj = {
+  id: 28,
+  title: 'Curious Cat',
+  thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/cat.png',
+  codeUrl: 'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/cat.js',
+  path: '/sketch-book/curious-cat',
+  siteUrl: '',
+  description: {
+    ja: '',
+    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+  },
+  supplement: {
+    ja: '',
+    en: '',
+  },
+  technology: {
+    ja: 'p5.js',
+    en: 'p5.js',
+  },
+  thumbnailX: 0,
+  thumbnailY: 0,
+} as const;
+
 export const sketchList: WorkObj[] = [
   sketch1,
   sketch2,
@@ -672,4 +695,5 @@ export const sketchList: WorkObj[] = [
   sketch25,
   sketch26,
   sketch27,
+  sketch28,
 ];
