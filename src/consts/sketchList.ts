@@ -667,6 +667,77 @@ const sketch28: WorkObj = {
   thumbnailY: 0,
 } as const;
 
+const sketch29: WorkObj = {
+  id: 29,
+  title: 'Tentacles',
+  thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/tentacles.png',
+  codeUrl: 'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/tentacles.js',
+  path: '/sketch-book/tentacles',
+  siteUrl: '',
+  description: {
+    ja: '',
+    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+  },
+  supplement: {
+    ja: '',
+    en: '',
+  },
+  technology: {
+    ja: 'p5.js',
+    en: 'p5.js',
+  },
+  thumbnailX: 0,
+  thumbnailY: 0,
+} as const;
+
+const sketch30: WorkObj = {
+  id: 30,
+  title: 'Trigonometric Wave',
+  thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/trigonometric-wave.png',
+  codeUrl:
+    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/trigonometric-wave.js',
+  path: '/sketch-book/trigonometric-wave',
+  siteUrl: '',
+  description: {
+    ja: '',
+    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+  },
+  supplement: {
+    ja: '',
+    en: '',
+  },
+  technology: {
+    ja: 'p5.js',
+    en: 'p5.js',
+  },
+  thumbnailX: 0,
+  thumbnailY: 0,
+} as const;
+
+const sketch31: WorkObj = {
+  id: 31,
+  title: 'Transparent Object',
+  thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/transparent-object.png',
+  codeUrl:
+    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/transparent-object.js',
+  path: '/sketch-book/transparent-object',
+  siteUrl: '',
+  description: {
+    ja: '',
+    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+  },
+  supplement: {
+    ja: '',
+    en: '',
+  },
+  technology: {
+    ja: 'p5.js',
+    en: 'p5.js',
+  },
+  thumbnailX: 0,
+  thumbnailY: 0,
+} as const;
+
 export const sketchList: WorkObj[] = [
   sketch1,
   sketch2,
@@ -696,4 +767,7 @@ export const sketchList: WorkObj[] = [
   sketch26,
   sketch27,
   sketch28,
+  sketch29,
+  sketch30,
+  sketch31,
 ];
