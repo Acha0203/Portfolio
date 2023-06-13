@@ -31,16 +31,16 @@ const SketchTransparentObject = () => {
     p5.rotateY(p5.frameCount * -0.01);
     p5.push();
     p5.rotateX(p5.QUARTER_PI);
-    p5.box(p5.width / 3);
+    p5.box(p5.width / 2);
     p5.rotateY(p5.QUARTER_PI);
-    p5.box(p5.width / 3);
+    p5.box(p5.width / 2);
     p5.push();
     p5.rotateY(p5.QUARTER_PI);
     p5.rotateX(p5.QUARTER_PI);
-    p5.box(p5.width / 3);
+    p5.box(p5.width / 2);
     p5.pop();
     p5.pop();
-    p5.box(p5.width / 3);
+    p5.box(p5.width / 2);
   };
 
   const windowResized = (p5: p5Types) => {
