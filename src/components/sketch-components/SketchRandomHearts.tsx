@@ -6,7 +6,7 @@ const Sketch = dynamic(import('react-p5'), {
   ssr: false,
 });
 
-const SketchRandomWalk02 = () => {
+const SketchRandomHearts = () => {
   const setup = (p5: p5Types, canvasParentRef: Element) => {
     p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
     p5.noStroke();
@@ -36,4 +36,4 @@ const SketchRandomWalk02 = () => {
   return <Sketch setup={setup} draw={draw} windowResized={windowResized} />;
 };
 
-export default SketchRandomWalk02;
+export default SketchRandomHearts;

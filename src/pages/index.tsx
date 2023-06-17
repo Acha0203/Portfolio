@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import useWindowSize from '@/hooks/useWindowSize';
 import { myAppActions } from '@/store/myApp';
 import MyHead from '@/components/MyHead';
-import SketchCliffordAttractor01 from '@/components/sketch-components/SketchCliffordAttractor01';
+import SketchCliffordAttractor01 from '@/components/sketch-components/SketchCliffordAttractor03';
 import TitleOfHome from '@/components/TitleOfHome';
 import HamburgerBtn from '@/components/ui/button/HamburgerBtn';
 import HamburgerMenu from '@/components/ui/menu/HamburgerMenu';

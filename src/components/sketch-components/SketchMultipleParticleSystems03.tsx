@@ -6,7 +6,7 @@ const Sketch = dynamic(import('react-p5'), {
   ssr: false,
 });
 
-const SketchMultipleParticleSystems02 = () => {
+const SketchMultipleParticleSystems03 = () => {
   let systems: ParticleSystem[] = [];
   let green = 100;
   let blue = 150;
@@ -177,4 +177,4 @@ const SketchMultipleParticleSystems02 = () => {
   );
 };
 
-export default SketchMultipleParticleSystems02;
+export default SketchMultipleParticleSystems03;
