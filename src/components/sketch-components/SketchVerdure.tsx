@@ -20,7 +20,7 @@ const SketchVerdure = () => {
     p5.background(120, 100, 10, 0.1);
     p5.blendMode(p5.ADD);
 
-    for (let r = 0; r < p5.TAU * n; r += 0.005) {
+    for (let r = 0; r < p5.TAU * 5; r += 0.005) {
       const angle = r * p5.frameCount * 0.1;
       const p = r * r * n;
       const x = Math.cos(angle) * p + p5.width / 2;

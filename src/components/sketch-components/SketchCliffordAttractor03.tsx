@@ -6,7 +6,7 @@ const Sketch = dynamic(import('react-p5'), {
   ssr: false,
 });
 
-export const SketchCliffordAttractor01 = () => {
+export const SketchCliffordAttractor03 = () => {
   const drawScale = 200;
   let noiseValA = 0.002;
   let noiseValB = 0.002;
@@ -59,4 +59,4 @@ export const SketchCliffordAttractor01 = () => {
   return <Sketch setup={setup} draw={draw} windowResized={windowResized} />;
 };
 
-export default SketchCliffordAttractor01;
+export default SketchCliffordAttractor03;

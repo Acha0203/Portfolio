@@ -742,9 +742,32 @@ const sketch32: WorkObj = {
   id: 32,
   title: 'Verdure',
   thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/verdure.png',
-  codeUrl:
-    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/verdure.js',
+  codeUrl: 'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/verdure.js',
   path: '/sketch-book/verdure',
+  siteUrl: '',
+  description: {
+    ja: '',
+    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+  },
+  supplement: {
+    ja: '',
+    en: '',
+  },
+  technology: {
+    ja: 'p5.js',
+    en: 'p5.js',
+  },
+  thumbnailX: 0,
+  thumbnailY: 0,
+} as const;
+
+const sketch33: WorkObj = {
+  id: 33,
+  title: 'Luminous Spiral',
+  thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/luminous-spiral.png',
+  codeUrl:
+    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/luminous-spiral.js',
+  path: '/sketch-book/luminous-spiral',
   siteUrl: '',
   description: {
     ja: '',
@@ -795,4 +818,5 @@ export const sketchList: WorkObj[] = [
   sketch30,
   sketch31,
   sketch32,
+  sketch33,
 ];

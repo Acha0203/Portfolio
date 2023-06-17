@@ -5,14 +5,14 @@ import { sketchList } from '@/consts/sketchList';
 import useWindowSize from '@/hooks/useWindowSize';
 import { myAppActions } from '@/store/myApp';
 import MyHead from '@/components/MyHead';
-import SketchCliffordAttractor01 from '@/components/sketch-components/SketchCliffordAttractor03';
+import SketchLuminousSpiral from '@/components/sketch-components/SketchLuminousSpiral';
 import CodeAndBackBtn from '@/components/ui/button/CodeAndBackBtn';
 import HamburgerBtn from '@/components/ui/button/HamburgerBtn';
 import HamburgerMenu from '@/components/ui/menu/HamburgerMenu';
 import MenuBarTop from '@/components/ui/menu/MenuBarTop';
 import styles from '../../styles/Home.module.scss';
 
-const CliffordAttractor01Page = () => {
+const LuminousSpiralPage = () => {
   const dispatch = useDispatch();
   const { isHamburger, isInTransition } = useSelector((state: MyAppState) => state.myApp);
   const windowWidth = useWindowSize()[0];
@@ -32,16 +32,16 @@ const CliffordAttractor01Page = () => {
 
   return (
     <>
-      <MyHead title={sketchList[3].title} description={sketchList[3].description.en} />
+      <MyHead title={sketchList[32].title} description={sketchList[32].description.en} />
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
-          <SketchCliffordAttractor01 />
+          <SketchLuminousSpiral />
         </div>
         <div
           className={`flex-col justify-center items-center absolute bottom-10 ${styles.fade_up}`}
         >
-          <div className={styles.title_of_sketch}>{`${sketchList[3].title.toUpperCase()}`}</div>
-          <CodeAndBackBtn url={`${sketchList[3].codeUrl}`} prevPage='/sketch-book' />
+          <div className={styles.title_of_sketch}>{`${sketchList[32].title.toUpperCase()}`}</div>
+          <CodeAndBackBtn url={`${sketchList[32].codeUrl}`} prevPage='/sketch-book' />
         </div>
         {isInTransition && (
           <div
@@ -70,4 +70,4 @@ const CliffordAttractor01Page = () => {
   );
 };
 
-export default CliffordAttractor01Page;
+export default LuminousSpiralPage;
