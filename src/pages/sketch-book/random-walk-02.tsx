@@ -32,7 +32,11 @@ const SketchRandomWalk02Page = () => {
 
   return (
     <>
-      <MyHead title={sketchList[20].title} description={sketchList[20].description.en} />
+      <MyHead
+        title={sketchList[20].title}
+        thumbnailUrl={sketchList[20].thumbnailUrl}
+        description={sketchList[20].description.en}
+      />
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
           <SketchRandomWalk02 />

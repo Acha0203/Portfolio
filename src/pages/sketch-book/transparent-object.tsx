@@ -32,7 +32,11 @@ const TransparentObjectPage = () => {
 
   return (
     <>
-      <MyHead title={sketchList[30].title} description={sketchList[30].description.en} />
+      <MyHead
+        title={sketchList[30].title}
+        thumbnailUrl={sketchList[30].thumbnailUrl}
+        description={sketchList[30].description.en}
+      />
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
           <SketchTransparentObject />

@@ -32,7 +32,11 @@ const PsychedelicCurvePage = () => {
 
   return (
     <>
-      <MyHead title={sketchList[26].title} description={sketchList[26].description.en} />
+      <MyHead
+        title={sketchList[26].title}
+        thumbnailUrl={sketchList[26].thumbnailUrl}
+        description={sketchList[26].description.en}
+      />
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
           <SketchPsychedelicCurve />

@@ -32,7 +32,11 @@ const MultipleParticleSystems03Page = () => {
 
   return (
     <>
-      <MyHead title={sketchList[22].title} description={sketchList[22].description.en} />
+      <MyHead
+        title={sketchList[22].title}
+        thumbnailUrl={sketchList[22].thumbnailUrl}
+        description={sketchList[22].description.en}
+      />
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
           <SketchMultipleParticleSystems03 />

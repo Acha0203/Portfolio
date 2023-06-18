@@ -32,7 +32,11 @@ const SketchFlowField03Page = () => {
 
   return (
     <>
-      <MyHead title={sketchList[19].title} description={sketchList[19].description.en} />
+      <MyHead
+        title={sketchList[19].title}
+        thumbnailUrl={sketchList[19].thumbnailUrl}
+        description={sketchList[19].description.en}
+      />
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
           <SketchFlowField03 />

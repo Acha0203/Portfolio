@@ -32,7 +32,11 @@ const CliffordAttractor01Page = () => {
 
   return (
     <>
-      <MyHead title={sketchList[3].title} description={sketchList[3].description.en} />
+      <MyHead
+        title={sketchList[3].title}
+        thumbnailUrl={sketchList[3].thumbnailUrl}
+        description={sketchList[3].description.en}
+      />
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
           <SketchCliffordAttractor01 />

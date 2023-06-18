@@ -32,7 +32,11 @@ const MultipleFansPage = () => {
 
   return (
     <>
-      <MyHead title={sketchList[24].title} description={sketchList[24].description.en} />
+      <MyHead
+        title={sketchList[24].title}
+        thumbnailUrl={sketchList[24].thumbnailUrl}
+        description={sketchList[24].description.en}
+      />
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
           <SketchMultipleFans />

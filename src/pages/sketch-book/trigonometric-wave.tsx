@@ -32,7 +32,11 @@ const TrigonometricWavePage = () => {
 
   return (
     <>
-      <MyHead title={sketchList[29].title} description={sketchList[29].description.en} />
+      <MyHead
+        title={sketchList[29].title}
+        thumbnailUrl={sketchList[29].thumbnailUrl}
+        description={sketchList[29].description.en}
+      />
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
           <SketchTrigonometricWave />

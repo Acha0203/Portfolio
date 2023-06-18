@@ -32,7 +32,11 @@ const ConcentricCircle04Page = () => {
 
   return (
     <>
-      <MyHead title={sketchList[10].title} description={sketchList[10].description.en} />
+      <MyHead
+        title={sketchList[10].title}
+        thumbnailUrl={sketchList[10].thumbnailUrl}
+        description={sketchList[10].description.en}
+      />
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
           <SketchConcentricCircle04 />

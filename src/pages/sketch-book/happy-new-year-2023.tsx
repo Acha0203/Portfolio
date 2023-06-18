@@ -32,7 +32,11 @@ const HappyNewYear2023Page = () => {
 
   return (
     <>
-      <MyHead title={sketchList[2].title} description={sketchList[2].description.en} />
+      <MyHead
+        title={sketchList[2].title}
+        thumbnailUrl={sketchList[2].thumbnailUrl}
+        description={sketchList[2].description.en}
+      />
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
           <SketchHappyNewYear2023 />

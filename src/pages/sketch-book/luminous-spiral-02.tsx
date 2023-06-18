@@ -32,7 +32,11 @@ const LuminousSpiral02Page = () => {
 
   return (
     <>
-      <MyHead title={sketchList[33].title} description={sketchList[33].description.en} />
+      <MyHead
+        title={sketchList[33].title}
+        thumbnailUrl={sketchList[33].thumbnailUrl}
+        description={sketchList[33].description.en}
+      />
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
           <SketchLuminousSpiral02 />
