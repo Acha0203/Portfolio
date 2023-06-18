@@ -32,7 +32,11 @@ const Bezier08Page = () => {
 
   return (
     <>
-      <MyHead title={sketchList[9].title} description={sketchList[9].description.en} />
+      <MyHead
+        title={sketchList[9].title}
+        thumbnailUrl={sketchList[9].thumbnailUrl}
+        description={sketchList[9].description.en}
+      />
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
           <SketchBezier08 />

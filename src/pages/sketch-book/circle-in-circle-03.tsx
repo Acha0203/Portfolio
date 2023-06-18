@@ -32,7 +32,11 @@ const CircleInCircle03Page = () => {
 
   return (
     <>
-      <MyHead title={sketchList[11].title} description={sketchList[11].description.en} />
+      <MyHead
+        title={sketchList[11].title}
+        thumbnailUrl={sketchList[11].thumbnailUrl}
+        description={sketchList[11].description.en}
+      />
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
           <SketchCircleInCircle03 />

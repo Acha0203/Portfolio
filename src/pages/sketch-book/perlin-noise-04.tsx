@@ -32,7 +32,11 @@ const PerlinNoise04Page = () => {
 
   return (
     <>
-      <MyHead title={sketchList[12].title} description={sketchList[12].description.en} />
+      <MyHead
+        title={sketchList[12].title}
+        thumbnailUrl={sketchList[12].thumbnailUrl}
+        description={sketchList[12].description.en}
+      />
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
           <SketchPerlinNoise04 />

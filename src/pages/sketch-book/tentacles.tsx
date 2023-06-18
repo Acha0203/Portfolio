@@ -32,7 +32,11 @@ const TentaclesPage = () => {
 
   return (
     <>
-      <MyHead title={sketchList[28].title} description={sketchList[28].description.en} />
+      <MyHead
+        title={sketchList[28].title}
+        thumbnailUrl={sketchList[28].thumbnailUrl}
+        description={sketchList[28].description.en}
+      />
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
           <SketchTentacles />

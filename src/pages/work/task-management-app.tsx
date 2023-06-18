@@ -48,7 +48,11 @@ const TaskManagementAppPage = () => {
 
   return (
     <>
-      <MyHead title={workList[5].title} description={workList[5].description.en} />
+      <MyHead
+        title={workList[5].title}
+        thumbnailUrl={workList[5].thumbnailUrl}
+        description={workList[5].description.en}
+      />
       <div className={`flex-col justify-center items-center relative ${styles.vh_220}`}>
         <SketchBackground />
         <div

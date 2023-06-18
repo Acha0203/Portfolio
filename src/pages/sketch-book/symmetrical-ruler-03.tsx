@@ -32,7 +32,11 @@ const SymmetricalRuler03Page = () => {
 
   return (
     <>
-      <MyHead title={sketchList[14].title} description={sketchList[14].description.en} />
+      <MyHead
+        title={sketchList[14].title}
+        thumbnailUrl={sketchList[14].thumbnailUrl}
+        description={sketchList[14].description.en}
+      />
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
           <SketchSymmetricalRuler03 />

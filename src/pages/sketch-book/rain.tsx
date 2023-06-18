@@ -32,7 +32,11 @@ const RainPage = () => {
 
   return (
     <>
-      <MyHead title={sketchList[25].title} description={sketchList[25].description.en} />
+      <MyHead
+        title={sketchList[25].title}
+        thumbnailUrl={sketchList[25].thumbnailUrl}
+        description={sketchList[25].description.en}
+      />
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
           <SketchRain />

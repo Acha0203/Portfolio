@@ -48,7 +48,11 @@ const Connect4Page = () => {
 
   return (
     <>
-      <MyHead title={workList[0].title} description={workList[0].description.en} />
+      <MyHead
+        title={workList[0].title}
+        thumbnailUrl={workList[0].thumbnailUrl}
+        description={workList[0].description.en}
+      />
       <div className={`flex-col justify-center items-center relative ${styles.vh_300}`}>
         <SketchBackground />
         <div

@@ -32,7 +32,11 @@ const RoseCurve01Page = () => {
 
   return (
     <>
-      <MyHead title={sketchList[8].title} description={sketchList[8].description.en} />
+      <MyHead
+        title={sketchList[8].title}
+        thumbnailUrl={sketchList[8].thumbnailUrl}
+        description={sketchList[8].description.en}
+      />
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
           <SketchRoseCurve01 />

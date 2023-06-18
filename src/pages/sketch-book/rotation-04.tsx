@@ -32,7 +32,11 @@ const SketchRotation04Page = () => {
 
   return (
     <>
-      <MyHead title={sketchList[18].title} description={sketchList[18].description.en} />
+      <MyHead
+        title={sketchList[18].title}
+        thumbnailUrl={sketchList[18].thumbnailUrl}
+        description={sketchList[18].description.en}
+      />
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
           <SketchRotation04 />

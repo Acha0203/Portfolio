@@ -32,7 +32,11 @@ const SketchRandomHeartsPage = () => {
 
   return (
     <>
-      <MyHead title={sketchList[23].title} description={sketchList[23].description.en} />
+      <MyHead
+        title={sketchList[23].title}
+        thumbnailUrl={sketchList[23].thumbnailUrl}
+        description={sketchList[23].description.en}
+      />
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
           <SketchRandomHearts />

@@ -32,7 +32,11 @@ const CircleMotion01Page = () => {
 
   return (
     <>
-      <MyHead title={sketchList[5].title} description={sketchList[5].description.en} />
+      <MyHead
+        title={sketchList[5].title}
+        thumbnailUrl={sketchList[5].thumbnailUrl}
+        description={sketchList[5].description.en}
+      />
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
           <SketchCircleMotion01 />

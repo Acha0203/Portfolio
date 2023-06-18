@@ -32,7 +32,11 @@ const CuriousCatPage = () => {
 
   return (
     <>
-      <MyHead title={sketchList[27].title} description={sketchList[27].description.en} />
+      <MyHead
+        title={sketchList[27].title}
+        thumbnailUrl={sketchList[27].thumbnailUrl}
+        description={sketchList[27].description.en}
+      />
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
           <SketchCuriousCat />

@@ -32,7 +32,11 @@ const Composition02Page = () => {
 
   return (
     <>
-      <MyHead title={sketchList[7].title} description={sketchList[7].description.en} />
+      <MyHead
+        title={sketchList[7].title}
+        thumbnailUrl={sketchList[7].thumbnailUrl}
+        description={sketchList[7].description.en}
+      />
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
           <SketchComposition02 />
