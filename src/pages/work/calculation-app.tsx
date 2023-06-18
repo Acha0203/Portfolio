@@ -48,7 +48,11 @@ const CalculationAppPage = () => {
 
   return (
     <>
-      <MyHead title={workList[6].title} description={workList[6].description.en} />
+      <MyHead
+        title={workList[6].title}
+        thumbnailUrl={workList[6].thumbnailUrl}
+        description={workList[6].description.en}
+      />
       <div className={`flex-col justify-center items-center relative ${styles.vh_260}`}>
         <SketchBackground />
         <div

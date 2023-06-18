@@ -48,7 +48,11 @@ const CountdownTimerPage = () => {
 
   return (
     <>
-      <MyHead title={workList[7].title} description={workList[7].description.en} />
+      <MyHead
+        title={workList[7].title}
+        thumbnailUrl={workList[7].thumbnailUrl}
+        description={workList[7].description.en}
+      />
       <div className={`flex-col justify-center items-center relative ${styles.vh_200}`}>
         <SketchBackground />
         <div

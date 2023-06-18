@@ -48,7 +48,11 @@ const ComputerBuilderPage = () => {
 
   return (
     <>
-      <MyHead title={workList[3].title} description={workList[3].description.en} />
+      <MyHead
+        title={workList[3].title}
+        thumbnailUrl={workList[3].thumbnailUrl}
+        description={workList[3].description.en}
+      />
       <div className={`flex-col justify-center items-center relative ${styles.vh_200}`}>
         <SketchBackground />
         <div

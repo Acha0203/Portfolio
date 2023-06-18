@@ -48,7 +48,11 @@ const OnlineDatingAppPage = () => {
 
   return (
     <>
-      <MyHead title={workList[2].title} description={workList[2].description.en} />
+      <MyHead
+        title={workList[2].title}
+        thumbnailUrl={workList[2].thumbnailUrl}
+        description={workList[2].description.en}
+      />
       <div className={`flex-col justify-center items-center relative ${styles.vh_200}`}>
         <SketchBackground />
         <div
