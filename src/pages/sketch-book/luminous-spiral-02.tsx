@@ -5,14 +5,14 @@ import { sketchList } from '@/consts/sketchList';
 import useWindowSize from '@/hooks/useWindowSize';
 import { myAppActions } from '@/store/myApp';
 import MyHead from '@/components/MyHead';
-import SketchLuminousSpiral from '@/components/sketch-components/SketchLuminousSpiral';
+import SketchLuminousSpiral02 from '@/components/sketch-components/SketchLuminousSpiral02';
 import CodeAndBackBtn from '@/components/ui/button/CodeAndBackBtn';
 import HamburgerBtn from '@/components/ui/button/HamburgerBtn';
 import HamburgerMenu from '@/components/ui/menu/HamburgerMenu';
 import MenuBarTop from '@/components/ui/menu/MenuBarTop';
 import styles from '../../styles/Home.module.scss';
 
-const LuminousSpiralPage = () => {
+const LuminousSpiral02Page = () => {
   const dispatch = useDispatch();
   const { isHamburger, isInTransition } = useSelector((state: MyAppState) => state.myApp);
   const windowWidth = useWindowSize()[0];
@@ -32,16 +32,16 @@ const LuminousSpiralPage = () => {
 
   return (
     <>
-      <MyHead title={sketchList[32].title} description={sketchList[32].description.en} />
+      <MyHead title={sketchList[33].title} description={sketchList[33].description.en} />
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
-          <SketchLuminousSpiral />
+          <SketchLuminousSpiral02 />
         </div>
         <div
           className={`flex-col justify-center items-center absolute bottom-10 ${styles.fade_up}`}
         >
-          <div className={styles.title_of_sketch}>{`${sketchList[32].title.toUpperCase()}`}</div>
-          <CodeAndBackBtn url={`${sketchList[32].codeUrl}`} prevPage='/sketch-book' />
+          <div className={styles.title_of_sketch}>{`${sketchList[33].title.toUpperCase()}`}</div>
+          <CodeAndBackBtn url={`${sketchList[33].codeUrl}`} prevPage='/sketch-book' />
         </div>
         {isInTransition && (
           <div
@@ -70,4 +70,4 @@ const LuminousSpiralPage = () => {
   );
 };
 
-export default LuminousSpiralPage;
+export default LuminousSpiral02Page;
