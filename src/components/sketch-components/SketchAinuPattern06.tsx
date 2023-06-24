@@ -50,19 +50,19 @@ const SketchAinuPattern06 = () => {
     }
 
     layer.push();
-    layer.rotateY(p5.frameCount * 0.05);
+    layer.rotateY(p5.frameCount * 0.02);
     layer.sphere(p5.height / 12);
-    layer.rotateY(p5.frameCount * 0.05);
+    layer.rotateY(p5.frameCount * 0.02);
     layer.sphere(p5.height / 8);
     layer.pop();
     layer.push();
-    layer.rotateY(p5.frameCount * 0.05);
+    layer.rotateY(p5.frameCount * 0.02);
     layer.sphere(p5.height / 6);
     layer.pop();
     layer.push();
-    layer.rotateX(p5.frameCount * 0.05);
+    layer.rotateX(p5.frameCount * 0.02);
     layer.sphere((p5.height * 5) / 24);
-    layer.rotateY(p5.frameCount * -0.05);
+    layer.rotateY(p5.frameCount * -0.02);
     layer.sphere(p5.height / 4);
     layer.pop();
   };
