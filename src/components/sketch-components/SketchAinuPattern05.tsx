@@ -25,7 +25,7 @@ export const SketchAinuPattern05 = () => {
       hasCreated = true;
     }
 
-    drawBackground(p5, layer1, 100);
+    drawBackground(p5, layer1, 50);
     p5.image(layer1, 0, 0);
 
     p5.push();
