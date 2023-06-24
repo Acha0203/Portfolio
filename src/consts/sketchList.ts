@@ -809,6 +809,54 @@ const sketch34: WorkObj = {
   thumbnailY: 0,
 } as const;
 
+const sketch35: WorkObj = {
+  id: 35,
+  title: 'Ainu Pattern 5',
+  thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/ainu-pattern-05.png',
+  codeUrl:
+    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/ainu-pattern05.js',
+  path: '/sketch-book/ainu-pattern-05',
+  siteUrl: '',
+  description: {
+    ja: '',
+    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+  },
+  supplement: {
+    ja: '',
+    en: '',
+  },
+  technology: {
+    ja: 'p5.js',
+    en: 'p5.js',
+  },
+  thumbnailX: 0,
+  thumbnailY: 0,
+} as const;
+
+const sketch36: WorkObj = {
+  id: 36,
+  title: 'Ainu Pattern 5',
+  thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/ainu-pattern-06.png',
+  codeUrl:
+    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/ainu-pattern06.js',
+  path: '/sketch-book/ainu-pattern-06',
+  siteUrl: '',
+  description: {
+    ja: '',
+    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+  },
+  supplement: {
+    ja: '',
+    en: '',
+  },
+  technology: {
+    ja: 'p5.js',
+    en: 'p5.js',
+  },
+  thumbnailX: 0,
+  thumbnailY: 0,
+} as const;
+
 export const sketchList: WorkObj[] = [
   sketch1,
   sketch2,
@@ -844,4 +892,6 @@ export const sketchList: WorkObj[] = [
   sketch32,
   sketch33,
   sketch34,
+  sketch35,
+  sketch36,
 ];
