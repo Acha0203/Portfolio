@@ -835,7 +835,7 @@ const sketch35: WorkObj = {
 
 const sketch36: WorkObj = {
   id: 36,
-  title: 'Ainu Pattern 5',
+  title: 'Ainu Pattern 6',
   thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/ainu-pattern-06.png',
   codeUrl:
     'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/ainu-pattern06.js',

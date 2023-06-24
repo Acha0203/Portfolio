@@ -8,14 +8,11 @@ const Sketch = dynamic(import('react-p5'), {
 
 export const SketchAinuPattern05 = () => {
   let hasCreated = false;
-  let layer1: p5Types.Image;
-  let layer2: p5Types.Image;
+  let layer1: p5Types.Graphics;
+  let layer2: p5Types.Graphics;
 
   const setup = (p5: p5Types, canvasParentRef: Element) => {
     p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
-
-    layer1 = p5.createGraphics(p5.width, p5.height);
-    layer2 = p5.createGraphics(p5.width, p5.height);
   };
 
   const draw = (p5: p5Types) => {
@@ -41,11 +38,11 @@ export const SketchAinuPattern05 = () => {
   };
 
   class AinuPattern {
-    layer: p5Types.Image;
+    layer: p5Types.Graphics;
     cx: number;
     cy: number;
 
-    constructor(layer: p5Types.Image, cx: number, cy: number) {
+    constructor(layer: p5Types.Graphics, cx: number, cy: number) {
       this.layer = layer;
       this.cx = cx;
       this.cy = cy;
@@ -128,7 +125,7 @@ export const SketchAinuPattern05 = () => {
     }
   }
 
-  const drawAll = (p5: p5Types, layer: p5Types.Image) => {
+  const drawAll = (p5: p5Types, layer: p5Types.Graphics) => {
     const ainuPatternA = new AinuPattern(layer, 0, -p5.height * 0.6);
     const ainuPatternB = new AinuPattern(layer, 0, -p5.height * 0.4);
 
@@ -163,7 +160,7 @@ export const SketchAinuPattern05 = () => {
     layer.pop();
   };
 
-  const drawBackground = (p5: p5Types, layer: p5Types.Image, n: number) => {
+  const drawBackground = (p5: p5Types, layer: p5Types.Graphics, n: number) => {
     layer.background(0);
     layer.colorMode(p5.HSB);
     layer.noStroke();
@@ -175,7 +172,7 @@ export const SketchAinuPattern05 = () => {
       for (let j = 0; j < m; j++) {
         const p = Math.sin(p5.TAU * p5.noise(i * 0.01, j * 0.01, p5.frameCount * 0.04));
         layer.fill(210 + p * 60, 100, 100);
-        layer.rect(step * i, (p5.height / m) * j, step + 2);
+        layer.square(step * i, (p5.height / m) * j, step + 2);
       }
     }
   };
