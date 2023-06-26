@@ -5,14 +5,14 @@ import { sketchList } from '@/consts/sketchList';
 import useWindowSize from '@/hooks/useWindowSize';
 import { myAppActions } from '@/store/myApp';
 import MyHead from '@/components/MyHead';
-import SketchAinuPattern05 from '@/components/sketch-components/SketchAinuPattern05';
+import SketchAinuFantasy01 from '@/components/sketch-components/SketchAinuFantasy01';
 import CodeAndBackBtn from '@/components/ui/button/CodeAndBackBtn';
 import HamburgerBtn from '@/components/ui/button/HamburgerBtn';
 import HamburgerMenu from '@/components/ui/menu/HamburgerMenu';
 import MenuBarTop from '@/components/ui/menu/MenuBarTop';
 import styles from '../../styles/Home.module.scss';
 
-const AinuPattern05Page = () => {
+const AinuFantasy01Page = () => {
   const dispatch = useDispatch();
   const { isHamburger, isInTransition } = useSelector((state: MyAppState) => state.myApp);
   const windowWidth = useWindowSize()[0];
@@ -39,7 +39,7 @@ const AinuPattern05Page = () => {
       />
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
-          <SketchAinuPattern05/>
+          <SketchAinuFantasy01/>
         </div>
         <div
           className={`flex-col justify-center items-center absolute bottom-10 ${styles.fade_up}`}
@@ -74,4 +74,4 @@ const AinuPattern05Page = () => {
   );
 };
 
-export default AinuPattern05Page;
+export default AinuFantasy01Page;

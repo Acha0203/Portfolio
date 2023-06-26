@@ -5,14 +5,14 @@ import { sketchList } from '@/consts/sketchList';
 import useWindowSize from '@/hooks/useWindowSize';
 import { myAppActions } from '@/store/myApp';
 import MyHead from '@/components/MyHead';
-import SketchAinuPattern06 from '@/components/sketch-components/SketchAinuPattern06';
+import SketchBezierDance01 from '@/components/sketch-components/SketchBezierDance01';
 import CodeAndBackBtn from '@/components/ui/button/CodeAndBackBtn';
 import HamburgerBtn from '@/components/ui/button/HamburgerBtn';
 import HamburgerMenu from '@/components/ui/menu/HamburgerMenu';
 import MenuBarTop from '@/components/ui/menu/MenuBarTop';
 import styles from '../../styles/Home.module.scss';
 
-const AinuPattern06Page = () => {
+const BezierDance01Page = () => {
   const dispatch = useDispatch();
   const { isHamburger, isInTransition } = useSelector((state: MyAppState) => state.myApp);
   const windowWidth = useWindowSize()[0];
@@ -33,19 +33,19 @@ const AinuPattern06Page = () => {
   return (
     <>
       <MyHead
-        title={sketchList[35].title}
-        thumbnailUrl={sketchList[35].thumbnailUrl}
-        description={sketchList[35].description.en}
+        title={sketchList[17].title}
+        thumbnailUrl={sketchList[17].thumbnailUrl}
+        description={sketchList[17].description.en}
       />
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
-          <SketchAinuPattern06 />
+          <SketchBezierDance01 />
         </div>
         <div
           className={`flex-col justify-center items-center absolute bottom-10 ${styles.fade_up}`}
         >
-          <div className={styles.title_of_sketch}>{`${sketchList[35].title.toUpperCase()}`}</div>
-          <CodeAndBackBtn url={`${sketchList[35].codeUrl}`} prevPage='/sketch-book' />
+          <div className={styles.title_of_sketch}>{`${sketchList[17].title.toUpperCase()}`}</div>
+          <CodeAndBackBtn url={`${sketchList[17].codeUrl}`} prevPage='/sketch-book' />
         </div>
         {isInTransition && (
           <div
@@ -74,4 +74,4 @@ const AinuPattern06Page = () => {
   );
 };
 
-export default AinuPattern06Page;
+export default BezierDance01Page;

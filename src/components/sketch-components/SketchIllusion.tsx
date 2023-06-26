@@ -6,7 +6,7 @@ const Sketch = dynamic(import('react-p5'), {
   ssr: false,
 });
 
-const SketchTransparentObject = () => {
+const SketchIllusion = () => {
   let img: p5Types.Image;
 
   const preload = (p5: p5Types) => {
@@ -51,4 +51,4 @@ const SketchTransparentObject = () => {
   return <Sketch preload={preload} setup={setup} draw={draw} windowResized={windowResized} />;
 };
 
-export default SketchTransparentObject;
+export default SketchIllusion;

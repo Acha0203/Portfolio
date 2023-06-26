@@ -5,14 +5,14 @@ import { sketchList } from '@/consts/sketchList';
 import useWindowSize from '@/hooks/useWindowSize';
 import { myAppActions } from '@/store/myApp';
 import MyHead from '@/components/MyHead';
-import SketchTransparentObject from '@/components/sketch-components/SketchTransparentObject';
+import SketchIllusion from '@/components/sketch-components/SketchIllusion';
 import CodeAndBackBtn from '@/components/ui/button/CodeAndBackBtn';
 import HamburgerBtn from '@/components/ui/button/HamburgerBtn';
 import HamburgerMenu from '@/components/ui/menu/HamburgerMenu';
 import MenuBarTop from '@/components/ui/menu/MenuBarTop';
 import styles from '../../styles/Home.module.scss';
 
-const TransparentObjectPage = () => {
+const IllusionPage = () => {
   const dispatch = useDispatch();
   const { isHamburger, isInTransition } = useSelector((state: MyAppState) => state.myApp);
   const windowWidth = useWindowSize()[0];
@@ -39,7 +39,7 @@ const TransparentObjectPage = () => {
       />
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
-          <SketchTransparentObject />
+          <SketchIllusion />
         </div>
         <div
           className={`flex-col justify-center items-center absolute bottom-10 ${styles.fade_up}`}
@@ -74,4 +74,4 @@ const TransparentObjectPage = () => {
   );
 };
 
-export default TransparentObjectPage;
+export default IllusionPage;

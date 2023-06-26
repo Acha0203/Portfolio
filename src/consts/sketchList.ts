@@ -410,10 +410,10 @@ const sketch17: WorkObj = {
 
 const sketch18: WorkObj = {
   id: 18,
-  title: 'Bezier 9',
+  title: 'Bezier Dance 1',
   thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/bezier-09.png',
-  codeUrl: 'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/bezier09.js',
-  path: '/sketch-book/bezier-09',
+  codeUrl: 'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/bezier-dance01.js',
+  path: '/sketch-book/bezier-dance-01',
   siteUrl: '',
   description: {
     ja: '',
@@ -716,11 +716,11 @@ const sketch30: WorkObj = {
 
 const sketch31: WorkObj = {
   id: 31,
-  title: 'Transparent Object',
+  title: 'Illusion',
   thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/transparent-object.png',
   codeUrl:
-    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/transparent-object.js',
-  path: '/sketch-book/transparent-object',
+    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/illusion.js',
+  path: '/sketch-book/illusion',
   siteUrl: '',
   description: {
     ja: '',
@@ -811,11 +811,11 @@ const sketch34: WorkObj = {
 
 const sketch35: WorkObj = {
   id: 35,
-  title: 'Ainu Pattern 5',
+  title: 'Ainu Fantasy 1',
   thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/ainu-pattern-05.png',
   codeUrl:
-    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/ainu-pattern05.js',
-  path: '/sketch-book/ainu-pattern-05',
+    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/ainu-fantasy01.js',
+  path: '/sketch-book/ainu-fantasy-01',
   siteUrl: '',
   description: {
     ja: '',
@@ -835,11 +835,11 @@ const sketch35: WorkObj = {
 
 const sketch36: WorkObj = {
   id: 36,
-  title: 'Ainu Pattern 6',
+  title: 'Ainu Fantasy 2',
   thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/ainu-pattern-06.png',
   codeUrl:
-    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/ainu-pattern06.js',
-  path: '/sketch-book/ainu-pattern-06',
+    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/ainu-fantasy02.js',
+  path: '/sketch-book/ainu-fantasy-02',
   siteUrl: '',
   description: {
     ja: '',

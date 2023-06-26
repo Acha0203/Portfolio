@@ -6,7 +6,7 @@ const Sketch = dynamic(import('react-p5'), {
   ssr: false,
 });
 
-export const SketchAinuPattern05 = () => {
+export const SketchAinuFantasy01 = () => {
   let hasCreated = false;
   let layer1: p5Types.Graphics;
   let layer2: p5Types.Graphics;
@@ -185,4 +185,4 @@ export const SketchAinuPattern05 = () => {
   return <Sketch setup={setup} draw={draw} windowResized={windowResized} />;
 };
 
-export default SketchAinuPattern05;
+export default SketchAinuFantasy01;

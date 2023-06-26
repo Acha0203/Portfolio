@@ -5,14 +5,14 @@ import { sketchList } from '@/consts/sketchList';
 import useWindowSize from '@/hooks/useWindowSize';
 import { myAppActions } from '@/store/myApp';
 import MyHead from '@/components/MyHead';
-import SketchBezier09 from '@/components/sketch-components/SketchBezier09';
+import SketchAinuFantasy02 from '@/components/sketch-components/SketchAinuFantasy02';
 import CodeAndBackBtn from '@/components/ui/button/CodeAndBackBtn';
 import HamburgerBtn from '@/components/ui/button/HamburgerBtn';
 import HamburgerMenu from '@/components/ui/menu/HamburgerMenu';
 import MenuBarTop from '@/components/ui/menu/MenuBarTop';
 import styles from '../../styles/Home.module.scss';
 
-const Bezier09Page = () => {
+const AinuFantasy02Page = () => {
   const dispatch = useDispatch();
   const { isHamburger, isInTransition } = useSelector((state: MyAppState) => state.myApp);
   const windowWidth = useWindowSize()[0];
@@ -33,19 +33,19 @@ const Bezier09Page = () => {
   return (
     <>
       <MyHead
-        title={sketchList[17].title}
-        thumbnailUrl={sketchList[17].thumbnailUrl}
-        description={sketchList[17].description.en}
+        title={sketchList[35].title}
+        thumbnailUrl={sketchList[35].thumbnailUrl}
+        description={sketchList[35].description.en}
       />
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
-          <SketchBezier09 />
+          <SketchAinuFantasy02 />
         </div>
         <div
           className={`flex-col justify-center items-center absolute bottom-10 ${styles.fade_up}`}
         >
-          <div className={styles.title_of_sketch}>{`${sketchList[17].title.toUpperCase()}`}</div>
-          <CodeAndBackBtn url={`${sketchList[17].codeUrl}`} prevPage='/sketch-book' />
+          <div className={styles.title_of_sketch}>{`${sketchList[35].title.toUpperCase()}`}</div>
+          <CodeAndBackBtn url={`${sketchList[35].codeUrl}`} prevPage='/sketch-book' />
         </div>
         {isInTransition && (
           <div
@@ -74,4 +74,4 @@ const Bezier09Page = () => {
   );
 };
 
-export default Bezier09Page;
+export default AinuFantasy02Page;

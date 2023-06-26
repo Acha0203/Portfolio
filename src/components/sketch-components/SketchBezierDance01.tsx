@@ -6,7 +6,7 @@ const Sketch = dynamic(import('react-p5'), {
   ssr: false,
 });
 
-export const SketchBezier09 = () => {
+export const SketchBezierDance01 = () => {
   const setup = (p5: p5Types, canvasParentRef: Element) => {
     p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
     p5.noFill();
@@ -42,4 +42,4 @@ export const SketchBezier09 = () => {
   return <Sketch setup={setup} draw={draw} windowResized={windowResized} />;
 };
 
-export default SketchBezier09;
+export default SketchBezierDance01;
