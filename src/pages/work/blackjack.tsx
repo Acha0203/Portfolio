@@ -49,9 +49,9 @@ const BlackjackPage = () => {
   return (
     <>
       <MyHead
-        title={workList[1].title}
-        thumbnailUrl={workList[1].thumbnailUrl}
-        description={workList[1].description.en}
+        title={workList[7].title}
+        thumbnailUrl={workList[7].thumbnailUrl}
+        description={workList[7].description.en}
       />
       <div className={`flex-col justify-center items-center relative ${styles.vh_320}`}>
         <SketchBackground />
@@ -60,15 +60,15 @@ const BlackjackPage = () => {
         >
           <div
             className={`${styles.title_of_work} flex justify-center text-white text-center w-3/4`}
-          >{`${workList[1].title.toUpperCase()}`}</div>
+          >{`${workList[7].title.toUpperCase()}`}</div>
           <LanguageSwitch />
           <div className={`flex justify-center items-start w-screen mt-8 sm:mt-10 lg:mt-12`}>
             <div className='w-4/5 sm:w-1/2'>
               <Image
-                src={`${workList[1].thumbnailUrl}.png`}
-                alt={workList[1].title}
-                width={workList[1].thumbnailX}
-                height={workList[1].thumbnailY}
+                src={`${workList[7].thumbnailUrl}.png`}
+                alt={workList[7].title}
+                width={workList[7].thumbnailX}
+                height={workList[7].thumbnailY}
                 sizes='100vw'
                 className={`${styles.work_image} w-full`}
               />
@@ -91,17 +91,17 @@ const BlackjackPage = () => {
               }`}
             >
               {(language === 'English to Japanese' || language === 'English') &&
-                workList[1].description.en}
+                workList[7].description.en}
               {(language === 'Japanese to English' || language === 'Japanese') &&
-                workList[1].description.ja}
+                workList[7].description.ja}
             </div>
-            <Technology index={1} />
+            <Technology index={7} />
           </div>
           <div className='my-5'>
-            <WebsiteBtn text='WEBSITE' url={`${workList[1].siteUrl}`} />
+            <WebsiteBtn text='WEBSITE' url={`${workList[7].siteUrl}`} />
           </div>
           <div className='mb-10'>
-            <CodeAndBackBtn url={`${workList[1].codeUrl}`} prevPage='/work' />
+            <CodeAndBackBtn url={`${workList[7].codeUrl}`} prevPage='/work' />
           </div>
         </div>
         {isInTransition && (

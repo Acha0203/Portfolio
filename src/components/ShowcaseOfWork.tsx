@@ -7,7 +7,7 @@ import styles from '../styles/Home.module.scss';
 const ShowcaseOfWork = () => {
   return (
     <div
-      className={`${styles.showcase_wrapper} flex flex-wrap justify-center items-center w-full absolute px-5`}
+      className={`${styles.showcase_wrapper} flex flex-wrap-reverse justify-center items-center w-full absolute px-5`}
     >
       {workList.map(
         (work: {

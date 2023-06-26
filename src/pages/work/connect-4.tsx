@@ -49,9 +49,9 @@ const Connect4Page = () => {
   return (
     <>
       <MyHead
-        title={workList[0].title}
-        thumbnailUrl={workList[0].thumbnailUrl}
-        description={workList[0].description.en}
+        title={workList[6].title}
+        thumbnailUrl={workList[6].thumbnailUrl}
+        description={workList[6].description.en}
       />
       <div className={`flex-col justify-center items-center relative ${styles.vh_300}`}>
         <SketchBackground />
@@ -60,15 +60,15 @@ const Connect4Page = () => {
         >
           <div
             className={`${styles.title_of_work} flex justify-center text-white text-center w-3/4`}
-          >{`${workList[0].title.toUpperCase()}`}</div>
+          >{`${workList[6].title.toUpperCase()}`}</div>
           <LanguageSwitch />
           <div className={`flex justify-center items-start w-screen mt-8 sm:mt-10 lg:mt-12`}>
             <div className='w-4/5 sm:w-1/2'>
               <Image
-                src={`${workList[0].thumbnailUrl}.png`}
-                alt={workList[0].title}
-                width={workList[0].thumbnailX}
-                height={workList[0].thumbnailY}
+                src={`${workList[6].thumbnailUrl}.png`}
+                alt={workList[6].title}
+                width={workList[6].thumbnailX}
+                height={workList[6].thumbnailY}
                 sizes='100vw'
                 className={`${styles.work_image} w-full`}
               />
@@ -91,9 +91,9 @@ const Connect4Page = () => {
               }`}
             >
               {(language === 'English to Japanese' || language === 'English') &&
-                workList[0].description.en}
+                workList[6].description.en}
               {(language === 'Japanese to English' || language === 'Japanese') &&
-                workList[0].description.ja}
+                workList[6].description.ja}
             </div>
             <div
               className={`${
@@ -155,17 +155,17 @@ const Connect4Page = () => {
               }`}
             >
               {(language === 'English to Japanese' || language === 'English') &&
-                workList[0].supplement.en}
+                workList[6].supplement.en}
               {(language === 'Japanese to English' || language === 'Japanese') &&
-                workList[0].supplement.ja}
+                workList[6].supplement.ja}
             </div>
-            <Technology index={0} />
+            <Technology index={6} />
           </div>
           <div className='my-5'>
-            <WebsiteBtn text='WEBSITE' url={`${workList[0].siteUrl}`} />
+            <WebsiteBtn text='WEBSITE' url={`${workList[6].siteUrl}`} />
           </div>
           <div className='mb-10'>
-            <CodeAndBackBtn url={`${workList[0].codeUrl}`} prevPage='/work' />
+            <CodeAndBackBtn url={`${workList[6].codeUrl}`} prevPage='/work' />
           </div>
         </div>
         {isInTransition && (

@@ -49,9 +49,9 @@ const CountdownTimerPage = () => {
   return (
     <>
       <MyHead
-        title={workList[7].title}
-        thumbnailUrl={workList[7].thumbnailUrl}
-        description={workList[7].description.en}
+        title={workList[3].title}
+        thumbnailUrl={workList[3].thumbnailUrl}
+        description={workList[3].description.en}
       />
       <div className={`flex-col justify-center items-center relative ${styles.vh_200}`}>
         <SketchBackground />
@@ -60,15 +60,15 @@ const CountdownTimerPage = () => {
         >
           <div
             className={`${styles.title_of_work} flex justify-center text-white text-center w-3/4`}
-          >{`${workList[7].title.toUpperCase()}`}</div>
+          >{`${workList[3].title.toUpperCase()}`}</div>
           <LanguageSwitch />
           <div className={`flex justify-center items-start w-screen mt-8 sm:mt-10 lg:mt-12`}>
             <div className='w-4/5 sm:w-1/2'>
               <Image
-                src={`${workList[7].thumbnailUrl}.png`}
-                alt={workList[7].title}
-                width={workList[7].thumbnailX}
-                height={workList[7].thumbnailY}
+                src={`${workList[3].thumbnailUrl}.png`}
+                alt={workList[3].title}
+                width={workList[3].thumbnailX}
+                height={workList[3].thumbnailY}
                 sizes='100vw'
                 className={`${styles.work_image} w-full`}
               />
@@ -91,17 +91,17 @@ const CountdownTimerPage = () => {
               }`}
             >
               {(language === 'English to Japanese' || language === 'English') &&
-                workList[7].description.en}
+                workList[3].description.en}
               {(language === 'Japanese to English' || language === 'Japanese') &&
-                workList[7].description.ja}
+                workList[3].description.ja}
             </div>
-            <Technology index={7} />
+            <Technology index={3} />
           </div>
           <div className='my-5'>
-            <WebsiteBtn text='WEBSITE' url={`${workList[7].siteUrl}`} />
+            <WebsiteBtn text='WEBSITE' url={`${workList[3].siteUrl}`} />
           </div>
           <div className='mb-10'>
-            <CodeAndBackBtn url={`${workList[7].codeUrl}`} prevPage='/work' />
+            <CodeAndBackBtn url={`${workList[3].codeUrl}`} prevPage='/work' />
           </div>
         </div>
         {isInTransition && (

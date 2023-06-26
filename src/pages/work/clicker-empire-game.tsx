@@ -49,9 +49,9 @@ const ClickerEmpireGamePage = () => {
   return (
     <>
       <MyHead
-        title={workList[4].title}
-        thumbnailUrl={workList[4].thumbnailUrl}
-        description={workList[4].description.en}
+        title={workList[0].title}
+        thumbnailUrl={workList[0].thumbnailUrl}
+        description={workList[0].description.en}
       />
       <div className={`flex-col justify-center items-center relative ${styles.vh_320}`}>
         <SketchBackground />
@@ -60,15 +60,15 @@ const ClickerEmpireGamePage = () => {
         >
           <div
             className={`${styles.title_of_work} flex justify-center text-white text-center w-3/4`}
-          >{`${workList[4].title.toUpperCase()}`}</div>
+          >{`${workList[0].title.toUpperCase()}`}</div>
           <LanguageSwitch />
           <div className={`flex justify-center items-start w-screen mt-8 sm:mt-10 lg:mt-12`}>
             <div className='w-4/5 sm:w-1/2'>
               <Image
-                src={`${workList[4].thumbnailUrl}.png`}
-                alt={workList[4].title}
-                width={workList[4].thumbnailX}
-                height={workList[4].thumbnailY}
+                src={`${workList[0].thumbnailUrl}.png`}
+                alt={workList[0].title}
+                width={workList[0].thumbnailX}
+                height={workList[0].thumbnailY}
                 sizes='100vw'
                 className={`${styles.work_image} w-full`}
               />
@@ -92,7 +92,7 @@ const ClickerEmpireGamePage = () => {
             >
               {(language === 'English to Japanese' || language === 'English') && (
                 <>
-                  <div className='mb-5'>{workList[4].description.en}</div>
+                  <div className='mb-5'>{workList[0].description.en}</div>
                   <ol>
                     <li>
                       On the start page, enter your name and select New Game, then click Game Start.
@@ -118,7 +118,7 @@ const ClickerEmpireGamePage = () => {
               )}
               {(language === 'Japanese to English' || language === 'Japanese') && (
                 <>
-                  <div className='mb-5'>{workList[4].description.ja}</div>
+                  <div className='mb-5'>{workList[0].description.ja}</div>
                   <ol>
                     <li>
                       スタート画面で名前を入力して「New Game」を選び、「Game
@@ -139,13 +139,13 @@ const ClickerEmpireGamePage = () => {
                 </>
               )}
             </div>
-            <Technology index={4} />
+            <Technology index={0} />
           </div>
           <div className='my-5'>
-            <WebsiteBtn text='WEBSITE' url={`${workList[4].siteUrl}`} />
+            <WebsiteBtn text='WEBSITE' url={`${workList[0].siteUrl}`} />
           </div>
           <div className='mb-10'>
-            <CodeAndBackBtn url={`${workList[4].codeUrl}`} prevPage='/work' />
+            <CodeAndBackBtn url={`${workList[0].codeUrl}`} prevPage='/work' />
           </div>
         </div>
         {isInTransition && (
