@@ -5,14 +5,14 @@ import { sketchList } from '@/consts/sketchList';
 import useWindowSize from '@/hooks/useWindowSize';
 import { myAppActions } from '@/store/myApp';
 import MyHead from '@/components/MyHead';
-import SketchRotation01 from '@/components/sketch-components/SketchRotation01';
+import SketchBezierDance02 from '@/components/sketch-components/SketchBezierDance02';
 import CodeAndBackBtn from '@/components/ui/button/CodeAndBackBtn';
 import HamburgerBtn from '@/components/ui/button/HamburgerBtn';
 import HamburgerMenu from '@/components/ui/menu/HamburgerMenu';
 import MenuBarTop from '@/components/ui/menu/MenuBarTop';
 import styles from '../../styles/Home.module.scss';
 
-const Rotation01Page = () => {
+const BezierDance02Page = () => {
   const dispatch = useDispatch();
   const { isHamburger, isInTransition } = useSelector((state: MyAppState) => state.myApp);
   const windowWidth = useWindowSize()[0];
@@ -33,19 +33,19 @@ const Rotation01Page = () => {
   return (
     <>
       <MyHead
-        title={sketchList[6].title}
-        thumbnailUrl={sketchList[6].thumbnailUrl}
-        description={sketchList[6].description.en}
+        title={sketchList[37].title}
+        thumbnailUrl={sketchList[37].thumbnailUrl}
+        description={sketchList[37].description.en}
       />
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
-          <SketchRotation01 />
+          <SketchBezierDance02 />
         </div>
         <div
           className={`flex-col justify-center items-center absolute bottom-10 ${styles.fade_up}`}
         >
-          <div className={styles.title_of_sketch}>{`${sketchList[6].title.toUpperCase()}`}</div>
-          <CodeAndBackBtn url={`${sketchList[6].codeUrl}`} prevPage='/sketch-book' />
+          <div className={styles.title_of_sketch}>{`${sketchList[37].title.toUpperCase()}`}</div>
+          <CodeAndBackBtn url={`${sketchList[37].codeUrl}`} prevPage='/sketch-book' />
         </div>
         {isInTransition && (
           <div
@@ -74,4 +74,4 @@ const Rotation01Page = () => {
   );
 };
 
-export default Rotation01Page;
+export default BezierDance02Page;
