@@ -21,7 +21,7 @@ const SketchRandomHearts = () => {
       p5.push();
       p5.rotate(r - p5.PI);
       for (let i = 0; i < 40; i++) {
-        p5.fill(p5.frameCount % 360, 100 - i * 2, 90);
+        p5.fill((p5.frameCount + i) % 360, 100 - i * 2, 90);
         p5.ellipse(200 - i * 5, 0, 240 - i * 6, 200 - i * 5);
       }
       p5.pop();
