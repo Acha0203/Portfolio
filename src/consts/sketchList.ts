@@ -903,6 +903,30 @@ const sketch38: WorkObj = {
   thumbnailY: 0,
 } as const;
 
+const sketch39: WorkObj = {
+  id: 39,
+  title: 'minacoding 2023',
+  thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/minacoding-2023.png',
+  codeUrl:
+    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/minacoding2023.js',
+  path: '/sketch-book/minacoding-2023',
+  siteUrl: '',
+  description: {
+    ja: '',
+    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+  },
+  supplement: {
+    ja: '',
+    en: '',
+  },
+  technology: {
+    ja: 'p5.js',
+    en: 'p5.js',
+  },
+  thumbnailX: 0,
+  thumbnailY: 0,
+} as const;
+
 export const sketchList: WorkObj[] = [
   sketch1,
   sketch2,
@@ -942,4 +966,5 @@ export const sketchList: WorkObj[] = [
   sketch36,
   sketch37,
   sketch38,
+  sketch39,
 ];
