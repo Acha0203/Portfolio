@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { infoList } from '@/consts/information';
 import { myAppActions } from '@/store/myApp';
+import Blackout from '@/components/Blackout';
 import MyHead from '@/components/MyHead';
 import SketchBackground from '@/components/sketch-components/SketchBackground';
 import LanguageSwitch from '@/components/ui/button/LanguageSwitch';
@@ -13,7 +14,7 @@ import styles from '../styles/Home.module.scss';
 
 const InfoPage = () => {
   const dispatch = useDispatch();
-  const { isInTransition, language } = useSelector((state: MyAppState) => state.myApp);
+  const language = useSelector((state: MyAppState) => state.myApp.language);
 
   useEffect(() => {
     if (language === 'English to Japanese') {
@@ -172,11 +173,7 @@ const InfoPage = () => {
             />
           </div>
         </div>
-        {isInTransition && (
-          <div
-            className={`${styles.overlay} flex justify-center items-center fixed top-0 left-0 w-full h-full bg-black`}
-          ></div>
-        )}
+        <Blackout />
         <Menu />
       </div>
     </>
