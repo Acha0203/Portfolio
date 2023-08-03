@@ -2,35 +2,18 @@ import type { MyAppState } from '@/types';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { infoList } from '@/consts/information';
-import useWindowSize from '@/hooks/useWindowSize';
 import { myAppActions } from '@/store/myApp';
 import MyHead from '@/components/MyHead';
 import SketchBackground from '@/components/sketch-components/SketchBackground';
-import HamburgerBtn from '@/components/ui/button/HamburgerBtn';
 import LanguageSwitch from '@/components/ui/button/LanguageSwitch';
 import LinkBtn from '@/components/ui/button/LinkBtn';
 import WebsiteBtn from '@/components/ui/button/WebsiteBtn';
-import HamburgerMenu from '@/components/ui/menu/HamburgerMenu';
-import MenuBarTop from '@/components/ui/menu/MenuBarTop';
+import Menu from '@/components/ui/menu/Menu';
 import styles from '../styles/Home.module.scss';
 
 const InfoPage = () => {
   const dispatch = useDispatch();
-  const { isHamburger, isInTransition, language } = useSelector((state: MyAppState) => state.myApp);
-  const windowWidth = useWindowSize()[0];
-
-  // useWindowSize() を使用すると windowWidth の初期値が 0 にセットされてしまうため、メニューをクリックして画面遷移すると一瞬ハンバーガーメニューが表示されてしまう。それを防ぐために isHamburger という state を設定して、最初に画面が読み込まれた際に画面サイズを取得し、それに合わせてあらかじめ isHamburger の値をセットしておく。そして windowWidth の値が 0 の場合は isHamburger の値を参照する。
-
-  useEffect(() => {
-    dispatch(myAppActions.setIsOpen(false));
-    dispatch(myAppActions.setIsInTransition(false));
-
-    if (window.innerWidth <= 1024) {
-      dispatch(myAppActions.setIsHamburger(true));
-    } else {
-      dispatch(myAppActions.setIsHamburger(false));
-    }
-  }, [dispatch]);
+  const { isInTransition, language } = useSelector((state: MyAppState) => state.myApp);
 
   useEffect(() => {
     if (language === 'English to Japanese') {
@@ -50,7 +33,7 @@ const InfoPage = () => {
         title='Info'
         description='This page shows information about Acha Ikeda, a designer and developer in Japan.'
       />
-      <div className={`flex flex-col justify-center items-center relative ${styles.vh_340}`}>
+      <div className={`flex flex-col justify-center items-center relative h-screen`}>
         <SketchBackground />
         <div
           className={`flex flex-col justify-start items-center absolute ${styles.work_wrapper} ${styles.fade_up}`}
@@ -194,23 +177,7 @@ const InfoPage = () => {
             className={`${styles.overlay} flex justify-center items-center fixed top-0 left-0 w-full h-full bg-black`}
           ></div>
         )}
-        {windowWidth === 0 ? (
-          isHamburger ? (
-            <>
-              <HamburgerMenu />
-              <HamburgerBtn />
-            </>
-          ) : (
-            <MenuBarTop />
-          )
-        ) : windowWidth <= 1024 ? (
-          <>
-            <HamburgerMenu />
-            <HamburgerBtn />
-          </>
-        ) : (
-          <MenuBarTop />
-        )}
+        <Menu />
       </div>
     </>
   );
