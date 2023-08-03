@@ -412,7 +412,8 @@ const sketch18: WorkObj = {
   id: 18,
   title: 'Bezier Dance 1',
   thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/bezier-09.png',
-  codeUrl: 'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/bezier-dance01.js',
+  codeUrl:
+    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/bezier-dance01.js',
   path: '/sketch-book/bezier-dance-01',
   siteUrl: '',
   description: {
@@ -718,8 +719,7 @@ const sketch31: WorkObj = {
   id: 31,
   title: 'Illusion',
   thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/transparent-object.png',
-  codeUrl:
-    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/illusion.js',
+  codeUrl: 'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/illusion.js',
   path: '/sketch-book/illusion',
   siteUrl: '',
   description: {
@@ -861,7 +861,8 @@ const sketch37: WorkObj = {
   id: 37,
   title: 'Random Squares',
   thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/random-squares.png',
-  codeUrl: 'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/random-squares.js',
+  codeUrl:
+    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/random-squares.js',
   path: '/sketch-book/random-squares',
   siteUrl: '',
   description: {
@@ -884,7 +885,8 @@ const sketch38: WorkObj = {
   id: 38,
   title: 'Bezier Dance 2',
   thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/bezier-dance-02.png',
-  codeUrl: 'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/bezier-dance02.js',
+  codeUrl:
+    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/bezier-dance02.js',
   path: '/sketch-book/bezier-dance-02',
   siteUrl: '',
   description: {
@@ -951,6 +953,29 @@ const sketch40: WorkObj = {
   thumbnailY: 0,
 } as const;
 
+const sketch41: WorkObj = {
+  id: 41,
+  title: 'Fireworks 2',
+  thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/fireworks-02.png',
+  codeUrl: 'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/fireworks02.js',
+  path: '/sketch-book/fireworks-02',
+  siteUrl: '',
+  description: {
+    ja: '',
+    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+  },
+  supplement: {
+    ja: '',
+    en: '',
+  },
+  technology: {
+    ja: 'p5.js',
+    en: 'p5.js',
+  },
+  thumbnailX: 0,
+  thumbnailY: 0,
+} as const;
+
 export const sketchList: WorkObj[] = [
   sketch1,
   sketch2,
@@ -992,4 +1017,5 @@ export const sketchList: WorkObj[] = [
   sketch38,
   sketch39,
   sketch40,
+  sketch41,
 ];
