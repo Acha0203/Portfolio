@@ -1,5 +1,4 @@
-import type { MyAppState } from '@/types';
-import { useSelector } from 'react-redux';
+import Blackout from '@/components/Blackout';
 import MyHead from '@/components/MyHead';
 import ShowcaseOfWork from '@/components/ShowcaseOfWork';
 import SketchBackground from '@/components/sketch-components/SketchBackground';
@@ -8,8 +7,6 @@ import Menu from '@/components/ui/menu/Menu';
 import styles from '../styles/Home.module.scss';
 
 const WorkPage = () => {
-  const isInTransition = useSelector((state: MyAppState) => state.myApp.isInTransition);
-
   return (
     <>
       <MyHead
@@ -22,11 +19,7 @@ const WorkPage = () => {
           <TitleOfWork />
           <ShowcaseOfWork />
         </div>
-        {isInTransition && (
-          <div
-            className={`${styles.overlay} flex justify-center items-center fixed top-0 left-0 w-full h-full bg-black`}
-          ></div>
-        )}
+        <Blackout />
         <Menu />
       </div>
     </>
