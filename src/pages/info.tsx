@@ -33,7 +33,7 @@ const InfoPage = () => {
         title='Info'
         description='This page shows information about Acha Ikeda, a designer and developer in Japan.'
       />
-      <div className={`flex flex-col justify-center items-center relative h-screen`}>
+      <div className={`flex flex-col justify-center items-center relative ${styles.vh_340}`}>
         <SketchBackground />
         <div
           className={`flex flex-col justify-start items-center absolute ${styles.work_wrapper} ${styles.fade_up}`}
