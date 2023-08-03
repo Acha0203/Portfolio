@@ -955,6 +955,29 @@ const sketch40: WorkObj = {
 
 const sketch41: WorkObj = {
   id: 41,
+  title: 'Fireworks 1',
+  thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/fireworks-01.png',
+  codeUrl: 'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/fireworks.js',
+  path: '/sketch-book/fireworks-01',
+  siteUrl: '',
+  description: {
+    ja: '',
+    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+  },
+  supplement: {
+    ja: '',
+    en: '',
+  },
+  technology: {
+    ja: 'p5.js',
+    en: 'p5.js',
+  },
+  thumbnailX: 0,
+  thumbnailY: 0,
+} as const;
+
+const sketch42: WorkObj = {
+  id: 42,
   title: 'Fireworks 2',
   thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/fireworks-02.png',
   codeUrl: 'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/fireworks02.js',
@@ -1018,4 +1041,5 @@ export const sketchList: WorkObj[] = [
   sketch39,
   sketch40,
   sketch41,
+  sketch42,
 ];
