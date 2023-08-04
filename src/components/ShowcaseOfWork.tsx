@@ -1,3 +1,4 @@
+import type { WorkObj } from '@/types';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -5,11 +6,13 @@ import { workList } from '@/consts/workList';
 import styles from '../styles/Home.module.scss';
 
 const ShowcaseOfWork = () => {
+  const reversedWorkList: WorkObj[] = [...workList].reverse();
+
   return (
     <div
-      className={`${styles.showcase_wrapper} flex flex-wrap-reverse justify-center items-center w-full absolute px-5`}
+      className={`${styles.showcase_wrapper} flex flex-wrap justify-center items-center w-full absolute px-5`}
     >
-      {workList.map(
+      {reversedWorkList.map(
         (work: {
           id: number;
           title: string;
