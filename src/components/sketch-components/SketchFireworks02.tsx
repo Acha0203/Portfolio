@@ -80,13 +80,14 @@ const SketchFireworks02 = () => {
     }
 
     initFireworks(p5: p5Types) {
+      const MAX_NUMBER = p5.random(10, 20);
       this.fireworks = [];
 
-      for (let i = 0; i < p5.width / 70; i++) {
+      for (let i = 0; i < MAX_NUMBER; i++) {
         this.fireworks.push(
           new Firework(
             p5.createVector(p5.random(p5.width), p5.random(p5.height)),
-            p5.random(p5.width / 10, p5.width / 2),
+            p5.random(p5.height / 10, p5.height / 2),
           ),
         );
 
@@ -107,13 +108,14 @@ const SketchFireworks02 = () => {
   };
 
   const draw = (p5: p5Types) => {
+    const AVERAGE_LIFE = p5.height / 6;
     p5.background(0, 0.05);
 
     for (let i = 0; i < system.fireworks.length; i++) {
       system.fireworks[i].run(p5);
     }
 
-    if (p5.frameCount % 250 <= 0) system.initFireworks(p5);
+    if (p5.frameCount % AVERAGE_LIFE <= 0) system.initFireworks(p5);
   };
 
   const windowResized = (p5: p5Types) => {
