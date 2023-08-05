@@ -108,7 +108,7 @@ const SketchFireworks02 = () => {
   };
 
   const draw = (p5: p5Types) => {
-    const AVERAGE_LIFE = p5.height / 6;
+    const AVERAGE_LIFE = 250;
     p5.background(0, 0.05);
 
     for (let i = 0; i < system.fireworks.length; i++) {
