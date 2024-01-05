@@ -2,7 +2,7 @@ import type { MyAppState } from '@/types';
 import Image from 'next/image';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { workList } from '@/consts/workList';
+import { workList } from '@/constants/workList';
 import { myAppActions } from '@/store/myApp';
 import Blackout from '@/components/Blackout';
 import MyHead from '@/components/MyHead';

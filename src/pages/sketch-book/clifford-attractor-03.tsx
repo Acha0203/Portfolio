@@ -1,4 +1,4 @@
-import { sketchList } from '@/consts/sketchList';
+import { sketchList } from '@/constants/sketchList';
 import Blackout from '@/components/Blackout';
 import MyHead from '@/components/MyHead';
 import SketchCliffordAttractor01 from '@/components/sketch-components/SketchCliffordAttractor03';

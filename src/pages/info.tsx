@@ -1,7 +1,7 @@
 import type { MyAppState } from '@/types';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { infoList } from '@/consts/information';
+import { infoList } from '@/constants/information';
 import { myAppActions } from '@/store/myApp';
 import Blackout from '@/components/Blackout';
 import MyHead from '@/components/MyHead';

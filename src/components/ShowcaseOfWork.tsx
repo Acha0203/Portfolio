@@ -2,7 +2,7 @@ import type { WorkObj } from '@/types';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { workList } from '@/consts/workList';
+import { workList } from '@/constants/workList';
 import styles from '../styles/Home.module.scss';
 
 const ShowcaseOfWork = () => {
