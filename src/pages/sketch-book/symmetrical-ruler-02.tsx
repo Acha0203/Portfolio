@@ -1,4 +1,4 @@
-import { sketchList } from '@/consts/sketchList';
+import { sketchList } from '@/constants/sketchList';
 import Blackout from '@/components/Blackout';
 import MyHead from '@/components/MyHead';
 import SketchSymmetricalRuler02 from '@/components/sketch-components/SketchSymmetricalRuler02';

@@ -1,7 +1,7 @@
 import type { MyAppState } from '@/types';
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { workList } from '@/consts/workList';
+import { workList } from '@/constants/workList';
 import styles from '../styles/Home.module.scss';
 
 interface Props {
@@ -14,9 +14,7 @@ const Technology: React.FC<Props> = ({ index }) => {
   return (
     <div className='flex flex-col justify-center items-center w-3/4 sm:w-3/5'>
       <div
-        className={`${
-          styles.title_of_description
-        } text-center text-white w-full mb-6 sm:mb-10 ${
+        className={`${styles.title_of_description} text-center text-white w-full mb-6 sm:mb-10 ${
           (language === 'English to Japanese' || language === 'Japanese to English') &&
           styles.vanish
         } ${(language === 'English to Japanese' || language === 'English') && styles.en} ${
