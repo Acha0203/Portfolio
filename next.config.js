@@ -14,9 +14,9 @@ const nextConfig = {
       },
     ],
   },
-  experimental: {
-    scrollRestoration: false,
-  },
+  // experimental: {
+  //   scrollRestoration: false,
+  // },
 };
 
 module.exports = nextConfig;
