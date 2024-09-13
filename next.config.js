@@ -2,7 +2,7 @@
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
-  distDir: 'dist',
+  output: 'export',
   reactStrictMode: true,
   images: {
     remotePatterns: [
@@ -17,7 +17,6 @@ const nextConfig = {
   experimental: {
     scrollRestoration: false,
   },
-  output: 'export',
 };
 
 module.exports = nextConfig;
