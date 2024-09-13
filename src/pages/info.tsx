@@ -151,11 +151,11 @@ const InfoPage = () => {
           </div>
           <div className='flex justify-around items-center w-1/3 mt-5 mb-14'>
             <LinkBtn
-              url='https://twitter.com/Acha_for_CS'
-              iconUrl='https://acha0203.github.io/Portfolio/images/Twitter_Logo_white.svg'
-              name='Twitter'
-              width={1034}
-              height={842}
+              url='https://x.com/Acha_for_CS'
+              iconUrl='https://acha0203.github.io/Portfolio/images/x-logo.svg'
+              name='X'
+              width={204}
+              height={200}
             />
             <LinkBtn
               url='https://github.com/Acha0203'

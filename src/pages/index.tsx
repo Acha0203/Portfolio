@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <>
       <MyHead />
-      <div className='flex-col justify-center items-center fixed top-0 right-0'>
+      <div className='flex-col justify-center items-center fixed top-0 right-0 w-screen h-screen'>
         <div className={styles.curtain}>
           <SketchCliffordAttractor01 />
         </div>

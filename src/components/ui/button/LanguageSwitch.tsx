@@ -27,7 +27,7 @@ const LanguageSwitch = () => {
       >
         ENGLISH
       </button>
-      <div className={styles.separater} />
+      <div className={styles.separator} />
       <button
         className={`${styles.en_ja}`}
         onClick={handleClickJa}
