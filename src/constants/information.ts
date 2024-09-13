@@ -12,7 +12,7 @@ const info1: InfoObj = {
 
 2000 - 2011: Designed and coded various websites and created raster or vector graphics for websites.
 
-2012 - Present: Translated English texts into Japanese, including IT and computer marketing materials, computer software manuals, cyber security reports.
+2012 - Present: Translated English texts into Japanese, including IT and computer marketing materials, computer software manuals, and cyber security reports.
 
 2021 - Present: Designed and developed various web applications and websites.
 
