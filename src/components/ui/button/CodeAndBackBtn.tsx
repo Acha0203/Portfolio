@@ -25,7 +25,7 @@ const CodeAndBackBtn: React.FC<Props> = ({ url, prevPage }) => {
           CODE
         </a>
       </div>
-      <div className={styles.separater} />
+      <div className={styles.separator} />
       <div className={`${styles.code} ml-3`}>
         <Link href={prevPage} onClick={handleClick}>
           BACK
