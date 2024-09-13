@@ -14,4 +14,5 @@ module.exports = {
   experimental: {
     scrollRestoration: false,
   },
+  output: 'export',
 };
