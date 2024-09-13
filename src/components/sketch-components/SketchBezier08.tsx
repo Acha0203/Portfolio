@@ -1,5 +1,5 @@
+import type { Sketch } from '@p5-wrapper/react';
 import { NextReactP5Wrapper } from '@p5-wrapper/next';
-import { type Sketch } from '@p5-wrapper/react';
 import React from 'react';
 
 const sketch: Sketch = (p5) => {
@@ -28,7 +28,7 @@ const sketch: Sketch = (p5) => {
 
     p5.circle(x2, y2, 20);
     p5.circle(x3, y3, 20);
-  }
+  };
 
   p5.windowResized = () => {
     p5.resizeCanvas(p5.windowWidth, p5.windowHeight);

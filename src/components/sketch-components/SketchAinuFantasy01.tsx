@@ -1,21 +1,18 @@
-import type p5Types from 'p5';
-import dynamic from 'next/dynamic';
+import type { P5CanvasInstance, Sketch } from '@p5-wrapper/react';
+import type { Graphics } from 'p5';
+import { NextReactP5Wrapper } from '@p5-wrapper/next';
+import React from 'react';
 
-const Sketch = dynamic(import('react-p5'), {
-  loading: () => <></>,
-  ssr: false,
-});
-
-export const SketchAinuFantasy01 = () => {
+const sketch: Sketch = (p5) => {
   let hasCreated = false;
-  let layer1: p5Types.Graphics;
-  let layer2: p5Types.Graphics;
+  let layer1: Graphics;
+  let layer2: Graphics;
 
-  const setup = (p5: p5Types, canvasParentRef: Element) => {
-    p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
+  p5.setup = () => {
+    p5.createCanvas(p5.windowWidth, p5.windowHeight);
   };
 
-  const draw = (p5: p5Types) => {
+  p5.draw = () => {
     p5.clear();
     p5.background(0);
 
@@ -25,7 +22,7 @@ export const SketchAinuFantasy01 = () => {
       hasCreated = true;
     }
 
-    drawBackground(p5, layer1, 50);
+    drawBackground(layer1, 50);
     p5.image(layer1, 0, 0);
 
     p5.push();
@@ -34,98 +31,10 @@ export const SketchAinuFantasy01 = () => {
     p5.image(layer2, 0, 0);
     p5.pop();
 
-    drawAll(p5, layer2);
+    drawAll(layer2);
   };
 
-  class AinuPattern {
-    layer: p5Types.Graphics;
-    cx: number;
-    cy: number;
-
-    constructor(layer: p5Types.Graphics, cx: number, cy: number) {
-      this.layer = layer;
-      this.cx = cx;
-      this.cy = cy;
-    }
-
-    drawSpiral(p5: p5Types, centerX: number, maxRadian: number, direction: number) {
-      const spiralCenterX = centerX * direction;
-      for (let r = 0; r < maxRadian; r += p5.PI / 180) {
-        const p = (r * p5.height) / 100;
-        const x = Math.cos(r) * p * direction + (this.cx - spiralCenterX);
-        const y = Math.sin(r) * p + this.cy;
-        this.layer.circle(x, y, r + p5.height / 64);
-      }
-    }
-
-    drawKnot(
-      p5: p5Types,
-      size: number,
-      thickness: number,
-      spiralRadian: number,
-      maxRadian: number,
-      direction: number,
-    ) {
-      const spiralCenterY = Math.sin(spiralRadian) * spiralRadian * (p5.height / 100);
-
-      for (let r = 1.5 * p5.PI; r < maxRadian; r += p5.PI / 180) {
-        const x = Math.pow(Math.cos(r), 3) * size * direction + this.cx;
-        const y = Math.pow(Math.sin(r), 3) * size + this.cy + spiralCenterY + p5.height / 520;
-        this.layer.circle(x, y, r * thickness);
-      }
-    }
-
-    drawThorn(p5: p5Types, direction: number) {
-      const startPointX = Math.cos(2 * p5.PI) * (p5.height / 14) * direction;
-
-      for (let i = 0; i < p5.height / 2; i += 1) {
-        const r = i * (p5.PI / (p5.height / 4));
-        const x = Math.cos(r) * (p5.height / 14) * direction + this.cx - startPointX;
-        const y = i + Math.cos(r) * (p5.height / 40) + this.cy - p5.height / 150;
-        this.layer.circle(x, y, p5.height / 30 - r);
-      }
-    }
-
-    drawPatternA(p5: p5Types) {
-      const maxRadian = p5.TAU * 2.02;
-      const centerX = (Math.cos(maxRadian) * maxRadian * p5.height) / 100;
-      const size = p5.height / 7;
-      const thickness = p5.height / 260;
-      const spiralRadian = p5.TAU * 1.75;
-
-      this.drawSpiral(p5, centerX, maxRadian, 1);
-      this.drawSpiral(p5, centerX, maxRadian, -1);
-      this.drawKnot(p5, size, thickness, spiralRadian, p5.TAU, 1);
-      this.drawKnot(p5, size, thickness, spiralRadian, p5.TAU, -1);
-      this.drawThorn(p5, 1);
-      this.drawThorn(p5, -1);
-    }
-
-    drawPatternB(p5: p5Types) {
-      const centerX = (Math.cos(p5.TAU) * p5.TAU * p5.height) / 100 + p5.TAU + p5.height / 256;
-      let maxRadian = p5.TAU * 1.72;
-
-      this.drawSpiral(p5, centerX, maxRadian, 1);
-      this.drawSpiral(p5, centerX, maxRadian, -1);
-
-      let size = p5.height / 10;
-      let thickness = p5.height / 220;
-      let spiralRadian = p5.TAU * 1.73;
-      maxRadian = (p5.TAU * 35) / 36;
-
-      this.drawKnot(p5, size, thickness, spiralRadian, maxRadian, 1);
-      this.drawKnot(p5, size, thickness, spiralRadian, maxRadian, -1);
-
-      size = p5.height / 20;
-      thickness = p5.height / 250;
-      spiralRadian = p5.TAU * 1.58;
-
-      this.drawKnot(p5, size, thickness, spiralRadian, maxRadian, 1);
-      this.drawKnot(p5, size, thickness, spiralRadian, maxRadian, -1);
-    }
-  }
-
-  const drawAll = (p5: p5Types, layer: p5Types.Graphics) => {
+  const drawAll = (layer: Graphics) => {
     const ainuPatternA = new AinuPattern(layer, 0, -p5.height * 0.6);
     const ainuPatternB = new AinuPattern(layer, 0, -p5.height * 0.4);
 
@@ -160,7 +69,7 @@ export const SketchAinuFantasy01 = () => {
     layer.pop();
   };
 
-  const drawBackground = (p5: p5Types, layer: p5Types.Graphics, n: number) => {
+  const drawBackground = (layer: Graphics, n: number) => {
     layer.background(0);
     layer.colorMode(p5.HSB);
     layer.noStroke();
@@ -177,12 +86,99 @@ export const SketchAinuFantasy01 = () => {
     }
   };
 
-  const windowResized = (p5: p5Types) => {
-    // コンポーネントのレスポンシブ化
+  p5.windowResized = () => {
     p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
   };
-
-  return <Sketch setup={setup} draw={draw} windowResized={windowResized} />;
 };
 
-export default SketchAinuFantasy01;
+class AinuPattern {
+  layer: Graphics;
+  cx: number;
+  cy: number;
+
+  constructor(layer: Graphics, cx: number, cy: number) {
+    this.layer = layer;
+    this.cx = cx;
+    this.cy = cy;
+  }
+
+  drawSpiral(p5: P5CanvasInstance, centerX: number, maxRadian: number, direction: number) {
+    const spiralCenterX = centerX * direction;
+    for (let r = 0; r < maxRadian; r += p5.PI / 180) {
+      const p = (r * p5.height) / 100;
+      const x = Math.cos(r) * p * direction + (this.cx - spiralCenterX);
+      const y = Math.sin(r) * p + this.cy;
+      this.layer.circle(x, y, r + p5.height / 64);
+    }
+  }
+
+  drawKnot(
+    p5: P5CanvasInstance,
+    size: number,
+    thickness: number,
+    spiralRadian: number,
+    maxRadian: number,
+    direction: number,
+  ) {
+    const spiralCenterY = Math.sin(spiralRadian) * spiralRadian * (p5.height / 100);
+
+    for (let r = 1.5 * p5.PI; r < maxRadian; r += p5.PI / 180) {
+      const x = Math.pow(Math.cos(r), 3) * size * direction + this.cx;
+      const y = Math.pow(Math.sin(r), 3) * size + this.cy + spiralCenterY + p5.height / 520;
+      this.layer.circle(x, y, r * thickness);
+    }
+  }
+
+  drawThorn(p5: P5CanvasInstance, direction: number) {
+    const startPointX = Math.cos(2 * p5.PI) * (p5.height / 14) * direction;
+
+    for (let i = 0; i < p5.height / 2; i += 1) {
+      const r = i * (p5.PI / (p5.height / 4));
+      const x = Math.cos(r) * (p5.height / 14) * direction + this.cx - startPointX;
+      const y = i + Math.cos(r) * (p5.height / 40) + this.cy - p5.height / 150;
+      this.layer.circle(x, y, p5.height / 30 - r);
+    }
+  }
+
+  drawPatternA(p5: P5CanvasInstance) {
+    const maxRadian = p5.TAU * 2.02;
+    const centerX = (Math.cos(maxRadian) * maxRadian * p5.height) / 100;
+    const size = p5.height / 7;
+    const thickness = p5.height / 260;
+    const spiralRadian = p5.TAU * 1.75;
+
+    this.drawSpiral(p5, centerX, maxRadian, 1);
+    this.drawSpiral(p5, centerX, maxRadian, -1);
+    this.drawKnot(p5, size, thickness, spiralRadian, p5.TAU, 1);
+    this.drawKnot(p5, size, thickness, spiralRadian, p5.TAU, -1);
+    this.drawThorn(p5, 1);
+    this.drawThorn(p5, -1);
+  }
+
+  drawPatternB(p5: P5CanvasInstance) {
+    const centerX = (Math.cos(p5.TAU) * p5.TAU * p5.height) / 100 + p5.TAU + p5.height / 256;
+    let maxRadian = p5.TAU * 1.72;
+
+    this.drawSpiral(p5, centerX, maxRadian, 1);
+    this.drawSpiral(p5, centerX, maxRadian, -1);
+
+    let size = p5.height / 10;
+    let thickness = p5.height / 220;
+    let spiralRadian = p5.TAU * 1.73;
+    maxRadian = (p5.TAU * 35) / 36;
+
+    this.drawKnot(p5, size, thickness, spiralRadian, maxRadian, 1);
+    this.drawKnot(p5, size, thickness, spiralRadian, maxRadian, -1);
+
+    size = p5.height / 20;
+    thickness = p5.height / 250;
+    spiralRadian = p5.TAU * 1.58;
+
+    this.drawKnot(p5, size, thickness, spiralRadian, maxRadian, 1);
+    this.drawKnot(p5, size, thickness, spiralRadian, maxRadian, -1);
+  }
+}
+
+export default function SketchAinuFantasy01() {
+  return <NextReactP5Wrapper sketch={sketch} />;
+}
