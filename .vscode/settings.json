@@ -18,7 +18,8 @@
     "unoptimized",
     "lerp",
     "minacoding",
-    "Perlin"
+    "Perlin",
+    "millis"
   ],
   "cSpell.enabledLanguageIds": [
     "asciidoc",

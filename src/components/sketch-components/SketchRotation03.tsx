@@ -1,14 +1,10 @@
-import type p5Types from 'p5';
-import dynamic from 'next/dynamic';
+import type { Sketch } from '@p5-wrapper/react';
+import { NextReactP5Wrapper } from '@p5-wrapper/next';
+import React from 'react';
 
-const Sketch = dynamic(import('react-p5'), {
-  loading: () => <></>,
-  ssr: false,
-});
-
-const SketchRotation03 = () => {
-  const setup = (p5: p5Types, canvasParentRef: Element) => {
-    p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
+const sketch: Sketch = (p5) => {
+  p5.setup = () => {
+    p5.createCanvas(p5.windowWidth, p5.windowHeight);
     p5.angleMode(p5.DEGREES);
     p5.colorMode(p5.HSB);
     p5.noFill();
@@ -18,7 +14,7 @@ const SketchRotation03 = () => {
   const s = 1.1;
   let angle = 0;
 
-  const draw = (p5: p5Types) => {
+  p5.draw = () => {
     p5.background(0, 0.1);
     p5.translate(p5.windowWidth / 2, p5.windowHeight / 2);
 
@@ -32,12 +28,11 @@ const SketchRotation03 = () => {
     angle += 0.5;
   };
 
-  const windowResized = (p5: p5Types) => {
-    // コンポーネントのレスポンシブ化
-    p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
+  p5.windowResized = () => {
+    p5.resizeCanvas(p5.windowWidth, p5.windowHeight, false);
   };
-
-  return <Sketch setup={setup} draw={draw} windowResized={windowResized} />;
 };
 
-export default SketchRotation03;
+export default function SketchRotation03() {
+  return <NextReactP5Wrapper sketch={sketch} />;
+}
