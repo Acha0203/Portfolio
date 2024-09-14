@@ -1,35 +1,27 @@
-import type p5Types from 'p5';
-import dynamic from 'next/dynamic';
-import useWindowSize from '@/hooks/useWindowSize';
+import type { Sketch } from '@p5-wrapper/react';
+import { NextReactP5Wrapper } from '@p5-wrapper/next';
+import React from 'react';
 
-const Sketch = dynamic(import('react-p5'), {
-  loading: () => <></>,
-  ssr: false,
-});
-
-const SketchCircleInCircle03 = () => {
-  const windowWidth = useWindowSize()[0];
-  const windowHeight = useWindowSize()[1];
-
+const sketch: Sketch = (p5) => {
   const circles: Array<{ x: number; y: number }> = [];
   const n = 24;
 
   for (let y = -6; y < n; y++) {
     for (let x = -6; x < n; x++) {
-      const tx = (windowWidth / (n - 1)) * x;
-      const ty = (windowHeight / (n - 1)) * y;
+      const tx = (p5.windowWidth / (n - 1)) * x;
+      const ty = (p5.windowHeight / (n - 1)) * y;
 
       circles.push({ x: tx, y: ty });
     }
   }
 
-  const setup = (p5: p5Types, canvasParentRef: Element) => {
-    p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
+  p5.setup = () => {
+    p5.createCanvas(p5.windowWidth, p5.windowHeight);
     p5.noStroke();
     p5.colorMode(p5.HSB);
   };
 
-  const draw = (p5: p5Types) => {
+  p5.draw = () => {
     p5.background(0, 0.01);
     p5.fill(p5.frameCount % 360, 80, 100);
 
@@ -43,12 +35,11 @@ const SketchCircleInCircle03 = () => {
     }
   };
 
-  const windowResized = (p5: p5Types) => {
-    // コンポーネントのレスポンシブ化
+  p5.windowResized = () => {
     p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
   };
-
-  return <Sketch setup={setup} draw={draw} windowResized={windowResized} />;
 };
 
-export default SketchCircleInCircle03;
+export default function SketchCircleInCircle03() {
+  return <NextReactP5Wrapper sketch={sketch} />;
+}

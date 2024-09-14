@@ -1,22 +1,18 @@
-import type p5Types from 'p5';
-import dynamic from 'next/dynamic';
+import type { Sketch } from '@p5-wrapper/react';
+import { NextReactP5Wrapper } from '@p5-wrapper/next';
+import React from 'react';
 
-const Sketch = dynamic(import('react-p5'), {
-  loading: () => <></>,
-  ssr: false,
-});
-
-export const SketchBezierDance01 = () => {
-  const setup = (p5: p5Types, canvasParentRef: Element) => {
-    p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
+const sketch: Sketch = (p5) => {
+  p5.setup = () => {
+    p5.createCanvas(p5.windowWidth, p5.windowHeight);
     p5.noFill();
     p5.colorMode(p5.HSL, 1);
   };
 
-  const draw = (p5: p5Types) => {
+  p5.draw = () => {
     p5.background(0, 0.05);
-    const c1 = p5.color(0.1, 1, 1);
-    const c2 = p5.color(0.9, 1, 0.05);
+    const c1 = p5.color(0.05, 1, 1);
+    const c2 = p5.color(0.5, 0.5, 0.05);
 
     for (let i = 0; i < 10; i++) {
       p5.stroke(p5.lerpColor(c1, c2, p5.noise(p5.frameCount / 100, 0 + i)));
@@ -34,12 +30,11 @@ export const SketchBezierDance01 = () => {
     }
   };
 
-  const windowResized = (p5: p5Types) => {
-    // コンポーネントのレスポンシブ化
+  p5.windowResized = () => {
     p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
   };
-
-  return <Sketch setup={setup} draw={draw} windowResized={windowResized} />;
 };
 
-export default SketchBezierDance01;
+export default function SketchBezierDance01() {
+  return <NextReactP5Wrapper sketch={sketch} />;
+}
