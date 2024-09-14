@@ -1,13 +1,8 @@
-import type p5Types from 'p5';
-import dynamic from 'next/dynamic';
-import useWindowSize from '@/hooks/useWindowSize';
+import type { Sketch } from '@p5-wrapper/react';
+import { NextReactP5Wrapper } from '@p5-wrapper/next';
+import React from 'react';
 
-const Sketch = dynamic(import('react-p5'), {
-  loading: () => <></>,
-  ssr: false,
-});
-
-const SketchConcentricCircle05 = () => {
+const sketch: Sketch = (p5) => {
   const colors = ['#22577a', '#3873a5', '#5799cc', '#8099ed', '#a7ccf9'];
   const circles: Array<{
     x: number;
@@ -23,27 +18,27 @@ const SketchConcentricCircle05 = () => {
     return array[i];
   };
 
-  const windowSize = useWindowSize();
+  let n: number;
 
-  const n = Math.floor(windowSize[0] * windowSize[1] * (6 / 1e5));
-
-  for (let i = 0; i < n; i++) {
-    circles.push({
-      x: Math.floor(Math.random() * windowSize[0] + 1),
-      y: Math.floor(Math.random() * windowSize[1] + 1),
-      diameter: 2,
-      maxSize: Math.floor(Math.random() * (300 - 50) + 50),
-      c1: pick(colors),
-      c2: pick(colors),
-    });
-  }
-
-  const setup = (p5: p5Types, canvasParentRef: Element) => {
-    p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
+  p5.setup = () => {
+    p5.createCanvas(p5.windowWidth, p5.windowHeight);
     p5.noFill();
+
+    n = Math.floor(p5.windowWidth * p5.windowHeight * (6 / 1e5));
+
+    for (let i = 0; i < n; i++) {
+      circles.push({
+        x: Math.floor(Math.random() * p5.windowWidth + 1),
+        y: Math.floor(Math.random() * p5.windowHeight + 1),
+        diameter: 2,
+        maxSize: Math.floor(Math.random() * (300 - 50) + 50),
+        c1: pick(colors),
+        c2: pick(colors),
+      });
+    }
   };
 
-  const draw = (p5: p5Types) => {
+  p5.draw = () => {
     p5.background(14, 57, 92, 10);
 
     for (let i = 0; i < n; i++) {
@@ -60,12 +55,11 @@ const SketchConcentricCircle05 = () => {
     }
   };
 
-  const windowResized = (p5: p5Types) => {
-    // コンポーネントのレスポンシブ化
+  p5.windowResized = () => {
     p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
   };
-
-  return <Sketch setup={setup} draw={draw} windowResized={windowResized} />;
 };
 
-export default SketchConcentricCircle05;
+export default function SketchConcentricCircle05() {
+  return <NextReactP5Wrapper sketch={sketch} />;
+}
