@@ -1,17 +1,10 @@
-import type p5Types from 'p5';
-import dynamic from 'next/dynamic';
-import useWindowSize from '@/hooks/useWindowSize';
+import type { Sketch } from '@p5-wrapper/react';
+import { NextReactP5Wrapper } from '@p5-wrapper/next';
+import React from 'react';
 
-const Sketch = dynamic(import('react-p5'), {
-  loading: () => <></>,
-  ssr: false,
-});
-
-const SketchRain = () => {
-  const windowWidth = useWindowSize()[0];
-  const windowHeight = useWindowSize()[1];
+const sketch: Sketch = (p5) => {
   const maxSize = 300;
-  const n = Math.floor(windowWidth * windowHeight * (6 / 1e5));
+  const n = Math.floor(p5.windowWidth * p5.windowHeight * (6 / 1e5));
   let drawRipples = false;
   let ripples: Array<{ x: number; y: number; w: number; size: number }> = [];
 
@@ -20,8 +13,8 @@ const SketchRain = () => {
 
     for (let i = 0; i < n; i++) {
       ripples.push({
-        x: Math.floor(Math.random() * windowWidth),
-        y: Math.floor(Math.random() * windowHeight),
+        x: Math.floor(Math.random() * p5.windowWidth),
+        y: Math.floor(Math.random() * p5.windowHeight),
         w: 2,
         size: Math.floor(Math.random() * (300 - 50) + 50),
       });
@@ -30,13 +23,13 @@ const SketchRain = () => {
 
   initRipples();
 
-  const setup = (p5: p5Types, canvasParentRef: Element) => {
-    p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
+  p5.setup = () => {
+    p5.createCanvas(p5.windowWidth, p5.windowHeight);
     p5.noFill();
     initRipples();
   };
 
-  const draw = (p5: p5Types) => {
+  p5.draw = () => {
     p5.background(0, 10);
     p5.stroke(p5.frameCount % 100, 100 + (p5.frameCount % 100), 240);
 
@@ -61,12 +54,11 @@ const SketchRain = () => {
     }
   };
 
-  const windowResized = (p5: p5Types) => {
-    // コンポーネントのレスポンシブ化
-    p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
+  p5.windowResized = () => {
+    p5.resizeCanvas(p5.windowWidth, p5.windowHeight, false);
   };
-
-  return <Sketch setup={setup} draw={draw} windowResized={windowResized} />;
 };
 
-export default SketchRain;
+export default function SketchRain() {
+  return <NextReactP5Wrapper sketch={sketch} />;
+}
