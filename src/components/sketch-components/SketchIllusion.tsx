@@ -1,31 +1,28 @@
-import type p5Types from 'p5';
-import dynamic from 'next/dynamic';
+import type { Sketch } from '@p5-wrapper/react';
+import type { Image } from 'p5';
+import { NextReactP5Wrapper } from '@p5-wrapper/next';
+import React from 'react';
 
-const Sketch = dynamic(import('react-p5'), {
-  loading: () => <></>,
-  ssr: false,
-});
+const sketch: Sketch = (p5) => {
+  let img: Image;
 
-const SketchIllusion = () => {
-  let img: p5Types.Image;
-
-  const preload = (p5: p5Types) => {
+  p5.preload = () => {
     img = p5.loadImage('https://acha0203.github.io/Portfolio/images/symmetrical-ruler-03-m.png');
   };
 
-  const setup = (p5: p5Types, canvasParentRef: Element) => {
-    p5.createCanvas(p5.windowWidth, p5.windowHeight, p5.WEBGL).parent(canvasParentRef);
+  p5.setup = () => {
+    p5.createCanvas(p5.windowWidth, p5.windowHeight, p5.WEBGL);
     p5.noStroke();
     p5.blendMode(p5.SCREEN);
   };
 
-  const draw = (p5: p5Types) => {
+  p5.draw = () => {
     p5.background(0);
 
     if (img !== undefined) {
       p5.texture(img);
     } else {
-      preload(p5);
+      p5.preload();
     }
 
     p5.rotateY(p5.frameCount * -0.01);
@@ -43,12 +40,11 @@ const SketchIllusion = () => {
     p5.box(p5.width / 2);
   };
 
-  const windowResized = (p5: p5Types) => {
-    // コンポーネントのレスポンシブ化
-    p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
+  p5.windowResized = () => {
+    p5.resizeCanvas(p5.windowWidth, p5.windowHeight, false);
   };
-
-  return <Sketch preload={preload} setup={setup} draw={draw} windowResized={windowResized} />;
 };
 
-export default SketchIllusion;
+export default function SketchIllusion() {
+  return <NextReactP5Wrapper sketch={sketch} />;
+}
