@@ -1,41 +1,34 @@
-import type p5Types from 'p5';
-import dynamic from 'next/dynamic';
-import useWindowSize from '@/hooks/useWindowSize';
+import type { Sketch } from '@p5-wrapper/react';
+import { NextReactP5Wrapper } from '@p5-wrapper/next';
+import React from 'react';
 
-const Sketch = dynamic(import('react-p5'), {
-  loading: () => <></>,
-  ssr: false,
-});
-
-const SketchFlowField03 = () => {
+const sketch: Sketch = (p5) => {
   let pos: Array<{ x: number; y: number }> = [];
   let n = 5;
-  const windowWidth = useWindowSize()[0];
-  const windowHeight = useWindowSize()[1];
-  const max = 1e4 + windowWidth * 5;
+  const max = 1e4 + p5.windowWidth * 5;
 
   for (let i = 0; i < max; i++) {
-    pos.push({ x: Math.random() * windowWidth, y: Math.random() * windowHeight });
+    pos.push({ x: Math.random() * p5.windowWidth, y: Math.random() * p5.windowHeight });
   }
 
-  const setup = (p5: p5Types, canvasParentRef: Element) => {
-    p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
+  p5.setup = () => {
+    p5.createCanvas(p5.windowWidth, p5.windowHeight);
     p5.blendMode(p5.ADD);
     p5.stroke(0, 0, 255, 10);
   };
 
-  const draw = (p5: p5Types) => {
+  p5.draw = () => {
     p5.background(0);
-    drawFlowField(p5);
+    drawFlowField();
   };
 
-  const mousePressed = (p5: p5Types) => {
+  p5.mousePressed = () => {
     p5.clear();
-    initPosList(p5);
+    initPosList();
     n = p5.random(5, 20);
   };
 
-  const initPosList = (p5: p5Types) => {
+  const initPosList = () => {
     pos = [];
 
     for (let i = 0; i < max; i++) {
@@ -43,7 +36,7 @@ const SketchFlowField03 = () => {
     }
   };
 
-  const drawFlowField = (p5: p5Types) => {
+  const drawFlowField = () => {
     for (let i = 0; i < pos.length; i++) {
       p5.stroke(i / 100, i / 70, 255, 10);
       p5.point(pos[i].x, pos[i].y);
@@ -60,14 +53,11 @@ const SketchFlowField03 = () => {
     }
   };
 
-  const windowResized = (p5: p5Types) => {
-    // コンポーネントのレスポンシブ化
-    p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
+  p5.windowResized = () => {
+    p5.resizeCanvas(p5.windowWidth, p5.windowHeight, false);
   };
-
-  return (
-    <Sketch setup={setup} draw={draw} windowResized={windowResized} mousePressed={mousePressed} />
-  );
 };
 
-export default SketchFlowField03;
+export default function SketchFlowField03() {
+  return <NextReactP5Wrapper sketch={sketch} />;
+}

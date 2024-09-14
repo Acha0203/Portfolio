@@ -14,6 +14,7 @@ const sketch: Sketch = (p5) => {
   };
 
   p5.setup = () => {
+    hasCreated = false;
     p5.createCanvas(p5.windowWidth, p5.windowHeight);
   };
 
@@ -30,8 +31,19 @@ const sketch: Sketch = (p5) => {
     drawBackground(layer1, 50);
     drawAinuSphere(layer2);
 
-    p5.image(layer1, 0, 0);
-    p5.image(layer2, 0, 0);
+    let w: number;
+    let h: number;
+
+    if (p5.width > p5.height) {
+      w = p5.width;
+      h = layer1.height * (p5.width / layer1.width);
+    } else {
+      w = layer1.width * (p5.height / layer1.height);
+      h = p5.height;
+    }
+
+    p5.image(layer1, 0, 0, w, h);
+    p5.image(layer2, 0, 0, w, h);
   };
 
   const drawAinuSphere = (layer: Graphics) => {
@@ -81,7 +93,7 @@ const sketch: Sketch = (p5) => {
   };
 
   p5.windowResized = () => {
-    p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
+    p5.resizeCanvas(p5.windowWidth, p5.windowHeight, false);
   };
 };
 
