@@ -1,26 +1,24 @@
-import type p5Types from 'p5';
-import dynamic from 'next/dynamic';
+import type { Sketch } from '@p5-wrapper/react';
+import type { Image, Graphics } from 'p5';
+import { NextReactP5Wrapper } from '@p5-wrapper/next';
+import React from 'react';
 
-const Sketch = dynamic(import('react-p5'), {
-  loading: () => <></>,
-  ssr: false,
-});
-
-const SketchAinuFantasy02 = () => {
+const sketch: Sketch = (p5) => {
   let hasCreated = false;
-  let img: p5Types.Image;
-  let layer1: p5Types.Graphics;
-  let layer2: p5Types.Graphics;
+  let img: Image;
+  let layer1: Graphics;
+  let layer2: Graphics;
 
-  const preload = (p5: p5Types) => {
+  p5.preload = () => {
     img = p5.loadImage('https://acha0203.github.io/Portfolio/images/ainu-pattern-03-m3.png');
   };
 
-  const setup = (p5: p5Types, canvasParentRef: Element) => {
-    p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
+  p5.setup = () => {
+    hasCreated = false;
+    p5.createCanvas(p5.windowWidth, p5.windowHeight);
   };
 
-  const draw = (p5: p5Types) => {
+  p5.draw = () => {
     p5.clear();
     p5.blendMode(p5.MULTIPLY);
 
@@ -30,14 +28,25 @@ const SketchAinuFantasy02 = () => {
       hasCreated = true;
     }
 
-    drawBackground(p5, layer1, 50);
-    drawAinuSphere(p5, layer2);
+    drawBackground(layer1, 50);
+    drawAinuSphere(layer2);
 
-    p5.image(layer1, 0, 0);
-    p5.image(layer2, 0, 0);
+    let w: number;
+    let h: number;
+
+    if (p5.width > p5.height) {
+      w = p5.width;
+      h = layer1.height * (p5.width / layer1.width);
+    } else {
+      w = layer1.width * (p5.height / layer1.height);
+      h = p5.height;
+    }
+
+    p5.image(layer1, 0, 0, w, h);
+    p5.image(layer2, 0, 0, w, h);
   };
 
-  const drawAinuSphere = (p5: p5Types, layer: p5Types.Graphics) => {
+  const drawAinuSphere = (layer: Graphics) => {
     layer.clear();
     layer.background(0);
     layer.blendMode(p5.SCREEN);
@@ -46,7 +55,7 @@ const SketchAinuFantasy02 = () => {
     if (img !== undefined) {
       layer.texture(img);
     } else {
-      preload(p5);
+      p5.preload();
     }
 
     layer.push();
@@ -67,7 +76,7 @@ const SketchAinuFantasy02 = () => {
     layer.pop();
   };
 
-  const drawBackground = (p5: p5Types, layer: p5Types.Graphics, n: number) => {
+  const drawBackground = (layer: Graphics, n: number) => {
     layer.colorMode(p5.HSB);
     layer.noStroke();
     const step = p5.width / n;
@@ -83,12 +92,11 @@ const SketchAinuFantasy02 = () => {
     }
   };
 
-  const windowResized = (p5: p5Types) => {
-    // コンポーネントのレスポンシブ化
-    p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
+  p5.windowResized = () => {
+    p5.resizeCanvas(p5.windowWidth, p5.windowHeight, false);
   };
-
-  return <Sketch preload={preload} setup={setup} draw={draw} windowResized={windowResized} />;
 };
 
-export default SketchAinuFantasy02;
+export default function SketchAinuFantasy02() {
+  return <NextReactP5Wrapper sketch={sketch} />;
+}

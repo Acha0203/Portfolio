@@ -1,21 +1,18 @@
-import type p5Types from 'p5';
-import dynamic from 'next/dynamic';
+import type { Sketch } from '@p5-wrapper/react';
+import type { Vector } from 'p5';
+import { NextReactP5Wrapper } from '@p5-wrapper/next';
+import React from 'react';
 
-const Sketch = dynamic(import('react-p5'), {
-  loading: () => <></>,
-  ssr: false,
-});
-
-const SketchFireworks02 = () => {
+const sketch: Sketch = (p5) => {
   // A simple Particle class
   class Particle {
-    acceleration: p5Types.Vector;
-    velocity: p5Types.Vector;
-    position: p5Types.Vector;
+    acceleration: Vector;
+    velocity: Vector;
+    position: Vector;
     lifespan: number;
     size: number;
 
-    constructor(p5: p5Types, position: p5Types.Vector, x: number, y: number, size: number) {
+    constructor(position: Vector, x: number, y: number, size: number) {
       this.acceleration = p5.createVector(0, 0.005);
       this.velocity = p5.createVector(x, y);
       this.position = position.copy();
@@ -23,9 +20,9 @@ const SketchFireworks02 = () => {
       this.size = size;
     }
 
-    run(p5: p5Types): void {
+    run(): void {
       this.update();
-      this.display(p5);
+      this.display();
     }
 
     // Method to update position
@@ -36,7 +33,7 @@ const SketchFireworks02 = () => {
     }
 
     // Method to display
-    display(p5: p5Types) {
+    display() {
       p5.fill((p5.frameCount + this.size) % 360, 90, this.lifespan, this.lifespan);
       p5.circle(this.position.x, this.position.y, p5.random(this.size - this.lifespan) / 50);
     }
@@ -48,26 +45,26 @@ const SketchFireworks02 = () => {
   }
 
   class Firework {
-    origin: p5Types.Vector;
+    origin: Vector;
     particles: Particle[];
     size: number;
 
-    constructor(position: p5Types.Vector, size: number) {
+    constructor(position: Vector, size: number) {
       this.origin = position.copy();
       this.particles = [];
       this.size = size;
     }
 
-    addParticle(p5: p5Types) {
+    addParticle() {
       for (let r = 0; r < p5.TAU; r += p5.PI / 10) {
-        this.particles.push(new Particle(p5, this.origin, Math.cos(r), Math.sin(r), this.size));
+        this.particles.push(new Particle(this.origin, Math.cos(r), Math.sin(r), this.size));
       }
     }
 
-    run(p5: p5Types) {
+    run() {
       this.particles = this.particles.filter((p) => !p.isDead());
-      for (let i = 0; i < this.particles.length; i++) {
-        this.particles[i].run(p5);
+      for (const element of this.particles) {
+        element.run();
       }
     }
   }
@@ -79,7 +76,7 @@ const SketchFireworks02 = () => {
       this.fireworks = [];
     }
 
-    initFireworks(p5: p5Types) {
+    initFireworks() {
       const MAX_NUMBER = p5.random(10, 20);
       this.fireworks = [];
 
@@ -91,39 +88,38 @@ const SketchFireworks02 = () => {
           ),
         );
 
-        this.fireworks[i].addParticle(p5);
+        this.fireworks[i].addParticle();
       }
     }
   }
 
   let system = new Fireworks();
 
-  const setup = (p5: p5Types, canvasParentRef: Element) => {
-    p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
+  p5.setup = () => {
+    p5.createCanvas(p5.windowWidth, p5.windowHeight);
     p5.colorMode(p5.HSB);
     p5.noStroke();
 
     system = new Fireworks();
-    system.initFireworks(p5);
+    system.initFireworks();
   };
 
-  const draw = (p5: p5Types) => {
+  p5.draw = () => {
     const AVERAGE_LIFE = 250;
     p5.background(0, 0.05);
 
-    for (let i = 0; i < system.fireworks.length; i++) {
-      system.fireworks[i].run(p5);
+    for (const element of system.fireworks) {
+      element.run();
     }
 
-    if (p5.frameCount % AVERAGE_LIFE <= 0) system.initFireworks(p5);
+    if (p5.frameCount % AVERAGE_LIFE <= 0) system.initFireworks();
   };
 
-  const windowResized = (p5: p5Types) => {
-    // コンポーネントのレスポンシブ化
-    p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
+  p5.windowResized = () => {
+    p5.resizeCanvas(p5.windowWidth, p5.windowHeight, false);
   };
-
-  return <Sketch setup={setup} draw={draw} windowResized={windowResized} />;
 };
 
-export default SketchFireworks02;
+export default function SketchFireworks02() {
+  return <NextReactP5Wrapper sketch={sketch} />;
+}

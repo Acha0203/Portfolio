@@ -1,12 +1,8 @@
-import type p5Types from 'p5';
-import dynamic from 'next/dynamic';
+import type { Sketch } from '@p5-wrapper/react';
+import { NextReactP5Wrapper } from '@p5-wrapper/next';
+import React from 'react';
 
-const Sketch = dynamic(import('react-p5'), {
-  loading: () => <></>,
-  ssr: false,
-});
-
-export const SketchCliffordAttractor03 = () => {
+const sketch: Sketch = (p5) => {
   const drawScale = 200;
   let noiseValA = 0.002;
   let noiseValB = 0.002;
@@ -17,14 +13,14 @@ export const SketchCliffordAttractor03 = () => {
   let c = -1.8;
   let d = -0.5;
 
-  const setup = (p5: p5Types, canvasParentRef: Element) => {
-    p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
+  p5.setup = () => {
+    p5.createCanvas(p5.windowWidth, p5.windowHeight);
     p5.background(0);
     p5.blendMode(p5.ADD);
     p5.stroke(0, 100, 100, 100);
   };
 
-  const draw = (p5: p5Types) => {
+  p5.draw = () => {
     p5.clear();
     p5.translate(p5.windowWidth / 2, p5.windowHeight / 2);
     let xNow = 0.1;
@@ -51,12 +47,11 @@ export const SketchCliffordAttractor03 = () => {
     d += noiseValD;
   };
 
-  const windowResized = (p5: p5Types) => {
-    // コンポーネントのレスポンシブ化
-    p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
+  p5.windowResized = () => {
+    p5.resizeCanvas(p5.windowWidth, p5.windowHeight, false);
   };
-
-  return <Sketch setup={setup} draw={draw} windowResized={windowResized} />;
 };
 
-export default SketchCliffordAttractor03;
+export default function SketchCliffordAttractor03() {
+  return <NextReactP5Wrapper sketch={sketch} />;
+}

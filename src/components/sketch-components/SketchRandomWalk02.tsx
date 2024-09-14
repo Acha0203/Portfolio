@@ -1,12 +1,8 @@
-import type p5Types from 'p5';
-import dynamic from 'next/dynamic';
+import type { Sketch } from '@p5-wrapper/react';
+import { NextReactP5Wrapper } from '@p5-wrapper/next';
+import React from 'react';
 
-const Sketch = dynamic(import('react-p5'), {
-  loading: () => <></>,
-  ssr: false,
-});
-
-const SketchRandomWalk02 = () => {
+const sketch: Sketch = (p5) => {
   let walker = { x: 0, y: 0 };
   const s = 8;
   const colors = [
@@ -22,31 +18,31 @@ const SketchRandomWalk02 = () => {
     '#77986a',
   ];
 
-  const setup = (p5: p5Types, canvasParentRef: Element) => {
-    p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
+  p5.setup = () => {
+    p5.createCanvas(p5.windowWidth, p5.windowHeight);
     p5.noFill();
     p5.strokeWeight(1);
-    setWalker(p5);
+    setWalker();
   };
 
-  const draw = (p5: p5Types) => {
+  p5.draw = () => {
     p5.background(0, 10);
 
     for (let i = 0; i < p5.width; i++) {
-      walk(p5, walker, i);
+      walk(walker, i);
     }
 
-    setWalker(p5);
+    setWalker();
   };
 
-  const setWalker = (p5: p5Types) => {
+  const setWalker = () => {
     const x = p5.random(p5.width);
     const y = p5.random(p5.height);
 
     walker = { x, y };
   };
 
-  const walk = (p5: p5Types, walker: { x: number; y: number }, i: number) => {
+  const walk = (walker: { x: number; y: number }, i: number) => {
     const x = walker.x + s * p5.random([-1, 1]);
     const y = walker.y + s * p5.random([-1, 1]);
 
@@ -57,12 +53,11 @@ const SketchRandomWalk02 = () => {
     walker.y = y;
   };
 
-  const windowResized = (p5: p5Types) => {
-    // コンポーネントのレスポンシブ化
-    p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
+  p5.windowResized = () => {
+    p5.resizeCanvas(p5.windowWidth, p5.windowHeight, false);
   };
-
-  return <Sketch setup={setup} draw={draw} windowResized={windowResized} />;
 };
 
-export default SketchRandomWalk02;
+export default function SketchRandomWalk02() {
+  return <NextReactP5Wrapper sketch={sketch} />;
+}

@@ -1,16 +1,12 @@
-import type p5Types from 'p5';
-import dynamic from 'next/dynamic';
+import type { Sketch } from '@p5-wrapper/react';
+import { NextReactP5Wrapper } from '@p5-wrapper/next';
+import React from 'react';
 
-const Sketch = dynamic(import('react-p5'), {
-  loading: () => <></>,
-  ssr: false,
-});
-
-const SketchFireworks01 = () => {
+const sketch: Sketch = (p5) => {
   const n = 9;
   let fireworks: Array<{ x: number; y: number; size: number }> = [];
 
-  const initFireworks = (p5: p5Types): void => {
+  const initFireworks = (): void => {
     fireworks = [];
 
     for (let i = 0; i < n; i++) {
@@ -22,14 +18,14 @@ const SketchFireworks01 = () => {
     }
   };
 
-  const setup = (p5: p5Types, canvasParentRef: Element) => {
-    p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
+  p5.setup = () => {
+    p5.createCanvas(p5.windowWidth, p5.windowHeight);
     p5.colorMode(p5.HSB);
     p5.noStroke();
-    initFireworks(p5);
+    initFireworks();
   };
 
-  const draw = (p5: p5Types) => {
+  p5.draw = () => {
     p5.background(0, 0.05);
 
     for (let i = 0; i < n; i++) {
@@ -42,15 +38,14 @@ const SketchFireworks01 = () => {
       }
     }
 
-    if (p5.frameCount % 90 <= 0) initFireworks(p5);
+    if (p5.frameCount % 90 <= 0) initFireworks();
   };
 
-  const windowResized = (p5: p5Types) => {
-    // コンポーネントのレスポンシブ化
-    p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
+  p5.windowResized = () => {
+    p5.resizeCanvas(p5.windowWidth, p5.windowHeight, false);
   };
-
-  return <Sketch setup={setup} draw={draw} windowResized={windowResized} />;
 };
 
-export default SketchFireworks01;
+export default function SketchFireworks01() {
+  return <NextReactP5Wrapper sketch={sketch} />;
+}

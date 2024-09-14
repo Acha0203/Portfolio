@@ -1,21 +1,17 @@
-import type p5Types from 'p5';
-import dynamic from 'next/dynamic';
+import type { Sketch } from '@p5-wrapper/react';
+import { NextReactP5Wrapper } from '@p5-wrapper/next';
+import React from 'react';
 
-const Sketch = dynamic(import('react-p5'), {
-  loading: () => <></>,
-  ssr: false,
-});
-
-const SketchCircleMotion01 = () => {
-  const setup = (p5: p5Types, canvasParentRef: Element) => {
-    p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
+const sketch: Sketch = (p5) => {
+  p5.setup = () => {
+    p5.createCanvas(p5.windowWidth, p5.windowHeight);
     p5.colorMode(p5.HSB);
     p5.noFill();
   };
 
   let angle = 0;
 
-  const draw = (p5: p5Types) => {
+  p5.draw = () => {
     const centerX = p5.windowWidth / 2;
     const centerY = p5.windowHeight / 2;
 
@@ -33,12 +29,11 @@ const SketchCircleMotion01 = () => {
     angle += 0.02;
   };
 
-  const windowResized = (p5: p5Types) => {
-    // コンポーネントのレスポンシブ化
-    p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
+  p5.windowResized = () => {
+    p5.resizeCanvas(p5.windowWidth, p5.windowHeight, false);
   };
-
-  return <Sketch setup={setup} draw={draw} windowResized={windowResized} />;
 };
 
-export default SketchCircleMotion01;
+export default function SketchCircleMotion01() {
+  return <NextReactP5Wrapper sketch={sketch} />;
+}

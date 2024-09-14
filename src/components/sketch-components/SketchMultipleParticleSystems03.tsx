@@ -1,12 +1,9 @@
-import type p5Types from 'p5';
-import dynamic from 'next/dynamic';
+import type { Sketch } from '@p5-wrapper/react';
+import type { Vector } from 'p5';
+import { NextReactP5Wrapper } from '@p5-wrapper/next';
+import React from 'react';
 
-const Sketch = dynamic(import('react-p5'), {
-  loading: () => <></>,
-  ssr: false,
-});
-
-const SketchMultipleParticleSystems03 = () => {
+const sketch: Sketch = (p5) => {
   let systems: ParticleSystem[] = [];
   let green = 100;
   let blue = 150;
@@ -14,18 +11,18 @@ const SketchMultipleParticleSystems03 = () => {
   let blueD = 1;
   let isFirst = true;
 
-  const setup = (p5: p5Types, canvasParentRef: Element) => {
-    p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
+  p5.setup = () => {
+    p5.createCanvas(p5.windowWidth, p5.windowHeight);
     systems = [];
-    addNewParticles(p5, p5.width / 2, p5.height / 2);
+    addNewParticles(p5.width / 2, p5.height / 2);
   };
 
-  const draw = (p5: p5Types) => {
+  p5.draw = () => {
     p5.background(0);
 
     for (let i = 0; i < systems.length; i++) {
-      systems[i].run(p5);
-      systems[i].addParticle(p5);
+      systems[i].run();
+      systems[i].addParticle();
 
       if (systems[i].number <= 0 && systems[i].particles.length <= 0) {
         systems.splice(i, 1);
@@ -34,7 +31,7 @@ const SketchMultipleParticleSystems03 = () => {
 
     if (systems.length === 0) {
       if (isFirst) {
-        addNewParticles(p5, p5.width / 2, p5.height / 2);
+        addNewParticles(p5.width / 2, p5.height / 2);
         isFirst = false;
       } else {
         isFirst = p5.frameCount % 400 === 0;
@@ -42,12 +39,12 @@ const SketchMultipleParticleSystems03 = () => {
     }
   };
 
-  const mousePressed = (p5: p5Types) => {
+  p5.mousePressed = () => {
     if (isHit(p5.mouseX, p5.mouseY)) {
-      addNewParticles(p5, p5.mouseX, p5.mouseY);
+      addNewParticles(p5.mouseX, p5.mouseY);
     }
   };
-  const addNewParticles = (p5: p5Types, x: number, y: number) => {
+  const addNewParticles = (x: number, y: number) => {
     green -= 20 * greenD;
     blue += 20 * blueD;
 
@@ -64,13 +61,13 @@ const SketchMultipleParticleSystems03 = () => {
   };
 
   const isHit = (x: number, y: number) => {
-    for (let i = 0; i < systems.length; i++) {
-      for (let j = 0; j < systems[i].particles.length; j++) {
+    for (const element of systems) {
+      for (const particle of element.particles) {
         if (
-          x <= systems[i].particles[j].position.x + systems[i].particles[j].size / 2 &&
-          x >= systems[i].particles[j].position.x - systems[i].particles[j].size / 2 &&
-          y <= systems[i].particles[j].position.y + systems[i].particles[j].size / 2 &&
-          y >= systems[i].particles[j].position.y - systems[i].particles[j].size / 2
+          x <= particle.position.x + Number(particle.size) / 2 &&
+          x >= particle.position.x - Number(particle.size) / 2 &&
+          y <= particle.position.y + Number(particle.size) / 2 &&
+          y >= particle.position.y - Number(particle.size) / 2
         ) {
           console.log('Hit!');
 
@@ -84,13 +81,13 @@ const SketchMultipleParticleSystems03 = () => {
 
   /// A simple Particle class
   class Particle {
-    acceleration: p5Types.Vector;
-    velocity: p5Types.Vector;
-    position: p5Types.Vector;
+    acceleration: Vector;
+    velocity: Vector;
+    position: Vector;
     lifespan: number;
     size: number;
 
-    constructor(p5: p5Types, position: p5Types.Vector, size: number) {
+    constructor(position: Vector, size: number) {
       this.acceleration = p5.createVector(0, 0.02);
       this.velocity = p5.createVector(p5.random(-5, 5), p5.random(-5, 5));
       this.position = position.copy();
@@ -98,9 +95,9 @@ const SketchMultipleParticleSystems03 = () => {
       this.size = size;
     }
 
-    run(p5: p5Types, green: number, blue: number) {
+    run(green: number, blue: number) {
       this.update();
-      this.display(p5, green, blue);
+      this.display(green, blue);
     }
 
     // Method to update position
@@ -111,7 +108,7 @@ const SketchMultipleParticleSystems03 = () => {
     }
 
     // Method to display
-    display(p5: p5Types, green: number, blue: number) {
+    display(green: number, blue: number) {
       p5.stroke(0, green + 50, blue + 50, this.lifespan);
       p5.strokeWeight(2);
       p5.fill(0, green, blue, this.lifespan);
@@ -129,13 +126,13 @@ const SketchMultipleParticleSystems03 = () => {
   }
 
   class ParticleSystem {
-    origin: p5Types.Vector;
+    origin: Vector;
     particles: Particle[];
     green: number;
     blue: number;
     number: number;
 
-    constructor(position: p5Types.Vector, green: number, blue: number) {
+    constructor(position: Vector, green: number, blue: number) {
       this.origin = position.copy();
       this.particles = [];
       this.green = green;
@@ -143,18 +140,18 @@ const SketchMultipleParticleSystems03 = () => {
       this.number = 100;
     }
 
-    addParticle(p5: p5Types) {
+    addParticle() {
       if (this.number > 0) {
-        const p = new Particle(p5, this.origin, p5.random(5, 30));
+        const p = new Particle(this.origin, p5.random(5, 30));
 
         this.particles.push(p);
       }
     }
 
-    run(p5: p5Types) {
+    run() {
       for (let i = this.particles.length - 1; i >= 0; i--) {
         const p = this.particles[i];
-        p.run(p5, this.green, this.blue);
+        p.run(this.green, this.blue);
         if (p.isDead()) {
           this.particles.splice(i, 1);
           this.number--;
@@ -167,14 +164,11 @@ const SketchMultipleParticleSystems03 = () => {
     }
   }
 
-  const windowResized = (p5: p5Types) => {
-    // コンポーネントのレスポンシブ化
-    p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
+  p5.windowResized = () => {
+    p5.resizeCanvas(p5.windowWidth, p5.windowHeight, false);
   };
-
-  return (
-    <Sketch setup={setup} draw={draw} windowResized={windowResized} mousePressed={mousePressed} />
-  );
 };
 
-export default SketchMultipleParticleSystems03;
+export default function SketchMultipleParticleSystems03() {
+  return <NextReactP5Wrapper sketch={sketch} />;
+}

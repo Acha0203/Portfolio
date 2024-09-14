@@ -1,27 +1,23 @@
-import type p5Types from 'p5';
-import dynamic from 'next/dynamic';
+import type { Sketch } from '@p5-wrapper/react';
+import { NextReactP5Wrapper } from '@p5-wrapper/next';
+import React from 'react';
 
-const Sketch = dynamic(import('react-p5'), {
-  loading: () => <></>,
-  ssr: false,
-});
-
-const SketchSymmetricalRuler03 = () => {
-  const setup = (p5: p5Types, canvasParentRef: Element) => {
-    p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
+const sketch: Sketch = (p5) => {
+  p5.setup = () => {
+    p5.createCanvas(p5.windowWidth, p5.windowHeight);
     p5.colorMode(p5.HSB);
     p5.noStroke();
   };
 
-  const draw = (p5: p5Types) => {
+  p5.draw = () => {
     p5.background(0, 0.05);
 
-    drawCircle(p5, 6, 200, 0.1);
-    drawCircle(p5, 10, 350, 2);
-    drawCircle(p5, 16, 450, 0.5);
+    drawCircle(6, 200, 0.1);
+    drawCircle(10, 350, 2);
+    drawCircle(16, 450, 0.5);
   };
 
-  const drawCircle = (p5: p5Types, n: number, m: number, o: number) => {
+  const drawCircle = (n: number, m: number, o: number) => {
     let direction = 1;
 
     p5.fill((p5.frameCount + n * 3) % 360, 80, 100);
@@ -37,12 +33,11 @@ const SketchSymmetricalRuler03 = () => {
     }
   };
 
-  const windowResized = (p5: p5Types) => {
-    // コンポーネントのレスポンシブ化
-    p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
+  p5.windowResized = () => {
+    p5.resizeCanvas(p5.windowWidth, p5.windowHeight, false);
   };
-
-  return <Sketch setup={setup} draw={draw} windowResized={windowResized} />;
 };
 
-export default SketchSymmetricalRuler03;
+export default function SketchSymmetricalRuler03() {
+  return <NextReactP5Wrapper sketch={sketch} />;
+}

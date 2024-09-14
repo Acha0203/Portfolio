@@ -1,19 +1,15 @@
-import type p5Types from 'p5';
-import dynamic from 'next/dynamic';
+import type { Sketch } from '@p5-wrapper/react';
+import { NextReactP5Wrapper } from '@p5-wrapper/next';
+import React from 'react';
 
-const Sketch = dynamic(import('react-p5'), {
-  loading: () => <></>,
-  ssr: false,
-});
-
-const SketchTentacles = () => {
+const sketch: Sketch = (p5) => {
   let angle = 0;
   let length = 0;
   let x = 0;
   let y = 0;
   let z = 0;
 
-  const drawSphere = (p5: p5Types, n: number, m: number) => {
+  const drawSphere = (n: number, m: number) => {
     for (let r = 0; r < Math.PI * 2; r += Math.PI / n) {
       angle = r + p5.noise(p5.frameCount / 90) * 0.2;
       length = p5.noise(p5.frameCount / 90) * m;
@@ -28,28 +24,27 @@ const SketchTentacles = () => {
     }
   };
 
-  const setup = (p5: p5Types, canvasParentRef: Element) => {
-    p5.createCanvas(p5.windowWidth, p5.windowHeight, p5.WEBGL).parent(canvasParentRef);
+  p5.setup = () => {
+    p5.createCanvas(p5.windowWidth, p5.windowHeight, p5.WEBGL);
     p5.noStroke();
   };
 
-  const draw = (p5: p5Types) => {
+  p5.draw = () => {
     p5.clear();
     p5.directionalLight(255, 255, 255, 0, 1, 0);
     p5.directionalLight(150, 100, 100, 0, -1, 0);
 
     for (let i = 1; i < 10; i++) {
       p5.rotateZ(p5.frameCount * 0.005);
-      drawSphere(p5, i * 10, i * 100);
+      drawSphere(i * 10, i * 100);
     }
   };
 
-  const windowResized = (p5: p5Types) => {
-    // コンポーネントのレスポンシブ化
-    p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
+  p5.windowResized = () => {
+    p5.resizeCanvas(p5.windowWidth, p5.windowHeight, false);
   };
-
-  return <Sketch setup={setup} draw={draw} windowResized={windowResized} />;
 };
 
-export default SketchTentacles;
+export default function SketchTentacles() {
+  return <NextReactP5Wrapper sketch={sketch} />;
+}

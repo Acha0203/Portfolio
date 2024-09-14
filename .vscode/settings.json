@@ -9,7 +9,18 @@
     "markdown",
     "svelte"
   ],
-  "cSpell.words": ["Acha", "Ikeda", "Hiroya", "coconala", "Zenn", "unoptimized"],
+  "cSpell.words": [
+    "Acha",
+    "Ikeda",
+    "Hiroya",
+    "coconala",
+    "Zenn",
+    "unoptimized",
+    "lerp",
+    "minacoding",
+    "Perlin",
+    "millis"
+  ],
   "cSpell.enabledLanguageIds": [
     "asciidoc",
     "c",
