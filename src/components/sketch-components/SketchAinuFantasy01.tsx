@@ -24,24 +24,12 @@ const sketch: Sketch = (p5) => {
     }
 
     drawBackground(layer1, 50);
-
-    let w: number;
-    let h: number;
-
-    if (p5.width > p5.height) {
-      w = p5.width;
-      h = layer1.height * (p5.width / layer1.width);
-    } else {
-      w = layer1.width * (p5.height / layer1.height);
-      h = p5.height;
-    }
-
-    p5.image(layer1, 0, 0, w, h);
+    p5.image(layer1, 0, 0);
 
     p5.push();
     p5.imageMode(p5.CENTER);
-    p5.translate(w / 2, h / 2);
-    p5.image(layer2, 0, 0, w, h);
+    p5.translate(p5.width / 2, p5.height / 2);
+    p5.image(layer2, 0, 0);
     p5.pop();
 
     drawAll(layer2);
