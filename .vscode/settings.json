@@ -19,7 +19,8 @@
     "lerp",
     "minacoding",
     "Perlin",
-    "millis"
+    "millis",
+    "reduxjs"
   ],
   "cSpell.enabledLanguageIds": [
     "asciidoc",
