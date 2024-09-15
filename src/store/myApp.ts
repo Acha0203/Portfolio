@@ -5,7 +5,6 @@ const initialMyAppState = {
   isHamburger: true,
   isInTransition: false,
   language: 'English',
-  viewportTop: 0,
 };
 
 const myAppSlice = createSlice({
@@ -31,9 +30,6 @@ const myAppSlice = createSlice({
     },
     setLanguage: (state: { language: string }, action: { payload: string }) => {
       state.language = action.payload;
-    },
-    setViewportTop: (state: { viewportTop: number }, action: { payload: number }) => {
-      state.viewportTop = action.payload;
     },
   },
 });

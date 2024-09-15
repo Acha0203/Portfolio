@@ -4,6 +4,7 @@ const useReload = (): void => {
   useEffect(() => {
     const reloadWindow = (): void => {
       window.location.reload();
+      console.log('This window reloaded');
     };
 
     window.addEventListener('resize', reloadWindow);

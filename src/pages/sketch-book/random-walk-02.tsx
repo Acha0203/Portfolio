@@ -1,4 +1,5 @@
 import { sketchList } from '@/constants/sketchList';
+import useReload from '@/hooks/useReload';
 import Blackout from '@/components/Blackout';
 import MyHead from '@/components/MyHead';
 import SketchRandomWalk02 from '@/components/sketch-components/SketchRandomWalk02';
@@ -7,6 +8,8 @@ import Menu from '@/components/ui/menu/Menu';
 import styles from '../../styles/Home.module.scss';
 
 const SketchRandomWalk02Page = () => {
+  useReload();
+
   return (
     <>
       <MyHead
