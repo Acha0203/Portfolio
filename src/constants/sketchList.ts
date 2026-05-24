@@ -1065,5 +1065,5 @@ export const sketchList: WorkObj[] = [
   sketch40,
   sketch41,
   sketch42,
-  sketch43
+  sketch43,
 ];
