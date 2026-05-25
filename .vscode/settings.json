@@ -11,18 +11,21 @@
   ],
   "cSpell.words": [
     "Acha",
-    "Ikeda",
-    "Hiroya",
     "coconala",
-    "Zenn",
-    "unoptimized",
+    "currentcolor",
+    "Hiroya",
+    "Ikeda",
     "lerp",
-    "minacoding",
-    "Perlin",
     "millis",
-    "reduxjs"
+    "minacoding",
+    "Noto",
+    "Perlin",
+    "reduxjs",
+    "Segoe",
+    "unoptimized",
+    "Zenn"
   ],
-  "cSpell.enabledLanguageIds": [
+  "cSpell.cSpell.enabledFileTypes": [
     "asciidoc",
     "c",
     "cpp",

@@ -24,7 +24,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   useSmoothScroll();
 
   return (
-    <main className={`${montserrat.variable} ${notoSansJP.variable} font-sans`}>
+    <main className={`${montserrat.variable} ${notoSansJP.variable}`}>
       <Provider store={store}>
         <Component {...pageProps} />
       </Provider>
