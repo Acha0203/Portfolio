@@ -1,18 +1,18 @@
 import type { Sketch } from '@p5-wrapper/react';
-import type { Vector } from 'p5';
+import type P5 from 'p5';
 import { NextReactP5Wrapper } from '@p5-wrapper/next';
 import React from 'react';
 
 const sketch: Sketch = (p5) => {
   // A simple Particle class
   class Particle {
-    acceleration: Vector;
-    velocity: Vector;
-    position: Vector;
+    acceleration: P5.Vector;
+    velocity: P5.Vector;
+    position: P5.Vector;
     lifespan: number;
     size: number;
 
-    constructor(position: Vector, x: number, y: number, size: number) {
+    constructor(position: P5.Vector, x: number, y: number, size: number) {
       this.acceleration = p5.createVector(0, 0.005);
       this.velocity = p5.createVector(x, y);
       this.position = position.copy();
@@ -45,11 +45,11 @@ const sketch: Sketch = (p5) => {
   }
 
   class Firework {
-    origin: Vector;
+    origin: P5.Vector;
     particles: Particle[];
     size: number;
 
-    constructor(position: Vector, size: number) {
+    constructor(position: P5.Vector, size: number) {
       this.origin = position.copy();
       this.particles = [];
       this.size = size;

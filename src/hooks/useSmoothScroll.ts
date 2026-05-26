@@ -1,9 +1,9 @@
-import Lenis from '@studio-freight/lenis';
+import Lenis from 'lenis';
 import { useEffect, useRef, useState } from 'react';
 
 const useSmoothScroll = () => {
-  const [lenis, setLenis] = useState<Lenis | null>();
-  const reqIdRef = useRef<ReturnType<typeof requestAnimationFrame>>();
+  const [lenis, setLenis] = useState<Lenis | null>(null);
+  const reqIdRef = useRef<ReturnType<typeof requestAnimationFrame>>(0);
 
   useEffect(() => {
     const step = (time: DOMHighResTimeStamp) => {

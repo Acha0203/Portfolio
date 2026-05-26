@@ -1,12 +1,12 @@
 import type { Sketch } from '@p5-wrapper/react';
-import type { Graphics } from 'p5';
+import type P5 from 'p5';
 import { NextReactP5Wrapper } from '@p5-wrapper/next';
 import React from 'react';
 
 const sketch: Sketch = (p5) => {
   let hasCreated = false;
-  let layer1: Graphics;
-  let layer2: Graphics;
+  let layer1: P5.Graphics;
+  let layer2: P5.Graphics;
 
   p5.setup = () => {
     hasCreated = false;
@@ -35,7 +35,7 @@ const sketch: Sketch = (p5) => {
     drawAll(layer2);
   };
 
-  const drawAll = (layer: Graphics) => {
+  const drawAll = (layer: P5.Graphics) => {
     const ainuPatternA = new AinuPattern(layer, 0, -p5.height * 0.5);
     const ainuPatternB = new AinuPattern(layer, 0, -p5.height * 0.5);
 
@@ -70,7 +70,7 @@ const sketch: Sketch = (p5) => {
     layer.pop();
   };
 
-  const drawBackground = (layer: Graphics, n: number) => {
+  const drawBackground = (layer: P5.Graphics, n: number) => {
     layer.background(0);
     layer.colorMode(p5.HSB);
     layer.noStroke();
@@ -92,11 +92,11 @@ const sketch: Sketch = (p5) => {
   };
 
   class AinuPattern {
-    layer: Graphics;
+    layer: P5.Graphics;
     cx: number;
     cy: number;
 
-    constructor(layer: Graphics, cx: number, cy: number) {
+    constructor(layer: P5.Graphics, cx: number, cy: number) {
       this.layer = layer;
       this.cx = cx;
       this.cy = cy;

@@ -15,7 +15,7 @@ const sketch: Sketch = (p5) => {
 
   const drawCurve = (n: number, i: number, points: Array<{ x: number; y: number }>) => {
     p5.stroke((p5.frameCount % 360) + i * 5 * n, 90, i * 5);
-    p5.curve(
+    p5.spline(
       points[0].x,
       points[0].y,
       points[1].x,

@@ -19,7 +19,7 @@ const MenuBarTop = () => {
 
   return (
     <div>
-      <div className='flex-col fixed top-0 right-0 w-screen h-36 bg-gradient-to-b from-black from-40%'>
+      <div className='flex-col fixed top-0 right-0 w-screen h-36 bg-linear-to-b from-black from-40%'>
         <div className='flex justify-end items-end w-screen relative top-12'>
           <div className={styles.line_under_menu_bar_grad} />
           <div className={styles.line_under_menu_bar} />

@@ -1,16 +1,13 @@
 import type { Sketch } from '@p5-wrapper/react';
-import type { Image } from 'p5';
+import type P5 from 'p5';
 import { NextReactP5Wrapper } from '@p5-wrapper/next';
 import React from 'react';
 
 const sketch: Sketch = (p5) => {
-  let img: Image;
+  let img: P5.Image | undefined;
 
-  p5.preload = () => {
-    img = p5.loadImage('https://acha0203.github.io/Portfolio/images/symmetrical-ruler-03-m.png');
-  };
-
-  p5.setup = () => {
+  p5.setup = async () => {
+    img = await p5.loadImage('https://acha0203.github.io/Portfolio/images/symmetrical-ruler-03-m.png');
     p5.createCanvas(p5.windowWidth, p5.windowHeight, p5.WEBGL);
     p5.noStroke();
     p5.blendMode(p5.SCREEN);
@@ -21,8 +18,6 @@ const sketch: Sketch = (p5) => {
 
     if (img !== undefined) {
       p5.texture(img);
-    } else {
-      p5.preload();
     }
 
     p5.rotateY(p5.frameCount * -0.01);
