@@ -14,6 +14,9 @@ const Home = () => {
           <SketchCliffordAttractor03 />
         </div>
         <TitleOfHome />
+        <p className='absolute bottom-4 right-4 text-xs tracking-widest text-slate-400'>
+          v{process.env.NEXT_PUBLIC_VERSION}
+        </p>
         <Blackout />
         <Menu />
       </div>
