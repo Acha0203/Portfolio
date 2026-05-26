@@ -34,7 +34,7 @@ const InfoPage = () => {
         title='Info'
         description='This page shows information about Acha Ikeda, a designer and developer in Japan.'
       />
-      <div className={`flex flex-col justify-center items-center relative ${styles.vh_340}`}>
+      <div className='flex flex-col justify-center items-center relative'>
         <SketchBackground />
         <div
           className={`flex flex-col justify-start items-center absolute ${styles.work_wrapper} ${styles.fade_up}`}
@@ -66,51 +66,7 @@ const InfoPage = () => {
               {(language === 'Japanese to English' || language === 'Japanese') &&
                 infoList[0].description.ja}
             </div>
-            <div
-              className={`${
-                styles.title_of_description
-              } text-center text-white w-3/4 my-5 sm:mb-10 ${
-                (language === 'English to Japanese' || language === 'Japanese to English') &&
-                styles.vanish
-              } ${(language === 'English to Japanese' || language === 'English') && styles.en} ${
-                (language === 'Japanese to English' || language === 'Japanese') && styles.ja
-              }`}
-            >
-              BOOTH
-            </div>
-            <div
-              className={`${
-                styles.work_description
-              } text-neutral-400 text-justify w-3/4 sm:w-3/5 mb-6 sm:mb-10 ${
-                (language === 'English to Japanese' || language === 'Japanese to English') &&
-                styles.vanish
-              } ${(language === 'English to Japanese' || language === 'English') && styles.en} ${
-                (language === 'Japanese to English' || language === 'Japanese') && styles.ja
-              }`}
-            >
-              <p className='text-center whitespace-pre-wrap'>
-                <a
-                  href='https://www.lancers.jp/profile/HiroyaWebStudio'
-                  target='_blank'
-                  rel='noreferrer'
-                >
-                  {(language === 'English to Japanese' || language === 'English') &&
-                    `Hiroya Web Studio in Lancers
-(Japanese only)`}
-                  {(language === 'Japanese to English' || language === 'Japanese') &&
-                    `Hiroya Web Studio (Lancers)`}
-                </a>
-              </p>
-              <p className='text-center whitespace-pre-wrap mt-7'>
-                <a href='https://coconala.com/users/3587217' target='_blank' rel='noreferrer'>
-                  {(language === 'English to Japanese' || language === 'English') &&
-                    `Hiroya Web Studio in coconala
-(Japanese only)`}
-                  {(language === 'Japanese to English' || language === 'Japanese') &&
-                    `Hiroya Web Studio (coconala)`}
-                </a>
-              </p>
-            </div>
+
             <div
               className={`${
                 styles.title_of_description
@@ -149,7 +105,7 @@ const InfoPage = () => {
               }
             />
           </div>
-          <div className='flex justify-around items-center w-1/3 mt-5 mb-14'>
+          <div className='flex justify-around items-center w-52 mt-5 mb-14 gap-5 max-sm:w-36'>
             <LinkBtn
               url='https://x.com/Acha_for_CS'
               iconUrl='https://acha0203.github.io/Portfolio/images/x-logo.svg'
