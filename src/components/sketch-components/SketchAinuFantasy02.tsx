@@ -1,19 +1,16 @@
 import type { Sketch } from '@p5-wrapper/react';
-import type { Image, Graphics } from 'p5';
+import type P5 from 'p5';
 import { NextReactP5Wrapper } from '@p5-wrapper/next';
 import React from 'react';
 
 const sketch: Sketch = (p5) => {
   let hasCreated = false;
-  let img: Image;
-  let layer1: Graphics;
-  let layer2: Graphics;
+  let img: P5.Image | undefined;
+  let layer1: P5.Graphics;
+  let layer2: P5.Graphics;
 
-  p5.preload = () => {
-    img = p5.loadImage('https://acha0203.github.io/Portfolio/images/ainu-pattern-03-m3.png');
-  };
-
-  p5.setup = () => {
+  p5.setup = async () => {
+    img = await p5.loadImage('https://acha0203.github.io/Portfolio/images/ainu-pattern-03-m3.png');
     hasCreated = false;
     p5.createCanvas(p5.windowWidth, p5.windowHeight);
   };
@@ -46,7 +43,7 @@ const sketch: Sketch = (p5) => {
     p5.image(layer2, 0, 0, w, h);
   };
 
-  const drawAinuSphere = (layer: Graphics) => {
+  const drawAinuSphere = (layer: P5.Graphics) => {
     layer.clear();
     layer.background(0);
     layer.blendMode(p5.SCREEN);
@@ -54,8 +51,6 @@ const sketch: Sketch = (p5) => {
 
     if (img !== undefined) {
       layer.texture(img);
-    } else {
-      p5.preload();
     }
 
     layer.push();
@@ -76,7 +71,7 @@ const sketch: Sketch = (p5) => {
     layer.pop();
   };
 
-  const drawBackground = (layer: Graphics, n: number) => {
+  const drawBackground = (layer: P5.Graphics, n: number) => {
     layer.colorMode(p5.HSB);
     layer.noStroke();
     const step = p5.width / n;
