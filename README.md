@@ -1,5 +1,7 @@
 # Acha Ikeda's Portfolio Site
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+
 This is Acha Ikeda's portfolio website. It is developed using Next.js.
 
 ## Pages URL
@@ -9,6 +11,11 @@ This is Acha Ikeda's portfolio website. It is developed using Next.js.
 ## Author
 
 - Acha Ikeda
+
+## License
+
+The source code is licensed under the [MIT License](./LICENSE).
+Personal content (blog posts, photographs, profile information, etc.) is NOT included and remains All Rights Reserved.
 
 ---
 
