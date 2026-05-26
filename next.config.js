@@ -1,7 +1,12 @@
 /**
  * @type {import('next').NextConfig}
  */
+const { version } = require('./package.json');
+
 const nextConfig = {
+  env: {
+    NEXT_PUBLIC_VERSION: version,
+  },
   output: 'export',
   reactStrictMode: false,
   images: {
