@@ -37,7 +37,7 @@ const ClickerEmpireGamePage = () => {
         thumbnailUrl={workList[0].thumbnailUrl}
         description={workList[0].description.en}
       />
-      <div className={`flex-col justify-center items-center relative ${styles.vh_320}`}>
+      <div className='flex flex-col justify-center items-center relative'>
         <SketchBackground />
         <div
           className={`flex flex-col justify-start items-center absolute ${styles.work_wrapper} ${styles.fade_up}`}

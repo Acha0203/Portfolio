@@ -37,7 +37,7 @@ const CountdownTimerPage = () => {
         thumbnailUrl={workList[3].thumbnailUrl}
         description={workList[3].description.en}
       />
-      <div className={`flex-col justify-center items-center relative ${styles.vh_200}`}>
+      <div className='flex flex-col justify-center items-center relative'>
         <SketchBackground />
         <div
           className={`flex flex-col justify-start items-center absolute ${styles.work_wrapper} ${styles.fade_up}`}

@@ -37,7 +37,7 @@ const TaskManagementAppPage = () => {
         thumbnailUrl={workList[2].thumbnailUrl}
         description={workList[2].description.en}
       />
-      <div className={`flex-col justify-center items-center relative ${styles.vh_220}`}>
+      <div className='flex flex-col justify-center items-center relative'>
         <SketchBackground />
         <div
           className={`flex flex-col justify-start items-center absolute ${styles.work_wrapper} ${styles.fade_up}`}
