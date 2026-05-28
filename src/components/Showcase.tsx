@@ -8,6 +8,8 @@ import { useRouter } from 'next/router';
 import styles from '../styles/Home.module.scss';
 
 const ITEMS_PER_PAGE = 12;
+const IMAGE_WIDTH = 250
+const IMAGE_HEIGHT = 250
 
 const Showcase = () => {
   const router = useRouter();
@@ -25,16 +27,16 @@ const Showcase = () => {
     <div
       className={`${styles.showcase_wrapper} flex flex-col justify-center items-center w-full absolute px-5`}
     >
-      <div key={currentPage} className={`${styles.fade_up} flex flex-wrap justify-center items-center w-full`}>
+      <div key={currentPage} className={`${styles.fade_up} ${styles.showcase_grid} w-full`}>
         {visibleItems.map((work: WorkObj) => (
-          <div key={work.id} className={`${styles.showcase} relative`}>
+          <div key={work.id} className={`${styles.showcase}`}>
             <Link href={`${work.path}?from=${currentPage}`}>
               <div className={`${styles.showcase_image} flex justify-center items-center relative`}>
                 <Image
                   src={work.thumbnailUrl}
                   alt={work.title}
-                  width={250}
-                  height={250}
+                  width={IMAGE_WIDTH}
+                  height={IMAGE_HEIGHT}
                   sizes='100vw'
                   className='w-full h-full'
                 />

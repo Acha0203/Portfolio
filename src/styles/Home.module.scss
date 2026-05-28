@@ -579,6 +579,16 @@
 
 /* Showcase */
 
+.showcase_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 280px);
+  justify-content: center;
+
+  @media screen and (min-width: 640px) {
+    grid-template-columns: repeat(auto-fill, 300px);
+  }
+}
+
 .showcase {
   margin: 20px;
   filter: drop-shadow(0 0 0.75rem #525252);
