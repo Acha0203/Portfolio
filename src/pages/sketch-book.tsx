@@ -16,7 +16,7 @@ const SketchBookPage = () => {
         title='Sketch Book'
         description='This page shows various generative arts created by Acha Ikeda, a designer and developer in Japan.'
       />
-      <div className={`flex-col justify-center items-center relative ${styles.vh_780}`}>
+      <div className='flex-col justify-center items-center relative min-h-auto'>
         <div className={styles.fade_up}>
           <SketchBackground />
           <TitleOfSketchBook />

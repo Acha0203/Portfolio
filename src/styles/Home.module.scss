@@ -579,6 +579,16 @@
 
 /* Showcase */
 
+.showcase_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 280px);
+  justify-content: center;
+
+  @media screen and (min-width: 640px) {
+    grid-template-columns: repeat(auto-fill, 300px);
+  }
+}
+
 .showcase {
   margin: 20px;
   filter: drop-shadow(0 0 0.75rem #525252);
@@ -722,4 +732,37 @@
 .link_btn {
   width: 40px;
   height: auto;
+}
+
+/* Pagination */
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2.5rem 0;
+}
+
+.pagination_btn {
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.15s linear;
+
+  &:hover {
+    color: #fff;
+  }
+
+  &.pagination_btn_active {
+    color: #fff;
+    cursor: default;
+  }
+}
+
+.pagination_ellipsis {
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  color: #888;
 }
