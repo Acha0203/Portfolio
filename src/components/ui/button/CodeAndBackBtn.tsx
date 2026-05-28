@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { useRouter } from 'next/router';
 import { myAppActions } from '@/store/myApp';
 import styles from '../../../styles/Home.module.scss';
 
@@ -11,6 +12,8 @@ interface Props {
 
 const CodeAndBackBtn: React.FC<Props> = ({ url, prevPage }) => {
   const dispatch = useDispatch();
+  const router = useRouter();
+  const backUrl = router.query.from ? `/sketch-book?page=${router.query.from}` : prevPage;
 
   const handleClick = () => {
     dispatch(myAppActions.setIsInTransition(true));
@@ -27,7 +30,7 @@ const CodeAndBackBtn: React.FC<Props> = ({ url, prevPage }) => {
       </div>
       <div className={styles.separator} />
       <div className={`${styles.code} ml-3`}>
-        <Link href={prevPage} onClick={handleClick}>
+        <Link href={backUrl} onClick={handleClick}>
           BACK
         </Link>
       </div>

@@ -723,3 +723,36 @@
   width: 40px;
   height: auto;
 }
+
+/* Pagination */
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2.5rem 0;
+}
+
+.pagination_btn {
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.15s linear;
+
+  &:hover {
+    color: #fff;
+  }
+
+  &.pagination_btn_active {
+    color: #fff;
+    cursor: default;
+  }
+}
+
+.pagination_ellipsis {
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  color: #888;
+}
