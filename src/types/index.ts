@@ -5,9 +5,9 @@ export type WorkObj = {
   codeUrl: string;
   path: string;
   siteUrl: string;
-  description: { ja: string; en: string };
-  supplement: { ja: string; en: string };
-  technology: { ja: string; en: string };
+  description: BilingualTexts;
+  supplement: BilingualTexts;
+  technology: BilingualTexts;
   thumbnailX: number;
   thumbnailY: number;
 };
@@ -21,7 +21,18 @@ export type MyAppState = {
   };
 };
 
+export type BilingualTexts = {
+  ja: string[];
+  en: string[];
+};
+
 export type InfoObj = {
   id: number;
   description: { ja: string; en: string };
 };
+
+export enum InfoType {
+  description = 'description',
+  technology = 'technology',
+  algorithm = 'ALGORITHM FOR GAME AI',
+}

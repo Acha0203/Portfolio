@@ -6,7 +6,7 @@ import Blackout from '@/components/Blackout';
 import MyHead from '@/components/MyHead';
 import CodeAndBackBtn from '@/components/ui/button/CodeAndBackBtn';
 import Menu from '@/components/ui/menu/Menu';
-import styles from '../../styles/Home.module.scss';
+import styles from '@/styles/Home.module.scss';
 
 type Props = {
   index: number;
@@ -24,7 +24,7 @@ const SketchPage = ({ index, slug }: Props) => {
       <MyHead
         title={sketch.title}
         thumbnailUrl={sketch.thumbnailUrl}
-        description={sketch.description.en}
+        description={sketch.description.en.join('')}
       />
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
