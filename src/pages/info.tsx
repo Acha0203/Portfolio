@@ -1,7 +1,6 @@
-import type { MyAppState } from '@/types';
+import { InfoType, type MyAppState } from '@/types';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { infoList } from '@/constants/information';
 import { myAppActions } from '@/store/myApp';
 import Blackout from '@/components/Blackout';
 import MyHead from '@/components/MyHead';
@@ -10,7 +9,8 @@ import LanguageSwitch from '@/components/ui/button/LanguageSwitch';
 import LinkBtn from '@/components/ui/button/LinkBtn';
 import WebsiteBtn from '@/components/ui/button/WebsiteBtn';
 import Menu from '@/components/ui/menu/Menu';
-import styles from '../styles/Home.module.scss';
+import styles from '@/styles/Home.module.scss';
+import InfoForInfoPage from '@/components/InfoForInfoPage';
 
 const InfoPage = () => {
   const dispatch = useDispatch();
@@ -37,7 +37,7 @@ const InfoPage = () => {
       <div className='flex flex-col justify-center items-center relative'>
         <SketchBackground />
         <div
-          className={`flex flex-col justify-start items-center absolute ${styles.work_wrapper} ${styles.fade_up}`}
+          className={`flex flex-col justify-start items-center absolute w-full ${styles.work_wrapper} ${styles.fade_up}`}
         >
           <div
             className={`${styles.title_of_work_top} flex justify-center text-white text-center pl-5`}
@@ -45,55 +45,9 @@ const InfoPage = () => {
             INFO
           </div>
           <LanguageSwitch />
-          <div className='flex flex-col justify-center items-center sm:mt-10'>
-            <div
-              className={`${styles.title_of_description} text-center text-white w-3/4 my-5 sm:mb-10`}
-            >
-              BACKGROUND
-            </div>
-            <div
-              className={`${
-                styles.work_description
-              } text-neutral-400 text-justify w-3/4 sm:w-3/5 mb-6 sm:mb-10 whitespace-pre-wrap ${
-                (language === 'English to Japanese' || language === 'Japanese to English') &&
-                styles.vanish
-              } ${(language === 'English to Japanese' || language === 'English') && styles.en} ${
-                (language === 'Japanese to English' || language === 'Japanese') && styles.ja
-              }`}
-            >
-              {(language === 'English to Japanese' || language === 'English') &&
-                infoList[0].description.en}
-              {(language === 'Japanese to English' || language === 'Japanese') &&
-                infoList[0].description.ja}
-            </div>
-
-            <div
-              className={`${
-                styles.title_of_description
-              } text-center text-white w-3/4 my-5 sm:mb-10 ${
-                (language === 'English to Japanese' || language === 'Japanese to English') &&
-                styles.vanish
-              } ${(language === 'English to Japanese' || language === 'English') && styles.en} ${
-                (language === 'Japanese to English' || language === 'Japanese') && styles.ja
-              }`}
-            >
-              PRIZES
-            </div>
-            <div
-              className={`${
-                styles.work_description
-              } text-neutral-400 text-justify w-3/4 sm:w-3/5 mb-6 sm:mb-10 whitespace-pre-wrap ${
-                (language === 'English to Japanese' || language === 'Japanese to English') &&
-                styles.vanish
-              } ${(language === 'English to Japanese' || language === 'English') && styles.en} ${
-                (language === 'Japanese to English' || language === 'Japanese') && styles.ja
-              }`}
-            >
-              {(language === 'English to Japanese' || language === 'English') &&
-                infoList[1].description.en}
-              {(language === 'Japanese to English' || language === 'Japanese') &&
-                infoList[1].description.ja}
-            </div>
+          <div className='flex flex-col justify-center items-center w-full sm:mt-10'>
+            <InfoForInfoPage infoListId={1} infoType={InfoType.background} />
+            <InfoForInfoPage infoListId={2} infoType={InfoType.prizes} />
           </div>
           <div className='my-5 sm:my-10'>
             <WebsiteBtn

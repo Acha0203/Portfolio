@@ -8,16 +8,18 @@ const sketch1: WorkObj = {
   path: '/sketch-book/rotation-02',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -33,16 +35,18 @@ const sketch2: WorkObj = {
   path: '/sketch-book/symmetrical-ruler-02',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -57,16 +61,18 @@ const sketch3: WorkObj = {
   path: '/sketch-book/happy-new-year-2023',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -82,16 +88,18 @@ const sketch4: WorkObj = {
   path: '/sketch-book/clifford-attractor-03',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -105,16 +113,18 @@ const sketch5: WorkObj = {
   path: '/sketch-book/circle-motion-02',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -129,16 +139,18 @@ const sketch6: WorkObj = {
   path: '/sketch-book/circle-motion-01',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -152,16 +164,18 @@ const sketch7: WorkObj = {
   path: '/sketch-book/rotation-06',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -176,16 +190,18 @@ const sketch8: WorkObj = {
   path: '/sketch-book/composition-02',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -199,16 +215,18 @@ const sketch9: WorkObj = {
   path: '/sketch-book/rose-curve-01',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -222,16 +240,18 @@ const sketch10: WorkObj = {
   path: '/sketch-book/bezier-08',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -247,16 +267,18 @@ const sketch11: WorkObj = {
   path: '/sketch-book/concentric-circle-04',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -271,16 +293,18 @@ const sketch12: WorkObj = {
   path: '/sketch-book/circle-in-circle-03',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -295,16 +319,18 @@ const sketch13: WorkObj = {
   path: '/sketch-book/perlin-noise-04',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -320,16 +346,18 @@ const sketch14: WorkObj = {
   path: '/sketch-book/multiple-particle-systems-02',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -345,16 +373,18 @@ const sketch15: WorkObj = {
   path: '/sketch-book/symmetrical-ruler-03',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -368,16 +398,18 @@ const sketch16: WorkObj = {
   path: '/sketch-book/rotation-03',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -393,16 +425,18 @@ const sketch17: WorkObj = {
   path: '/sketch-book/concentric-circle-05',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -417,16 +451,18 @@ const sketch18: WorkObj = {
   path: '/sketch-book/bezier-dance-01',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -440,16 +476,18 @@ const sketch19: WorkObj = {
   path: '/sketch-book/rotation-04',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -463,16 +501,18 @@ const sketch20: WorkObj = {
   path: '/sketch-book/flow-field-03',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -487,16 +527,18 @@ const sketch21: WorkObj = {
   path: '/sketch-book/random-walk-02',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -510,16 +552,18 @@ const sketch22: WorkObj = {
   path: '/sketch-book/rotation-05',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -535,16 +579,18 @@ const sketch23: WorkObj = {
   path: '/sketch-book/multiple-particle-systems-03',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -559,16 +605,18 @@ const sketch24: WorkObj = {
   path: '/sketch-book/random-hearts',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -583,16 +631,18 @@ const sketch25: WorkObj = {
   path: '/sketch-book/multiple-fans',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -606,16 +656,18 @@ const sketch26: WorkObj = {
   path: '/sketch-book/rain',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -630,16 +682,18 @@ const sketch27: WorkObj = {
   path: '/sketch-book/psychedelic-curve',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -653,16 +707,18 @@ const sketch28: WorkObj = {
   path: '/sketch-book/curious-cat',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -676,16 +732,18 @@ const sketch29: WorkObj = {
   path: '/sketch-book/tentacles',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -700,16 +758,18 @@ const sketch30: WorkObj = {
   path: '/sketch-book/trigonometric-wave',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -723,16 +783,18 @@ const sketch31: WorkObj = {
   path: '/sketch-book/illusion',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -746,16 +808,18 @@ const sketch32: WorkObj = {
   path: '/sketch-book/verdure',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -770,16 +834,18 @@ const sketch33: WorkObj = {
   path: '/sketch-book/luminous-spiral-01',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -794,16 +860,18 @@ const sketch34: WorkObj = {
   path: '/sketch-book/luminous-spiral-02',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -818,16 +886,18 @@ const sketch35: WorkObj = {
   path: '/sketch-book/ainu-fantasy-01',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -842,16 +912,18 @@ const sketch36: WorkObj = {
   path: '/sketch-book/ainu-fantasy-02',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -866,16 +938,18 @@ const sketch37: WorkObj = {
   path: '/sketch-book/random-squares',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -890,16 +964,18 @@ const sketch38: WorkObj = {
   path: '/sketch-book/bezier-dance-02',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -914,16 +990,18 @@ const sketch39: WorkObj = {
   path: '/sketch-book/minacoding-2023',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -938,16 +1016,18 @@ const sketch40: WorkObj = {
   path: '/sketch-book/luminous-spiral-03',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -961,16 +1041,18 @@ const sketch41: WorkObj = {
   path: '/sketch-book/fireworks-01',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -984,16 +1066,18 @@ const sketch42: WorkObj = {
   path: '/sketch-book/fireworks-02',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
@@ -1007,16 +1091,18 @@ const sketch43: WorkObj = {
   path: '/sketch-book/screensaver',
   siteUrl: '',
   description: {
-    ja: '',
-    en: 'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
   },
   supplement: {
-    ja: '',
-    en: '',
+    ja: [''],
+    en: [''],
   },
   technology: {
-    ja: 'p5.js',
-    en: 'p5.js',
+    ja: ['p5.js'],
+    en: ['p5.js'],
   },
   thumbnailX: 0,
   thumbnailY: 0,
