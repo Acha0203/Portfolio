@@ -1,10 +1,10 @@
-import type { MyAppState } from '@/types';
+import type { MyAppState } from '#/types';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { myAppActions } from '@/store/myApp';
-import styles from '../../../styles/Home.module.scss';
+import { myAppActions } from '#/store/myApp';
+import styles from '#/styles/Home.module.scss';
 
 const HamburgerMenu = () => {
   const router = useRouter();

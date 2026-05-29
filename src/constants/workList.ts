@@ -1,4 +1,4 @@
-import type { WorkObj } from '@/types';
+import type { WorkObj } from '#/types';
 
 const work1: WorkObj = {
   id: 1,

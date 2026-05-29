@@ -1,11 +1,11 @@
-import type { MyAppState } from '@/types';
+import type { MyAppState } from '#/types';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import useWindowSize from '@/hooks/useWindowSize';
-import { myAppActions } from '@/store/myApp';
-import HamburgerMenu from './HamburgerMenu';
-import MenuBarTop from './MenuBarTop';
-import HamburgerBtn from '../button/HamburgerBtn';
+import useWindowSize from '#/hooks/useWindowSize';
+import { myAppActions } from '#/store/myApp';
+import HamburgerMenu from '#/components/ui/menu/HamburgerMenu';
+import MenuBarTop from '#/components/ui/menu/MenuBarTop';
+import HamburgerBtn from '#/components/ui/button/HamburgerBtn';
 
 const Menu = () => {
   const dispatch = useDispatch();

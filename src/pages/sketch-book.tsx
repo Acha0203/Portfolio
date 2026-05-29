@@ -1,11 +1,11 @@
-import useReload from '@/hooks/useReload';
-import Blackout from '@/components/Blackout';
-import MyHead from '@/components/MyHead';
-import Showcase from '@/components/Showcase';
-import SketchBackground from '@/components/sketch-components/SketchBackground';
-import TitleOfSketchBook from '@/components/TitleOfSketchBook';
-import Menu from '@/components/ui/menu/Menu';
-import styles from '../styles/Home.module.scss';
+import useReload from '#/hooks/useReload';
+import Blackout from '#/components/Blackout';
+import MyHead from '#/components/MyHead';
+import Showcase from '#/components/Showcase';
+import SketchBackground from '#/components/sketch-components/SketchBackground';
+import TitleOfSketchBook from '#/components/TitleOfSketchBook';
+import Menu from '#/components/ui/menu/Menu';
+import styles from '#/styles/Home.module.scss';
 
 const SketchBookPage = () => {
   useReload();

@@ -2,8 +2,8 @@ import Link from 'next/link';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
-import { myAppActions } from '@/store/myApp';
-import styles from '../../../styles/Home.module.scss';
+import { myAppActions } from '#/store/myApp';
+import styles from '#/styles/Home.module.scss';
 
 interface Props {
   url: string;

@@ -1,9 +1,9 @@
-import type { WorkObj } from '@/types';
+import type { WorkObj } from '#/types';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { workList } from '@/constants/workList';
-import styles from '../styles/Home.module.scss';
+import { workList } from '#/constants/workList';
+import styles from '#/styles/Home.module.scss';
 
 const IMAGE_WIDTH = 250;
 const IMAGE_HEIGHT = 250;

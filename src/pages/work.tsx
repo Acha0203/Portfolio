@@ -1,10 +1,10 @@
-import Blackout from '@/components/Blackout';
-import MyHead from '@/components/MyHead';
-import ShowcaseOfWork from '@/components/ShowcaseOfWork';
-import SketchBackground from '@/components/sketch-components/SketchBackground';
-import TitleOfWork from '@/components/TitleOfWork';
-import Menu from '@/components/ui/menu/Menu';
-import styles from '../styles/Home.module.scss';
+import Blackout from '#/components/Blackout';
+import MyHead from '#/components/MyHead';
+import ShowcaseOfWork from '#/components/ShowcaseOfWork';
+import SketchBackground from '#/components/sketch-components/SketchBackground';
+import TitleOfWork from '#/components/TitleOfWork';
+import Menu from '#/components/ui/menu/Menu';
+import styles from '#/styles/Home.module.scss';
 
 const WorkPage = () => {
   return (

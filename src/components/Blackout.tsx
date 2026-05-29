@@ -1,6 +1,6 @@
-import type { MyAppState } from '@/types';
+import type { MyAppState } from '#/types';
 import { useSelector } from 'react-redux';
-import styles from '../styles/Home.module.scss';
+import styles from '#/styles/Home.module.scss';
 
 const Blackout = () => {
   const isInTransition = useSelector((state: MyAppState) => state.myApp.isInTransition);
