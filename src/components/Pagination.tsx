@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../styles/Home.module.scss';
+import styles from '#/styles/Home.module.scss';
 
 type Props = {
   currentPage: number;
@@ -42,10 +42,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }: Props) => {
   return (
     <nav className={styles.pagination}>
       {currentPage > 1 && (
-        <button
-          onClick={() => onPageChange(currentPage - 1)}
-          className={styles.pagination_btn}
-        >
+        <button onClick={() => onPageChange(currentPage - 1)} className={styles.pagination_btn}>
           &lt;
         </button>
       )}
@@ -66,10 +63,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }: Props) => {
         ),
       )}
       {currentPage < totalPages && (
-        <button
-          onClick={() => onPageChange(currentPage + 1)}
-          className={styles.pagination_btn}
-        >
+        <button onClick={() => onPageChange(currentPage + 1)} className={styles.pagination_btn}>
           &gt;
         </button>
       )}

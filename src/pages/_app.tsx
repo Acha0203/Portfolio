@@ -1,10 +1,10 @@
-import '@/styles/globals.css';
+import '#/styles/globals.css';
 import type { AppProps } from 'next/app';
 import { Montserrat, Noto_Sans_JP } from 'next/font/google';
-import '../styles/reset.min.css';
+import '#/styles/reset.min.css';
 import { Provider } from 'react-redux';
-import useSmoothScroll from '@/hooks/useSmoothScroll';
-import store from '../store';
+import useSmoothScroll from '#/hooks/useSmoothScroll';
+import store from '#/store';
 
 const montserrat = Montserrat({
   weight: ['200', '400'],

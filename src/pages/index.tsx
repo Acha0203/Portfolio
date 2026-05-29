@@ -1,9 +1,9 @@
-import Blackout from '@/components/Blackout';
-import MyHead from '@/components/MyHead';
-import SketchCliffordAttractor03 from '@/components/sketch-components/SketchCliffordAttractor03';
-import TitleOfHome from '@/components/TitleOfHome';
-import Menu from '@/components/ui/menu/Menu';
-import styles from '../styles/Home.module.scss';
+import Blackout from '#/components/Blackout';
+import MyHead from '#/components/MyHead';
+import SketchCliffordAttractor03 from '#/components/sketch-components/SketchCliffordAttractor03';
+import TitleOfHome from '#/components/TitleOfHome';
+import Menu from '#/components/ui/menu/Menu';
+import styles from '#/styles/Home.module.scss';
 
 const Home = () => {
   return (

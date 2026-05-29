@@ -1,12 +1,12 @@
 import type { GetStaticPaths, GetStaticProps } from 'next';
-import { sketchList } from '@/constants/sketchList';
-import { sketchComponentMap } from '@/constants/sketchComponentMap';
-import useReload from '@/hooks/useReload';
-import Blackout from '@/components/Blackout';
-import MyHead from '@/components/MyHead';
-import CodeAndBackBtn from '@/components/ui/button/CodeAndBackBtn';
-import Menu from '@/components/ui/menu/Menu';
-import styles from '@/styles/Home.module.scss';
+import { sketchList } from '#/constants/sketchList';
+import { sketchComponentMap } from '#/constants/sketchComponentMap';
+import useReload from '#/hooks/useReload';
+import Blackout from '#/components/Blackout';
+import MyHead from '#/components/MyHead';
+import CodeAndBackBtn from '#/components/ui/button/CodeAndBackBtn';
+import Menu from '#/components/ui/menu/Menu';
+import styles from '#/styles/Home.module.scss';
 
 type Props = {
   index: number;

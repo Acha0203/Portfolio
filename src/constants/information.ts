@@ -1,4 +1,4 @@
-import type { InfoObj } from '@/types';
+import type { InfoObj } from '#/types';
 
 const info1: InfoObj = {
   id: 1,

@@ -1,18 +1,18 @@
-import { InfoType, type MyAppState } from '@/types';
+import { InfoType, type MyAppState } from '#/types';
 import Image from 'next/image';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { workList } from '@/constants/workList';
-import { myAppActions } from '@/store/myApp';
-import Blackout from '@/components/Blackout';
-import MyHead from '@/components/MyHead';
-import SketchBackground from '@/components/sketch-components/SketchBackground';
-import CodeAndBackBtn from '@/components/ui/button/CodeAndBackBtn';
-import LanguageSwitch from '@/components/ui/button/LanguageSwitch';
-import WebsiteBtn from '@/components/ui/button/WebsiteBtn';
-import Menu from '@/components/ui/menu/Menu';
-import styles from '@/styles/Home.module.scss';
-import InfoForWorkPages from '@/components/InfoForWorkPages';
+import { workList } from '#/constants/workList';
+import { myAppActions } from '#/store/myApp';
+import Blackout from '#/components/Blackout';
+import MyHead from '#/components/MyHead';
+import SketchBackground from '#/components/sketch-components/SketchBackground';
+import CodeAndBackBtn from '#/components/ui/button/CodeAndBackBtn';
+import LanguageSwitch from '#/components/ui/button/LanguageSwitch';
+import WebsiteBtn from '#/components/ui/button/WebsiteBtn';
+import Menu from '#/components/ui/menu/Menu';
+import styles from '#/styles/Home.module.scss';
+import InfoForWorkPages from '#/components/InfoForWorkPages';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
 type Props = {
