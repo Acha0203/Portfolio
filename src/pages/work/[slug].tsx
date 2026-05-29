@@ -53,7 +53,7 @@ const WorkPage = ({ index, slug }: Props) => {
             className={`${styles.title_of_work} flex justify-center text-white text-center w-3/4`}
           >{`${work.title.toUpperCase()}`}</div>
           <LanguageSwitch />
-          <div className='flex justify-center items-start w-screen mt-8 sm:mt-10 lg:mt-12'>
+          <div className='flex justify-center items-start w-full mt-8 sm:mt-10 lg:mt-12'>
             <div className='w-4/5 sm:w-1/2'>
               <Image
                 src={`${work.thumbnailUrl}.png`}

@@ -28,11 +28,13 @@ export type BilingualTexts = {
 
 export type InfoObj = {
   id: number;
-  description: { ja: string; en: string };
+  description: BilingualTexts;
 };
 
 export enum InfoType {
   description = 'description',
   technology = 'technology',
   algorithm = 'ALGORITHM FOR GAME AI',
+  background = 'background',
+  prizes = 'prizes',
 }
