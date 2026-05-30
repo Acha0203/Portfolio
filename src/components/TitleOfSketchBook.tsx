@@ -1,3 +1,4 @@
+import { UI_TEXT } from '#/constants/uiText';
 import styles from '#/styles/Home.module.scss';
 
 const TitleOfSketchBook = () => {
@@ -6,12 +7,12 @@ const TitleOfSketchBook = () => {
       <div
         className={`${styles.title_of_sketch_book} flex justify-center w-screen text-white absolute text-center`}
       >
-        SKETCH BOOK
+        {UI_TEXT.nav.sketchBook}
       </div>
       <div
         className={`${styles.description_for_sketch_book_title} flex justify-center w-screen absolute text-center`}
       >
-        SHOWING GENERATIVE ARTS
+        {UI_TEXT.page.sketchBookSubtitle}
       </div>
     </div>
   );

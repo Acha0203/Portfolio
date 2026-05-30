@@ -3,6 +3,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
 import { myAppActions } from '#/store/myApp';
+import { UI_TEXT } from '#/constants/uiText';
 import styles from '#/styles/Home.module.scss';
 
 interface Props {
@@ -25,13 +26,13 @@ const CodeAndBackBtn: React.FC<Props> = ({ url, prevPage }) => {
     >
       <div className={styles.code}>
         <a href={url} target='_blank' rel='noreferrer'>
-          CODE
+          {UI_TEXT.button.code}
         </a>
       </div>
       <div className={styles.separator} />
       <div className={`${styles.code} ml-3`}>
         <Link href={backUrl} onClick={handleClick}>
-          BACK
+          {UI_TEXT.button.back}
         </Link>
       </div>
     </div>

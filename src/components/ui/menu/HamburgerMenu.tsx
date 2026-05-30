@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { myAppActions } from '#/store/myApp';
+import { UI_TEXT } from '#/constants/uiText';
 import styles from '#/styles/Home.module.scss';
 
 const HamburgerMenu = () => {
@@ -50,38 +51,38 @@ const HamburgerMenu = () => {
     >
       <ul className={`${styles.menu_ul} text-2xl sm:text-3xl lg:text-4xl`}>
         {pathname === '/' ? (
-          <li className={styles.current}>HOME</li>
+          <li className={styles.current}>{UI_TEXT.nav.home}</li>
         ) : (
           <li className={styles.active}>
             <Link href='/' onClick={handleClick}>
-              HOME
+              {UI_TEXT.nav.home}
             </Link>
           </li>
         )}
         {pathname === '/work' ? (
-          <li className={styles.current}>WORK</li>
+          <li className={styles.current}>{UI_TEXT.nav.work}</li>
         ) : (
           <li className={styles.active}>
             <Link href='/work' onClick={handleClick}>
-              WORK
+              {UI_TEXT.nav.work}
             </Link>
           </li>
         )}
         {pathname === '/sketch-book' ? (
-          <li className={styles.current}>SKETCH BOOK</li>
+          <li className={styles.current}>{UI_TEXT.nav.sketchBook}</li>
         ) : (
           <li className={styles.active}>
             <Link href='/sketch-book' onClick={handleClick}>
-              SKETCH BOOK
+              {UI_TEXT.nav.sketchBook}
             </Link>
           </li>
         )}
         {pathname === '/info' ? (
-          <li className={styles.current}>INFO</li>
+          <li className={styles.current}>{UI_TEXT.nav.info}</li>
         ) : (
           <li className={styles.active}>
             <Link href='/info' onClick={handleClick}>
-              INFO
+              {UI_TEXT.nav.info}
             </Link>
           </li>
         )}

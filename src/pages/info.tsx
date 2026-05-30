@@ -2,6 +2,7 @@ import { InfoType, type MyAppState } from '#/types';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { myAppActions } from '#/store/myApp';
+import { LANGUAGE, UI_TEXT } from '#/constants/uiText';
 import Blackout from '#/components/Blackout';
 import MyHead from '#/components/MyHead';
 import SketchBackground from '#/components/sketch-components/SketchBackground';
@@ -17,13 +18,13 @@ const InfoPage = () => {
   const language = useSelector((state: MyAppState) => state.myApp.language);
 
   useEffect(() => {
-    if (language === 'English to Japanese') {
+    if (language === LANGUAGE.enToJa) {
       setTimeout(() => {
-        dispatch(myAppActions.setLanguage('Japanese'));
+        dispatch(myAppActions.setLanguage(LANGUAGE.japanese));
       }, 500);
-    } else if (language === 'Japanese to English') {
+    } else if (language === LANGUAGE.jaToEn) {
       setTimeout(() => {
-        dispatch(myAppActions.setLanguage('English'));
+        dispatch(myAppActions.setLanguage(LANGUAGE.english));
       }, 500);
     }
   }, [dispatch, language]);
@@ -42,7 +43,7 @@ const InfoPage = () => {
           <div
             className={`${styles.title_of_work_top} flex justify-center text-white text-center pl-5`}
           >
-            INFO
+            {UI_TEXT.nav.info}
           </div>
           <LanguageSwitch />
           <div className='flex flex-col justify-center items-center w-full sm:mt-10'>
@@ -51,9 +52,9 @@ const InfoPage = () => {
           </div>
           <div className='my-5 sm:my-10'>
             <WebsiteBtn
-              text='CONTACT'
+              text={UI_TEXT.button.contact}
               url={
-                language === 'English'
+                language === LANGUAGE.english
                   ? 'https://docs.google.com/forms/d/e/1FAIpQLSdl1GxKpcAaQwmxcdeeN5eMnPAbLzGT1RhYV4xgm3aESYmQQg/viewform?usp=sf_link'
                   : 'https://docs.google.com/forms/d/e/1FAIpQLSffeDpyhnvtgtsoZ7SM5c_VV0YB1xXomh4dQ-94XaxSiBEAEw/viewform?usp=sf_link'
               }

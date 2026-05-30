@@ -1,12 +1,13 @@
 import styles from '#/styles/Home.module.scss';
+import { UI_TEXT } from '#/constants/uiText';
 
 const TitleOfHome = () => {
   return (
     <div>
       <div className={`${styles.my_name} ${styles.fade_up}`}>
-        ACHA IKEDA
+        {UI_TEXT.page.myName}
         <br />
-        <span className={styles.profession}>DESIGNER & DEVELOPER</span>
+        <span className={styles.profession}>{UI_TEXT.page.profession}</span>
       </div>
     </div>
   );

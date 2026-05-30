@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { myAppActions } from '#/store/myApp';
+import { UI_TEXT } from '#/constants/uiText';
 import styles from '#/styles/Home.module.scss';
 
 const MenuBarTop = () => {
@@ -27,7 +28,7 @@ const MenuBarTop = () => {
         <div className='flex justify-end items-end w-screen h-12 absolute'>
           {router.pathname === '/' ? (
             <div className='flex flex-col justify-center items-center'>
-              <div className='mx-5 text-white'>HOME</div>
+              <div className='mx-5 text-white'>{UI_TEXT.nav.home}</div>
               <div className={`${styles.line_under_text_grad} w-20`} />
             </div>
           ) : (
@@ -42,7 +43,7 @@ const MenuBarTop = () => {
                 }}
               >
                 <Link href='/' onClick={handleClick}>
-                  HOME
+                  {UI_TEXT.nav.home}
                 </Link>
               </div>
               {isOverHome && <div className={`${styles.line_under_text_grad} w-20`} />}
@@ -50,7 +51,7 @@ const MenuBarTop = () => {
           )}
           {router.pathname === '/work' ? (
             <div className='flex flex-col justify-center items-center'>
-              <div className='mx-5 text-white'>WORK</div>
+              <div className='mx-5 text-white'>{UI_TEXT.nav.work}</div>
               <div className={`${styles.line_under_text_grad} w-20`} />
             </div>
           ) : (
@@ -65,7 +66,7 @@ const MenuBarTop = () => {
                 }}
               >
                 <Link href='/work' onClick={handleClick}>
-                  WORK
+                  {UI_TEXT.nav.work}
                 </Link>
               </div>
               {isOverWork && <div className={`${styles.line_under_text_grad} w-20`} />}
@@ -73,7 +74,7 @@ const MenuBarTop = () => {
           )}
           {router.pathname === '/sketch-book' ? (
             <div className='flex flex-col justify-center items-center'>
-              <div className='mx-5 text-white'>SKETCH BOOK</div>
+              <div className='mx-5 text-white'>{UI_TEXT.nav.sketchBook}</div>
               <div className={`${styles.line_under_text_grad} w-48`} />
             </div>
           ) : (
@@ -88,7 +89,7 @@ const MenuBarTop = () => {
                 }}
               >
                 <Link href='/sketch-book' onClick={handleClick}>
-                  SKETCH BOOK
+                  {UI_TEXT.nav.sketchBook}
                 </Link>
               </div>
               {isOverSketchBook && <div className={`${styles.line_under_text_grad} w-48`} />}
@@ -96,7 +97,7 @@ const MenuBarTop = () => {
           )}
           {router.pathname === '/info' ? (
             <div className='flex flex-col justify-center items-center'>
-              <div className='mx-5 text-white'>INFO</div>
+              <div className='mx-5 text-white'>{UI_TEXT.nav.info}</div>
               <div className={`${styles.line_under_text_grad} w-20`} />
             </div>
           ) : (
@@ -111,7 +112,7 @@ const MenuBarTop = () => {
                 }}
               >
                 <Link href='/info' onClick={handleClick}>
-                  INFO
+                  {UI_TEXT.nav.info}
                 </Link>
               </div>
               {isOverInfo && <div className={`${styles.line_under_text_grad} w-20`} />}

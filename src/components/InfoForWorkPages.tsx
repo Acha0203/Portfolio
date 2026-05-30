@@ -2,6 +2,7 @@ import { BilingualTexts, InfoType, MyAppState, WorkObj } from '#/types';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { workList } from '#/constants/workList';
+import { LANGUAGE } from '#/constants/uiText';
 import styles from '#/styles/Home.module.scss';
 import Appreciation from '#/components/Appreciation';
 
@@ -33,19 +34,19 @@ const InfoForWorkPages: React.FC<Props> = ({ workListId, infoType }) => {
         className={`${
           styles.work_description
         } text-neutral-400 w-4/5 whitespace-pre-wrap max-sm:wrap-anywhere max-sm:hyphens-auto ${infoType === InfoType.technology ? 'text-center max-sm:text-left' : 'text-left'} ${
-          (language === 'English to Japanese' || language === 'Japanese to English') &&
+          (language === LANGUAGE.enToJa || language === LANGUAGE.jaToEn) &&
           styles.vanish
-        } ${(language === 'English to Japanese' || language === 'English') && styles.en} ${
-          (language === 'Japanese to English' || language === 'Japanese') && styles.ja
+        } ${(language === LANGUAGE.enToJa || language === LANGUAGE.english) && styles.en} ${
+          (language === LANGUAGE.jaToEn || language === LANGUAGE.japanese) && styles.ja
         }`}
       >
-        {(language === 'English to Japanese' || language === 'English') &&
+        {(language === LANGUAGE.enToJa || language === LANGUAGE.english) &&
           bilingualTexts.en.map((englishText: string, index) => (
             <div className='my-4' key={index}>
               {englishText}
             </div>
           ))}
-        {(language === 'Japanese to English' || language === 'Japanese') &&
+        {(language === LANGUAGE.jaToEn || language === LANGUAGE.japanese) &&
           bilingualTexts.ja.map((japaneseText: string, index) => (
             <div className='my-4' key={index}>
               {japaneseText}
