@@ -2,7 +2,6 @@ import type { WorkObj } from '#/types';
 import Image from 'next/image';
 import Link from 'next/link';
 import Pagination from '#/components/Pagination';
-import React from 'react';
 import { sketchList } from '#/constants/sketchList';
 import { useRouter } from 'next/router';
 import styles from '#/styles/Home.module.scss';
