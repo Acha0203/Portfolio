@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { workList } from '#/constants/workList';
 import { myAppActions } from '#/store/myApp';
+import { LANGUAGE, UI_TEXT } from '#/constants/uiText';
 import Blackout from '#/components/Blackout';
 import MyHead from '#/components/MyHead';
 import SketchBackground from '#/components/sketch-components/SketchBackground';
@@ -26,13 +27,13 @@ const WorkPage = ({ index, slug }: Props) => {
   const work = workList[index];
 
   useEffect(() => {
-    if (language === 'English to Japanese') {
+    if (language === LANGUAGE.enToJa) {
       setTimeout(() => {
-        dispatch(myAppActions.setLanguage('Japanese'));
+        dispatch(myAppActions.setLanguage(LANGUAGE.japanese));
       }, 500);
-    } else if (language === 'Japanese to English') {
+    } else if (language === LANGUAGE.jaToEn) {
       setTimeout(() => {
-        dispatch(myAppActions.setLanguage('English'));
+        dispatch(myAppActions.setLanguage(LANGUAGE.english));
       }, 500);
     }
   }, [dispatch, language]);
@@ -75,7 +76,7 @@ const WorkPage = ({ index, slug }: Props) => {
             <InfoForWorkPages workListId={work.id} infoType={InfoType.technology} />
           </div>
           <div className='my-5'>
-            <WebsiteBtn text='WEBSITE' url={`${work.siteUrl}`} />
+            <WebsiteBtn text={UI_TEXT.button.website} url={`${work.siteUrl}`} />
           </div>
           <div className='mb-10'>
             <CodeAndBackBtn url={`${work.codeUrl}`} prevPage='/work' />

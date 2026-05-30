@@ -1,7 +1,7 @@
 import type { MyAppState } from '#/types';
-import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { myAppActions } from '#/store/myApp';
+import { LANGUAGE, UI_TEXT } from '#/constants/uiText';
 import styles from '#/styles/Home.module.scss';
 
 const LanguageSwitch = () => {
@@ -9,11 +9,11 @@ const LanguageSwitch = () => {
   const language = useSelector((state: MyAppState) => state.myApp.language);
 
   const handleClickEn = () => {
-    dispatch(myAppActions.setLanguage('Japanese to English'));
+    dispatch(myAppActions.setLanguage(LANGUAGE.jaToEn));
   };
 
   const handleClickJa = () => {
-    dispatch(myAppActions.setLanguage('English to Japanese'));
+    dispatch(myAppActions.setLanguage(LANGUAGE.enToJa));
   };
 
   return (
@@ -23,17 +23,17 @@ const LanguageSwitch = () => {
       <button
         className={`${styles.en_ja}`}
         onClick={handleClickEn}
-        disabled={language === 'English'}
+        disabled={language === LANGUAGE.english}
       >
-        ENGLISH
+        {UI_TEXT.button.english}
       </button>
       <div className={styles.separator} />
       <button
         className={`${styles.en_ja}`}
         onClick={handleClickJa}
-        disabled={language === 'Japanese'}
+        disabled={language === LANGUAGE.japanese}
       >
-        JAPANESE
+        {UI_TEXT.button.japanese}
       </button>
     </div>
   );

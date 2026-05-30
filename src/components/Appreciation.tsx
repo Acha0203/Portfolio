@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import { LANGUAGE } from '#/constants/uiText';
 import styles from '#/styles/Home.module.scss';
 import { MyAppState } from '#/types';
 
@@ -10,12 +11,12 @@ const Appreciation = () => {
       className={`${
         styles.work_description
       } text-neutral-400 w-4/5 whitespace-pre-wrap max-sm:wrap-anywhere max-sm:hyphens-auto ${
-        (language === 'English to Japanese' || language === 'Japanese to English') && styles.vanish
-      } ${(language === 'English to Japanese' || language === 'English') && styles.en} ${
-        (language === 'Japanese to English' || language === 'Japanese') && styles.ja
+        (language === LANGUAGE.enToJa || language === LANGUAGE.jaToEn) && styles.vanish
+      } ${(language === LANGUAGE.enToJa || language === LANGUAGE.english) && styles.en} ${
+        (language === LANGUAGE.jaToEn || language === LANGUAGE.japanese) && styles.ja
       }`}
     >
-      {(language === 'English to Japanese' || language === 'English') && (
+      {(language === LANGUAGE.enToJa || language === LANGUAGE.english) && (
         <div>
           This game was co-developed with{' '}
           <a href='https://github.com/tkwonn' target='_blank' rel='noreferrer'>
@@ -28,7 +29,7 @@ const Appreciation = () => {
           .
         </div>
       )}
-      {(language === 'Japanese to English' || language === 'Japanese') && (
+      {(language === LANGUAGE.jaToEn || language === LANGUAGE.japanese) && (
         <div>
           なお、このゲームは{' '}
           <a href='https://github.com/tkwonn' target='_blank' rel='noreferrer'>

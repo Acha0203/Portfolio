@@ -1,10 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { LANGUAGE } from '#/constants/uiText';
 
 const initialMyAppState = {
   isOpen: false,
   isHamburger: true,
   isInTransition: false,
-  language: 'English',
+  language: LANGUAGE.english,
 };
 
 const myAppSlice = createSlice({

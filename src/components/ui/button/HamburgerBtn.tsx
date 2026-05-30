@@ -1,6 +1,7 @@
 import type { MyAppState } from '#/types';
 import { useDispatch, useSelector } from 'react-redux';
 import { myAppActions } from '#/store/myApp';
+import { UI_TEXT } from '#/constants/uiText';
 import styles from '#/styles/Home.module.scss';
 
 const HamburgerBtn = () => {
@@ -25,7 +26,7 @@ const HamburgerBtn = () => {
             <span className={styles.hamburger_line}></span>
             <span className={styles.hamburger_line}></span>
           </span>
-          <div className={`${styles.menu} absolute bottom-0`}>MENU</div>
+          <div className={`${styles.menu} absolute bottom-0`}>{UI_TEXT.button.menu}</div>
         </div>
       </div>
     </div>
