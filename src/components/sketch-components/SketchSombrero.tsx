@@ -12,8 +12,8 @@ const sketch: Sketch = (p5) => {
     p5.clear();
     p5.stroke(0, p5.frameCount % 255, 255);
 
-    let angle1 = p5.frameCount * 0.3;
-    let angle2 = p5.frameCount * 0.5;
+    let angle1 = p5.frameCount * 0.05;
+    let angle2 = p5.frameCount * 0.2;
 
     for (let z = 240; z > -240; z -= 2) {
       for (let x = -240; x < 240; x += 2) {
