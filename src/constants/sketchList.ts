@@ -209,10 +209,10 @@ const sketch8: WorkObj = {
 
 const sketch9: WorkObj = {
   id: 9,
-  title: 'Rose Curve 1',
-  thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/rose-curve-01.png',
-  codeUrl: 'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/rose-curve01.js',
-  path: '/sketch-book/rose-curve-01',
+  title: 'Sombrero',
+  thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/sombrero.png',
+  codeUrl: 'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/sombrero.js',
+  path: '/sketch-book/sombrero',
   siteUrl: '',
   description: {
     ja: [''],
@@ -1108,6 +1108,33 @@ const sketch43: WorkObj = {
   thumbnailY: 0,
 } as const;
 
+const sketch44: WorkObj = {
+  id: 44,
+  title: 'Symmetrical Ruler 4',
+  thumbnailUrl:
+    'https://acha0203.github.io/Portfolio/images/Sketch_Images/symmetrical-ruler-04.png',
+  codeUrl:
+    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/symmetrical-ruler04.js',
+  path: '/sketch-book/symmetrical-ruler-04',
+  siteUrl: '',
+  description: {
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
+  },
+  supplement: {
+    ja: [''],
+    en: [''],
+  },
+  technology: {
+    ja: ['p5.js'],
+    en: ['p5.js'],
+  },
+  thumbnailX: 0,
+  thumbnailY: 0,
+} as const;
+
 export const sketchList: WorkObj[] = [
   sketch1,
   sketch2,
@@ -1152,4 +1179,5 @@ export const sketchList: WorkObj[] = [
   sketch41,
   sketch42,
   sketch43,
+  sketch44,
 ];
