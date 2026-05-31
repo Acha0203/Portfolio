@@ -209,10 +209,10 @@ const sketch8: WorkObj = {
 
 const sketch9: WorkObj = {
   id: 9,
-  title: 'Rose Curve 1',
-  thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/rose-curve-01.png',
-  codeUrl: 'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/rose-curve01.js',
-  path: '/sketch-book/rose-curve-01',
+  title: 'Sombrero',
+  thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/sombrero.png',
+  codeUrl: 'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/sombrero.js',
+  path: '/sketch-book/sombrero',
   siteUrl: '',
   description: {
     ja: [''],
