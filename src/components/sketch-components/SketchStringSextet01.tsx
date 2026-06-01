@@ -17,19 +17,19 @@ const sketch: Sketch = (p5) => {
 
     while (i < 7) {
       let n = i * i + 7;
-      let m = hz / i;
 
       for (let r = 0; r < p5.TAU; r += p5.PI / n) {
-        let angle = r + p5.noise(p5.frameCount / m) * n * direction;
-        let length = p5.noise(p5.frameCount / 50) * m;
+        let angle = r + p5.noise(p5.frameCount / hz) * n * direction;
+        let length = p5.noise(p5.frameCount / 50) * hz;
         let x = p5.tan(p5.cos(angle)) * length + p5.width / 2;
         let y = p5.tan(p5.sin(angle)) * length + p5.height / 2;
 
-        p5.fill(p5.frameCount % (hz / 2), 50, hz);
+        p5.fill(p5.frameCount % hz, 50, hz);
         p5.circle(x, y, length / 20);
         direction = -direction;
       }
 
+      hz = hz / 2;
       i++;
     }
   };
