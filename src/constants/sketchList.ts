@@ -1137,7 +1137,7 @@ const sketch44: WorkObj = {
 
 const sketch45: WorkObj = {
   id: 45,
-  title: 'String Sextet 4',
+  title: 'String Sextet 1',
   thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/string-sextet-01.png',
   codeUrl:
     'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/string-sextet01.js',
