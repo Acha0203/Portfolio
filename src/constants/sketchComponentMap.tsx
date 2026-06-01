@@ -44,6 +44,7 @@ import SketchTrigonometricWave from '#/components/sketch-components/SketchTrigon
 import SketchVerdure from '#/components/sketch-components/SketchVerdure';
 import SketchSymmetricalRuler04 from '#/components/sketch-components/SketchSymmetricalRuler04';
 import SketchSombrero from '#/components/sketch-components/SketchSombrero';
+import SketchStringSextet01 from '#/components/sketch-components/SketchStringSextet01';
 
 export const sketchComponentMap: Record<string, ComponentType> = {
   'ainu-fantasy-01': SketchAinuFantasy01,
@@ -85,6 +86,7 @@ export const sketchComponentMap: Record<string, ComponentType> = {
   'rotation-06': SketchRotation06,
   screensaver: SketchScreensaver,
   sombrero: SketchSombrero,
+  'string-sextet-01': SketchStringSextet01,
   'symmetrical-ruler-02': SketchSymmetricalRuler02,
   'symmetrical-ruler-03': SketchSymmetricalRuler03,
   'symmetrical-ruler-04': SketchSymmetricalRuler04,
