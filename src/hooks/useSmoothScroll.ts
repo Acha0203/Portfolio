@@ -1,9 +1,11 @@
 import Lenis from 'lenis';
+import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
 
 const useSmoothScroll = () => {
   const [lenis, setLenis] = useState<Lenis | null>(null);
   const reqIdRef = useRef<ReturnType<typeof requestAnimationFrame>>(0);
+  const router = useRouter();
 
   useEffect(() => {
     const step = (time: DOMHighResTimeStamp) => {
@@ -35,6 +37,21 @@ const useSmoothScroll = () => {
       setLenis(null);
     };
   }, []);
+
+  useEffect(() => {
+    if (!lenis) return;
+
+    const handleRouteChangeComplete = () => {
+      lenis.scrollTo(0, { immediate: true });
+      lenis.resize();
+    };
+
+    router.events.on('routeChangeComplete', handleRouteChangeComplete);
+
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChangeComplete);
+    };
+  }, [lenis, router.events]);
 };
 
 export default useSmoothScroll;
