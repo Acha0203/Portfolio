@@ -1138,7 +1138,7 @@ const sketch44: WorkObj = {
 const sketch45: WorkObj = {
   id: 45,
   title: 'String Sextet 1',
-  thumbnailUrl: '/images/Sketch_Images/string-sextet-01.png',
+  thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/string-sextet-01.png',
   codeUrl:
     'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/string-sextet01.js',
   path: '/sketch-book/string-sextet-01',
@@ -1164,7 +1164,7 @@ const sketch45: WorkObj = {
 const sketch46: WorkObj = {
   id: 46,
   title: 'Snowy Quartet',
-  thumbnailUrl: '/images/Sketch_Images/snowy-quartet.png',
+  thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/snowy-quartet.png',
   codeUrl:
     'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/snowy-quartet.js',
   path: '/sketch-book/snowy-quartet',
