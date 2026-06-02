@@ -1138,10 +1138,36 @@ const sketch44: WorkObj = {
 const sketch45: WorkObj = {
   id: 45,
   title: 'String Sextet 1',
-  thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Sketch_Images/string-sextet-01.png',
+  thumbnailUrl: '/images/Sketch_Images/string-sextet-01.png',
   codeUrl:
     'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/string-sextet01.js',
   path: '/sketch-book/string-sextet-01',
+  siteUrl: '',
+  description: {
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
+  },
+  supplement: {
+    ja: [''],
+    en: [''],
+  },
+  technology: {
+    ja: ['p5.js'],
+    en: ['p5.js'],
+  },
+  thumbnailX: 0,
+  thumbnailY: 0,
+} as const;
+
+const sketch46: WorkObj = {
+  id: 46,
+  title: 'Snowy Quartet',
+  thumbnailUrl: '/images/Sketch_Images/snowy-quartet.png',
+  codeUrl:
+    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/snowy-quartet.js',
+  path: '/sketch-book/snowy-quartet',
   siteUrl: '',
   description: {
     ja: [''],
@@ -1207,4 +1233,5 @@ export const sketchList: WorkObj[] = [
   sketch43,
   sketch44,
   sketch45,
+  sketch46,
 ];

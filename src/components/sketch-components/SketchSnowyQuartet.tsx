@@ -6,32 +6,34 @@ const sketch: Sketch = (p5) => {
   let img: P5.Image | undefined;
 
   p5.setup = async () => {
-    img = await p5.loadImage('https://acha0203.github.io/Portfolio/images/symmetrical-ruler-03-m.png');
+    img = await p5.loadImage('/images/snowy-quartet-texture.png');
     p5.createCanvas(p5.windowWidth, p5.windowHeight, p5.WEBGL);
     p5.noStroke();
-    p5.blendMode(p5.SCREEN);
   };
 
   p5.draw = () => {
+    let angle = p5.frameCount * 0.01;
+
     p5.background(0);
+    p5.blendMode(p5.ADD);
 
     if (img !== undefined) {
       p5.texture(img);
     }
 
-    p5.rotateY(p5.frameCount * -0.01);
+    p5.rotateY(angle);
     p5.push();
-    p5.rotateX(p5.QUARTER_PI);
-    p5.box(p5.width / 3);
-    p5.rotateY(p5.QUARTER_PI);
-    p5.box(p5.width / 3);
+    p5.rotateX(angle);
+    p5.box(p5.width / 4);
+    p5.rotateY(angle);
+    p5.box(p5.width / 2);
     p5.push();
-    p5.rotateY(p5.QUARTER_PI);
-    p5.rotateX(p5.QUARTER_PI);
-    p5.box(p5.width / 3);
+    p5.rotateY(angle);
+    p5.rotateX(angle);
+    p5.box(p5.width * (2 / 3));
     p5.pop();
     p5.pop();
-    p5.box(p5.width / 3);
+    p5.box(p5.width);
   };
 
   p5.windowResized = () => {
@@ -39,6 +41,6 @@ const sketch: Sketch = (p5) => {
   };
 };
 
-export default function SketchIllusion() {
+export default function SketchSnowyQuartet() {
   return <NextReactP5Wrapper sketch={sketch} />;
 }
