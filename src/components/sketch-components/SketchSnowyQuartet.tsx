@@ -6,7 +6,9 @@ const sketch: Sketch = (p5) => {
   let img: P5.Image | undefined;
 
   p5.setup = async () => {
-    img = await p5.loadImage('/images/snowy-quartet-texture.png');
+    img = await p5.loadImage(
+      'https://acha0203.github.io/Portfolio/images/snowy-quartet-texture.png',
+    );
     p5.createCanvas(p5.windowWidth, p5.windowHeight, p5.WEBGL);
     p5.noStroke();
   };
