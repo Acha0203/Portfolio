@@ -1,7 +1,6 @@
 import type { WorkObj } from '#/types';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
 import { workList } from '#/constants/workList';
 import { getImagePath } from '#/utils/path';
 import styles from '#/styles/Home.module.scss';

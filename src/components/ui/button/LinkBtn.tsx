@@ -9,7 +9,7 @@ interface Props {
   height: number;
 }
 
-const LinkBtn: React.FC<Props> = ({ url, iconUrl, name, width, height }) => {
+const LinkBtn = ({ url, iconUrl, name, width, height }: Props) => {
   return (
     <>
       <a href={url} target='_blank' rel='noreferrer'>

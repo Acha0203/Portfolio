@@ -1,5 +1,4 @@
 import { BilingualTexts, InfoType, MyAppState, WorkObj } from '#/types';
-import React from 'react';
 import { useSelector } from 'react-redux';
 import { workList } from '#/constants/workList';
 import { LANGUAGE } from '#/constants/uiText';
@@ -19,7 +18,7 @@ function getBilingualTexts(infoType: string, workData: WorkObj): BilingualTexts 
   return workData.supplement;
 }
 
-const InfoForWorkPages: React.FC<Props> = ({ workListId, infoType }) => {
+const InfoForWorkPages = ({ workListId, infoType }: Props) => {
   const language = useSelector((state: MyAppState) => state.myApp.language);
   const bilingualTexts = getBilingualTexts(infoType, workList[workListId - 1]);
 
@@ -34,8 +33,7 @@ const InfoForWorkPages: React.FC<Props> = ({ workListId, infoType }) => {
         className={`${
           styles.work_description
         } text-neutral-400 w-4/5 whitespace-pre-wrap max-sm:wrap-anywhere max-sm:hyphens-auto ${infoType === InfoType.technology ? 'text-center max-sm:text-left' : 'text-left'} ${
-          (language === LANGUAGE.enToJa || language === LANGUAGE.jaToEn) &&
-          styles.vanish
+          (language === LANGUAGE.enToJa || language === LANGUAGE.jaToEn) && styles.vanish
         } ${(language === LANGUAGE.enToJa || language === LANGUAGE.english) && styles.en} ${
           (language === LANGUAGE.jaToEn || language === LANGUAGE.japanese) && styles.ja
         }`}
