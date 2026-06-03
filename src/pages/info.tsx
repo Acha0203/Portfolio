@@ -63,21 +63,21 @@ const InfoPage = () => {
           <div className='flex justify-around items-center w-52 mt-5 mb-14 gap-5 max-sm:w-36'>
             <LinkBtn
               url='https://x.com/Acha_for_CS'
-              iconUrl='https://acha0203.github.io/Portfolio/images/x-logo.svg'
+              iconUrl='/images/x-logo.svg'
               name='X'
               width={204}
               height={200}
             />
             <LinkBtn
               url='https://github.com/Acha0203'
-              iconUrl='https://acha0203.github.io/Portfolio/images/github-mark-white.svg'
+              iconUrl='/images/github-mark-white.svg'
               name='GitHub'
               width={204}
               height={200}
             />
             <LinkBtn
               url='https://zenn.dev/acha_n'
-              iconUrl='https://acha0203.github.io/Portfolio/images/zenn-logo-only-white.svg'
+              iconUrl='/images/zenn-logo-only-white.svg'
               name='Zenn'
               width={204}
               height={200}

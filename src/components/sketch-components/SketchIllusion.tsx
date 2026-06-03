@@ -1,12 +1,13 @@
 import type { Sketch } from '@p5-wrapper/react';
 import type P5 from 'p5';
 import { NextReactP5Wrapper } from '@p5-wrapper/next';
+import { getImagePath } from '#/utils/path';
 
 const sketch: Sketch = (p5) => {
   let img: P5.Image | undefined;
 
   p5.setup = async () => {
-    img = await p5.loadImage('https://acha0203.github.io/Portfolio/images/symmetrical-ruler-03-m.png');
+    img = await p5.loadImage(getImagePath('/images/symmetrical-ruler-03-m.png'));
     p5.createCanvas(p5.windowWidth, p5.windowHeight, p5.WEBGL);
     p5.noStroke();
     p5.blendMode(p5.SCREEN);

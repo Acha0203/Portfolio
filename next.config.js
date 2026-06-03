@@ -4,6 +4,7 @@
 const { version } = require('./package.json');
 
 const nextConfig = {
+  basePath: '/Portfolio',
   env: {
     NEXT_PUBLIC_VERSION: version,
   },
@@ -11,14 +12,6 @@ const nextConfig = {
   reactStrictMode: false,
   images: {
     unoptimized: true,
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'acha0203.github.io',
-        port: '',
-        pathname: '/Portfolio/**',
-      },
-    ],
   },
   experimental: {
     scrollRestoration: false,
