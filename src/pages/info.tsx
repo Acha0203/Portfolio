@@ -1,5 +1,6 @@
 import { InfoType, type MyAppState } from '#/types';
 import { useEffect } from 'react';
+import { getImagePath } from '#/utils/path';
 import { useDispatch, useSelector } from 'react-redux';
 import { myAppActions } from '#/store/myApp';
 import { LANGUAGE, UI_TEXT } from '#/constants/uiText';
@@ -63,21 +64,21 @@ const InfoPage = () => {
           <div className='flex justify-around items-center w-52 mt-5 mb-14 gap-5 max-sm:w-36'>
             <LinkBtn
               url='https://x.com/Acha_for_CS'
-              iconUrl='/images/x-logo.svg'
+              iconUrl={getImagePath('/images/x-logo.svg')}
               name='X'
               width={204}
               height={200}
             />
             <LinkBtn
               url='https://github.com/Acha0203'
-              iconUrl='/images/github-mark-white.svg'
+              iconUrl={getImagePath('/images/github-mark-white.svg')}
               name='GitHub'
               width={204}
               height={200}
             />
             <LinkBtn
               url='https://zenn.dev/acha_n'
-              iconUrl='/images/zenn-logo-only-white.svg'
+              iconUrl={getImagePath('/images/zenn-logo-only-white.svg')}
               name='Zenn'
               width={204}
               height={200}

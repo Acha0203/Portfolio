@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Pagination from '#/components/Pagination';
 import { sketchList } from '#/constants/sketchList';
 import { useRouter } from 'next/router';
+import { getImagePath } from '#/utils/path';
 import styles from '#/styles/Home.module.scss';
 
 const ITEMS_PER_PAGE = 12;
@@ -32,7 +33,7 @@ const Showcase = () => {
             <Link href={`${work.path}?from=${currentPage}`}>
               <div className={`${styles.showcase_image} flex justify-center items-center relative`}>
                 <Image
-                  src={work.thumbnailUrl}
+                  src={getImagePath(work.thumbnailUrl)}
                   alt={work.title}
                   width={IMAGE_WIDTH}
                   height={IMAGE_HEIGHT}
