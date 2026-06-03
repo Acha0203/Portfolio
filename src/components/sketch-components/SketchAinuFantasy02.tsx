@@ -1,7 +1,8 @@
 import type { Sketch } from '@p5-wrapper/react';
 import type P5 from 'p5';
 import { NextReactP5Wrapper } from '@p5-wrapper/next';
-import React from 'react';
+
+import { getImagePath } from '#/utils/path';
 
 const sketch: Sketch = (p5) => {
   let hasCreated = false;
@@ -10,7 +11,7 @@ const sketch: Sketch = (p5) => {
   let layer2: P5.Graphics;
 
   p5.setup = async () => {
-    img = await p5.loadImage('https://acha0203.github.io/Portfolio/images/ainu-pattern-03-m3.png');
+    img = await p5.loadImage(getImagePath('/images/ainu-pattern-03-m3.png'));
     hasCreated = false;
     p5.createCanvas(p5.windowWidth, p5.windowHeight);
   };

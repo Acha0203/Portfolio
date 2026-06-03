@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from '#/styles/Home.module.scss';
 
 interface Props {
@@ -6,7 +5,7 @@ interface Props {
   url: string;
 }
 
-const WebsiteBtn: React.FC<Props> = ({ text, url }) => {
+const WebsiteBtn = ({ text, url }: Props) => {
   return (
     <div className={`${styles.website_btn} flex justify-center w-screen text-center my-5 relative`}>
       <div className={`${styles.website_btn_text} text-neutral-800 bg-neutral-400 p-2 pl-5`}>

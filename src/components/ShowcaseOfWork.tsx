@@ -1,8 +1,8 @@
 import type { WorkObj } from '#/types';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
 import { workList } from '#/constants/workList';
+import { getImagePath } from '#/utils/path';
 import styles from '#/styles/Home.module.scss';
 
 const IMAGE_WIDTH = 250;
@@ -31,7 +31,7 @@ const ShowcaseOfWork = () => {
                     className={`${styles.showcase_image} flex justify-center items-center relative`}
                   >
                     <Image
-                      src={`${work.thumbnailUrl}-s.png`}
+                      src={getImagePath(`${work.thumbnailUrl}-s.png`)}
                       alt={work.title}
                       width={IMAGE_WIDTH}
                       height={IMAGE_HEIGHT}

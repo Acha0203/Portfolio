@@ -15,6 +15,7 @@ import Menu from '#/components/ui/menu/Menu';
 import styles from '#/styles/Home.module.scss';
 import InfoForWorkPages from '#/components/InfoForWorkPages';
 import { GetStaticPaths, GetStaticProps } from 'next';
+import { getImagePath } from '#/utils/path';
 
 type Props = {
   index: number;
@@ -57,7 +58,7 @@ const WorkPage = ({ index, slug }: Props) => {
           <div className='flex justify-center items-start w-full mt-8 sm:mt-10 lg:mt-12'>
             <div className='w-4/5 sm:w-1/2'>
               <Image
-                src={`${work.thumbnailUrl}.png`}
+                src={getImagePath(`${work.thumbnailUrl}.png`)}
                 alt={work.title}
                 width={work.thumbnailX}
                 height={work.thumbnailY}

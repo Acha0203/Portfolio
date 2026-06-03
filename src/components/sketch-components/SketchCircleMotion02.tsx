@@ -1,6 +1,5 @@
 import type { Sketch } from '@p5-wrapper/react';
 import { NextReactP5Wrapper } from '@p5-wrapper/next';
-import React from 'react';
 
 const sketch: Sketch = (p5) => {
   p5.setup = () => {

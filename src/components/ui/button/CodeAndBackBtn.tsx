@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
 import { myAppActions } from '#/store/myApp';
@@ -11,7 +10,7 @@ interface Props {
   prevPage: string;
 }
 
-const CodeAndBackBtn: React.FC<Props> = ({ url, prevPage }) => {
+const CodeAndBackBtn = ({ url, prevPage }: Props) => {
   const dispatch = useDispatch();
   const router = useRouter();
   const backUrl = router.query.from ? `/sketch-book?page=${router.query.from}` : prevPage;

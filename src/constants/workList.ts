@@ -3,7 +3,7 @@ import type { WorkObj } from '#/types';
 const work1: WorkObj = {
   id: 1,
   title: 'Clicker Empire Game',
-  thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Work_Images/clicker-empire-game',
+  thumbnailUrl: '/images/Work_Images/clicker-empire-game',
   codeUrl: 'https://github.com/Acha0203/Clicker_Empire_Game',
   path: '/work/clicker-empire-game',
   siteUrl: 'https://acha0203.github.io/Clicker_Empire_Game/',
@@ -30,7 +30,7 @@ const work1: WorkObj = {
 const work2: WorkObj = {
   id: 2,
   title: 'Calculation App',
-  thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Work_Images/calculation-app',
+  thumbnailUrl: '/images/Work_Images/calculation-app',
   codeUrl: 'https://github.com/Acha0203/Calculation_App',
   path: '/work/calculation-app',
   siteUrl: 'https://acha0203.github.io/Calculation_App/',
@@ -61,7 +61,7 @@ const work2: WorkObj = {
 const work3: WorkObj = {
   id: 3,
   title: 'Task Management App',
-  thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Work_Images/task-management-app',
+  thumbnailUrl: '/images/Work_Images/task-management-app',
   codeUrl: 'https://github.com/Acha0203/Task_Management_App',
   path: '/work/task-management-app',
   siteUrl: 'https://acha0203.github.io/Task_Management_App/',
@@ -90,7 +90,7 @@ const work3: WorkObj = {
 const work4: WorkObj = {
   id: 4,
   title: 'Countdown Timer',
-  thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Work_Images/countdown-timer',
+  thumbnailUrl: '/images/Work_Images/countdown-timer',
   codeUrl: 'https://github.com/Acha0203/Countdown_Timer',
   path: '/work/countdown-timer',
   siteUrl: 'https://acha0203.github.io/Countdown_Timer/',
@@ -117,7 +117,7 @@ const work4: WorkObj = {
 const work5: WorkObj = {
   id: 5,
   title: 'Online Dating App',
-  thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Work_Images/online-dating-app',
+  thumbnailUrl: '/images/Work_Images/online-dating-app',
   codeUrl: 'https://github.com/Acha0203/Online_Dating_App',
   path: '/work/online-dating-app',
   siteUrl: 'https://acha0203.github.io/Online_Dating_App/',
@@ -148,7 +148,7 @@ const work5: WorkObj = {
 const work6: WorkObj = {
   id: 6,
   title: 'Computer Builder',
-  thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Work_Images/computer-builder',
+  thumbnailUrl: '/images/Work_Images/computer-builder',
   codeUrl: 'https://github.com/Acha0203/Computer_Builder',
   path: '/work/computer-builder',
   siteUrl: 'https://acha0203.github.io/Computer_Builder/',
@@ -175,7 +175,7 @@ const work6: WorkObj = {
 const work7: WorkObj = {
   id: 7,
   title: 'Connect 4',
-  thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Work_Images/connect-4',
+  thumbnailUrl: '/images/Work_Images/connect-4',
   codeUrl: 'https://github.com/TeamE-React/connect-4',
   path: '/work/connect-4',
   siteUrl: 'https://teame-connect4.vercel.app/',
@@ -206,7 +206,7 @@ const work7: WorkObj = {
 const work8: WorkObj = {
   id: 8,
   title: 'BlackJack',
-  thumbnailUrl: 'https://acha0203.github.io/Portfolio/images/Work_Images/blackjack',
+  thumbnailUrl: '/images/Work_Images/blackjack',
   codeUrl: 'https://github.com/Acha0203/BlackJack_Game',
   path: '/work/blackjack',
   siteUrl: 'https://acha0203.github.io/BlackJack_Game/',
