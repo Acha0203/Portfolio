@@ -47,6 +47,7 @@ import SketchSombrero from '#/components/sketch-components/SketchSombrero';
 import SketchStringSextet01 from '#/components/sketch-components/SketchStringSextet01';
 import SketchSnowyQuartet from '#/components/sketch-components/SketchSnowyQuartet';
 import SketchCastleWithTwelveRamparts from '#/components/sketch-components/SketchCastleWithTwelveRamparts';
+import SketchOceanCurrent from '#/components/sketch-components/SketchOceanCurrent';
 
 export const sketchComponentMap: Record<string, ComponentType> = {
   'ainu-fantasy-01': SketchAinuFantasy01,
@@ -75,6 +76,7 @@ export const sketchComponentMap: Record<string, ComponentType> = {
   'multiple-fans': SketchMultipleFans,
   'multiple-particle-systems-02': SketchMultipleParticleSystems02,
   'multiple-particle-systems-03': SketchMultipleParticleSystems03,
+  'ocean-current': SketchOceanCurrent,
   'perlin-noise-04': SketchPerlinNoise04,
   'psychedelic-curve': SketchPsychedelicCurve,
   rain: SketchRain,
