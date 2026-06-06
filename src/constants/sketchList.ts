@@ -1231,6 +1231,32 @@ const sketch48: WorkObj = {
   thumbnailY: 0,
 } as const;
 
+const sketch49: WorkObj = {
+  id: 49,
+  title: 'Rainbow Circulation',
+  thumbnailUrl: '/images/Sketch_Images/rainbow-circulation.png',
+  codeUrl:
+    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/rainbow-circulation.js',
+  path: '/sketch-book/rainbow-circulation',
+  siteUrl: '',
+  description: {
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
+  },
+  supplement: {
+    ja: [''],
+    en: [''],
+  },
+  technology: {
+    ja: ['p5.js'],
+    en: ['p5.js'],
+  },
+  thumbnailX: 0,
+  thumbnailY: 0,
+} as const;
+
 export const sketchList: WorkObj[] = [
   sketch1,
   sketch2,
@@ -1280,4 +1306,5 @@ export const sketchList: WorkObj[] = [
   sketch46,
   sketch47,
   sketch48,
+  sketch49,
 ];
