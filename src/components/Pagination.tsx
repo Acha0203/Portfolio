@@ -10,10 +10,10 @@ function getPaginationItems(currentPage: number, totalPages: number): (number | 
   let windowStart = Math.max(1, currentPage - 1);
   let windowEnd = Math.min(totalPages, currentPage + 1);
 
-  if (windowEnd >= totalPages - 1) {
+  if (windowEnd >= totalPages) {
     windowEnd = totalPages;
     windowStart = Math.max(1, totalPages - 2);
-  } else if (windowStart <= 2) {
+  } else if (windowStart <= 1) {
     windowStart = 1;
     windowEnd = Math.min(totalPages, 3);
   }
