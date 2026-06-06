@@ -48,6 +48,7 @@ import SketchStringSextet01 from '#/components/sketch-components/SketchStringSex
 import SketchSnowyQuartet from '#/components/sketch-components/SketchSnowyQuartet';
 import SketchCastleWithTwelveRamparts from '#/components/sketch-components/SketchCastleWithTwelveRamparts';
 import SketchOceanCurrent from '#/components/sketch-components/SketchOceanCurrent';
+import SketchRainbowCirculation from '#/components/sketch-components/SketchRainbowCirculation';
 
 export const sketchComponentMap: Record<string, ComponentType> = {
   'ainu-fantasy-01': SketchAinuFantasy01,
@@ -80,6 +81,7 @@ export const sketchComponentMap: Record<string, ComponentType> = {
   'perlin-noise-04': SketchPerlinNoise04,
   'psychedelic-curve': SketchPsychedelicCurve,
   rain: SketchRain,
+  'rainbow-circulation': SketchRainbowCirculation,
   'random-hearts': SketchRandomHearts,
   'random-squares': SketchRandomSquares,
   'random-walk-02': SketchRandomWalk02,
