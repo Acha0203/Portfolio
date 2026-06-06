@@ -28,8 +28,7 @@ const sketch1: WorkObj = {
 const sketch2: WorkObj = {
   id: 2,
   title: 'Symmetrical Ruler 2',
-  thumbnailUrl:
-    '/images/Sketch_Images/symmetrical-ruler-02.png',
+  thumbnailUrl: '/images/Sketch_Images/symmetrical-ruler-02.png',
   codeUrl:
     'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/symmetrical-ruler02-b.js',
   path: '/sketch-book/symmetrical-ruler-02',
@@ -81,8 +80,7 @@ const sketch3: WorkObj = {
 const sketch4: WorkObj = {
   id: 4,
   title: 'Clifford Attractor 3',
-  thumbnailUrl:
-    '/images/Sketch_Images/clifford-attractor-03.png',
+  thumbnailUrl: '/images/Sketch_Images/clifford-attractor-03.png',
   codeUrl:
     'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/clifford-attractor03.js',
   path: '/sketch-book/clifford-attractor-03',
@@ -260,8 +258,7 @@ const sketch10: WorkObj = {
 const sketch11: WorkObj = {
   id: 11,
   title: 'Concentric Circle 4',
-  thumbnailUrl:
-    '/images/Sketch_Images/concentric-circle-04.png',
+  thumbnailUrl: '/images/Sketch_Images/concentric-circle-04.png',
   codeUrl:
     'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/concentric-circle04.js',
   path: '/sketch-book/concentric-circle-04',
@@ -339,8 +336,7 @@ const sketch13: WorkObj = {
 const sketch14: WorkObj = {
   id: 14,
   title: 'Multiple Particle Systems 2',
-  thumbnailUrl:
-    '/images/Sketch_Images/multiple-particle-systems-02.png',
+  thumbnailUrl: '/images/Sketch_Images/multiple-particle-systems-02.png',
   codeUrl:
     'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/p5js-examples/multiple-particle-systems02.js',
   path: '/sketch-book/multiple-particle-systems-02',
@@ -366,8 +362,7 @@ const sketch14: WorkObj = {
 const sketch15: WorkObj = {
   id: 15,
   title: 'Symmetrical Ruler 3',
-  thumbnailUrl:
-    '/images/Sketch_Images/symmetrical-ruler-03.png',
+  thumbnailUrl: '/images/Sketch_Images/symmetrical-ruler-03.png',
   codeUrl:
     'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/symmetrical-ruler03.js',
   path: '/sketch-book/symmetrical-ruler-03',
@@ -418,8 +413,7 @@ const sketch16: WorkObj = {
 const sketch17: WorkObj = {
   id: 17,
   title: 'Concentric Circle 5',
-  thumbnailUrl:
-    '/images/Sketch_Images/concentric-circle-05.png',
+  thumbnailUrl: '/images/Sketch_Images/concentric-circle-05.png',
   codeUrl:
     'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/concentric-circle05.js',
   path: '/sketch-book/concentric-circle-05',
@@ -572,8 +566,7 @@ const sketch22: WorkObj = {
 const sketch23: WorkObj = {
   id: 23,
   title: 'Multiple Particle Systems 3',
-  thumbnailUrl:
-    '/images/Sketch_Images/multiple-particle-systems-03.png',
+  thumbnailUrl: '/images/Sketch_Images/multiple-particle-systems-03.png',
   codeUrl:
     'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/multiple-particle-systems03.js',
   path: '/sketch-book/multiple-particle-systems-03',
@@ -1111,8 +1104,7 @@ const sketch43: WorkObj = {
 const sketch44: WorkObj = {
   id: 44,
   title: 'Symmetrical Ruler 4',
-  thumbnailUrl:
-    '/images/Sketch_Images/symmetrical-ruler-04.png',
+  thumbnailUrl: '/images/Sketch_Images/symmetrical-ruler-04.png',
   codeUrl:
     'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/symmetrical-ruler04.js',
   path: '/sketch-book/symmetrical-ruler-04',
@@ -1187,6 +1179,32 @@ const sketch46: WorkObj = {
   thumbnailY: 0,
 } as const;
 
+const sketch47: WorkObj = {
+  id: 47,
+  title: 'Castle with Twelve Ramparts',
+  thumbnailUrl: '/images/Sketch_Images/castle-with-twelve-ramparts.png',
+  codeUrl:
+    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/castle-with-twelve-ramparts.js',
+  path: '/sketch-book/castle-with-twelve-ramparts',
+  siteUrl: '',
+  description: {
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
+  },
+  supplement: {
+    ja: [''],
+    en: [''],
+  },
+  technology: {
+    ja: ['p5.js'],
+    en: ['p5.js'],
+  },
+  thumbnailX: 0,
+  thumbnailY: 0,
+} as const;
+
 export const sketchList: WorkObj[] = [
   sketch1,
   sketch2,
@@ -1234,4 +1252,5 @@ export const sketchList: WorkObj[] = [
   sketch44,
   sketch45,
   sketch46,
+  sketch47,
 ];
