@@ -46,6 +46,7 @@ import SketchSymmetricalRuler04 from '#/components/sketch-components/SketchSymme
 import SketchSombrero from '#/components/sketch-components/SketchSombrero';
 import SketchStringSextet01 from '#/components/sketch-components/SketchStringSextet01';
 import SketchSnowyQuartet from '#/components/sketch-components/SketchSnowyQuartet';
+import SketchCastleWithTwelveRamparts from '#/components/sketch-components/SketchCastleWithTwelveRamparts';
 
 export const sketchComponentMap: Record<string, ComponentType> = {
   'ainu-fantasy-01': SketchAinuFantasy01,
@@ -53,6 +54,7 @@ export const sketchComponentMap: Record<string, ComponentType> = {
   'bezier-08': SketchBezier08,
   'bezier-dance-01': SketchBezierDance01,
   'bezier-dance-02': SketchBezierDance02,
+  'castle-with-twelve-ramparts': SketchCastleWithTwelveRamparts,
   'circle-in-circle-03': SketchCircleInCircle03,
   'circle-motion-01': SketchCircleMotion01,
   'circle-motion-02': SketchCircleMotion02,

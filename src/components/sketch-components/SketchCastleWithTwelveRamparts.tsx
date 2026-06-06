@@ -7,10 +7,10 @@ const sketch: Sketch = (p5) => {
   let img: P5.Image | undefined;
 
   p5.setup = async () => {
-    img = await p5.loadImage(getImagePath('/images/snowy-quartet-texture.png'));
+    img = await p5.loadImage(getImagePath('/images/flow-field-03-lg.png'));
 
     p5.createCanvas(p5.windowWidth, p5.windowHeight, p5.WEBGL);
-    p5.noStroke();
+    p5.colorMode(p5.HSB);
   };
 
   p5.draw = () => {
@@ -24,18 +24,11 @@ const sketch: Sketch = (p5) => {
     }
 
     p5.rotateY(angle);
-    p5.push();
-    p5.rotateX(angle);
-    p5.box(p5.width / 4);
-    p5.rotateY(angle);
-    p5.box(p5.width / 2);
-    p5.push();
-    p5.rotateY(angle);
-    p5.rotateX(angle);
-    p5.box(p5.width * (2 / 3));
-    p5.pop();
-    p5.pop();
-    p5.box(p5.width);
+
+    Array.from({ length: 12 }, (_, i) => 1 + i).forEach((r) => {
+      p5.tint(p5.frameCount % (r * 30), 90, 90);
+      p5.cylinder(p5.frameCount % (r * 90), 200, 90, 1, false, false);
+    });
   };
 
   p5.windowResized = () => {
@@ -43,6 +36,6 @@ const sketch: Sketch = (p5) => {
   };
 };
 
-export default function SketchSnowyQuartet() {
+export default function SketchCastleWithTwelveRamparts() {
   return <NextReactP5Wrapper sketch={sketch} />;
 }
