@@ -1205,6 +1205,32 @@ const sketch47: WorkObj = {
   thumbnailY: 0,
 } as const;
 
+const sketch48: WorkObj = {
+  id: 48,
+  title: 'Ocean Current',
+  thumbnailUrl: '/images/Sketch_Images/ocean-current.png',
+  codeUrl:
+    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/ocean-current.js',
+  path: '/sketch-book/ocean-current',
+  siteUrl: '',
+  description: {
+    ja: [''],
+    en: [
+      'This page shows a generative art created by Acha Ikeda, a designer and developer in Japan.',
+    ],
+  },
+  supplement: {
+    ja: [''],
+    en: [''],
+  },
+  technology: {
+    ja: ['p5.js'],
+    en: ['p5.js'],
+  },
+  thumbnailX: 0,
+  thumbnailY: 0,
+} as const;
+
 export const sketchList: WorkObj[] = [
   sketch1,
   sketch2,
@@ -1253,4 +1279,5 @@ export const sketchList: WorkObj[] = [
   sketch45,
   sketch46,
   sketch47,
+  sketch48,
 ];
