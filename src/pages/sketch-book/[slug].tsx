@@ -7,6 +7,7 @@ import MyHead from '#/components/MyHead';
 import CodeAndBackBtn from '#/components/ui/button/CodeAndBackBtn';
 import Menu from '#/components/ui/menu/Menu';
 import styles from '#/styles/Home.module.scss';
+import { getImagePath } from '#/utils/path';
 
 type Props = {
   index: number;
@@ -23,7 +24,7 @@ const SketchPage = ({ index, slug }: Props) => {
     <>
       <MyHead
         title={sketch.title}
-        thumbnailUrl={sketch.thumbnailUrl}
+        thumbnailUrl={getImagePath(sketch.thumbnailUrl)}
         description={sketch.description.en.join('')}
       />
       <div className='flex-col justify-center items-center relative'>
@@ -44,7 +45,7 @@ const SketchPage = ({ index, slug }: Props) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = sketchList.map(sketch => ({
+  const paths = sketchList.map((sketch) => ({
     params: { slug: sketch.path.replace('/sketch-book/', '') },
   }));
   return { paths, fallback: false };
@@ -52,7 +53,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
   const slug = params!.slug as string;
-  const index = sketchList.findIndex(s => s.path === `/sketch-book/${slug}`);
+  const index = sketchList.findIndex((s) => s.path === `/sketch-book/${slug}`);
   return { props: { index, slug } };
 };
 
