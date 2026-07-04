@@ -16,6 +16,7 @@ import SketchConcentricCircle04 from '#/components/sketch-components/SketchConce
 import SketchEnergeticDance02 from '#/components/sketch-components/SketchEnergeticDance02';
 import SketchFireworks01 from '#/components/sketch-components/SketchFireworks01';
 import SketchFireworks02 from '#/components/sketch-components/SketchFireworks02';
+import SketchFloatingTriangles from '#/components/sketch-components/SketchFloatingTriangles';
 import SketchIllusion from '#/components/sketch-components/SketchIllusion';
 import SketchInfiniteFans from '#/components/sketch-components/SketchInfiniteFans';
 import SketchLazulineFire from '#/components/sketch-components/SketchLazulineFire';
@@ -57,6 +58,7 @@ export const sketchComponentMap: Record<string, ComponentType> = {
   'rainy-lake': SketchRainyLake,
   'fireworks-01': SketchFireworks01,
   'fireworks-02': SketchFireworks02,
+  'floating-triangles': SketchFloatingTriangles,
   'lazuline-fire': SketchLazulineFire,
   illusion: SketchIllusion,
   'luminous-spiral-01': SketchLuminousSpiral01,
