@@ -10,18 +10,18 @@ import SketchCircleMotion02 from '#/components/sketch-components/SketchCircleMot
 import SketchCliffordAttractor03 from '#/components/sketch-components/SketchCliffordAttractor03';
 import SketchComposition02 from '#/components/sketch-components/SketchComposition02';
 import SketchConcentricCircle04 from '#/components/sketch-components/SketchConcentricCircle04';
-import SketchConcentricCircle05 from '#/components/sketch-components/SketchConcentricCircle05';
+import SketchRainyLake from '#/components/sketch-components/SketchRainyLake';
 import SketchCuriousCat from '#/components/sketch-components/SketchCuriousCat';
 import SketchFireworks01 from '#/components/sketch-components/SketchFireworks01';
 import SketchFireworks02 from '#/components/sketch-components/SketchFireworks02';
-import SketchFlowField03 from '#/components/sketch-components/SketchFlowField03';
+import SketchLazulineFire from '#/components/sketch-components/SketchLazulineFire';
 import SketchHappyNewYear2023 from '#/components/sketch-components/SketchHappyNewYear2023';
 import SketchIllusion from '#/components/sketch-components/SketchIllusion';
 import SketchLuminousSpiral01 from '#/components/sketch-components/SketchLuminousSpiral01';
 import SketchLuminousSpiral02 from '#/components/sketch-components/SketchLuminousSpiral02';
 import SketchLuminousSpiral03 from '#/components/sketch-components/SketchLuminousSpiral03';
 import SketchMinacoding2023 from '#/components/sketch-components/SketchMinacoding2023';
-import SketchMultipleFans from '#/components/sketch-components/SketchMultipleFans';
+import SketchInfiniteFans from '#/components/sketch-components/SketchInfiniteFans';
 import SketchMultipleParticleSystems02 from '#/components/sketch-components/SketchMultipleParticleSystems02';
 import SketchMultipleParticleSystems03 from '#/components/sketch-components/SketchMultipleParticleSystems03';
 import SketchPerlinNoise04 from '#/components/sketch-components/SketchPerlinNoise04';
@@ -36,13 +36,13 @@ import SketchRotation03 from '#/components/sketch-components/SketchRotation03';
 import SketchRotation04 from '#/components/sketch-components/SketchRotation04';
 import SketchRotation05 from '#/components/sketch-components/SketchRotation05';
 import SketchRotation06 from '#/components/sketch-components/SketchRotation06';
-import SketchScreensaver from '#/components/sketch-components/SketchScreensaver';
-import SketchSymmetricalRuler02 from '#/components/sketch-components/SketchSymmetricalRuler02';
-import SketchSymmetricalRuler03 from '#/components/sketch-components/SketchSymmetricalRuler03';
+import SketchLuminousWave02 from '#/components/sketch-components/SketchLuminousWave02';
+import SketchBlooming02 from '#/components/sketch-components/SketchBlooming02';
+import SketchBlooming03 from '#/components/sketch-components/SketchBlooming03';
 import SketchTentacles from '#/components/sketch-components/SketchTentacles';
-import SketchTrigonometricWave from '#/components/sketch-components/SketchTrigonometricWave';
+import SketchLuminousWave01 from '#/components/sketch-components/SketchLuminousWave01';
 import SketchVerdure from '#/components/sketch-components/SketchVerdure';
-import SketchSymmetricalRuler04 from '#/components/sketch-components/SketchSymmetricalRuler04';
+import SketchBlooming04 from '#/components/sketch-components/SketchBlooming04';
 import SketchSombrero from '#/components/sketch-components/SketchSombrero';
 import SketchStringSextet01 from '#/components/sketch-components/SketchStringSextet01';
 import SketchSnowyQuartet from '#/components/sketch-components/SketchSnowyQuartet';
@@ -63,18 +63,18 @@ export const sketchComponentMap: Record<string, ComponentType> = {
   'clifford-attractor-03': SketchCliffordAttractor03,
   'composition-02': SketchComposition02,
   'concentric-circle-04': SketchConcentricCircle04,
-  'concentric-circle-05': SketchConcentricCircle05,
+  'rainy-lake': SketchRainyLake,
   'curious-cat': SketchCuriousCat,
   'fireworks-01': SketchFireworks01,
   'fireworks-02': SketchFireworks02,
-  'flow-field-03': SketchFlowField03,
+  'lazuline-fire': SketchLazulineFire,
   'happy-new-year-2023': SketchHappyNewYear2023,
   illusion: SketchIllusion,
   'luminous-spiral-01': SketchLuminousSpiral01,
   'luminous-spiral-02': SketchLuminousSpiral02,
   'luminous-spiral-03': SketchLuminousSpiral03,
   'minacoding-2023': SketchMinacoding2023,
-  'multiple-fans': SketchMultipleFans,
+  'infinite-fans': SketchInfiniteFans,
   'multiple-particle-systems-02': SketchMultipleParticleSystems02,
   'multiple-particle-systems-03': SketchMultipleParticleSystems03,
   'ocean-current': SketchOceanCurrent,
@@ -91,14 +91,14 @@ export const sketchComponentMap: Record<string, ComponentType> = {
   'rotation-04': SketchRotation04,
   'rotation-05': SketchRotation05,
   'rotation-06': SketchRotation06,
-  screensaver: SketchScreensaver,
+  'luminous-wave-02': SketchLuminousWave02,
   'snowy-quartet': SketchSnowyQuartet,
   sombrero: SketchSombrero,
   'string-sextet-01': SketchStringSextet01,
-  'symmetrical-ruler-02': SketchSymmetricalRuler02,
-  'symmetrical-ruler-03': SketchSymmetricalRuler03,
-  'symmetrical-ruler-04': SketchSymmetricalRuler04,
+  'blooming-02': SketchBlooming02,
+  'blooming-03': SketchBlooming03,
+  'blooming-04': SketchBlooming04,
   tentacles: SketchTentacles,
-  'trigonometric-wave': SketchTrigonometricWave,
+  'luminous-wave-01': SketchLuminousWave01,
   verdure: SketchVerdure,
 };

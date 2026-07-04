@@ -27,11 +27,11 @@ const sketch1: WorkObj = {
 
 const sketch2: WorkObj = {
   id: 2,
-  title: 'Symmetrical Ruler 2',
-  thumbnailUrl: '/images/Sketch_Images/symmetrical-ruler-02.png',
+  title: 'Blooming 2',
+  thumbnailUrl: '/images/Sketch_Images/blooming-02.png',
   codeUrl:
-    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/symmetrical-ruler02-b.js',
-  path: '/sketch-book/symmetrical-ruler-02',
+    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/blooming-02.js',
+  path: '/sketch-book/blooming-02',
   siteUrl: '',
   description: {
     ja: [''],
@@ -361,11 +361,11 @@ const sketch14: WorkObj = {
 
 const sketch15: WorkObj = {
   id: 15,
-  title: 'Symmetrical Ruler 3',
-  thumbnailUrl: '/images/Sketch_Images/symmetrical-ruler-03.png',
+  title: 'Blooming 3',
+  thumbnailUrl: '/images/Sketch_Images/blooming-03.png',
   codeUrl:
-    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/symmetrical-ruler03.js',
-  path: '/sketch-book/symmetrical-ruler-03',
+    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/blooming-03.js',
+  path: '/sketch-book/blooming-03',
   siteUrl: '',
   description: {
     ja: [''],
@@ -412,11 +412,11 @@ const sketch16: WorkObj = {
 
 const sketch17: WorkObj = {
   id: 17,
-  title: 'Concentric Circle 5',
-  thumbnailUrl: '/images/Sketch_Images/concentric-circle-05.png',
+  title: 'Rainy Lake',
+  thumbnailUrl: '/images/Sketch_Images/rainy-lake.png',
   codeUrl:
-    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/concentric-circle05.js',
-  path: '/sketch-book/concentric-circle-05',
+    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/rainy-lake.js',
+  path: '/sketch-book/rainy-lake',
   siteUrl: '',
   description: {
     ja: [''],
@@ -489,10 +489,10 @@ const sketch19: WorkObj = {
 
 const sketch20: WorkObj = {
   id: 20,
-  title: 'Flow Field 3',
-  thumbnailUrl: '/images/Sketch_Images/flow-field-03.png',
-  codeUrl: 'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/flow-field03.js',
-  path: '/sketch-book/flow-field-03',
+  title: 'Lazuline Fire',
+  thumbnailUrl: '/images/Sketch_Images/lazuline-fire.png',
+  codeUrl: 'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/lazuline-fire.js',
+  path: '/sketch-book/lazuline-fire',
   siteUrl: '',
   description: {
     ja: [''],
@@ -617,11 +617,11 @@ const sketch24: WorkObj = {
 
 const sketch25: WorkObj = {
   id: 25,
-  title: 'Multiple Fans',
-  thumbnailUrl: '/images/Sketch_Images/multiple-fans.png',
+  title: 'Infinite Fans',
+  thumbnailUrl: '/images/Sketch_Images/infinite-fans.png',
   codeUrl:
-    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/multiple-fans.js',
-  path: '/sketch-book/multiple-fans',
+    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/infinite-fans.js',
+  path: '/sketch-book/infinite-fans',
   siteUrl: '',
   description: {
     ja: [''],
@@ -744,11 +744,11 @@ const sketch29: WorkObj = {
 
 const sketch30: WorkObj = {
   id: 30,
-  title: 'Trigonometric Wave',
-  thumbnailUrl: '/images/Sketch_Images/trigonometric-wave.png',
+  title: 'Luminous Wave 1',
+  thumbnailUrl: '/images/Sketch_Images/luminous-wave-01.png',
   codeUrl:
-    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/trigonometric-wave.js',
-  path: '/sketch-book/trigonometric-wave',
+    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/luminous-wave-01.js',
+  path: '/sketch-book/luminous-wave-01',
   siteUrl: '',
   description: {
     ja: [''],
@@ -1078,10 +1078,10 @@ const sketch42: WorkObj = {
 
 const sketch43: WorkObj = {
   id: 43,
-  title: 'Screensaver',
-  thumbnailUrl: '/images/Sketch_Images/screensaver.png',
-  codeUrl: 'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/screensaver.js',
-  path: '/sketch-book/screensaver',
+  title: 'Luminous Wave 2',
+  thumbnailUrl: '/images/Sketch_Images/luminous-wave-02.png',
+  codeUrl: 'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/luminous-wave-02.js',
+  path: '/sketch-book/luminous-wave-02',
   siteUrl: '',
   description: {
     ja: [''],
@@ -1103,11 +1103,11 @@ const sketch43: WorkObj = {
 
 const sketch44: WorkObj = {
   id: 44,
-  title: 'Symmetrical Ruler 4',
-  thumbnailUrl: '/images/Sketch_Images/symmetrical-ruler-04.png',
+  title: 'Blooming 4',
+  thumbnailUrl: '/images/Sketch_Images/blooming-04.png',
   codeUrl:
-    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/symmetrical-ruler04.js',
-  path: '/sketch-book/symmetrical-ruler-04',
+    'https://github.com/Acha0203/Creative_Coding/blob/main/scripts/sketches/blooming-04.js',
+  path: '/sketch-book/blooming-04',
   siteUrl: '',
   description: {
     ja: [''],
