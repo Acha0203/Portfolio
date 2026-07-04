@@ -13,6 +13,7 @@ import SketchCircleMotion02 from '#/components/sketch-components/SketchCircleMot
 import SketchCliffordAttractor03 from '#/components/sketch-components/SketchCliffordAttractor03';
 import SketchComposition02 from '#/components/sketch-components/SketchComposition02';
 import SketchConcentricCircle04 from '#/components/sketch-components/SketchConcentricCircle04';
+import SketchEnergeticDance02 from '#/components/sketch-components/SketchEnergeticDance02';
 import SketchFireworks01 from '#/components/sketch-components/SketchFireworks01';
 import SketchFireworks02 from '#/components/sketch-components/SketchFireworks02';
 import SketchIllusion from '#/components/sketch-components/SketchIllusion';
@@ -52,6 +53,7 @@ export const sketchComponentMap: Record<string, ComponentType> = {
   'clifford-attractor-03': SketchCliffordAttractor03,
   'composition-02': SketchComposition02,
   'concentric-circle-04': SketchConcentricCircle04,
+  'energetic-dance-02': SketchEnergeticDance02,
   'rainy-lake': SketchRainyLake,
   'fireworks-01': SketchFireworks01,
   'fireworks-02': SketchFireworks02,
