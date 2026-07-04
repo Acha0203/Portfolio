@@ -1,7 +1,7 @@
+import type { MyAppState } from '#/types';
 import { useSelector } from 'react-redux';
 import { LANGUAGE } from '#/constants/uiText';
 import styles from '#/styles/Home.module.scss';
-import { MyAppState } from '#/types';
 
 const Appreciation = () => {
   const language = useSelector((state: MyAppState) => state.myApp.language);

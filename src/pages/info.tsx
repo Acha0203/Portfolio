@@ -1,10 +1,11 @@
-import { InfoType, type MyAppState } from '#/types';
 import { useEffect } from 'react';
-import { getImagePath } from '#/utils/path';
 import { useDispatch, useSelector } from 'react-redux';
-import { myAppActions } from '#/store/myApp';
 import { LANGUAGE, UI_TEXT } from '#/constants/uiText';
+import { myAppActions } from '#/store/myApp';
+import { InfoType, type MyAppState } from '#/types';
+import { getImagePath } from '#/utils/path';
 import Blackout from '#/components/Blackout';
+import InfoForInfoPage from '#/components/InfoForInfoPage';
 import MyHead from '#/components/MyHead';
 import SketchBackground from '#/components/sketch-components/SketchBackground';
 import LanguageSwitch from '#/components/ui/button/LanguageSwitch';
@@ -12,7 +13,6 @@ import LinkBtn from '#/components/ui/button/LinkBtn';
 import WebsiteBtn from '#/components/ui/button/WebsiteBtn';
 import Menu from '#/components/ui/menu/Menu';
 import styles from '#/styles/Home.module.scss';
-import InfoForInfoPage from '#/components/InfoForInfoPage';
 
 const InfoPage = () => {
   const dispatch = useDispatch();

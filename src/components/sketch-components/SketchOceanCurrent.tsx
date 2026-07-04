@@ -11,9 +11,9 @@ const sketch: Sketch = (p5) => {
   };
 
   p5.draw = () => {
-    let w = p5.width / 2;
-    let h = p5.height / 2;
-    let fishSize = Math.max(p5.width, p5.height) / 30;
+    const w = p5.width / 2;
+    const h = p5.height / 2;
+    const fishSize = Math.max(p5.width, p5.height) / 30;
 
     t += 0.01;
     p5.blendMode(p5.BLEND);

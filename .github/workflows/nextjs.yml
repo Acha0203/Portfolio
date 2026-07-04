@@ -5,6 +5,10 @@ on:
   push:
     branches: ['main']
 
+  # Runs the build job on pull requests targeting the default branch
+  pull_request:
+    branches: ['main']
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -74,8 +78,9 @@ jobs:
         with:
           path: ./out
 
-  # Deployment job
+  # Deployment job (only on the default branch; the github-pages environment allows main only)
   deploy:
+    if: github.ref == 'refs/heads/main'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

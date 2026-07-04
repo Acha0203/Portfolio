@@ -1,13 +1,13 @@
 import type { GetStaticPaths, GetStaticProps } from 'next';
-import { sketchList } from '#/constants/sketchList';
 import { sketchComponentMap } from '#/constants/sketchComponentMap';
+import { sketchList } from '#/constants/sketchList';
 import useReload from '#/hooks/useReload';
+import { getImagePath } from '#/utils/path';
 import Blackout from '#/components/Blackout';
 import MyHead from '#/components/MyHead';
 import CodeAndBackBtn from '#/components/ui/button/CodeAndBackBtn';
 import Menu from '#/components/ui/menu/Menu';
 import styles from '#/styles/Home.module.scss';
-import { getImagePath } from '#/utils/path';
 
 type Props = {
   index: number;
@@ -48,6 +48,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = sketchList.map((sketch) => ({
     params: { slug: sketch.path.replace('/sketch-book/', '') },
   }));
+
   return { paths, fallback: false };
 };
 

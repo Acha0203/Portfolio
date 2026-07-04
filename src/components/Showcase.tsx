@@ -1,10 +1,10 @@
 import type { WorkObj } from '#/types';
 import Image from 'next/image';
 import Link from 'next/link';
-import Pagination from '#/components/Pagination';
-import { sketchList } from '#/constants/sketchList';
 import { useRouter } from 'next/router';
+import { sketchList } from '#/constants/sketchList';
 import { getImagePath } from '#/utils/path';
+import Pagination from '#/components/Pagination';
 import styles from '#/styles/Home.module.scss';
 
 const ITEMS_PER_PAGE = 12;

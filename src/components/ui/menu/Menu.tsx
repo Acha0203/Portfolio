@@ -3,9 +3,9 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import useWindowSize from '#/hooks/useWindowSize';
 import { myAppActions } from '#/store/myApp';
+import HamburgerBtn from '#/components/ui/button/HamburgerBtn';
 import HamburgerMenu from '#/components/ui/menu/HamburgerMenu';
 import MenuBarTop from '#/components/ui/menu/MenuBarTop';
-import HamburgerBtn from '#/components/ui/button/HamburgerBtn';
 
 const Menu = () => {
   const dispatch = useDispatch();

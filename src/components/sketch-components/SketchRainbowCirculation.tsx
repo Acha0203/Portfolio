@@ -21,7 +21,7 @@ const sketch: Sketch = (p5) => {
 
     for (let i = 1; i <= numPoints; i++) {
       const x = (t + i * interval) % p5.width;
-      let y =
+      const y =
         p5.height / 2 +
         p5.height * volume * p5.sin(((x + i / p5.noise(interval)) * frequency * p5.TAU) / p5.width);
 
