@@ -19,6 +19,7 @@ import SketchFireworks02 from '#/components/sketch-components/SketchFireworks02'
 import SketchFloatingTriangles from '#/components/sketch-components/SketchFloatingTriangles';
 import SketchIllusion from '#/components/sketch-components/SketchIllusion';
 import SketchInfiniteFans from '#/components/sketch-components/SketchInfiniteFans';
+import SketchKandeon from '#/components/sketch-components/SketchKandeon';
 import SketchLazulineFire from '#/components/sketch-components/SketchLazulineFire';
 import SketchLuminousSpiral01 from '#/components/sketch-components/SketchLuminousSpiral01';
 import SketchLuminousSpiral02 from '#/components/sketch-components/SketchLuminousSpiral02';
@@ -59,8 +60,9 @@ export const sketchComponentMap: Record<string, ComponentType> = {
   'fireworks-01': SketchFireworks01,
   'fireworks-02': SketchFireworks02,
   'floating-triangles': SketchFloatingTriangles,
-  'lazuline-fire': SketchLazulineFire,
   illusion: SketchIllusion,
+  kandeon: SketchKandeon,
+  'lazuline-fire': SketchLazulineFire,
   'luminous-spiral-01': SketchLuminousSpiral01,
   'luminous-spiral-02': SketchLuminousSpiral02,
   'luminous-spiral-03': SketchLuminousSpiral03,
