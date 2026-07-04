@@ -1,5 +1,5 @@
-import styles from '#/styles/Home.module.scss';
 import { UI_TEXT } from '#/constants/uiText';
+import styles from '#/styles/Home.module.scss';
 
 const TitleOfHome = () => {
   return (

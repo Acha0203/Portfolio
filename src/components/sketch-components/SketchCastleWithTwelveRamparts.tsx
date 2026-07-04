@@ -14,7 +14,7 @@ const sketch: Sketch = (p5) => {
   };
 
   p5.draw = () => {
-    let angle = p5.frameCount * 0.01;
+    const angle = p5.frameCount * 0.01;
 
     p5.background(0);
     p5.blendMode(p5.ADD);

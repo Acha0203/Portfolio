@@ -1,11 +1,14 @@
-import { InfoType, type MyAppState } from '#/types';
+import type { GetStaticPaths, GetStaticProps } from 'next';
 import Image from 'next/image';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { LANGUAGE, UI_TEXT } from '#/constants/uiText';
 import { workList } from '#/constants/workList';
 import { myAppActions } from '#/store/myApp';
-import { LANGUAGE, UI_TEXT } from '#/constants/uiText';
+import { InfoType, type MyAppState } from '#/types';
+import { getImagePath } from '#/utils/path';
 import Blackout from '#/components/Blackout';
+import InfoForWorkPages from '#/components/InfoForWorkPages';
 import MyHead from '#/components/MyHead';
 import SketchBackground from '#/components/sketch-components/SketchBackground';
 import CodeAndBackBtn from '#/components/ui/button/CodeAndBackBtn';
@@ -13,16 +16,13 @@ import LanguageSwitch from '#/components/ui/button/LanguageSwitch';
 import WebsiteBtn from '#/components/ui/button/WebsiteBtn';
 import Menu from '#/components/ui/menu/Menu';
 import styles from '#/styles/Home.module.scss';
-import InfoForWorkPages from '#/components/InfoForWorkPages';
-import { GetStaticPaths, GetStaticProps } from 'next';
-import { getImagePath } from '#/utils/path';
 
 type Props = {
   index: number;
   slug: string;
 };
 
-const WorkPage = ({ index, slug }: Props) => {
+const WorkPage = ({ index }: Props) => {
   const dispatch = useDispatch();
   const language = useSelector((state: MyAppState) => state.myApp.language);
   const work = workList[index];
@@ -94,6 +94,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = workList.map((work) => ({
     params: { slug: work.path.replace('/work/', '') },
   }));
+
   return { paths, fallback: false };
 };
 

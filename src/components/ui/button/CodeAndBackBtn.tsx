@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import { useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
-import { myAppActions } from '#/store/myApp';
+import { useDispatch } from 'react-redux';
 import { UI_TEXT } from '#/constants/uiText';
+import { myAppActions } from '#/store/myApp';
 import styles from '#/styles/Home.module.scss';
 
 interface Props {
@@ -13,7 +13,8 @@ interface Props {
 const CodeAndBackBtn = ({ url, prevPage }: Props) => {
   const dispatch = useDispatch();
   const router = useRouter();
-  const backUrl = router.query.from ? `/sketch-book?page=${router.query.from}` : prevPage;
+  const { from } = router.query;
+  const backUrl = typeof from === 'string' && from !== '' ? `/sketch-book?page=${from}` : prevPage;
 
   const handleClick = () => {
     dispatch(myAppActions.setIsInTransition(true));

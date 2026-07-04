@@ -1,8 +1,9 @@
-import { InfoType, MyAppState } from '#/types';
+import type { MyAppState } from '#/types';
 import { useSelector } from 'react-redux';
-import { LANGUAGE } from '#/constants/uiText';
-import styles from '#/styles/Home.module.scss';
 import { infoList } from '#/constants/information';
+import { LANGUAGE } from '#/constants/uiText';
+import { InfoType } from '#/types';
+import styles from '#/styles/Home.module.scss';
 
 interface Props {
   infoListId: number;

@@ -1,7 +1,6 @@
 import type { Sketch } from '@p5-wrapper/react';
 import type P5 from 'p5';
 import { NextReactP5Wrapper } from '@p5-wrapper/next';
-
 import { getImagePath } from '#/utils/path';
 
 const sketch: Sketch = (p5) => {

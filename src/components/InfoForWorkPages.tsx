@@ -1,9 +1,10 @@
-import { BilingualTexts, InfoType, MyAppState, WorkObj } from '#/types';
+import type { BilingualTexts, MyAppState, WorkObj } from '#/types';
 import { useSelector } from 'react-redux';
-import { workList } from '#/constants/workList';
 import { LANGUAGE } from '#/constants/uiText';
-import styles from '#/styles/Home.module.scss';
+import { workList } from '#/constants/workList';
+import { InfoType } from '#/types';
 import Appreciation from '#/components/Appreciation';
+import styles from '#/styles/Home.module.scss';
 
 interface Props {
   workListId: number;

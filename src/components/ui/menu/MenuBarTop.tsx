@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { myAppActions } from '#/store/myApp';
 import { UI_TEXT } from '#/constants/uiText';
+import { myAppActions } from '#/store/myApp';
 import styles from '#/styles/Home.module.scss';
 
 const MenuBarTop = () => {

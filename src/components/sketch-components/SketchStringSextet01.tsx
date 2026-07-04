@@ -16,13 +16,13 @@ const sketch: Sketch = (p5) => {
     let hz = 660;
 
     while (i < 7) {
-      let n = i * i + 7;
+      const n = i * i + 7;
 
       for (let r = 0; r < p5.TAU; r += p5.PI / n) {
-        let angle = r + p5.noise(p5.frameCount / hz) * n * direction;
-        let length = p5.noise(p5.frameCount / 50) * hz;
-        let x = p5.tan(p5.cos(angle)) * length + p5.width / 2;
-        let y = p5.tan(p5.sin(angle)) * length + p5.height / 2;
+        const angle = r + p5.noise(p5.frameCount / hz) * n * direction;
+        const length = p5.noise(p5.frameCount / 50) * hz;
+        const x = p5.tan(p5.cos(angle)) * length + p5.width / 2;
+        const y = p5.tan(p5.sin(angle)) * length + p5.height / 2;
 
         p5.fill(p5.frameCount % hz, 50, hz);
         p5.circle(x, y, length / 20);
