@@ -53,6 +53,7 @@ const sketchSeeds: SketchSeed[] = [
   { title: 'Energetic Dance 2', slug: 'energetic-dance-02' },
   { title: 'Floating Triangles', slug: 'floating-triangles' },
   { title: 'Kandeon', slug: 'kandeon' },
+  { title: 'Grassland', slug: 'grassland' },
 ];
 
 export const sketchList: WorkObj[] = sketchSeeds.map((seed, index) => ({

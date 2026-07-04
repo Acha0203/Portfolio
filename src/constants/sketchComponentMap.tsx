@@ -17,6 +17,7 @@ import SketchEnergeticDance02 from '#/components/sketch-components/SketchEnerget
 import SketchFireworks01 from '#/components/sketch-components/SketchFireworks01';
 import SketchFireworks02 from '#/components/sketch-components/SketchFireworks02';
 import SketchFloatingTriangles from '#/components/sketch-components/SketchFloatingTriangles';
+import SketchGrassland from '#/components/sketch-components/SketchGrassland';
 import SketchIllusion from '#/components/sketch-components/SketchIllusion';
 import SketchInfiniteFans from '#/components/sketch-components/SketchInfiniteFans';
 import SketchKandeon from '#/components/sketch-components/SketchKandeon';
@@ -49,6 +50,9 @@ export const sketchComponentMap: Record<string, ComponentType> = {
   'bezier-08': SketchBezier08,
   'bezier-dance-01': SketchBezierDance01,
   'bezier-dance-02': SketchBezierDance02,
+  'blooming-02': SketchBlooming02,
+  'blooming-03': SketchBlooming03,
+  'blooming-04': SketchBlooming04,
   'castle-with-twelve-ramparts': SketchCastleWithTwelveRamparts,
   'circle-motion-01': SketchCircleMotion01,
   'circle-motion-02': SketchCircleMotion02,
@@ -60,14 +64,17 @@ export const sketchComponentMap: Record<string, ComponentType> = {
   'fireworks-01': SketchFireworks01,
   'fireworks-02': SketchFireworks02,
   'floating-triangles': SketchFloatingTriangles,
+  grassland: SketchGrassland,
   illusion: SketchIllusion,
+  'infinite-fans': SketchInfiniteFans,
   kandeon: SketchKandeon,
   'lazuline-fire': SketchLazulineFire,
   'luminous-spiral-01': SketchLuminousSpiral01,
   'luminous-spiral-02': SketchLuminousSpiral02,
   'luminous-spiral-03': SketchLuminousSpiral03,
+  'luminous-wave-01': SketchLuminousWave01,
+  'luminous-wave-02': SketchLuminousWave02,
   'minacoding-2023': SketchMinacoding2023,
-  'infinite-fans': SketchInfiniteFans,
   'ocean-current': SketchOceanCurrent,
   'perlin-noise-04': SketchPerlinNoise04,
   'psychedelic-curve': SketchPsychedelicCurve,
@@ -77,14 +84,9 @@ export const sketchComponentMap: Record<string, ComponentType> = {
   'rotation-03': SketchRotation03,
   'rotation-05': SketchRotation05,
   'rotation-06': SketchRotation06,
-  'luminous-wave-02': SketchLuminousWave02,
   'snowy-quartet': SketchSnowyQuartet,
   sombrero: SketchSombrero,
   'string-sextet-01': SketchStringSextet01,
-  'blooming-02': SketchBlooming02,
-  'blooming-03': SketchBlooming03,
-  'blooming-04': SketchBlooming04,
   tentacles: SketchTentacles,
-  'luminous-wave-01': SketchLuminousWave01,
   verdure: SketchVerdure,
 };
