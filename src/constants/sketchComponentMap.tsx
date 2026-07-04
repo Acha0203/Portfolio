@@ -43,6 +43,7 @@ import SketchSombrero from '#/components/sketch-components/SketchSombrero';
 import SketchStringSextet01 from '#/components/sketch-components/SketchStringSextet01';
 import SketchTentacles from '#/components/sketch-components/SketchTentacles';
 import SketchVerdure from '#/components/sketch-components/SketchVerdure';
+import SketchWindingByHumidity from '#/components/sketch-components/SketchWindingByHumidity';
 
 export const sketchComponentMap: Record<string, ComponentType> = {
   'ainu-fantasy-01': SketchAinuFantasy01,
@@ -89,4 +90,5 @@ export const sketchComponentMap: Record<string, ComponentType> = {
   'string-sextet-01': SketchStringSextet01,
   tentacles: SketchTentacles,
   verdure: SketchVerdure,
+  'winding-by-humidity': SketchWindingByHumidity,
 };

@@ -54,6 +54,7 @@ const sketchSeeds: SketchSeed[] = [
   { title: 'Floating Triangles', slug: 'floating-triangles' },
   { title: 'Kandeon', slug: 'kandeon' },
   { title: 'Grassland', slug: 'grassland' },
+  { title: 'Winding by Humidity', slug: 'winding-by-humidity' },
 ];
 
 export const sketchList: WorkObj[] = sketchSeeds.map((seed, index) => ({
