@@ -41,6 +41,7 @@ import SketchQuicksilver from '#/components/sketch-components/SketchQuicksilver'
 import SketchRain from '#/components/sketch-components/SketchRain';
 import SketchRainbowCirculation from '#/components/sketch-components/SketchRainbowCirculation';
 import SketchRainyLake from '#/components/sketch-components/SketchRainyLake';
+import SketchRandomWalk03 from '#/components/sketch-components/SketchRandomWalk03';
 import SketchRotation02 from '#/components/sketch-components/SketchRotation02';
 import SketchRotation03 from '#/components/sketch-components/SketchRotation03';
 import SketchRotation05 from '#/components/sketch-components/SketchRotation05';
@@ -97,6 +98,7 @@ export const sketchComponentMap: Record<string, ComponentType> = {
   quicksilver: SketchQuicksilver,
   rain: SketchRain,
   'rainbow-circulation': SketchRainbowCirculation,
+  'random-walk-03': SketchRandomWalk03,
   'rotation-02': SketchRotation02,
   'rotation-03': SketchRotation03,
   'rotation-05': SketchRotation05,
