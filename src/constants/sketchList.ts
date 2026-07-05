@@ -65,6 +65,7 @@ const sketchSeeds: SketchSeed[] = [
   { title: 'Mortal Flowers', slug: 'mortal-flowers' },
   { title: 'Quicksilver', slug: 'quicksilver' },
   { title: 'Random Walk 3', slug: 'random-walk-03' },
+  { title: 'Rainbow Falls', slug: 'rainbow-falls' },
 ];
 
 export const sketchList: WorkObj[] = sketchSeeds.map((seed, index) => ({
