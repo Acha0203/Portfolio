@@ -17,6 +17,7 @@ import SketchEnergeticDance02 from '#/components/sketch-components/SketchEnerget
 import SketchFireworks01 from '#/components/sketch-components/SketchFireworks01';
 import SketchFireworks02 from '#/components/sketch-components/SketchFireworks02';
 import SketchFloatingTriangles from '#/components/sketch-components/SketchFloatingTriangles';
+import SketchFlowersOfTime from '#/components/sketch-components/SketchFlowersOfTime';
 import SketchGiveThanksToShin from '#/components/sketch-components/SketchGiveThanksToShin';
 import SketchGrassland from '#/components/sketch-components/SketchGrassland';
 import SketchIllusion from '#/components/sketch-components/SketchIllusion';
@@ -69,6 +70,7 @@ export const sketchComponentMap: Record<string, ComponentType> = {
   'fireworks-01': SketchFireworks01,
   'fireworks-02': SketchFireworks02,
   'floating-triangles': SketchFloatingTriangles,
+  'flowers-of-time': SketchFlowersOfTime,
   'give-thanks-to-shin': SketchGiveThanksToShin,
   grassland: SketchGrassland,
   illusion: SketchIllusion,
