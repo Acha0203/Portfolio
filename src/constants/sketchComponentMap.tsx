@@ -37,6 +37,7 @@ import SketchMortalFlowers from '#/components/sketch-components/SketchMortalFlow
 import SketchOceanCurrent from '#/components/sketch-components/SketchOceanCurrent';
 import SketchPerlinNoise04 from '#/components/sketch-components/SketchPerlinNoise04';
 import SketchPsychedelicCurve from '#/components/sketch-components/SketchPsychedelicCurve';
+import SketchQuicksilver from '#/components/sketch-components/SketchQuicksilver';
 import SketchRain from '#/components/sketch-components/SketchRain';
 import SketchRainbowCirculation from '#/components/sketch-components/SketchRainbowCirculation';
 import SketchRainyLake from '#/components/sketch-components/SketchRainyLake';
@@ -93,6 +94,7 @@ export const sketchComponentMap: Record<string, ComponentType> = {
   'ocean-current': SketchOceanCurrent,
   'perlin-noise-04': SketchPerlinNoise04,
   'psychedelic-curve': SketchPsychedelicCurve,
+  quicksilver: SketchQuicksilver,
   rain: SketchRain,
   'rainbow-circulation': SketchRainbowCirculation,
   'rotation-02': SketchRotation02,
