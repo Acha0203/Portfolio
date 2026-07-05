@@ -2,7 +2,6 @@ import type { GetStaticPaths, GetStaticProps } from 'next';
 import { sketchComponentMap } from '#/constants/sketchComponentMap';
 import { sketchList } from '#/constants/sketchList';
 import useReload from '#/hooks/useReload';
-import { getImagePath } from '#/utils/path';
 import Blackout from '#/components/Blackout';
 import MyHead from '#/components/MyHead';
 import CodeAndBackBtn from '#/components/ui/button/CodeAndBackBtn';
@@ -24,7 +23,7 @@ const SketchPage = ({ index, slug }: Props) => {
     <>
       <MyHead
         title={sketch.title}
-        thumbnailUrl={getImagePath(sketch.thumbnailUrl)}
+        thumbnailUrl={`https://acha0203.github.io/Portfolio${sketch.thumbnailUrl}`}
         description={sketch.description.en.join('')}
       />
       <div className='flex-col justify-center items-center relative'>
