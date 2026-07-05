@@ -21,6 +21,7 @@ import SketchGiveThanksToShin from '#/components/sketch-components/SketchGiveTha
 import SketchGrassland from '#/components/sketch-components/SketchGrassland';
 import SketchIllusion from '#/components/sketch-components/SketchIllusion';
 import SketchInfiniteFans from '#/components/sketch-components/SketchInfiniteFans';
+import SketchIslamicGeometricPattern02 from '#/components/sketch-components/SketchIslamicGeometricPattern02';
 import SketchKandeon from '#/components/sketch-components/SketchKandeon';
 import SketchLazulineFire from '#/components/sketch-components/SketchLazulineFire';
 import SketchLuminousSpiral01 from '#/components/sketch-components/SketchLuminousSpiral01';
@@ -71,6 +72,7 @@ export const sketchComponentMap: Record<string, ComponentType> = {
   grassland: SketchGrassland,
   illusion: SketchIllusion,
   'infinite-fans': SketchInfiniteFans,
+  'islamic-geometric-pattern-02': SketchIslamicGeometricPattern02,
   kandeon: SketchKandeon,
   'lazuline-fire': SketchLazulineFire,
   'luminous-spiral-01': SketchLuminousSpiral01,
