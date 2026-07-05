@@ -58,6 +58,7 @@ const sketchSeeds: SketchSeed[] = [
   { title: 'Give Thanks to Shin', slug: 'give-thanks-to-shin' },
   { title: 'Rotation 7', slug: 'rotation-07' },
   { title: 'Islamic Geometric Pattern 2', slug: 'islamic-geometric-pattern-02' },
+  { title: 'Snowfall', slug: 'snowfall' },
 ];
 
 export const sketchList: WorkObj[] = sketchSeeds.map((seed, index) => ({

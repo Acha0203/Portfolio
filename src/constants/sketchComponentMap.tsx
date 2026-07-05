@@ -41,6 +41,7 @@ import SketchRotation03 from '#/components/sketch-components/SketchRotation03';
 import SketchRotation05 from '#/components/sketch-components/SketchRotation05';
 import SketchRotation06 from '#/components/sketch-components/SketchRotation06';
 import SketchRotation07 from '#/components/sketch-components/SketchRotation07';
+import SketchSnowfall from '#/components/sketch-components/SketchSnowfall';
 import SketchSnowyQuartet from '#/components/sketch-components/SketchSnowyQuartet';
 import SketchSombrero from '#/components/sketch-components/SketchSombrero';
 import SketchStringSextet01 from '#/components/sketch-components/SketchStringSextet01';
@@ -91,6 +92,7 @@ export const sketchComponentMap: Record<string, ComponentType> = {
   'rotation-05': SketchRotation05,
   'rotation-06': SketchRotation06,
   'rotation-07': SketchRotation07,
+  snowfall: SketchSnowfall,
   'snowy-quartet': SketchSnowyQuartet,
   sombrero: SketchSombrero,
   'string-sextet-01': SketchStringSextet01,
