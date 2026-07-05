@@ -33,6 +33,7 @@ import SketchLuminousWave01 from '#/components/sketch-components/SketchLuminousW
 import SketchLuminousWave02 from '#/components/sketch-components/SketchLuminousWave02';
 import SketchMinacoding2023 from '#/components/sketch-components/SketchMinacoding2023';
 import SketchMochiMochi from '#/components/sketch-components/SketchMochiMochi';
+import SketchMortalFlowers from '#/components/sketch-components/SketchMortalFlowers';
 import SketchOceanCurrent from '#/components/sketch-components/SketchOceanCurrent';
 import SketchPerlinNoise04 from '#/components/sketch-components/SketchPerlinNoise04';
 import SketchPsychedelicCurve from '#/components/sketch-components/SketchPsychedelicCurve';
@@ -88,6 +89,7 @@ export const sketchComponentMap: Record<string, ComponentType> = {
   'luminous-wave-02': SketchLuminousWave02,
   'minacoding-2023': SketchMinacoding2023,
   'mochi-mochi': SketchMochiMochi,
+  'mortal-flowers': SketchMortalFlowers,
   'ocean-current': SketchOceanCurrent,
   'perlin-noise-04': SketchPerlinNoise04,
   'psychedelic-curve': SketchPsychedelicCurve,
