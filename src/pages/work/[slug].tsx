@@ -43,7 +43,7 @@ const WorkPage = ({ index }: Props) => {
     <>
       <MyHead
         title={work.title}
-        thumbnailUrl={getImagePath(work.thumbnailUrl)}
+        thumbnailUrl={`https://acha0203.github.io/Portfolio${work.thumbnailUrl}-s.png`}
         description={work.description.en.join('')}
       />
       <div className='flex flex-col justify-center items-center relative mb-7'>
