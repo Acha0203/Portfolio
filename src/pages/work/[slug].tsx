@@ -57,14 +57,16 @@ const WorkPage = ({ index }: Props) => {
           <LanguageSwitch />
           <div className='flex justify-center items-start w-full mt-8 sm:mt-10 lg:mt-12'>
             <div className='w-4/5 sm:w-1/2'>
-              <Image
-                src={getImagePath(`${work.thumbnailUrl}.png`)}
-                alt={work.title}
-                width={work.thumbnailX}
-                height={work.thumbnailY}
-                sizes='100vw'
-                className={`${styles.work_image} w-full`}
-              />
+              <a href={work.siteUrl} target='_blank' rel='noreferrer'>
+                <Image
+                  src={getImagePath(`${work.thumbnailUrl}.png`)}
+                  alt={work.title}
+                  width={work.thumbnailX}
+                  height={work.thumbnailY}
+                  sizes='100vw'
+                  className={`${styles.work_image} w-full`}
+                />
+              </a>
             </div>
           </div>
           <div className='flex flex-col justify-center items-center w-full gap-y-2 mt-10 max-sm:mt-5'>
@@ -77,10 +79,10 @@ const WorkPage = ({ index }: Props) => {
             <InfoForWorkPages workListId={work.id} infoType={InfoType.technology} />
           </div>
           <div className='my-5'>
-            <WebsiteBtn text={UI_TEXT.button.website} url={`${work.siteUrl}`} />
+            <WebsiteBtn text={UI_TEXT.button.website} url={work.siteUrl} />
           </div>
           <div className='mb-10'>
-            <CodeAndBackBtn url={`${work.codeUrl}`} prevPage='/work' />
+            <CodeAndBackBtn url={work.codeUrl} prevPage='/work' />
           </div>
         </div>
         <Blackout />
