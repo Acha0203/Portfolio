@@ -17,6 +17,9 @@ export default defineConfig([globalIgnores([
     "**/build/",
     "**/dist/",
     "**/out/",
+    "**/.e2e-serve/",
+    "**/test-results/",
+    "**/playwright-report/",
     "**/public/",
     "**/package-lock.json",
     "**/vite.config.ts",
@@ -164,5 +167,13 @@ export default defineConfig([globalIgnores([
         "react/no-unknown-property": ["error", {
             ignore: ["css"],
         }],
+    },
+}, {
+    // PlaywrightのE2EテストはReactコードではないため、
+    // fixtureの`use`関数がReact Hooksルールに誤検知されるのを防ぐ
+    files: ["e2e/**/*.ts", "playwright.config.ts"],
+
+    rules: {
+        "react-hooks/rules-of-hooks": "off",
     },
 }]);

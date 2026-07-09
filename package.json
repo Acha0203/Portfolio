@@ -8,6 +8,7 @@
     "export": "next build && next export -o dist",
     "start": "next start",
     "lint": "eslint .",
+    "test:e2e": "playwright test",
     "analyze": "ANALYZE=true next build"
   },
   "dependencies": {
@@ -27,6 +28,7 @@
     "tailwindcss": "^4.3.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.61.1",
     "@types/node": "18.19.50",
     "@types/react": "19.2.15",
     "@types/react-dom": "19.2.3",
@@ -36,6 +38,7 @@
     "eslint-plugin-unused-imports": "^4",
     "globals": "^15",
     "prettier": "^3.8.3",
+    "serve": "^14.2.6",
     "typescript": "^5.9.3"
   },
   "imports": {
