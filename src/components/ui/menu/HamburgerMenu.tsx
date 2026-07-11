@@ -77,6 +77,15 @@ const HamburgerMenu = () => {
             </Link>
           </li>
         )}
+        {pathname === '/laboratory' ? (
+          <li className={styles.current}>{UI_TEXT.nav.laboratory}</li>
+        ) : (
+          <li className={styles.active}>
+            <Link href='/laboratory' onClick={handleClick}>
+              {UI_TEXT.nav.laboratory}
+            </Link>
+          </li>
+        )}
         {pathname === '/info' ? (
           <li className={styles.current}>{UI_TEXT.nav.info}</li>
         ) : (

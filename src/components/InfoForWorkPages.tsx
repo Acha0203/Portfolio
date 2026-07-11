@@ -1,27 +1,26 @@
 import type { BilingualTexts, MyAppState, WorkObj } from '#/types';
 import { useSelector } from 'react-redux';
 import { LANGUAGE } from '#/constants/uiText';
-import { workList } from '#/constants/workList';
 import { InfoType } from '#/types';
 import Appreciation from '#/components/Appreciation';
 import styles from '#/styles/Home.module.scss';
 
 interface Props {
-  workListId: number;
+  item: WorkObj;
   infoType: string;
 }
 
-function getBilingualTexts(infoType: string, workData: WorkObj): BilingualTexts {
-  if (infoType === InfoType.description) return workData.description;
+function getBilingualTexts(item: WorkObj, infoType: string): BilingualTexts {
+  if (infoType === InfoType.description) return item.description;
 
-  if (infoType === InfoType.technology) return workData.technology;
+  if (infoType === InfoType.technology) return item.technology;
 
-  return workData.supplement;
+  return item.supplement;
 }
 
-const InfoForWorkPages = ({ workListId, infoType }: Props) => {
+const InfoForWorkPages = ({ item, infoType }: Props) => {
   const language = useSelector((state: MyAppState) => state.myApp.language);
-  const bilingualTexts = getBilingualTexts(infoType, workList[workListId - 1]);
+  const bilingualTexts = getBilingualTexts(item, infoType);
 
   return (
     <div className='flex flex-col justify-center items-center w-3/4 max-sm:w-11/12'>
@@ -53,8 +52,8 @@ const InfoForWorkPages = ({ workListId, infoType }: Props) => {
           ))}
       </div>
 
-      {/* Connect 4 (workListId === 7) の場合は Appreciation コンポーネントを表示する */}
-      {workListId === 7 && infoType === InfoType.description && <Appreciation />}
+      {/* Connect 4 の場合は Appreciation コンポーネントを表示する */}
+      {item.title === 'Connect 4' && infoType === InfoType.description && <Appreciation />}
     </div>
   );
 };

@@ -3,6 +3,7 @@ export const UI_TEXT = {
     home: 'HOME',
     work: 'WORK',
     sketchBook: 'SKETCH BOOK',
+    laboratory: 'LABORATORY',
     info: 'INFO',
   },
   button: {
@@ -12,6 +13,7 @@ export const UI_TEXT = {
     back: 'BACK',
     menu: 'MENU',
     website: 'WEBSITE',
+    application: 'APPLICATION',
     contact: 'CONTACT',
   },
   page: {
@@ -19,6 +21,7 @@ export const UI_TEXT = {
     profession: 'DESIGNER & DEVELOPER',
     workSubtitle: 'SHOWING WEB APPLICATIONS',
     sketchBookSubtitle: 'SHOWING GENERATIVE ARTS',
+    laboratorySubtitle: 'SHOWING EXPERIMENTAL WORKS',
   },
 } as const;
 
