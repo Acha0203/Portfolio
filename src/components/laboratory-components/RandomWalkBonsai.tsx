@@ -1,6 +1,7 @@
 import type { Sketch } from '@p5-wrapper/react';
 import type P5 from 'p5';
 import { NextReactP5Wrapper } from '@p5-wrapper/next';
+import { useEffect, useState } from 'react';
 
 const sketch: Sketch = (p5) => {
   // Friendly Error System のコード解析による開発時の SyntaxError ノイズを抑止する
@@ -220,5 +221,23 @@ const sketch: Sketch = (p5) => {
 };
 
 export default function RandomWalkBonsai() {
-  return <NextReactP5Wrapper sketch={sketch} />;
+  const [elapsedSeconds, setElapsedSeconds] = useState(0);
+
+  useEffect(() => {
+    const startTime = Date.now();
+    const timerId = setInterval(() => {
+      setElapsedSeconds(Math.floor((Date.now() - startTime) / 1000));
+    }, 1000);
+
+    return () => clearInterval(timerId);
+  }, []);
+
+  return (
+    <>
+      <NextReactP5Wrapper sketch={sketch} />
+      <div className='fixed top-24 left-5 z-10 max-sm:top-6 pointer-events-none text-white [text-shadow:#000_0_0_10px]'>
+        {`Passage of Time: ${elapsedSeconds} sec.`}
+      </div>
+    </>
+  );
 }
