@@ -201,7 +201,7 @@ const BonsaiSettingsDialog = ({
 
     try {
       onExport();
-      setStatusMessage('Exported the saved bonsai data as a file.');
+      setStatusMessage('Exported the saved bonsai data as JSON and OBJ files.');
     } catch (error) {
       setErrorMessage(toErrorMessage(error));
     }

@@ -81,18 +81,32 @@ export const loadBonsai = (): BonsaiSaveData | null => {
 
 export const hasSavedBonsai = (): boolean => localStorage.getItem(STORAGE_KEY) !== null;
 
-// 保存データを JSON ファイルとしてダウンロードさせる
-export const downloadBonsaiFile = (data: BonsaiSaveData): void => {
-  // savedAt をファイル名に使えるよう「YYYY-MM-DD-HHmmss」に整形する
+// savedAt をファイル名に使えるよう「YYYY-MM-DD-HHmmss」に整形した共通のベース名を返す
+export const bonsaiFileBaseName = (data: BonsaiSaveData): string => {
   const timestamp = data.savedAt.replace(/[T:]/g, '-').replace(/\..*$/, '');
-  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+
+  return `random-walk-bonsai-${timestamp}`;
+};
+
+// テキストをファイルとしてダウンロードさせる
+export const downloadTextFile = (fileName: string, content: string, mimeType: string): void => {
+  const blob = new Blob([content], { type: mimeType });
   const url = URL.createObjectURL(blob);
   const anchor = document.createElement('a');
 
   anchor.href = url;
-  anchor.download = `random-walk-bonsai-${timestamp}.json`;
+  anchor.download = fileName;
   anchor.click();
   URL.revokeObjectURL(url);
+};
+
+// 保存データを JSON ファイルとしてダウンロードさせる
+export const downloadBonsaiFile = (data: BonsaiSaveData): void => {
+  downloadTextFile(
+    `${bonsaiFileBaseName(data)}.json`,
+    JSON.stringify(data, null, 2),
+    'application/json',
+  );
 };
 
 // ユーザーが選択したファイルを読み込んで検証する

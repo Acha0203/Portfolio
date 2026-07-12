@@ -3,6 +3,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { laboratoryList } from '#/constants/laboratoryList';
 import { DEFAULT_BONSAI_SETTINGS } from '#/constants/randomWalkBonsai';
 import useReload from '#/hooks/useReload';
+import { downloadBonsaiBlenderFile } from '#/utils/bonsaiBlenderExport';
 import { downloadBonsaiFile, loadBonsai, saveBonsai } from '#/utils/bonsaiStorage';
 import Blackout from '#/components/Blackout';
 import BonsaiSettingsDialog from '#/components/laboratory-components/BonsaiSettingsDialog';
@@ -87,7 +88,7 @@ const RandomWalkBonsaiApp = () => {
     resumeFromSaveData(savedData);
   };
 
-  // localStorage に保存済みのデータをファイルとしてダウンロードする
+  // localStorage に保存済みのデータを JSON と Blender 用 OBJ の両方でダウンロードする
   const handleExport = () => {
     const savedData = loadBonsai();
 
@@ -96,6 +97,7 @@ const RandomWalkBonsaiApp = () => {
     }
 
     downloadBonsaiFile(savedData);
+    downloadBonsaiBlenderFile(savedData);
   };
 
   const handleImport = (data: BonsaiSaveData) => {
