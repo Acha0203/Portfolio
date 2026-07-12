@@ -3,75 +3,78 @@ import type P5 from 'p5';
 import { NextReactP5Wrapper } from '@p5-wrapper/next';
 
 const sketch: Sketch = (p5) => {
-  const NUMBER_OF_OVULEs = 20000;
+  // Friendly Error System のコード解析による開発時の SyntaxError ノイズを抑止する
+  // p5.js 2.x の FES はインスタンスではなく p5 クラスの静的フラグを参照する
+  (p5.constructor as unknown as { disableFriendlyErrors: boolean }).disableFriendlyErrors = true;
+
   const SPHERE_SIZE = 20;
   const AREA_RADIUS = 500;
-  const BATCH_SIZE = 20;
-  const ovules: Ovule[] = [];
-  const adheredOvulesX: number[] = [];
-  const adheredOvulesY: number[] = [];
-  const adheredOvulesZ: number[] = [];
-  const adheredOvulesColor: P5.Color[] = [];
+  const NUM_OF_ACTIVE_OVULES = 20;
+  const bonsaiX: number[] = [];
+  const bonsaiY: number[] = [];
+  const bonsaiZ: number[] = [];
+  const activeOvules: Ovule[] = [];
 
-  let nextBatchIndex = 0;
-  let activeOvules: Ovule[] = [];
-  let number = 0;
+  let allNumberOfOvules = 0; // 現在の胚珠の総数（固着した胚珠も含む）
+
+  // p5.color() はレンダラー生成後（createCanvas 後）でないと使えないため setup 内で初期化する
+  let ovulesColor: P5.Color;
+  let centerColor: P5.Color; // 盆栽の最も内側の色
+  let middleColor: P5.Color; // 盆栽の中間の色
+  let edgeColor: P5.Color; // 盆栽の最も外側の色
 
   p5.setup = () => {
     p5.createCanvas(p5.windowWidth, p5.windowHeight, p5.WEBGL);
-    p5.colorMode(p5.HSB);
     p5.noStroke();
 
-    for (let i = 0; i < NUMBER_OF_OVULEs; i++) {
-      ovules.push(new Ovule());
+    ovulesColor = p5.color(128, 128, 128);
+    centerColor = p5.color(128, 128, 0);
+    middleColor = p5.color(255, 255, 255);
+    edgeColor = p5.color(0, 128, 128);
+
+    for (let i = 0; i < NUM_OF_ACTIVE_OVULES; i++) {
+      activeOvules.push(new Ovule(allNumberOfOvules));
+      allNumberOfOvules++;
     }
 
     // 中央に胚珠を配置する
-    ovules[0].x = 0;
-    ovules[0].y = 0;
-    ovules[0].z = 0;
-    ovules[0].collapse();
-
-    activateNextBatch();
+    activeOvules[0].x = 0;
+    activeOvules[0].y = 0;
+    activeOvules[0].z = 0;
+    activeOvules[0].addOvuleToBonsai();
+    allNumberOfOvules++;
+    activeOvules[0].initOvule(allNumberOfOvules);
   };
 
   p5.draw = () => {
     p5.clear();
     p5.orbitControl();
-    p5.directionalLight(0, 0, 100, 0, 2, 0);
+    // Z成分（カメラから奥へ向かう向き）を持たせないと、カメラに向いた面に光が当たらず陰影が見えない
+    p5.directionalLight(255, 255, 255, 0, 2, -1);
     p5.directionalLight(80, 30, 30, 0, -1, 0);
 
     // 固着した胚珠は背景クリアのたびに消えるので、毎フレーム描き直す
-    for (let i = 0; i < adheredOvulesX.length; i++) {
-      drawOvule(adheredOvulesX[i], adheredOvulesY[i], adheredOvulesZ[i], adheredOvulesColor[i]);
+    for (let i = 0; i < bonsaiX.length; i++) {
+      const bonsaiColor = getColor(bonsaiX[i], bonsaiY[i], bonsaiZ[i]);
+
+      drawOvule(bonsaiX[i], bonsaiY[i], bonsaiZ[i], bonsaiColor);
     }
 
     for (let i = 0; i < activeOvules.length; i++) {
-      activeOvules[i].judge();
+      if (activeOvules[i].hasAdhered()) {
+        activeOvules[i].addOvuleToBonsai();
+        allNumberOfOvules++;
+        activeOvules[i].initOvule(allNumberOfOvules);
+      }
 
-      if (!activeOvules[i].adhered && !activeOvules[i].missing) {
+      if (activeOvules[i].isMissing()) {
+        allNumberOfOvules++;
+        activeOvules[i].initOvule(allNumberOfOvules);
         activeOvules[i].randomWalk();
       }
+
+      activeOvules[i].randomWalk();
     }
-
-    // 現在のバッチが全員停止したら次のバッチを起動する
-    if (activeOvules.length > 0 && activeOvules.every((d) => d.adhered || d.missing)) {
-      activateNextBatch();
-    }
-  };
-
-  // 次のBATCH_SIZE数を新しいバッチとして起動する
-  const activateNextBatch = () => {
-    if (nextBatchIndex >= ovules.length) {
-      activeOvules = [];
-
-      return;
-    }
-
-    const end = Math.min(nextBatchIndex + BATCH_SIZE, ovules.length);
-
-    activeOvules = ovules.slice(nextBatchIndex, end);
-    nextBatchIndex = end;
   };
 
   const drawOvule = (x: number, y: number, z: number, color: P5.Color) => {
@@ -82,29 +85,71 @@ const sketch: Sketch = (p5) => {
     p5.pop();
   };
 
+  const getColor = (x: number, y: number, z: number) => {
+    // 中心からの距離を算出する
+    const distance = p5.dist(x, y, z, 0, 0, 0);
+
+    let startPosition = 0;
+    let endPosition = AREA_RADIUS / 2;
+    let startColor = centerColor;
+    let endColor = middleColor;
+
+    // 空間内の外側の座標の場合
+    if (distance > AREA_RADIUS / 2) {
+      startPosition = AREA_RADIUS / 2;
+      endPosition = AREA_RADIUS;
+      startColor = middleColor;
+      endColor = edgeColor;
+    }
+
+    const redValue = p5.map(
+      distance,
+      startPosition,
+      endPosition,
+      p5.red(startColor),
+      p5.red(endColor),
+    );
+    const greenValue = p5.map(
+      distance,
+      startPosition,
+      endPosition,
+      p5.green(startColor),
+      p5.green(endColor),
+    );
+    const blueValue = p5.map(
+      distance,
+      startPosition,
+      endPosition,
+      p5.blue(startColor),
+      p5.blue(endColor),
+    );
+
+    return p5.color(redValue, greenValue, blueValue);
+  };
+
   class Ovule {
     x: number;
     y: number;
     z: number;
     number: number;
-    adhered: boolean;
-    missing: boolean;
-    color: P5.Color;
 
-    constructor() {
+    constructor(numberOfOvules: number) {
       const startingPosition = this.getStartingPosition();
 
       this.x = startingPosition.x; // 現在地のX座標
       this.y = startingPosition.y; // 現在地のY座標
       this.z = startingPosition.z; // 現在地のZ座標
-      this.number = ++number; // 何個目の胚珠か
-      this.adhered = false; // 固着したかどうかのフラグ
-      this.missing = false; // 行方不明になったかどうかのフラグ
+      this.number = numberOfOvules + 1; // 何個目の胚珠か
+    }
 
-      const colorValue = p5.map(this.number, 0, NUMBER_OF_OVULEs, 30, 100);
+    // 胚珠を初期化
+    initOvule(numberOfOvules: number) {
+      const startingPosition = this.getStartingPosition();
 
-      // 胚珠の色
-      this.color = p5.color(90 + (this.number % 150), colorValue, colorValue);
+      this.x = startingPosition.x;
+      this.y = startingPosition.y;
+      this.z = startingPosition.z;
+      this.number = numberOfOvules;
     }
 
     getStartingPosition() {
@@ -121,35 +166,24 @@ const sketch: Sketch = (p5) => {
       };
     }
 
-    // 行方不明になったかどうかを判定する
+    // 胚珠が行方不明になったかどうかを判定する
     isMissing() {
-      if (
+      return (
         this.x < -AREA_RADIUS ||
         this.x > AREA_RADIUS ||
         this.y < -AREA_RADIUS ||
         this.y > AREA_RADIUS ||
         this.z < -AREA_RADIUS ||
         this.z > AREA_RADIUS
-      ) {
-        this.missing = true;
-      }
+      );
     }
 
-    // 固着したかどうかを判定する
-    hasCollapsed() {
-      for (let i = 0; i < adheredOvulesX.length; i++) {
-        const distance = p5.dist(
-          this.x,
-          this.y,
-          this.z,
-          adheredOvulesX[i],
-          adheredOvulesY[i],
-          adheredOvulesZ[i],
-        );
+    // 胚珠が固着したかどうかを判定する
+    hasAdhered() {
+      for (let i = 0; i < bonsaiX.length; i++) {
+        const distance = p5.dist(this.x, this.y, this.z, bonsaiX[i], bonsaiY[i], bonsaiZ[i]);
 
         if (distance <= SPHERE_SIZE) {
-          this.collapse();
-
           return true;
         }
       }
@@ -157,67 +191,26 @@ const sketch: Sketch = (p5) => {
       return false;
     }
 
-    // 中心に引き寄せられつつ、ランダムな方向にふらふら進む
+    // 胚珠がランダムな方向にふらふら進む
     randomWalk() {
-      let randomFactor = p5.random();
+      const randomFactor = p5.random();
 
-      if (randomFactor < 0.3) {
-        // 中心に引き寄せられる
-        const centerX = 0;
-        const centerY = 0;
-        const centerZ = 0;
-
-        const dx = centerX - this.x;
-        const dy = centerY - this.y;
-        const dz = centerZ - this.z;
-
-        const distance = p5.sqrt(dx * dx + dy * dy + dz * dz);
-
-        if (distance > 0) {
-          this.x += (dx / distance) * p5.random(0.5, 1.5);
-          this.y += (dy / distance) * p5.random(0.5, 1.5);
-          this.z += (dz / distance) * p5.random(0.5, 1.5);
-        }
+      if (randomFactor < 0.33) {
+        this.x += p5.random([-5, 5]);
+      } else if (randomFactor < 0.66) {
+        this.y += p5.random([-5, 5]);
       } else {
-        // ランダムな方向にふらふら進む
-        randomFactor = p5.random();
-
-        if (randomFactor < 0.33) {
-          this.x += p5.random([-5, 5]);
-        } else if (randomFactor < 0.66) {
-          this.y += p5.random([-5, 5]);
-        } else {
-          this.z += p5.random([-5, 5]);
-        }
+        this.z += p5.random([-5, 5]);
       }
 
-      drawOvule(this.x, this.y, this.z, this.color);
+      drawOvule(this.x, this.y, this.z, ovulesColor);
     }
 
     // 胚珠が固着した座標を記録する
-    collapse() {
-      adheredOvulesX.push(this.x);
-      adheredOvulesY.push(this.y);
-      adheredOvulesZ.push(this.z);
-      adheredOvulesColor.push(this.color);
-
-      this.adhered = true;
-    }
-
-    judge() {
-      if (this.adhered) {
-        return;
-      }
-
-      // 胚珠が空間外に彷徨い出たかどうかを判定する
-      this.isMissing();
-
-      // 胚珠が固着したかどうかを判定する
-      this.hasCollapsed();
-
-      if (this.number > NUMBER_OF_OVULEs) {
-        console.log('Completed!');
-      }
+    addOvuleToBonsai() {
+      bonsaiX.push(this.x);
+      bonsaiY.push(this.y);
+      bonsaiZ.push(this.z);
     }
   }
 
