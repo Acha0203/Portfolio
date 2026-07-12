@@ -16,6 +16,12 @@ export const UI_TEXT = {
     website: 'WEBSITE',
     application: 'APPLICATION',
     contact: 'CONTACT',
+    save: 'SAVE',
+    load: 'LOAD',
+    export: 'EXPORT',
+    import: 'IMPORT',
+    apply: 'APPLY',
+    close: 'CLOSE',
   },
   page: {
     myName: 'ACHA IKEDA',
@@ -23,6 +29,14 @@ export const UI_TEXT = {
     workSubtitle: 'SHOWING WEB APPLICATIONS',
     sketchBookSubtitle: 'SHOWING GENERATIVE ARTS',
     laboratorySubtitle: 'SHOWING EXPERIMENTAL WORKS',
+  },
+  settingItems: {
+    centerColor: 'Center Color',
+    middleColor: 'Middle Color',
+    edgeColor: 'Edge Color',
+    areaRadius: 'Area Radius',
+    activeOvules: 'Active Ovules',
+    ovuleSize: 'Ovule Size',
   },
 } as const;
 

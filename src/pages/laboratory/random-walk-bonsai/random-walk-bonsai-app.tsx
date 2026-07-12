@@ -1,9 +1,9 @@
-import type { BonsaiData, BonsaiSettings } from '#/types';
+import type { BonsaiData, BonsaiSaveData, BonsaiSettings } from '#/types';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { laboratoryList } from '#/constants/laboratoryList';
 import { DEFAULT_BONSAI_SETTINGS } from '#/constants/randomWalkBonsai';
 import useReload from '#/hooks/useReload';
-import { loadBonsai, saveBonsai } from '#/utils/bonsaiStorage';
+import { downloadBonsaiFile, loadBonsai, saveBonsai } from '#/utils/bonsaiStorage';
 import Blackout from '#/components/Blackout';
 import BonsaiSettingsDialog from '#/components/laboratory-components/BonsaiSettingsDialog';
 import RandomWalkBonsai from '#/components/laboratory-components/RandomWalkBonsai';
@@ -69,7 +69,14 @@ const RandomWalkBonsaiApp = () => {
     setIsSettingsOpen(false);
   };
 
-  // 保存済みデータから、現在の設定のまま栽培を再開する
+  // 保存データから、現在の設定のまま栽培を再開する（LOAD・IMPORT共通）
+  const resumeFromSaveData = (savedData: BonsaiSaveData) => {
+    setInitialBonsai(savedData.bonsai);
+    setInitialElapsedSeconds(savedData.elapsedSeconds);
+    setGeneration((prev) => prev + 1);
+    setIsSettingsOpen(false);
+  };
+
   const handleLoad = () => {
     const savedData = loadBonsai();
 
@@ -77,10 +84,22 @@ const RandomWalkBonsaiApp = () => {
       throw new Error('No saved bonsai data found.');
     }
 
-    setInitialBonsai(savedData.bonsai);
-    setInitialElapsedSeconds(savedData.elapsedSeconds);
-    setGeneration((prev) => prev + 1);
-    setIsSettingsOpen(false);
+    resumeFromSaveData(savedData);
+  };
+
+  // localStorage に保存済みのデータをファイルとしてダウンロードする
+  const handleExport = () => {
+    const savedData = loadBonsai();
+
+    if (savedData === null) {
+      throw new Error('No saved bonsai data found. Save the bonsai first.');
+    }
+
+    downloadBonsaiFile(savedData);
+  };
+
+  const handleImport = (data: BonsaiSaveData) => {
+    resumeFromSaveData(data);
   };
 
   return (
@@ -115,6 +134,8 @@ const RandomWalkBonsaiApp = () => {
           onApply={handleApply}
           onSave={handleSave}
           onLoad={handleLoad}
+          onExport={handleExport}
+          onImport={handleImport}
           onClose={() => setIsSettingsOpen(false)}
         />
         <Blackout />

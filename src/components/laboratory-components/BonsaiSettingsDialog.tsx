@@ -1,7 +1,9 @@
-import type { BonsaiSettings } from '#/types';
-import { useEffect, useState } from 'react';
+import type { BonsaiSaveData, BonsaiSettings } from '#/types';
+import { useEffect, useRef, useState } from 'react';
 import { BONSAI_SETTINGS_LIMITS } from '#/constants/randomWalkBonsai';
-import { hasSavedBonsai } from '#/utils/bonsaiStorage';
+import { UI_TEXT } from '#/constants/uiText';
+import { hasSavedBonsai, readBonsaiFile } from '#/utils/bonsaiStorage';
+import styles from '#/styles/Home.module.scss';
 
 interface Props {
   isOpen: boolean;
@@ -9,6 +11,8 @@ interface Props {
   onApply: (newSettings: BonsaiSettings) => void;
   onSave: () => void;
   onLoad: () => void;
+  onExport: () => void;
+  onImport: (data: BonsaiSaveData) => void;
   onClose: () => void;
 }
 
@@ -26,28 +30,28 @@ type ColorKey = 'centerColor' | 'middleColor' | 'edgeColor';
 type NumberKey = 'areaRadius' | 'numOfActiveOvules' | 'ovuleSize';
 
 const COLOR_FIELDS: { key: ColorKey; label: string }[] = [
-  { key: 'centerColor', label: 'CENTER COLOR' },
-  { key: 'middleColor', label: 'MIDDLE COLOR' },
-  { key: 'edgeColor', label: 'EDGE COLOR' },
+  { key: 'centerColor', label: UI_TEXT.settingItems.centerColor },
+  { key: 'middleColor', label: UI_TEXT.settingItems.middleColor },
+  { key: 'edgeColor', label: UI_TEXT.settingItems.edgeColor },
 ];
 
 type NumberField = { key: NumberKey; label: string; min: number; max?: number };
 
 const AREA_RADIUS_FIELD: NumberField = {
   key: 'areaRadius',
-  label: 'AREA RADIUS',
+  label: UI_TEXT.settingItems.areaRadius,
   min: BONSAI_SETTINGS_LIMITS.areaRadius.min,
 };
 
 const ACTIVE_OVULES_FIELD: NumberField = {
   key: 'numOfActiveOvules',
-  label: 'ACTIVE OVULES',
+  label: UI_TEXT.settingItems.activeOvules,
   min: BONSAI_SETTINGS_LIMITS.numOfActiveOvules.min,
 };
 
 const OVULE_SIZE_FIELD: NumberField = {
   key: 'ovuleSize',
-  label: 'OVULE SIZE',
+  label: UI_TEXT.settingItems.ovuleSize,
   min: BONSAI_SETTINGS_LIMITS.ovuleSize.min,
   max: BONSAI_SETTINGS_LIMITS.ovuleSize.max,
 };
@@ -102,21 +106,36 @@ const isSameSettings = (a: BonsaiSettings, b: BonsaiSettings): boolean =>
 const toErrorMessage = (error: unknown): string =>
   error instanceof Error ? error.message : 'An unexpected error occurred.';
 
-const BonsaiSettingsDialog = ({ isOpen, settings, onApply, onSave, onLoad, onClose }: Props) => {
+const BonsaiSettingsDialog = ({
+  isOpen,
+  settings,
+  onApply,
+  onSave,
+  onLoad,
+  onExport,
+  onImport,
+  onClose,
+}: Props) => {
   const [draft, setDraft] = useState<SettingsDraft>(() => toDraft(settings));
   const [pendingSettings, setPendingSettings] = useState<BonsaiSettings | null>(null);
-  const [confirmAction, setConfirmAction] = useState<'apply' | 'load' | null>(null);
+  const [pendingImport, setPendingImport] = useState<BonsaiSaveData | null>(null);
+  const [confirmAction, setConfirmAction] = useState<'apply' | 'load' | 'import' | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
+  // 保存データの有無（EXPORT ボタンの活性状態に使う）
+  const [hasSavedData, setHasSavedData] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   // ダイアログを開くたびに、適用中の設定でフォームを初期化する
   useEffect(() => {
     if (isOpen) {
       setDraft(toDraft(settings));
       setPendingSettings(null);
+      setPendingImport(null);
       setConfirmAction(null);
       setErrorMessage(null);
       setStatusMessage(null);
+      setHasSavedData(hasSavedBonsai());
     }
   }, [isOpen, settings]);
 
@@ -169,6 +188,37 @@ const BonsaiSettingsDialog = ({ isOpen, settings, onApply, onSave, onLoad, onClo
     try {
       onSave();
       setStatusMessage('Saved the current bonsai data to this browser.');
+      setHasSavedData(true);
+    } catch (error) {
+      setErrorMessage(toErrorMessage(error));
+    }
+  };
+
+  const handleExport = () => {
+    setErrorMessage(null);
+    setStatusMessage(null);
+
+    try {
+      onExport();
+      setStatusMessage('Exported the saved bonsai data as a file.');
+    } catch (error) {
+      setErrorMessage(toErrorMessage(error));
+    }
+  };
+
+  const handleImportRequest = () => {
+    setErrorMessage(null);
+    setStatusMessage(null);
+    fileInputRef.current?.click();
+  };
+
+  const handleImportFile = async (file: File) => {
+    try {
+      const data = await readBonsaiFile(file);
+
+      // 読み込むと現在の盆栽が失われるため、先に保存するかどうかを確認する
+      setPendingImport(data);
+      setConfirmAction('import');
     } catch (error) {
       setErrorMessage(toErrorMessage(error));
     }
@@ -184,6 +234,8 @@ const BonsaiSettingsDialog = ({ isOpen, settings, onApply, onSave, onLoad, onClo
         onApply(pendingSettings);
       } else if (confirmAction === 'load') {
         onLoad();
+      } else if (confirmAction === 'import' && pendingImport !== null) {
+        onImport(pendingImport);
       }
     } catch (error) {
       setErrorMessage(toErrorMessage(error));
@@ -191,9 +243,12 @@ const BonsaiSettingsDialog = ({ isOpen, settings, onApply, onSave, onLoad, onClo
     }
   };
 
-  const confirmVerb = confirmAction === 'apply' ? 'APPLY' : 'LOAD';
-  const buttonClass =
-    'border border-neutral-500 px-3 py-1 tracking-widest hover:bg-neutral-700 transition-colors';
+  const confirmVerb =
+    confirmAction === 'apply'
+      ? UI_TEXT.button.apply
+      : confirmAction === 'import'
+        ? UI_TEXT.button.import
+        : UI_TEXT.button.load;
 
   return (
     <div
@@ -202,10 +257,10 @@ const BonsaiSettingsDialog = ({ isOpen, settings, onApply, onSave, onLoad, onClo
       aria-modal='true'
       aria-label='Settings'
     >
-      <div className='w-[min(90vw,28rem)] max-h-[85vh] overflow-y-auto border border-neutral-600 bg-neutral-900 p-6 text-white'>
+      <div className='w-1/3 max-sm:w-11/12 max-h-[85vh] overflow-y-auto border border-neutral-600 bg-neutral-900 p-8 text-white'>
         {confirmAction === null ? (
           <>
-            <h2 className='mb-5 text-center text-xl tracking-[0.5rem]'>SETTINGS</h2>
+            <div className='mb-5 text-center text-xl tracking-[0.5rem]'>SETTINGS</div>
             <div className='mb-5 grid grid-cols-2 gap-3'>
               {COLOR_FIELDS.map((field) => (
                 <label key={field.key} className='contents'>
@@ -214,7 +269,7 @@ const BonsaiSettingsDialog = ({ isOpen, settings, onApply, onSave, onLoad, onClo
                     type='color'
                     value={draft[field.key]}
                     onChange={(e) => updateDraft(field.key, e.target.value)}
-                    className='h-8 w-full cursor-pointer bg-transparent'
+                    className='h-7 w-full cursor-pointer bg-transparent'
                   />
                 </label>
               ))}
@@ -237,28 +292,59 @@ const BonsaiSettingsDialog = ({ isOpen, settings, onApply, onSave, onLoad, onClo
                 {errorMessage}
               </p>
             )}
-            {statusMessage !== null && <p className='mb-3 text-sm text-green-400'>{statusMessage}</p>}
+            {statusMessage !== null && (
+              <p className='mb-3 text-sm text-green-400'>{statusMessage}</p>
+            )}
             <div className='flex flex-wrap justify-center gap-3'>
-              <button type='button' className={buttonClass} onClick={handleSave}>
-                SAVE
+              <button type='button' className={styles.settings_btn} onClick={handleSave}>
+                {UI_TEXT.button.save}
               </button>
-              <button type='button' className={buttonClass} onClick={handleLoadRequest}>
-                LOAD
+              <button type='button' className={styles.settings_btn} onClick={handleLoadRequest}>
+                {UI_TEXT.button.load}
               </button>
-              <button type='button' className={buttonClass} onClick={handleApplyRequest}>
-                APPLY
+              <button
+                type='button'
+                className={styles.settings_btn}
+                onClick={handleExport}
+                disabled={!hasSavedData}
+              >
+                {UI_TEXT.button.export}
               </button>
-              <button type='button' className={buttonClass} onClick={onClose}>
-                CLOSE
+              <button type='button' className={styles.settings_btn} onClick={handleImportRequest}>
+                {UI_TEXT.button.import}
+              </button>
+              <button type='button' className={styles.settings_btn} onClick={handleApplyRequest}>
+                {UI_TEXT.button.apply}
+              </button>
+              <button type='button' className={styles.settings_btn} onClick={onClose}>
+                {UI_TEXT.button.close}
               </button>
             </div>
+            <input
+              ref={fileInputRef}
+              type='file'
+              accept='.json,application/json'
+              className='hidden'
+              onChange={(e) => {
+                const file = e.target.files?.[0];
+
+                // 同じファイルを選び直せるように毎回リセットする
+                e.target.value = '';
+
+                if (file !== undefined) {
+                  void handleImportFile(file);
+                }
+              }}
+            />
           </>
         ) : (
           <>
             <p className='mb-5 text-center leading-relaxed'>
               {confirmAction === 'apply'
                 ? 'Applying new settings will restart the bonsai from scratch.'
-                : 'Loading will replace the current bonsai.'}
+                : confirmAction === 'import'
+                  ? 'Importing will replace the current bonsai.'
+                  : 'Loading will replace the current bonsai.'}
               <br />
               Save the current bonsai and elapsed time first?
             </p>
@@ -268,13 +354,25 @@ const BonsaiSettingsDialog = ({ isOpen, settings, onApply, onSave, onLoad, onClo
               </p>
             )}
             <div className='flex flex-wrap justify-center gap-3'>
-              <button type='button' className={buttonClass} onClick={() => handleConfirm(true)}>
+              <button
+                type='button'
+                className={styles.settings_btn}
+                onClick={() => handleConfirm(true)}
+              >
                 {`SAVE & ${confirmVerb}`}
               </button>
-              <button type='button' className={buttonClass} onClick={() => handleConfirm(false)}>
+              <button
+                type='button'
+                className={styles.settings_btn}
+                onClick={() => handleConfirm(false)}
+              >
                 {`${confirmVerb} WITHOUT SAVING`}
               </button>
-              <button type='button' className={buttonClass} onClick={() => setConfirmAction(null)}>
+              <button
+                type='button'
+                className={styles.settings_btn}
+                onClick={() => setConfirmAction(null)}
+              >
                 CANCEL
               </button>
             </div>
