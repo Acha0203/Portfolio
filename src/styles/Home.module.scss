@@ -693,6 +693,41 @@
   }
 }
 
+/* Close Button */
+.close {
+  height: 36px;
+  width: 36px;
+  cursor: pointer;
+  filter: drop-shadow(0 0 2rem #000);
+
+  .close_line_frame {
+    position: relative;
+    display: block;
+    width: 26px;
+    height: 2px;
+  }
+
+  .close_line:first-child {
+    @include line();
+    transform: rotate(45deg);
+  }
+
+  .close_line:last-child {
+    @include line();
+    transform: rotate(-45deg);
+  }
+
+  &:hover {
+    .close_line:first-child {
+      rotate: z 90deg;
+    }
+
+    .close_line:last-child {
+      rotate: z 90deg;
+    }
+  }
+}
+
 /* Hamburger Menu */
 
 .hamburger_menu {

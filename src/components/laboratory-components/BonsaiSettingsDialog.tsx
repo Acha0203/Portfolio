@@ -4,6 +4,7 @@ import { BONSAI_SETTINGS_LIMITS } from '#/constants/randomWalkBonsai';
 import { UI_TEXT } from '#/constants/uiText';
 import { hasSavedBonsai, readBonsaiFile } from '#/utils/bonsaiStorage';
 import styles from '#/styles/Home.module.scss';
+import CloseBtn from '../ui/button/CloseBtn';
 
 interface Props {
   isOpen: boolean;
@@ -257,11 +258,16 @@ const BonsaiSettingsDialog = ({
       aria-modal='true'
       aria-label='Settings'
     >
-      <div className='w-1/3 max-sm:w-11/12 max-h-[85vh] overflow-y-auto border border-neutral-600 bg-neutral-900 p-8 text-white'>
+      <div className='w-1/3 max-sm:w-11/12 max-h-[85vh] overflow-y-auto border border-neutral-600 bg-neutral-900 p-2 text-white'>
         {confirmAction === null ? (
           <>
+            <div className='flex justify-end items-center'>
+              <button type='button' onClick={onClose}>
+                <CloseBtn />
+              </button>
+            </div>
             <div className='mb-5 text-center text-xl tracking-[0.5rem]'>SETTINGS</div>
-            <div className='mb-5 grid grid-cols-2 gap-3'>
+            <div className='mb-5 grid grid-cols-2 gap-3 px-8'>
               {COLOR_FIELDS.map((field) => (
                 <label key={field.key} className='contents'>
                   <span className='self-center text-sm tracking-wider'>{field.label}</span>
@@ -295,7 +301,7 @@ const BonsaiSettingsDialog = ({
             {statusMessage !== null && (
               <p className='mb-3 text-sm text-green-400'>{statusMessage}</p>
             )}
-            <div className='flex flex-wrap justify-center gap-3'>
+            <div className='flex flex-wrap justify-center gap-3 mb-5'>
               <button type='button' className={styles.settings_btn} onClick={handleSave}>
                 {UI_TEXT.button.save}
               </button>
@@ -315,9 +321,6 @@ const BonsaiSettingsDialog = ({
               </button>
               <button type='button' className={styles.settings_btn} onClick={handleApplyRequest}>
                 {UI_TEXT.button.apply}
-              </button>
-              <button type='button' className={styles.settings_btn} onClick={onClose}>
-                {UI_TEXT.button.close}
               </button>
             </div>
             <input
