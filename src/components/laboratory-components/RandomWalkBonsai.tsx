@@ -3,6 +3,7 @@ import type { Sketch } from '@p5-wrapper/react';
 import type P5 from 'p5';
 import { NextReactP5Wrapper } from '@p5-wrapper/next';
 import { useMemo } from 'react';
+import { disableP5FriendlyErrors } from '#/utils/disableP5FriendlyErrors';
 
 type SketchParams = {
   settings: BonsaiSettings;
@@ -13,9 +14,7 @@ type SketchParams = {
 // 設定変更やデータ読み込みのたびに再マウントして作り直すため、
 // クロージャで設定を受け取るファクトリーにしている
 const createSketch = ({ settings, initialBonsai, onBonsaiGrow }: SketchParams): Sketch => (p5) => {
-  // Friendly Error System のコード解析による開発時の SyntaxError ノイズを抑止する
-  // p5.js 2.x の FES はインスタンスではなく p5 クラスの静的フラグを参照する
-  (p5.constructor as unknown as { disableFriendlyErrors: boolean }).disableFriendlyErrors = true;
+  disableP5FriendlyErrors(p5);
 
   const OVULE_SIZE = settings.ovuleSize;
   const AREA_RADIUS = settings.areaRadius;

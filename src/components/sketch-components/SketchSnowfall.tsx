@@ -1,8 +1,11 @@
 import type { Sketch } from '@p5-wrapper/react';
 import type P5 from 'p5';
 import { NextReactP5Wrapper } from '@p5-wrapper/next';
+import { disableP5FriendlyErrors } from '#/utils/disableP5FriendlyErrors';
 
 const sketch: Sketch = (p5) => {
+  disableP5FriendlyErrors(p5);
+
   let snowCrystalImage: P5.Graphics;
   const snowflakes: Snowflake[] = [];
 

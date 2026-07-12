@@ -1,7 +1,10 @@
 import type { Sketch } from '@p5-wrapper/react';
 import { NextReactP5Wrapper } from '@p5-wrapper/next';
+import { disableP5FriendlyErrors } from '#/utils/disableP5FriendlyErrors';
 
 const sketch: Sketch = (p5) => {
+  disableP5FriendlyErrors(p5);
+
   const drawScale = 200;
   let noiseValA = 0.002;
   let noiseValB = 0.002;

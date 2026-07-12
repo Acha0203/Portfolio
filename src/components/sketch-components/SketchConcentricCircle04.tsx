@@ -1,7 +1,10 @@
 import type { Sketch } from '@p5-wrapper/react';
 import { NextReactP5Wrapper } from '@p5-wrapper/next';
+import { disableP5FriendlyErrors } from '#/utils/disableP5FriendlyErrors';
 
 const sketch: Sketch = (p5) => {
+  disableP5FriendlyErrors(p5);
+
   const arcs: Array<{ x: number; y: number; diameter: number; sWidth: number; colorCode: string }> =
     [];
   const colors = [

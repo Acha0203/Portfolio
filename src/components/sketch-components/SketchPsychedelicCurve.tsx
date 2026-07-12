@@ -1,7 +1,10 @@
 import type { Sketch } from '@p5-wrapper/react';
 import { NextReactP5Wrapper } from '@p5-wrapper/next';
+import { disableP5FriendlyErrors } from '#/utils/disableP5FriendlyErrors';
 
 const sketch: Sketch = (p5) => {
+  disableP5FriendlyErrors(p5);
+
   const p1 = { x: -100, y: 100 };
   const p2 = { x: 0, y: -100 };
   const p3 = { x: 100, y: 100 };
