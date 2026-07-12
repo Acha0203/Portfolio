@@ -11,6 +11,7 @@ export const UI_TEXT = {
     japanese: 'JAPANESE',
     code: 'CODE',
     back: 'BACK',
+    settings: 'SETTINGS',
     menu: 'MENU',
     website: 'WEBSITE',
     application: 'APPLICATION',

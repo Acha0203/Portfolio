@@ -1,19 +1,28 @@
+import type { BonsaiData, BonsaiSettings } from '#/types';
 import type { Sketch } from '@p5-wrapper/react';
 import type P5 from 'p5';
 import { NextReactP5Wrapper } from '@p5-wrapper/next';
-import { useEffect, useState } from 'react';
+import { useMemo } from 'react';
 
-const sketch: Sketch = (p5) => {
+type SketchParams = {
+  settings: BonsaiSettings;
+  initialBonsai: BonsaiData | null;
+  onBonsaiGrow: (bonsai: BonsaiData) => void;
+};
+
+// 設定変更やデータ読み込みのたびに再マウントして作り直すため、
+// クロージャで設定を受け取るファクトリーにしている
+const createSketch = ({ settings, initialBonsai, onBonsaiGrow }: SketchParams): Sketch => (p5) => {
   // Friendly Error System のコード解析による開発時の SyntaxError ノイズを抑止する
   // p5.js 2.x の FES はインスタンスではなく p5 クラスの静的フラグを参照する
   (p5.constructor as unknown as { disableFriendlyErrors: boolean }).disableFriendlyErrors = true;
 
-  const SPHERE_SIZE = 20;
-  const AREA_RADIUS = 500;
-  const NUM_OF_ACTIVE_OVULES = 20;
-  const bonsaiX: number[] = [];
-  const bonsaiY: number[] = [];
-  const bonsaiZ: number[] = [];
+  const OVULE_SIZE = settings.ovuleSize;
+  const AREA_RADIUS = settings.areaRadius;
+  const NUM_OF_ACTIVE_OVULES = settings.numOfActiveOvules;
+  const bonsaiX: number[] = initialBonsai ? [...initialBonsai.x] : [];
+  const bonsaiY: number[] = initialBonsai ? [...initialBonsai.y] : [];
+  const bonsaiZ: number[] = initialBonsai ? [...initialBonsai.z] : [];
   const activeOvules: Ovule[] = [];
 
   let allNumberOfOvules = 0; // 現在の胚珠の総数（固着した胚珠も含む）
@@ -29,22 +38,27 @@ const sketch: Sketch = (p5) => {
     p5.noStroke();
 
     ovulesColor = p5.color(128, 128, 128);
-    centerColor = p5.color(128, 128, 0);
-    middleColor = p5.color(255, 255, 255);
-    edgeColor = p5.color(0, 128, 128);
+    centerColor = p5.color(settings.centerColor);
+    middleColor = p5.color(settings.middleColor);
+    edgeColor = p5.color(settings.edgeColor);
 
     for (let i = 0; i < NUM_OF_ACTIVE_OVULES; i++) {
       activeOvules.push(new Ovule(allNumberOfOvules));
       allNumberOfOvules++;
     }
 
-    // 中央に胚珠を配置する
-    activeOvules[0].x = 0;
-    activeOvules[0].y = 0;
-    activeOvules[0].z = 0;
-    activeOvules[0].addOvuleToBonsai();
-    allNumberOfOvules++;
-    activeOvules[0].initOvule(allNumberOfOvules);
+    // 新規の盆栽の場合のみ、中央に最初の胚珠を配置する
+    if (bonsaiX.length === 0) {
+      activeOvules[0].x = 0;
+      activeOvules[0].y = 0;
+      activeOvules[0].z = 0;
+      activeOvules[0].addOvuleToBonsai();
+      allNumberOfOvules++;
+      activeOvules[0].initOvule(allNumberOfOvules);
+    }
+
+    // 盆栽の配列は以後 push で伸びるだけなので、参照を一度渡せば親は常に最新の状態を保存できる
+    onBonsaiGrow({ x: bonsaiX, y: bonsaiY, z: bonsaiZ });
   };
 
   p5.draw = () => {
@@ -82,7 +96,7 @@ const sketch: Sketch = (p5) => {
     p5.push();
     p5.fill(color);
     p5.translate(x, y, z);
-    p5.sphere(SPHERE_SIZE);
+    p5.sphere(OVULE_SIZE);
     p5.pop();
   };
 
@@ -184,7 +198,7 @@ const sketch: Sketch = (p5) => {
       for (let i = 0; i < bonsaiX.length; i++) {
         const distance = p5.dist(this.x, this.y, this.z, bonsaiX[i], bonsaiY[i], bonsaiZ[i]);
 
-        if (distance <= SPHERE_SIZE) {
+        if (distance <= OVULE_SIZE) {
           return true;
         }
       }
@@ -220,17 +234,23 @@ const sketch: Sketch = (p5) => {
   };
 };
 
-export default function RandomWalkBonsai() {
-  const [elapsedSeconds, setElapsedSeconds] = useState(0);
+interface Props {
+  settings: BonsaiSettings;
+  initialBonsai: BonsaiData | null;
+  elapsedSeconds: number;
+  onBonsaiGrow: (bonsai: BonsaiData) => void;
+}
 
-  useEffect(() => {
-    const startTime = Date.now();
-    const timerId = setInterval(() => {
-      setElapsedSeconds(Math.floor((Date.now() - startTime) / 1000));
-    }, 1000);
-
-    return () => clearInterval(timerId);
-  }, []);
+export default function RandomWalkBonsai({
+  settings,
+  initialBonsai,
+  elapsedSeconds,
+  onBonsaiGrow,
+}: Props) {
+  const sketch = useMemo(
+    () => createSketch({ settings, initialBonsai, onBonsaiGrow }),
+    [settings, initialBonsai, onBonsaiGrow],
+  );
 
   return (
     <>
