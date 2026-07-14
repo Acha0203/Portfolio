@@ -70,8 +70,9 @@ const RandomWalkBonsaiApp = () => {
     setIsSettingsOpen(false);
   };
 
-  // 保存データから、現在の設定のまま栽培を再開する（LOAD・IMPORT共通）
+  // 保存データから、保存時の設定・盆栽・経過時間をすべて復元して栽培を再開する（LOAD・IMPORT共通）
   const resumeFromSaveData = (savedData: BonsaiSaveData) => {
+    setSettings(savedData.settings);
     setInitialBonsai(savedData.bonsai);
     setInitialElapsedSeconds(savedData.elapsedSeconds);
     setGeneration((prev) => prev + 1);

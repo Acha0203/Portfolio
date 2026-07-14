@@ -1,6 +1,16 @@
 import type { BonsaiData, BonsaiSaveData, BonsaiSettings } from '#/types';
+import { BONSAI_SETTINGS_LIMITS } from '#/constants/randomWalkBonsai';
 
 const STORAGE_KEY = 'randomWalkBonsai';
+
+const isColorCode = (value: unknown): value is string =>
+  typeof value === 'string' && /^#[0-9a-f]{6}$/i.test(value);
+
+const isIntegerInRange = (value: unknown, min: number, max?: number): value is number =>
+  typeof value === 'number' &&
+  Number.isInteger(value) &&
+  value >= min &&
+  (max === undefined || value <= max);
 
 const isNumberArray = (value: unknown): value is number[] =>
   Array.isArray(value) && value.every((item) => typeof item === 'number' && Number.isFinite(item));
@@ -19,18 +29,23 @@ const isBonsaiData = (value: unknown): value is BonsaiData => {
   );
 };
 
+// 復元した設定はそのままスケッチに適用されるため、形式だけでなく SETTINGS ダイアログと同じ範囲制限も検証する
 const isBonsaiSettings = (value: unknown): value is BonsaiSettings => {
   if (typeof value !== 'object' || value === null) return false;
 
   const settings = value as Record<string, unknown>;
 
   return (
-    typeof settings.centerColor === 'string' &&
-    typeof settings.middleColor === 'string' &&
-    typeof settings.edgeColor === 'string' &&
-    typeof settings.areaRadius === 'number' &&
-    typeof settings.numOfActiveOvules === 'number' &&
-    typeof settings.ovuleSize === 'number'
+    isColorCode(settings.centerColor) &&
+    isColorCode(settings.middleColor) &&
+    isColorCode(settings.edgeColor) &&
+    isIntegerInRange(settings.areaRadius, BONSAI_SETTINGS_LIMITS.areaRadius.min) &&
+    isIntegerInRange(settings.numOfActiveOvules, BONSAI_SETTINGS_LIMITS.numOfActiveOvules.min) &&
+    isIntegerInRange(
+      settings.ovuleSize,
+      BONSAI_SETTINGS_LIMITS.ovuleSize.min,
+      BONSAI_SETTINGS_LIMITS.ovuleSize.max,
+    )
   );
 };
 
