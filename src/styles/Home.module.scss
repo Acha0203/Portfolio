@@ -803,25 +803,6 @@
   color: #888;
 }
 
-/* Settings Dialog */
-
-.settings_btn {
-  font-size: 0.9rem;
-  letter-spacing: 0.4rem;
-  text-shadow: #000 0 0 10px;
-  color: #888;
-
-  @media screen and (min-width: 640px) {
-    font-size: 1rem;
-    letter-spacing: 0.3rem;
-  }
-
-  &:hover {
-    filter: brightness(1.5);
-  }
-
-  &:disabled {
-    color: #444444;
-    filter: brightness(1);
-  }
+.settings_btn_full_width {
+  width: calc(80% + 8px);
 }

@@ -20,8 +20,10 @@ export const UI_TEXT = {
     load: 'LOAD',
     export: 'EXPORT',
     import: 'IMPORT',
-    apply: 'APPLY',
+    applySettings: 'APPLY SETTINGS',
     close: 'CLOSE',
+    withoutSaving: 'WITHOUT SAVING',
+    cancel: 'CANCEL',
   },
   page: {
     myName: 'ACHA IKEDA',

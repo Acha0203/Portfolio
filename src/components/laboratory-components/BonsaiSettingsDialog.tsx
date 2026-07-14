@@ -3,8 +3,10 @@ import { useEffect, useRef, useState } from 'react';
 import { BONSAI_SETTINGS_LIMITS } from '#/constants/randomWalkBonsai';
 import { UI_TEXT } from '#/constants/uiText';
 import { hasSavedBonsai, readBonsaiFile } from '#/utils/bonsaiStorage';
+import CloseBtn from '#/components/ui/button/CloseBtn';
+import SettingsBtnAppearance from '#/components/ui/button/SettingsBtnAppearance';
+import DisplayOfMessages from '#/components/ui/DisplayOfMessages';
 import styles from '#/styles/Home.module.scss';
-import CloseBtn from '../ui/button/CloseBtn';
 
 interface Props {
   isOpen: boolean;
@@ -246,7 +248,7 @@ const BonsaiSettingsDialog = ({
 
   const confirmVerb =
     confirmAction === 'apply'
-      ? UI_TEXT.button.apply
+      ? UI_TEXT.button.applySettings
       : confirmAction === 'import'
         ? UI_TEXT.button.import
         : UI_TEXT.button.load;
@@ -257,17 +259,25 @@ const BonsaiSettingsDialog = ({
       role='dialog'
       aria-modal='true'
       aria-label='Settings'
+      onClick={(e) => {
+        // ダイアログ内のクリックもここまでバブリングするため、背景自身のクリックのときだけ閉じる
+        if (e.target === e.currentTarget) {
+          onClose();
+        }
+      }}
     >
-      <div className='w-1/3 max-sm:w-11/12 max-h-[85vh] overflow-y-auto border border-neutral-600 bg-neutral-900 p-2 text-white'>
+      <div className='flex justify-end items-center z-50 absolute top-5 right-5'>
+        <button type='button' onClick={onClose}>
+          <CloseBtn />
+        </button>
+      </div>
+      <div className='w-1/2 max-sm:w-11/12 max-h-[85vh] overflow-y-auto border border-neutral-600 bg-neutral-900 p-2 text-white'>
         {confirmAction === null ? (
           <>
-            <div className='flex justify-end items-center'>
-              <button type='button' onClick={onClose}>
-                <CloseBtn />
-              </button>
+            <div className='my-5 text-center text-3xl tracking-[0.5rem]'>
+              {UI_TEXT.button.settings}
             </div>
-            <div className='mb-5 text-center text-xl tracking-[0.5rem]'>SETTINGS</div>
-            <div className='mb-5 grid grid-cols-2 gap-3 px-8'>
+            <div className='m-5 grid grid-cols-2 gap-3 px-8 max-sm:m-1'>
               {COLOR_FIELDS.map((field) => (
                 <label key={field.key} className='contents'>
                   <span className='self-center text-sm tracking-wider'>{field.label}</span>
@@ -293,34 +303,51 @@ const BonsaiSettingsDialog = ({
                 </label>
               ))}
             </div>
-            {errorMessage !== null && (
-              <p className='mb-3 text-sm text-red-400' role='alert'>
-                {errorMessage}
-              </p>
-            )}
-            {statusMessage !== null && (
-              <p className='mb-3 text-sm text-green-400'>{statusMessage}</p>
-            )}
-            <div className='flex flex-wrap justify-center gap-3 mb-5'>
-              <button type='button' className={styles.settings_btn} onClick={handleSave}>
-                {UI_TEXT.button.save}
-              </button>
-              <button type='button' className={styles.settings_btn} onClick={handleLoadRequest}>
-                {UI_TEXT.button.load}
+            <div className='flex justify-center items-center mx-7 my-5'>
+              {errorMessage !== null && <DisplayOfMessages message={errorMessage} isError={true} />}
+              {statusMessage !== null && (
+                <DisplayOfMessages message={statusMessage} isError={false} />
+              )}
+            </div>
+            <div className='flex w-full justify-center items-center gap-2 mb-2'>
+              <button type='button' className='w-2/5' onClick={handleSave}>
+                <SettingsBtnAppearance buttonText={UI_TEXT.button.save} />
               </button>
               <button
                 type='button'
-                className={styles.settings_btn}
+                className='w-2/5'
+                onClick={handleLoadRequest}
+                disabled={!hasSavedData}
+              >
+                <SettingsBtnAppearance
+                  buttonText={UI_TEXT.button.load}
+                  isDisabled={!hasSavedData}
+                />
+              </button>
+            </div>
+            <div className='flex w-full justify-center items-center gap-2 mb-2'>
+              <button
+                type='button'
+                className='w-2/5'
                 onClick={handleExport}
                 disabled={!hasSavedData}
               >
-                {UI_TEXT.button.export}
+                <SettingsBtnAppearance
+                  buttonText={UI_TEXT.button.export}
+                  isDisabled={!hasSavedData}
+                />
               </button>
-              <button type='button' className={styles.settings_btn} onClick={handleImportRequest}>
-                {UI_TEXT.button.import}
+              <button type='button' className='w-2/5' onClick={handleImportRequest}>
+                <SettingsBtnAppearance buttonText={UI_TEXT.button.import} />
               </button>
-              <button type='button' className={styles.settings_btn} onClick={handleApplyRequest}>
-                {UI_TEXT.button.apply}
+            </div>
+            <div className='flex w-full justify-center items-center mb-6'>
+              <button
+                type='button'
+                className={styles.settings_btn_full_width}
+                onClick={handleApplyRequest}
+              >
+                <SettingsBtnAppearance buttonText={UI_TEXT.button.applySettings} />
               </button>
             </div>
             <input
@@ -342,7 +369,7 @@ const BonsaiSettingsDialog = ({
           </>
         ) : (
           <>
-            <p className='mb-5 text-center leading-relaxed'>
+            <div className='m-5 text-center leading-relaxed'>
               {confirmAction === 'apply'
                 ? 'Applying new settings will restart the bonsai from scratch.'
                 : confirmAction === 'import'
@@ -350,33 +377,21 @@ const BonsaiSettingsDialog = ({
                   : 'Loading will replace the current bonsai.'}
               <br />
               Save the current bonsai and elapsed time first?
-            </p>
-            {errorMessage !== null && (
-              <p className='mb-3 text-sm text-red-400' role='alert'>
-                {errorMessage}
-              </p>
-            )}
-            <div className='flex flex-wrap justify-center gap-3'>
-              <button
-                type='button'
-                className={styles.settings_btn}
-                onClick={() => handleConfirm(true)}
-              >
-                {`SAVE & ${confirmVerb}`}
+            </div>
+            <div className='flex justify-center items-center mx-7 my-5'>
+              {errorMessage !== null && <DisplayOfMessages message={errorMessage} isError={true} />}
+            </div>
+            <div className='flex flex-col justify-center items-center gap-3 mb-6'>
+              <button type='button' className='w-8/12' onClick={() => handleConfirm(true)}>
+                <SettingsBtnAppearance buttonText={`${UI_TEXT.button.save} & ${confirmVerb}`} />
               </button>
-              <button
-                type='button'
-                className={styles.settings_btn}
-                onClick={() => handleConfirm(false)}
-              >
-                {`${confirmVerb} WITHOUT SAVING`}
+              <button type='button' className='w-8/12' onClick={() => handleConfirm(false)}>
+                <SettingsBtnAppearance
+                  buttonText={`${confirmVerb} ${UI_TEXT.button.withoutSaving}`}
+                />
               </button>
-              <button
-                type='button'
-                className={styles.settings_btn}
-                onClick={() => setConfirmAction(null)}
-              >
-                CANCEL
+              <button type='button' className='w-8/12' onClick={() => setConfirmAction(null)}>
+                <SettingsBtnAppearance buttonText={UI_TEXT.button.cancel} />
               </button>
             </div>
           </>
