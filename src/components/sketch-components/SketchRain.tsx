@@ -1,7 +1,10 @@
 import type { Sketch } from '@p5-wrapper/react';
 import { NextReactP5Wrapper } from '@p5-wrapper/next';
+import { disableP5FriendlyErrors } from '#/utils/disableP5FriendlyErrors';
 
 const sketch: Sketch = (p5) => {
+  disableP5FriendlyErrors(p5);
+
   const maxSize = 300;
   const n = Math.floor(p5.windowWidth * p5.windowHeight * (6 / 1e5));
   let drawRipples = false;

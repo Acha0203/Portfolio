@@ -9,9 +9,10 @@ import styles from '#/styles/Home.module.scss';
 const MenuBarTop = () => {
   const dispatch = useDispatch();
   const router = useRouter();
-  const [isOverSketchBook, setIsOverSketchBook] = useState(false);
   const [isOverHome, setIsOverHome] = useState(false);
   const [isOverWork, setIsOverWork] = useState(false);
+  const [isOverSketchBook, setIsOverSketchBook] = useState(false);
+  const [isOverLaboratory, setIsOverLaboratory] = useState(false);
   const [isOverInfo, setIsOverInfo] = useState(false);
 
   const handleClick = () => {
@@ -93,6 +94,29 @@ const MenuBarTop = () => {
                 </Link>
               </div>
               {isOverSketchBook && <div className={`${styles.line_under_text_grad} w-48`} />}
+            </div>
+          )}
+          {router.pathname === '/laboratory' ? (
+            <div className='flex flex-col justify-center items-center'>
+              <div className='mx-5 text-white'>{UI_TEXT.nav.laboratory}</div>
+              <div className={`${styles.line_under_text_grad} w-48`} />
+            </div>
+          ) : (
+            <div className='flex flex-col justify-center items-center'>
+              <div
+                className='mx-5 text-neutral-500 hover:text-white'
+                onMouseEnter={() => {
+                  setIsOverLaboratory(true);
+                }}
+                onMouseLeave={() => {
+                  setIsOverLaboratory(false);
+                }}
+              >
+                <Link href='/laboratory' onClick={handleClick}>
+                  {UI_TEXT.nav.laboratory}
+                </Link>
+              </div>
+              {isOverLaboratory && <div className={`${styles.line_under_text_grad} w-48`} />}
             </div>
           )}
           {router.pathname === '/info' ? (

@@ -1,5 +1,6 @@
 import type { Sketch } from '@p5-wrapper/react';
 import { NextReactP5Wrapper } from '@p5-wrapper/next';
+import { disableP5FriendlyErrors } from '#/utils/disableP5FriendlyErrors';
 
 type Grass = {
   x: number;
@@ -9,6 +10,8 @@ type Grass = {
 };
 
 const sketch: Sketch = (p5) => {
+  disableP5FriendlyErrors(p5);
+
   const gap = 50; // 草の間隔
   const bladeWidth = 8; // 草の横幅（太さ）
   const bladeLength = 500; // 草の長さ

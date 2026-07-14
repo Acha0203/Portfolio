@@ -1,3 +1,4 @@
+import { workList } from '#/constants/workList';
 import Blackout from '#/components/Blackout';
 import MyHead from '#/components/MyHead';
 import ShowcaseOfWork from '#/components/ShowcaseOfWork';
@@ -17,7 +18,7 @@ const WorkPage = () => {
         <div className={styles.fade_up}>
           <SketchBackground />
           <TitleOfWork />
-          <ShowcaseOfWork />
+          <ShowcaseOfWork itemList={workList} />
         </div>
         <Blackout />
         <Menu />

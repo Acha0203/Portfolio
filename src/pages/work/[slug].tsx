@@ -70,13 +70,13 @@ const WorkPage = ({ index }: Props) => {
             </div>
           </div>
           <div className='flex flex-col justify-center items-center w-full gap-y-2 mt-10 max-sm:mt-5'>
-            <InfoForWorkPages workListId={work.id} infoType={InfoType.description} />
+            <InfoForWorkPages item={work} infoType={InfoType.description} />
 
             {work.title === 'Connect 4' && (
-              <InfoForWorkPages workListId={work.id} infoType={InfoType.algorithm} />
+              <InfoForWorkPages item={work} infoType={InfoType.algorithm} />
             )}
 
-            <InfoForWorkPages workListId={work.id} infoType={InfoType.technology} />
+            <InfoForWorkPages item={work} infoType={InfoType.technology} />
           </div>
           <div className='my-5'>
             <WebsiteBtn text={UI_TEXT.button.website} url={work.siteUrl} />

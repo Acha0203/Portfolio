@@ -1,7 +1,10 @@
 import type { Sketch } from '@p5-wrapper/react';
 import { NextReactP5Wrapper } from '@p5-wrapper/next';
+import { disableP5FriendlyErrors } from '#/utils/disableP5FriendlyErrors';
 
 const sketch: Sketch = (p5) => {
+  disableP5FriendlyErrors(p5);
+
   const springing = 0.0009;
   const damping = 0.98;
   const pushSpring = 0.04;

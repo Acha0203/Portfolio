@@ -38,3 +38,30 @@ export enum InfoType {
   background = 'background',
   prizes = 'prizes',
 }
+
+// Random Walk Bonsai のユーザー設定
+// 色は P5.Color ではなく '#rrggbb' 形式で持つ（localStorage 保存や <input type="color"> と互換にするため）
+export type BonsaiSettings = {
+  centerColor: string;
+  middleColor: string;
+  edgeColor: string;
+  areaRadius: number;
+  numOfActiveOvules: number;
+  ovuleSize: number;
+};
+
+// 固着した胚珠（盆栽本体）の座標
+export type BonsaiData = {
+  x: number[];
+  y: number[];
+  z: number[];
+};
+
+// localStorage およびファイルエクスポートに使う保存データ
+export type BonsaiSaveData = {
+  version: 1;
+  settings: BonsaiSettings;
+  bonsai: BonsaiData;
+  elapsedSeconds: number;
+  savedAt: string;
+};

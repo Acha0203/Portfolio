@@ -284,7 +284,7 @@
 /* Menu Bar */
 
 .line_under_menu_bar {
-  width: 430px;
+  width: 580px;
   height: 1px;
   background-color: #676767;
 }
@@ -693,6 +693,41 @@
   }
 }
 
+/* Close Button */
+.close {
+  height: 36px;
+  width: 36px;
+  cursor: pointer;
+  filter: drop-shadow(0 0 2rem #000);
+
+  .close_line_frame {
+    position: relative;
+    display: block;
+    width: 26px;
+    height: 2px;
+  }
+
+  .close_line:first-child {
+    @include line();
+    transform: rotate(45deg);
+  }
+
+  .close_line:last-child {
+    @include line();
+    transform: rotate(-45deg);
+  }
+
+  &:hover {
+    .close_line:first-child {
+      rotate: z 90deg;
+    }
+
+    .close_line:last-child {
+      rotate: z 90deg;
+    }
+  }
+}
+
 /* Hamburger Menu */
 
 .hamburger_menu {
@@ -766,4 +801,8 @@
   font-size: 1.2rem;
   letter-spacing: 0.1em;
   color: #888;
+}
+
+.settings_btn_full_width {
+  width: calc(80% + 8px);
 }
