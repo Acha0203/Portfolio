@@ -61,11 +61,15 @@ const RandomWalkBonsaiApp = () => {
     });
   };
 
-  // 新しい設定で盆栽を最初から育て直す
+  // 現在の盆栽と経過時間を保持したまま、新しい設定を適用して育成を続ける
   const handleApply = (newSettings: BonsaiSettings) => {
+    const bonsai = bonsaiRef.current;
+
     setSettings(newSettings);
-    setInitialBonsai(null);
-    setInitialElapsedSeconds(0);
+    setInitialBonsai(
+      bonsai === null ? null : { x: [...bonsai.x], y: [...bonsai.y], z: [...bonsai.z] },
+    );
+    setInitialElapsedSeconds(elapsedSeconds);
     setGeneration((prev) => prev + 1);
     setIsSettingsOpen(false);
   };
