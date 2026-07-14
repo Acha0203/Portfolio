@@ -120,9 +120,8 @@ const BonsaiSettingsDialog = ({
   onClose,
 }: Props) => {
   const [draft, setDraft] = useState<SettingsDraft>(() => toDraft(settings));
-  const [pendingSettings, setPendingSettings] = useState<BonsaiSettings | null>(null);
   const [pendingImport, setPendingImport] = useState<BonsaiSaveData | null>(null);
-  const [confirmAction, setConfirmAction] = useState<'apply' | 'load' | 'import' | null>(null);
+  const [confirmAction, setConfirmAction] = useState<'load' | 'import' | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
   // 保存データの有無（EXPORT ボタンの活性状態に使う）
@@ -133,7 +132,6 @@ const BonsaiSettingsDialog = ({
   useEffect(() => {
     if (isOpen) {
       setDraft(toDraft(settings));
-      setPendingSettings(null);
       setPendingImport(null);
       setConfirmAction(null);
       setErrorMessage(null);
@@ -156,16 +154,15 @@ const BonsaiSettingsDialog = ({
     try {
       const parsed = parseDraft(draft);
 
-      // 変更がなければ育て直す必要はないので、そのまま閉じる
+      // 変更がなければ適用する必要はないので、そのまま閉じる
       if (isSameSettings(parsed, settings)) {
         onClose();
 
         return;
       }
 
-      // 適用すると盆栽が最初からになるため、先に保存するかどうかを確認する
-      setPendingSettings(parsed);
-      setConfirmAction('apply');
+      // 盆栽と経過時間は保持されたまま適用されるため、確認なしでそのまま適用する
+      onApply(parsed);
     } catch (error) {
       setErrorMessage(toErrorMessage(error));
     }
@@ -233,9 +230,7 @@ const BonsaiSettingsDialog = ({
         onSave();
       }
 
-      if (confirmAction === 'apply' && pendingSettings !== null) {
-        onApply(pendingSettings);
-      } else if (confirmAction === 'load') {
+      if (confirmAction === 'load') {
         onLoad();
       } else if (confirmAction === 'import' && pendingImport !== null) {
         onImport(pendingImport);
@@ -246,12 +241,7 @@ const BonsaiSettingsDialog = ({
     }
   };
 
-  const confirmVerb =
-    confirmAction === 'apply'
-      ? UI_TEXT.button.applySettings
-      : confirmAction === 'import'
-        ? UI_TEXT.button.import
-        : UI_TEXT.button.load;
+  const confirmVerb = confirmAction === 'import' ? UI_TEXT.button.import : UI_TEXT.button.load;
 
   return (
     <div
@@ -370,11 +360,9 @@ const BonsaiSettingsDialog = ({
         ) : (
           <>
             <div className='m-5 text-center leading-relaxed'>
-              {confirmAction === 'apply'
-                ? 'Applying new settings will restart the bonsai from scratch.'
-                : confirmAction === 'import'
-                  ? 'Importing will replace the current bonsai.'
-                  : 'Loading will replace the current bonsai.'}
+              {confirmAction === 'import'
+                ? 'Importing will replace the current bonsai.'
+                : 'Loading will replace the current bonsai.'}
               <br />
               Save the current bonsai and elapsed time first?
             </div>

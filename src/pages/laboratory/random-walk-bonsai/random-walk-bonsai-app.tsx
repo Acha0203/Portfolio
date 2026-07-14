@@ -61,17 +61,22 @@ const RandomWalkBonsaiApp = () => {
     });
   };
 
-  // 新しい設定で盆栽を最初から育て直す
+  // 現在の盆栽と経過時間を保持したまま、新しい設定を適用して育成を続ける
   const handleApply = (newSettings: BonsaiSettings) => {
+    const bonsai = bonsaiRef.current;
+
     setSettings(newSettings);
-    setInitialBonsai(null);
-    setInitialElapsedSeconds(0);
+    setInitialBonsai(
+      bonsai === null ? null : { x: [...bonsai.x], y: [...bonsai.y], z: [...bonsai.z] },
+    );
+    setInitialElapsedSeconds(elapsedSeconds);
     setGeneration((prev) => prev + 1);
     setIsSettingsOpen(false);
   };
 
-  // 保存データから、現在の設定のまま栽培を再開する（LOAD・IMPORT共通）
+  // 保存データから、保存時の設定・盆栽・経過時間をすべて復元して栽培を再開する（LOAD・IMPORT共通）
   const resumeFromSaveData = (savedData: BonsaiSaveData) => {
+    setSettings(savedData.settings);
     setInitialBonsai(savedData.bonsai);
     setInitialElapsedSeconds(savedData.elapsedSeconds);
     setGeneration((prev) => prev + 1);
