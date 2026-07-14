@@ -24,11 +24,12 @@ const SettingsAndBackBtn = ({ prevPage, onOpenSettings }: Props) => {
     <div
       className={`${styles.code_back} flex justify-center w-screen text-center text-neutral-400`}
     >
-      <div className={styles.code}>
-        <button type='button' onClick={onOpenSettings}>
-          {UI_TEXT.button.settings}
-        </button>
-      </div>
+      <button
+        className='text-shadow-[0_0_10px_rgb(0,0,0)] cursor-pointer hover:brightness-150'
+        onClick={onOpenSettings}
+      >
+        {UI_TEXT.button.settings}
+      </button>
       <div className={styles.separator} />
       <div className={`${styles.code} ml-3`}>
         <Link href={backUrl} onClick={handleClick}>
