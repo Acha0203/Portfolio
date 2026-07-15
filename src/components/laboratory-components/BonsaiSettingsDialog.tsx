@@ -2,6 +2,7 @@ import type { BonsaiSaveData, BonsaiSettings } from '#/types';
 import { useEffect, useRef, useState } from 'react';
 import { BONSAI_SETTINGS_LIMITS } from '#/constants/randomWalkBonsai';
 import { UI_TEXT } from '#/constants/uiText';
+import useDialogTransition from '#/hooks/useDialogTransition';
 import { hasSavedBonsai, readBonsaiFile } from '#/utils/bonsaiStorage';
 import CloseBtn from '#/components/ui/button/CloseBtn';
 import SettingsBtnAppearance from '#/components/ui/button/SettingsBtnAppearance';
@@ -109,6 +110,9 @@ const isSameSettings = (a: BonsaiSettings, b: BonsaiSettings): boolean =>
 const toErrorMessage = (error: unknown): string =>
   error instanceof Error ? error.message : 'An unexpected error occurred.';
 
+// Tailwind の duration-300 クラスと合わせる
+const TRANSITION_DURATION_MS = 300;
+
 const BonsaiSettingsDialog = ({
   isOpen,
   settings,
@@ -127,6 +131,7 @@ const BonsaiSettingsDialog = ({
   // 保存データの有無（EXPORT ボタンの活性状態に使う）
   const [hasSavedData, setHasSavedData] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const { shouldRender, isVisible } = useDialogTransition(isOpen, TRANSITION_DURATION_MS);
 
   // ダイアログを開くたびに、適用中の設定でフォームを初期化する
   useEffect(() => {
@@ -140,7 +145,8 @@ const BonsaiSettingsDialog = ({
     }
   }, [isOpen, settings]);
 
-  if (!isOpen) return null;
+  // 閉じるアニメーションが終わるまではマウントしたままにする
+  if (!shouldRender) return null;
 
   const updateDraft = (key: keyof SettingsDraft, value: string) => {
     setDraft((prev) => ({ ...prev, [key]: value }));
@@ -245,7 +251,9 @@ const BonsaiSettingsDialog = ({
 
   return (
     <div
-      className='fixed inset-0 z-40 flex items-center justify-center bg-black/70'
+      className={`fixed inset-0 z-40 flex items-center justify-center bg-black/70 transition-opacity duration-300 ease-out ${
+        isVisible ? 'opacity-100' : 'pointer-events-none opacity-0'
+      }`}
       role='dialog'
       aria-modal='true'
       aria-label='Settings'
@@ -261,7 +269,11 @@ const BonsaiSettingsDialog = ({
           <CloseBtn />
         </button>
       </div>
-      <div className='w-1/2 max-sm:w-11/12 max-h-[85vh] overflow-y-auto border border-neutral-600 bg-neutral-900 p-2 text-white'>
+      <div
+        className={`w-1/2 max-sm:w-11/12 max-h-[85vh] overflow-y-auto border border-neutral-600 bg-neutral-900 p-2 text-white transition-transform duration-300 ease-out ${
+          isVisible ? 'translate-y-0' : 'translate-y-4'
+        }`}
+      >
         {confirmAction === null ? (
           <>
             <div className='my-5 text-center text-3xl tracking-[0.5rem]'>
