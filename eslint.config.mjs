@@ -15,7 +15,6 @@ export default defineConfig([globalIgnores([
     "**/.next/",
     "**/.nuxt/",
     "**/build/",
-    "**/dist/",
     "**/out/",
     "**/.e2e-serve/",
     "**/test-results/",
