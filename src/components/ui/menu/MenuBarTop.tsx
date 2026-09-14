@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { UI_TEXT } from '#/constants/uiText';
@@ -8,7 +8,7 @@ import styles from '#/styles/Home.module.scss';
 
 const MenuBarTop = () => {
   const dispatch = useDispatch();
-  const router = useRouter();
+  const pathname = usePathname();
   const [isOverHome, setIsOverHome] = useState(false);
   const [isOverWork, setIsOverWork] = useState(false);
   const [isOverSketchBook, setIsOverSketchBook] = useState(false);
@@ -27,7 +27,7 @@ const MenuBarTop = () => {
           <div className={styles.line_under_menu_bar} />
         </div>
         <div className='flex justify-end items-end w-screen h-12 absolute'>
-          {router.pathname === '/' ? (
+          {pathname === '/' ? (
             <div className='flex flex-col justify-center items-center'>
               <div className='mx-5 text-white'>{UI_TEXT.nav.home}</div>
               <div className={`${styles.line_under_text_grad} w-20`} />
@@ -50,7 +50,7 @@ const MenuBarTop = () => {
               {isOverHome && <div className={`${styles.line_under_text_grad} w-20`} />}
             </div>
           )}
-          {router.pathname === '/work' ? (
+          {pathname === '/work' ? (
             <div className='flex flex-col justify-center items-center'>
               <div className='mx-5 text-white'>{UI_TEXT.nav.work}</div>
               <div className={`${styles.line_under_text_grad} w-20`} />
@@ -73,7 +73,7 @@ const MenuBarTop = () => {
               {isOverWork && <div className={`${styles.line_under_text_grad} w-20`} />}
             </div>
           )}
-          {router.pathname === '/sketch-book' ? (
+          {pathname === '/sketch-book' ? (
             <div className='flex flex-col justify-center items-center'>
               <div className='mx-5 text-white'>{UI_TEXT.nav.sketchBook}</div>
               <div className={`${styles.line_under_text_grad} w-48`} />
@@ -96,7 +96,7 @@ const MenuBarTop = () => {
               {isOverSketchBook && <div className={`${styles.line_under_text_grad} w-48`} />}
             </div>
           )}
-          {router.pathname === '/laboratory' ? (
+          {pathname === '/laboratory' ? (
             <div className='flex flex-col justify-center items-center'>
               <div className='mx-5 text-white'>{UI_TEXT.nav.laboratory}</div>
               <div className={`${styles.line_under_text_grad} w-48`} />
@@ -119,7 +119,7 @@ const MenuBarTop = () => {
               {isOverLaboratory && <div className={`${styles.line_under_text_grad} w-48`} />}
             </div>
           )}
-          {router.pathname === '/info' ? (
+          {pathname === '/info' ? (
             <div className='flex flex-col justify-center items-center'>
               <div className='mx-5 text-white'>{UI_TEXT.nav.info}</div>
               <div className={`${styles.line_under_text_grad} w-20`} />

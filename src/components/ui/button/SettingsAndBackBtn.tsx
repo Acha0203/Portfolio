@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { useSearchParams } from 'next/navigation';
 import { useDispatch } from 'react-redux';
 import { UI_TEXT } from '#/constants/uiText';
 import { myAppActions } from '#/store/myApp';
@@ -12,9 +12,8 @@ interface Props {
 
 const SettingsAndBackBtn = ({ prevPage, onOpenSettings }: Props) => {
   const dispatch = useDispatch();
-  const router = useRouter();
-  const { from } = router.query;
-  const backUrl = typeof from === 'string' && from !== '' ? `/sketch-book?page=${from}` : prevPage;
+  const from = useSearchParams().get('from');
+  const backUrl = from !== null && from !== '' ? `/sketch-book?page=${from}` : prevPage;
 
   const handleClick = () => {
     dispatch(myAppActions.setIsInTransition(true));

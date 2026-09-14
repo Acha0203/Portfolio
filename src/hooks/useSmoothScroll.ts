@@ -1,11 +1,13 @@
 import Lenis from 'lenis';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 
 const useSmoothScroll = () => {
   const [lenis, setLenis] = useState<Lenis | null>(null);
   const reqIdRef = useRef<ReturnType<typeof requestAnimationFrame>>(0);
-  const router = useRouter();
+  const pathname = usePathname();
+  // 初回表示時はスクロール位置をリセットせず、ページ遷移時のみリセットするために直前の pathname を保持する
+  const prevPathnameRef = useRef(pathname);
 
   useEffect(() => {
     const step = (time: DOMHighResTimeStamp) => {
@@ -39,19 +41,12 @@ const useSmoothScroll = () => {
   }, []);
 
   useEffect(() => {
-    if (!lenis) return;
+    if (!lenis || prevPathnameRef.current === pathname) return;
 
-    const handleRouteChangeComplete = () => {
-      lenis.scrollTo(0, { immediate: true });
-      lenis.resize();
-    };
-
-    router.events.on('routeChangeComplete', handleRouteChangeComplete);
-
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChangeComplete);
-    };
-  }, [lenis, router.events]);
+    prevPathnameRef.current = pathname;
+    lenis.scrollTo(0, { immediate: true });
+    lenis.resize();
+  }, [lenis, pathname]);
 };
 
 export default useSmoothScroll;

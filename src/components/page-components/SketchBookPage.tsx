@@ -1,5 +1,7 @@
+'use client';
+
+import { Suspense } from 'react';
 import Blackout from '#/components/Blackout';
-import MyHead from '#/components/MyHead';
 import Showcase from '#/components/Showcase';
 import SketchBackground from '#/components/sketch-components/SketchBackground';
 import TitleOfSketchBook from '#/components/TitleOfSketchBook';
@@ -9,15 +11,14 @@ import styles from '#/styles/Home.module.scss';
 const SketchBookPage = () => {
   return (
     <>
-      <MyHead
-        title='Sketch Book'
-        description='This page shows various generative arts created by Acha Ikeda, a designer and developer in Japan.'
-      />
       <div className='flex-col justify-center items-center relative min-h-auto'>
         <div className={styles.fade_up}>
           <SketchBackground />
           <TitleOfSketchBook />
-          <Showcase />
+          {/* useSearchParams を使うため、静的エクスポート時に Suspense で囲む必要がある */}
+          <Suspense>
+            <Showcase />
+          </Suspense>
         </div>
         <Blackout />
         <Menu />
