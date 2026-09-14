@@ -1,17 +1,15 @@
 import type { MyAppState } from '#/types';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { useDispatch, useSelector } from 'react-redux';
 import { UI_TEXT } from '#/constants/uiText';
 import { myAppActions } from '#/store/myApp';
 import styles from '#/styles/Home.module.scss';
 
 const HamburgerMenu = () => {
-  const router = useRouter();
+  const pathname = usePathname();
   const dispatch = useDispatch();
   const isOpen = useSelector((state: MyAppState) => state.myApp.isOpen);
-  const [pathname, setPathname] = useState('');
 
   const handleClick = () => {
     dispatch(myAppActions.setIsOpen(false));
@@ -37,11 +35,6 @@ const HamburgerMenu = () => {
   //     document.body.style.overflowY = 'scroll';
   //   };
   // };
-
-  useEffect(() => {
-    // isOpen ? stopScrollingBackContent() : allowScrollingBackContent();
-    setPathname(router.pathname);
-  }, [router.pathname]);
 
   return (
     <nav

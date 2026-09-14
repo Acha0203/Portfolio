@@ -1,7 +1,7 @@
 import type { WorkObj } from '#/types';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { sketchList } from '#/constants/sketchList';
 import { getImagePath } from '#/utils/path';
 import Pagination from '#/components/Pagination';
@@ -13,14 +13,15 @@ const IMAGE_HEIGHT = 250;
 
 const Showcase = () => {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const reversedSketchList: WorkObj[] = [...sketchList].reverse();
   const totalPages = Math.ceil(reversedSketchList.length / ITEMS_PER_PAGE);
-  const currentPage = Math.min(Math.max(Number(router.query.page) || 1, 1), totalPages);
+  const currentPage = Math.min(Math.max(Number(searchParams.get('page')) || 1, 1), totalPages);
   const start = (currentPage - 1) * ITEMS_PER_PAGE;
   const visibleItems = reversedSketchList.slice(start, start + ITEMS_PER_PAGE);
 
   const handlePageChange = (page: number) => {
-    router.push({ pathname: '/sketch-book', query: { page } });
+    router.push(`/sketch-book?page=${page}`);
   };
 
   return (

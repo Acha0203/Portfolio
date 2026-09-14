@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { LANGUAGE, UI_TEXT } from '#/constants/uiText';
@@ -6,7 +8,6 @@ import { InfoType, type MyAppState } from '#/types';
 import { getImagePath } from '#/utils/path';
 import Blackout from '#/components/Blackout';
 import InfoForInfoPage from '#/components/InfoForInfoPage';
-import MyHead from '#/components/MyHead';
 import SketchBackground from '#/components/sketch-components/SketchBackground';
 import LanguageSwitch from '#/components/ui/button/LanguageSwitch';
 import LinkBtn from '#/components/ui/button/LinkBtn';
@@ -32,10 +33,6 @@ const InfoPage = () => {
 
   return (
     <>
-      <MyHead
-        title='Info'
-        description='This page shows information about Acha Ikeda, a designer and developer in Japan.'
-      />
       <div className='flex flex-col justify-center items-center relative'>
         <SketchBackground />
         <div

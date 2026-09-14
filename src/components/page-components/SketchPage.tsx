@@ -1,9 +1,10 @@
-import type { GetStaticPaths, GetStaticProps } from 'next';
+'use client';
+
+import { Suspense } from 'react';
 import { sketchComponentMap } from '#/constants/sketchComponentMap';
 import { sketchList } from '#/constants/sketchList';
 import useReload from '#/hooks/useReload';
 import Blackout from '#/components/Blackout';
-import MyHead from '#/components/MyHead';
 import CodeAndBackBtn from '#/components/ui/button/CodeAndBackBtn';
 import Menu from '#/components/ui/menu/Menu';
 import styles from '#/styles/Home.module.scss';
@@ -21,11 +22,6 @@ const SketchPage = ({ index, slug }: Props) => {
 
   return (
     <>
-      <MyHead
-        title={sketch.title}
-        thumbnailUrl={`https://acha0203.github.io/Portfolio${sketch.thumbnailUrl}`}
-        description={sketch.description.en.join('')}
-      />
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
           <SketchComponent />
@@ -34,27 +30,16 @@ const SketchPage = ({ index, slug }: Props) => {
           className={`flex-col justify-center items-center absolute bottom-10 ${styles.fade_up}`}
         >
           <div className={styles.title_of_sketch}>{`${sketch.title.toUpperCase()}`}</div>
-          <CodeAndBackBtn url={`${sketch.codeUrl}`} prevPage='/sketch-book' />
+          {/* useSearchParams を使うため、静的エクスポート時に Suspense で囲む必要がある */}
+          <Suspense>
+            <CodeAndBackBtn url={`${sketch.codeUrl}`} prevPage='/sketch-book' />
+          </Suspense>
         </div>
         <Blackout />
         <Menu />
       </div>
     </>
   );
-};
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = sketchList.map((sketch) => ({
-    params: { slug: sketch.path.replace('/sketch-book/', '') },
-  }));
-
-  return { paths, fallback: false };
-};
-
-export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
-  const slug = params!.slug as string;
-  const index = sketchList.findIndex((s) => s.path === `/sketch-book/${slug}`);
-  return { props: { index, slug } };
 };
 
 export default SketchPage;

@@ -1,5 +1,7 @@
+'use client';
+
 import type { BonsaiData, BonsaiSaveData, BonsaiSettings } from '#/types';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import { laboratoryList } from '#/constants/laboratoryList';
 import { DEFAULT_BONSAI_SETTINGS } from '#/constants/randomWalkBonsai';
 import useReload from '#/hooks/useReload';
@@ -8,7 +10,6 @@ import { downloadBonsaiFile, loadBonsai, saveBonsai } from '#/utils/bonsaiStorag
 import Blackout from '#/components/Blackout';
 import BonsaiSettingsDialog from '#/components/laboratory-components/BonsaiSettingsDialog';
 import RandomWalkBonsai from '#/components/laboratory-components/RandomWalkBonsai';
-import MyHead from '#/components/MyHead';
 import SettingsAndBackBtn from '#/components/ui/button/SettingsAndBackBtn';
 import Menu from '#/components/ui/menu/Menu';
 import styles from '#/styles/Home.module.scss';
@@ -111,11 +112,6 @@ const RandomWalkBonsaiApp = () => {
 
   return (
     <>
-      <MyHead
-        title={appData.title}
-        thumbnailUrl={`https://acha0203.github.io/Portfolio${appData.thumbnailUrl}-s.png`}
-        description={appData.description.en.join('')}
-      />
       <div className='flex-col justify-center items-center relative'>
         <div className={styles.curtain}>
           <RandomWalkBonsai
@@ -130,10 +126,13 @@ const RandomWalkBonsaiApp = () => {
           className={`flex-col justify-center items-center absolute bottom-10 ${styles.fade_up}`}
         >
           <div className={styles.title_of_sketch}>{`${appData.title.toUpperCase()}`}</div>
-          <SettingsAndBackBtn
-            prevPage={appData.path}
-            onOpenSettings={() => setIsSettingsOpen(true)}
-          />
+          {/* useSearchParams を使うため、静的エクスポート時に Suspense で囲む必要がある */}
+          <Suspense>
+            <SettingsAndBackBtn
+              prevPage={appData.path}
+              onOpenSettings={() => setIsSettingsOpen(true)}
+            />
+          </Suspense>
         </div>
         <BonsaiSettingsDialog
           isOpen={isSettingsOpen}
