@@ -36,6 +36,7 @@ import SketchMochiMochi from '#/components/sketch-components/SketchMochiMochi';
 import SketchMortalFlowers from '#/components/sketch-components/SketchMortalFlowers';
 import SketchOceanCurrent from '#/components/sketch-components/SketchOceanCurrent';
 import SketchPerlinNoise04 from '#/components/sketch-components/SketchPerlinNoise04';
+import SketchProcessing25thAnniversary from '#/components/sketch-components/SketchProcessing25thAnniversary';
 import SketchPsychedelicCurve from '#/components/sketch-components/SketchPsychedelicCurve';
 import SketchQuicksilver from '#/components/sketch-components/SketchQuicksilver';
 import SketchRain from '#/components/sketch-components/SketchRain';
@@ -95,6 +96,7 @@ export const sketchComponentMap: Record<string, ComponentType> = {
   'mortal-flowers': SketchMortalFlowers,
   'ocean-current': SketchOceanCurrent,
   'perlin-noise-04': SketchPerlinNoise04,
+  'processing-25th-anniversary': SketchProcessing25thAnniversary,
   'psychedelic-curve': SketchPsychedelicCurve,
   quicksilver: SketchQuicksilver,
   rain: SketchRain,
